@@ -1,0 +1,21 @@
+﻿<Window x:Class="Detector.WPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow">
+    <Grid Margin="0,0,0,-174">
+        <Button Name="btnChooseSolution" Content="Choose Solution to Detect Anti Patterns" HorizontalAlignment="Left" Margin="358,61,0,0" VerticalAlignment="Top" Width="380" Height="32" Click="btnChooseSolution_Click"/>
+        <Label Content="Solution chosen: " HorizontalAlignment="Left" Margin="70,30,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Name="lblSolutionName" HorizontalAlignment="Left" Margin="190,30,0,0" VerticalAlignment="Top" Width="260" Height="26"/>
+        <Label Content="Choose ORM tool used in solution:" HorizontalAlignment="Left" Margin="70,98,0,0" VerticalAlignment="Top" Width="197"/>
+        <ComboBox HorizontalAlignment="Left" Margin="358,102,0,0" VerticalAlignment="Top" Width="178"/>
+        <Button Name="btnExtractDatabaseAccessingCode" Content="Extract Database Accessing Calls" HorizontalAlignment="Left" Margin="560,160,0,0" VerticalAlignment="Top" Width="178" Height="30" Click="btnExtractDatabaseAccessingCode_Click"/>
+        <ListView HorizontalAlignment="Left" Height="264" Margin="29,211,0,0" VerticalAlignment="Top" Width="709">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

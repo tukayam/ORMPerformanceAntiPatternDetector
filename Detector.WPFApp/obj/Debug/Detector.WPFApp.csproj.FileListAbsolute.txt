@@ -1,0 +1,13 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.WPFApp.exe.config
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.WPFApp.exe
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.WPFApp.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\MainWindow.baml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\MainWindow.g.cs
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\App.g.cs
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp_MarkupCompile.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.g.resources
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.Properties.Resources.resources
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.csproj.GenerateResource.Cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.exe
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp.pdb

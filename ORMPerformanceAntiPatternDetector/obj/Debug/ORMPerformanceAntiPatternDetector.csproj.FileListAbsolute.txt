@@ -1,0 +1,1 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\ORMPerformanceAntiPatternDetector\bin\Debug\ORMPerformanceAntiPatternDetector.exe.config

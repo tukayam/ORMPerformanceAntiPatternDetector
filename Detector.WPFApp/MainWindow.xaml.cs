@@ -41,7 +41,7 @@ namespace Detector.WPFApp
 
         private void btnExtractDatabaseAccessingCode_Click(object sender, RoutedEventArgs e)
         {
-            IEnumerable<CallGraph> callGraphs = new CallGraphExtractor().Extract(solution);
+            //IEnumerable<CallGraph> callGraphs = new CallGraphExtractor().Extract(solution);
         }
     }
 }

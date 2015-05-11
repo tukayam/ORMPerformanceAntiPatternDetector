@@ -69,6 +69,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Base\EAGERMapping.cs" />
+    <Compile Include="Models\Base\Entity.cs" />
+    <Compile Include="Models\NHibernate\HQLQuery.cs" />
+    <Compile Include="Models\Base\LAZYMapping.cs" />
+    <Compile Include="Models\LINQToSQL\LINQQuery.cs" />
+    <Compile Include="Models\LINQToSQL\LINQToSQLEAGERMapping.cs" />
+    <Compile Include="Models\LINQToSQL\LINQToSQLLAZYMapping.cs" />
+    <Compile Include="Models\Base\Mapping.cs" />
+    <Compile Include="Models\NHibernate\NHibernateEAGERMapping.cs" />
+    <Compile Include="Models\NHibernate\NHibernateLAZYMapping.cs" />
+    <Compile Include="Models\Base\Query.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +97,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\EntityFramework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

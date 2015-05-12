@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.Models.ORM
 {
-    class ORMContext
+    public static class ORMContext
     {
+        public static IEnumerable<Query> Queries;
+        public static IEnumerable<Entity> Entities;
     }
 }

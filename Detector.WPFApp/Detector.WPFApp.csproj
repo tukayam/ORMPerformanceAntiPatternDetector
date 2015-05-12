@@ -34,8 +34,53 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Desktop">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Desktop">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.0.0-rc2\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.33-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.18-beta\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,23 +108,29 @@
     </Compile>
     <Compile Include="CallGraph.cs" />
     <Compile Include="CallGraphExtractor.cs" />
+    <Compile Include="DetectionRules\DetectionRule.cs" />
+    <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
+    <Compile Include="Extractors\DatabaseEntities\DatabaseEntityExtractor.cs" />
+    <Compile Include="Extractors\DatabaseEntities\LINQToSQLDatabaseEntityExtractor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Base\EAGERMapping.cs" />
-    <Compile Include="Models\Base\Entity.cs" />
-    <Compile Include="Models\NHibernate\HQLQuery.cs" />
-    <Compile Include="Models\Base\LAZYMapping.cs" />
-    <Compile Include="Models\LINQToSQL\LINQQuery.cs" />
-    <Compile Include="Models\LINQToSQL\LINQToSQLEAGERMapping.cs" />
-    <Compile Include="Models\LINQToSQL\LINQToSQLLAZYMapping.cs" />
-    <Compile Include="Models\Base\Mapping.cs" />
-    <Compile Include="Models\NHibernate\NHibernateEAGERMapping.cs" />
-    <Compile Include="Models\NHibernate\NHibernateLAZYMapping.cs" />
-    <Compile Include="Models\Base\Query.cs" />
+    <Compile Include="Models\ORM\Base\EAGERMapping.cs" />
+    <Compile Include="Models\ORM\Base\Entity.cs" />
+    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLEntity.cs" />
+    <Compile Include="Models\ORM\NHibernate\HQLQuery.cs" />
+    <Compile Include="Models\ORM\Base\LAZYMapping.cs" />
+    <Compile Include="Models\ORM\LINQToSQL\LINQQuery.cs" />
+    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLEAGERMapping.cs" />
+    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLLAZYMapping.cs" />
+    <Compile Include="Models\ORM\Base\Mapping.cs" />
+    <Compile Include="Models\ORM\NHibernate\NHibernateEAGERMapping.cs" />
+    <Compile Include="Models\ORM\NHibernate\NHibernateLAZYMapping.cs" />
+    <Compile Include="Models\ORM\Base\Query.cs" />
+    <Compile Include="Models\ORM\ORMContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -108,7 +159,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\EntityFramework\" />
+    <Folder Include="Models\ORM\EntityFramework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

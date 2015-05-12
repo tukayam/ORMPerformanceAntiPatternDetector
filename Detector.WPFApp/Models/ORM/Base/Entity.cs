@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.Models
 {
-    public class Entity
+    public abstract class Entity
     {
-        
+        public string Name
+        {
+            get;
+            private set;
+        }
+
+        public Entity(string name)
+        {
+            this.Name = name;
+        }
     }
 }

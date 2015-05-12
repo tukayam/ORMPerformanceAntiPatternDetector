@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.DetectionRules
 {
-    class DetectionRule
+    public abstract class DetectionRule
     {
+
     }
 }

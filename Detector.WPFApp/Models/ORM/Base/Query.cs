@@ -1,5 +1,4 @@
-﻿using Detector.WPFApp.Models.CSharpProject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,6 @@ namespace Detector.WPFApp.Models
         /// <summary>
         /// File in which the Query is found
         /// </summary>
-        public File File;
+        //public File File;
     }
 }

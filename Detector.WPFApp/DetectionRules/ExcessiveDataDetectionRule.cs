@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.DetectionRules
 {
-    class ExcessiveDataDetectionRule
+    /// <summary>
+    /// 
+    /// 
+    /// 
+    /// 
+    /// </summary>
+    public class ExcessiveDataDetectionRule
     {
+        
     }
 }

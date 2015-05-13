@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Detector.WPFApp
+namespace Detector.WPFApp.Models.ORM.Base
 {
-    class CallGraph
+    public abstract class DatabaseAccessingMethod
     {
     }
 }

@@ -11,7 +11,7 @@ namespace Detector.WPFApp.Models
         /// <summary>
         /// Entities that the query returns
         /// </summary>
-        public IEnumerable<Entity> FetchedEntities;
+        public IEnumerable<DatabaseEntityClass> FetchedEntities;
         
         /// <summary>
         /// File in which the Query is found

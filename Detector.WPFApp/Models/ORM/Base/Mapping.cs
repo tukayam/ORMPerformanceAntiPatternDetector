@@ -8,14 +8,14 @@ namespace Detector.WPFApp.Models
 {
     public abstract class Mapping
     {
-        private Entity[] entities;
-        public Entity[] Entities
+        private DatabaseEntityClass[] entities;
+        public DatabaseEntityClass[] Entities
         {
             get
             {
                 if (entities == null)
                 {
-                    entities = new Entity[2];
+                    entities = new DatabaseEntityClass[2];
                 }
                 return entities;
             }

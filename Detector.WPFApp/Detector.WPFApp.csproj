@@ -106,20 +106,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CallGraph.cs" />
-    <Compile Include="CallGraphExtractor.cs" />
     <Compile Include="DetectionRules\DetectionRule.cs" />
     <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
-    <Compile Include="Extractors\DatabaseEntities\DatabaseEntityExtractor.cs" />
-    <Compile Include="Extractors\DatabaseEntities\LINQToSQLDatabaseEntityExtractor.cs" />
+    <Compile Include="Extractors\DatabaseEntityExtractors\DatabaseEntityExtractor.cs" />
+    <Compile Include="Extractors\DatabaseEntityExtractors\LINQToSQLDatabaseEntityExtractor.cs" />
+    <Compile Include="Extractors\MappingExtractors\LINQToSQLMappingExtractor.cs" />
+    <Compile Include="Extractors\MappingExtractors\MappingExtractor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ORM\Base\DatabaseAccessingMethod.cs" />
+    <Compile Include="Models\ORM\Base\DatabaseEntityObject.cs" />
+    <Compile Include="Models\ORM\Base\DatabaseEntityObjectInstantiationStatement.cs" />
+    <Compile Include="Models\ORM\Base\DatabaseEntityObjectUpdateStatement.cs" />
     <Compile Include="Models\ORM\Base\EAGERMapping.cs" />
-    <Compile Include="Models\ORM\Base\Entity.cs" />
+    <Compile Include="Models\ORM\Base\DatabaseEntityClass.cs" />
+    <Compile Include="Models\ORM\Base\QueryConfiguration.cs" />
+    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLDatabaseAccessingMethod.cs" />
     <Compile Include="Models\ORM\LINQToSQL\LINQToSQLEntity.cs" />
     <Compile Include="Models\ORM\NHibernate\HQLQuery.cs" />
     <Compile Include="Models\ORM\Base\LAZYMapping.cs" />
@@ -159,6 +165,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Extractors\CallGraphExtractors\" />
+    <Folder Include="Extractors\ConfigurationExtractors\" />
     <Folder Include="Models\ORM\EntityFramework\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Detector.WPFApp.Models.ORM.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.Models.ORM.LINQToSQL
 {
-    public class LINQToSQLEntity : DatabaseEntityClass
+    public class LINQToSQLDatabaseAccessingMethod : DatabaseAccessingMethod
     {
-        public LINQToSQLEntity(string name) : base(name) { }
     }
 }

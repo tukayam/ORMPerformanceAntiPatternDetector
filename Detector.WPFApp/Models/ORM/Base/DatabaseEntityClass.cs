@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.Models
 {
-    public abstract class Entity
+    public abstract class DatabaseEntityClass
     {
         public string Name
         {
@@ -14,7 +14,7 @@ namespace Detector.WPFApp.Models
             private set;
         }
 
-        public Entity(string name)
+        public DatabaseEntityClass(string name)
         {
             this.Name = name;
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Detector.WPFApp.Extractors.DatabaseEntities
 {
-    public interface DatabaseEntityExtractor<T> where T : Entity
+    public interface DatabaseEntityExtractor<T> where T : DatabaseEntityClass
     {
         IEnumerable<T> Entities { get; }
     }

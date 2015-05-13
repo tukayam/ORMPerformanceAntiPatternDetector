@@ -9,6 +9,6 @@ namespace Detector.WPFApp.Models.ORM
     public static class ORMContext
     {
         public static IEnumerable<Query> Queries;
-        public static IEnumerable<Entity> Entities;
+        public static IEnumerable<DatabaseEntityClass> Entities;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Detector.WPFApp.Models.ORM.LINQToSQL;
+﻿using Detector.WPFApp.Models.ORM;
+using Detector.WPFApp.Models.ORM.LINQToSQL;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -30,6 +31,7 @@ namespace Detector.WPFApp.Extractors.DatabaseEntities
             {
                 entities.Add(new LINQToSQLEntity(node.Identifier.ToString()) { });
             }
+            ORMContext.Entities = entities;
             base.VisitClassDeclaration(node);
         }
     }

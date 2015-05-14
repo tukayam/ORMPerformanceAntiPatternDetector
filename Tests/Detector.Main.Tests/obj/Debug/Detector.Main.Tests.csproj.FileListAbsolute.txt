@@ -1,0 +1,5 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Detector.Main.Tests.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Detector.Main.Tests.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\obj\Debug\Detector.Main.Tests.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\obj\Debug\Detector.Main.Tests.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\obj\Debug\Detector.Main.Tests.pdb

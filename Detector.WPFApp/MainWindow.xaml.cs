@@ -1,13 +1,16 @@
-﻿using Detector.WPFApp.Extractors.DatabaseEntities;
-using Detector.WPFApp.Models.ORM.LINQToSQL;
+﻿using Detector.Extractors.Extractors.CallGraphExtractors;
+using Detector.Models.ORM.LINQToSQL;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
+using Detector.Extractors.DatabaseEntities;
 
-namespace Detector.WPFApp
+namespace Detector.Extractors
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -56,10 +59,23 @@ namespace Detector.WPFApp
                 {
                     var document = solution.GetDocument(documentId);
 
-                    var root = await Task.Run(() => document.GetSyntaxRootAsync());
+                    SyntaxNode root = await Task.Run(() => document.GetSyntaxRootAsync());
 
                     LINQToSQLDatabaseEntityExtractor LINQToSQLDatabaseEntityExtractor = new LINQToSQLDatabaseEntityExtractor();
                     LINQToSQLDatabaseEntityExtractor.Visit(root);
+
+
+                    CallGraphExtractor ext = new CallGraphExtractor();
+                    ext.Visit(root);
+
+                    SyntaxTree tree = await Task.Run(() => document.GetSyntaxTreeAsync());
+
+
+                    var compilation = CSharpCompilation.Create("HelloWorld")
+                        .AddReferences(MetadataReference.CreateFromAssembly(typeof(object).Assembly))
+                        .AddSyntaxTrees(new SyntaxTree[] { tree });
+                    var model = compilation.GetSemanticModel(tree);
+
 
                     entities.AddRange(LINQToSQLDatabaseEntityExtractor.Entities);
                 }

@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Detector.WPFApp</RootNamespace>
     <AssemblyName>Detector.WPFApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,37 +107,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DetectionRules\DetectionRule.cs" />
-    <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
-    <Compile Include="Extractors\DatabaseEntityExtractors\DatabaseEntityExtractor.cs" />
-    <Compile Include="Extractors\DatabaseEntityExtractors\LINQToSQLDatabaseEntityExtractor.cs" />
-    <Compile Include="Extractors\MappingExtractors\LINQToSQLMappingExtractor.cs" />
-    <Compile Include="Extractors\MappingExtractors\MappingExtractor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ORM\Base\DatabaseAccessingMethod.cs" />
-    <Compile Include="Models\ORM\Base\DatabaseEntityObject.cs" />
-    <Compile Include="Models\ORM\Base\DatabaseEntityObjectInstantiationStatement.cs" />
-    <Compile Include="Models\ORM\Base\DatabaseEntityObjectUpdateStatement.cs" />
-    <Compile Include="Models\ORM\Base\EAGERMapping.cs" />
-    <Compile Include="Models\ORM\Base\DatabaseEntityClass.cs" />
-    <Compile Include="Models\ORM\Base\QueryConfiguration.cs" />
-    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLDatabaseAccessingMethod.cs" />
-    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLEntity.cs" />
-    <Compile Include="Models\ORM\NHibernate\HQLQuery.cs" />
-    <Compile Include="Models\ORM\Base\LAZYMapping.cs" />
-    <Compile Include="Models\ORM\LINQToSQL\LINQQuery.cs" />
-    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLEAGERMapping.cs" />
-    <Compile Include="Models\ORM\LINQToSQL\LINQToSQLLAZYMapping.cs" />
-    <Compile Include="Models\ORM\Base\Mapping.cs" />
-    <Compile Include="Models\ORM\NHibernate\NHibernateEAGERMapping.cs" />
-    <Compile Include="Models\ORM\NHibernate\NHibernateLAZYMapping.cs" />
-    <Compile Include="Models\ORM\Base\Query.cs" />
-    <Compile Include="Models\ORM\ORMContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -164,10 +140,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Extractors\CallGraphExtractors\" />
-    <Folder Include="Extractors\ConfigurationExtractors\" />
-    <Folder Include="Models\ORM\EntityFramework\" />
+    <ProjectReference Include="..\Detector.Extractors\Detector.Extractors.csproj">
+      <Project>{200f6e6d-e6bd-4f1b-8ead-55ecbc09b9f3}</Project>
+      <Name>Detector.Extractors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Detector.Main\Detector.Main.csproj">
+      <Project>{cceee6d1-d9e6-4a9b-a345-20a3a3009981}</Project>
+      <Name>Detector.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
+      <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
+      <Name>Detector.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

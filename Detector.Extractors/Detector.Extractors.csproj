@@ -101,12 +101,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallGraphExtractors\CallGraphExtractor.cs" />
-    <Compile Include="DatabaseEntityExtractors\DatabaseEntityExtractor.cs" />
-    <Compile Include="DatabaseEntityExtractors\LINQToSQLDatabaseEntityExtractor.cs" />
-    <Compile Include="FlowOfExecutionExtractors\FlowOfExecutionExtractor.cs" />
-    <Compile Include="MappingExtractors\LINQToSQLMappingExtractor.cs" />
-    <Compile Include="MappingExtractors\MappingExtractor.cs" />
+    <Compile Include="DatabaseAccessingMethodCallsExtractor.cs" />
+    <Compile Include="LINQToSQLDatabaseEntityExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,10 +112,12 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ConfigurationExtractors\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+      <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
+      <Name>Detector.Extractors.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>

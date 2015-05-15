@@ -45,6 +45,12 @@
     <Compile Include="ExcessiveDataDetectionRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
+      <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
+      <Name>Detector.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

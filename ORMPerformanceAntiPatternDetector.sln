@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detector.DetectionRules", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detector.Main", "Detector.Main\Detector.Main.csproj", "{CCEEE6D1-D9E6-4A9B-A345-20A3A3009981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detector.Extractors.Base", "Detector.Extractors.Base\Detector.Extractors.Base.csproj", "{97F1E032-107E-4946-BEB3-4AD63332F86F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{CCEEE6D1-D9E6-4A9B-A345-20A3A3009981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEEE6D1-D9E6-4A9B-A345-20A3A3009981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCEEE6D1-D9E6-4A9B-A345-20A3A3009981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F1E032-107E-4946-BEB3-4AD63332F86F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F1E032-107E-4946-BEB3-4AD63332F86F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F1E032-107E-4946-BEB3-4AD63332F86F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F1E032-107E-4946-BEB3-4AD63332F86F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,4 @@
-﻿using Detector.Extractors.Extractors.CallGraphExtractors;
-using Detector.Models.ORM.LINQToSQL;
+﻿using Detector.Models.ORM.LINQToSQL;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.MSBuild;
@@ -9,6 +8,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using Detector.Extractors.DatabaseEntities;
+using Detector.Main;
 
 namespace Detector.Extractors
 {
@@ -61,12 +61,11 @@ namespace Detector.Extractors
 
                     SyntaxNode root = await Task.Run(() => document.GetSyntaxRootAsync());
 
+                    RoslynSyntaxTreeWalker rw = new RoslynSyntaxTreeWalker();
+                    rw.Visit(root);
+
                     LINQToSQLDatabaseEntityExtractor LINQToSQLDatabaseEntityExtractor = new LINQToSQLDatabaseEntityExtractor();
                     LINQToSQLDatabaseEntityExtractor.Visit(root);
-
-
-                    CallGraphExtractor ext = new CallGraphExtractor();
-                    ext.Visit(root);
 
                     SyntaxTree tree = await Task.Run(() => document.GetSyntaxTreeAsync());
 

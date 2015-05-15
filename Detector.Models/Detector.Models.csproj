@@ -32,7 +32,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.33.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.33-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Reflection.Metadata, Version=1.0.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.18-beta\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,32 +69,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ORMPerformanceAntiPatternDetectorTree.cs" />
+    <Compile Include="Compilation\CompilationUnit.cs" />
+    <Compile Include="MethodDeclaration.cs" />
+    <Compile Include="ORM\Base\DatabaseEntityObjectCallStatement.cs" />
+    <Compile Include="ORM\Base\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
+    <Compile Include="ORM\Base\EagerFetchingQuery.cs" />
+    <Compile Include="ORM\Base\ModelBase.cs" />
+    <Compile Include="ORMSyntaxTree.cs" />
     <Compile Include="ORM\Base\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\Base\DatabaseEntityDeclaration.cs" />
     <Compile Include="ORM\Base\DatabaseEntityObject.cs" />
     <Compile Include="ORM\Base\DatabaseEntityObjectInstantiationStatement.cs" />
     <Compile Include="ORM\Base\DatabaseEntityObjectUpdateStatement.cs" />
-    <Compile Include="ORM\Base\EAGERMapping.cs" />
-    <Compile Include="ORM\Base\LAZYMapping.cs" />
+    <Compile Include="ORM\Base\DataContextInitializationStatement.cs" />
     <Compile Include="ORM\Base\Mapping.cs" />
     <Compile Include="ORM\Base\Query.cs" />
     <Compile Include="ORM\Base\QueryConfiguration.cs" />
     <Compile Include="ORM\LINQToSQL\DataContextObjectInstantiationStatement.cs" />
     <Compile Include="ORM\LINQToSQL\LINQQuery.cs" />
     <Compile Include="ORM\LINQToSQL\LINQToSQLDatabaseAccessingMethod.cs" />
-    <Compile Include="ORM\LINQToSQL\LINQToSQLEAGERMapping.cs" />
     <Compile Include="ORM\LINQToSQL\LINQToSQLEntity.cs" />
-    <Compile Include="ORM\LINQToSQL\LINQToSQLLAZYMapping.cs" />
     <Compile Include="ORM\NHibernate\HQLQuery.cs" />
-    <Compile Include="ORM\NHibernate\NHibernateEAGERMapping.cs" />
-    <Compile Include="ORM\NHibernate\NHibernateLAZYMapping.cs" />
     <Compile Include="ORM\NHibernate\SessionObjectInstantiationStatement.cs" />
     <Compile Include="ORM\ORMContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ORM\EntityFramework\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

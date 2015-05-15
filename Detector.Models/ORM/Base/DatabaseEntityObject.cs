@@ -2,5 +2,6 @@
 {
     public class DatabaseEntityObject
     {
+        public DatabaseEntityDeclaration DatabaseEntityDeclaration { get; private set; }
     }
 }

@@ -1,14 +1,15 @@
 ﻿using Detector.Models;
-using Detector.Models.ORM.Base;
+using Detector.Models.ORM;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Detector.Extractors.DetectionRules
 {
     /// <summary>
     ///  
     /// </summary>
-    public class ExcessiveDataDetectionRule : DetectionRule
+    public class ExcessiveDataDetectionRule<T> : DetectionRule where T : ORMToolType
     {
         public override Func<bool> GetRuleFunction()
         {
@@ -18,33 +19,34 @@ namespace Detector.Extractors.DetectionRules
         private bool TreeHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed()
         {
             bool result = false;
-            IEnumerable<ModelBase> databaseAccessingMethodCalls = SyntaxTree.Nodes.FindAll(n => n is DatabaseAccessingMethodCallStatement);
+            IEnumerable<ModelBase> databaseAccessingMethodCalls = SyntaxTree.Nodes.FindAll(n => n is DatabaseAccessingMethodCallStatement<T>);
 
-            foreach (DatabaseAccessingMethodCallStatement databaseAccessingMethodCall in databaseAccessingMethodCalls)
+            foreach (DatabaseAccessingMethodCallStatement<T> databaseAccessingMethodCall in databaseAccessingMethodCalls)
             {
-                if (databaseAccessingMethodCall.Query is EagerFetchingQuery)
+                //TODO: If the query does not mention multiple entities, it is still possible that it fetches eagerly..
+                var entityTypesQuerySelects = databaseAccessingMethodCall.DatabaseQuery.EntityDeclarations.ToList();
+                if (entityTypesQuerySelects.Count() > 0)
                 {
-                    EagerFetchingQuery eagerFetchingQuery = databaseAccessingMethodCall.Query as EagerFetchingQuery;
-                    DatabaseEntityObject databaseEntityObjectSetByCall = databaseAccessingMethodCall.DatabaseEntityObject;
-                    if (databaseEntityObjectSetByCall != null)
-                    {
-                        var callsOnDatabaseEntityObjectInTree = SyntaxTree.Nodes.FindAll(n => n is DatabaseEntityObjectCallStatement
-                         && ((DatabaseEntityObjectCallStatement)n).DatabaseEntityObject == databaseEntityObjectSetByCall);
+                    //DatabaseEntityObject<T> databaseEntityObjectSetByCall = databaseAccessingMethodCall.DatabaseEntityObject;
+                    //if (databaseEntityObjectSetByCall != null)
+                    //{
+                    //    var callsOnDatabaseEntityObjectInTree = SyntaxTree.Nodes.FindAll(n => n is DatabaseEntityObjectCallStatement<T>
+                    //     && ((DatabaseEntityObjectCallStatement<T>)n).DatabaseEntityObject == databaseEntityObjectSetByCall);
 
-                        foreach (var call in callsOnDatabaseEntityObjectInTree)
-                        {
-                            if (call is DatabaseEntityObjectRelatedEntitySelectCallStatement)
-                            {
-                                DatabaseEntityObject relatedEntity = ((DatabaseEntityObjectRelatedEntitySelectCallStatement)call).RelatedEntityObject;
+                    //    foreach (var call in callsOnDatabaseEntityObjectInTree)
+                    //    {
+                    //        if (call is DatabaseEntityObjectRelatedEntitySelectCallStatement)
+                    //        {
+                    //            DatabaseEntityObject relatedEntity = ((DatabaseEntityObjectRelatedEntitySelectCallStatement)call).RelatedEntityObject;
 
-                                if ((eagerFetchingQuery.FetchedEntities as List<DatabaseEntityDeclaration>).Contains(relatedEntity.DatabaseEntityDeclaration))
-                                {
-                                    result = true;
-                                    break;
-                                }
-                            }
-                        }
-                    }
+                    //            if (entityTypesQuerySelects.Contains(relatedEntity.DatabaseEntityDeclaration))
+                    //            {
+                    //                result = true;
+                    //                break;
+                    //            }
+                    //        }
+                    //    }
+                    //}
                 }
             }
 

@@ -1,6 +1,6 @@
-﻿namespace Detector.Models.ORM.Base
+﻿namespace Detector.Models.ORM
 {
-    public abstract class DatabaseEntityDeclaration
+    public class DatabaseEntityDeclaration<T> where T : ORMToolType
     {
         public string Name
         {

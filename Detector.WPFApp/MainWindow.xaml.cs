@@ -1,5 +1,4 @@
-﻿using Detector.Models.ORM.LINQToSQL;
-using Microsoft.CodeAnalysis;
+﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.Win32;
 using System;
@@ -9,6 +8,7 @@ using System.Windows;
 using Detector.Extractors.DatabaseEntities;
 using Detector.Main;
 using Detector.Models.ORM.Base;
+using Detector.Models.ORM;
 
 namespace Detector.Extractors
 {
@@ -18,13 +18,13 @@ namespace Detector.Extractors
     public partial class MainWindow : Window
     {
         string solutionPath = "";
-        List<LINQToSQLEntity> entities;
-        List<DatabaseAccessingMethodCallStatement> dbAccessingMethods;
+        List<DatabaseEntityDeclaration<LINQToSQL>> entities;
+        List<DatabaseAccessingMethodCallStatement<LINQToSQL>> dbAccessingMethods;
 
         public MainWindow()
         {
-            entities = new List<LINQToSQLEntity>();
-            dbAccessingMethods = new List<DatabaseAccessingMethodCallStatement>();
+            entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
+            dbAccessingMethods = new List<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
             InitializeComponent();
         }
 
@@ -89,10 +89,10 @@ namespace Detector.Extractors
                     //    .AddSyntaxTrees(new SyntaxTree[] { tree });
                    // var model = compilation.GetSemanticModel(tree);
 
-                    RoslynLINQToSQLDatabaseEntityExtractor RoslynLINQToSQLDatabaseEntityExtractor = new RoslynLINQToSQLDatabaseEntityExtractor();
+                    var RoslynLINQToSQLDatabaseEntityExtractor = new RoslynLINQToSQLDatabaseEntityExtractor();
                     RoslynLINQToSQLDatabaseEntityExtractor.Visit(root);
 
-                    entities.AddRange(RoslynLINQToSQLDatabaseEntityExtractor.Entities);
+                    entities.AddRange(RoslynLINQToSQLDatabaseEntityExtractor.EntityDeclarations);
                 }
             }
 
@@ -122,10 +122,12 @@ namespace Detector.Extractors
                     SyntaxTree tree = await Task.Run(() => document.GetSyntaxTreeAsync());
                     SemanticModel model = await Task.Run(() => document.GetSemanticModelAsync());
 
-                    RoslynDatabaseAccessingMethodCallsExtractor extractor = new RoslynDatabaseAccessingMethodCallsExtractor(model);
-                    extractor.Visit(root);
+                    
 
-                    dbAccessingMethods.AddRange(extractor.DatabaseAccessingMethodCalls);
+                    //var extractor = new RoslynDatabaseAccessingMethodCallsExtractor(model);
+                    //extractor.Visit(root);
+
+                   // dbAccessingMethods.AddRange(extractor.DatabaseAccessingMethodCalls);
                 }
             }
 

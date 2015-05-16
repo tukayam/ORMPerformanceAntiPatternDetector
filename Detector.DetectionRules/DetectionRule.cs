@@ -1,6 +1,5 @@
 ﻿using Detector.Models;
 using System;
-using System.Collections.Generic;
 
 namespace Detector.Extractors.DetectionRules
 {

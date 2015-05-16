@@ -71,32 +71,28 @@
   <ItemGroup>
     <Compile Include="Compilation\CompilationUnit.cs" />
     <Compile Include="MethodDeclaration.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityObjectCallStatement.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
-    <Compile Include="ORM\Base\EagerFetchingQuery.cs" />
-    <Compile Include="ORM\Base\ModelBase.cs" />
+    <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
+    <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
+    <Compile Include="ORM\DataContextDeclaration.cs" />
+    <Compile Include="ORM\EntityFramework.cs" />
+    <Compile Include="ORM\LINQToSQL.cs" />
+    <Compile Include="ORM\ModelBase.cs" />
     <Compile Include="ORMSyntaxTree.cs" />
-    <Compile Include="ORM\Base\DatabaseAccessingMethodCallStatement.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityDeclaration.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityObject.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityObjectInstantiationStatement.cs" />
-    <Compile Include="ORM\Base\DatabaseEntityObjectUpdateStatement.cs" />
-    <Compile Include="ORM\Base\DataContextInitializationStatement.cs" />
-    <Compile Include="ORM\Base\Mapping.cs" />
-    <Compile Include="ORM\Base\Query.cs" />
-    <Compile Include="ORM\Base\QueryConfiguration.cs" />
-    <Compile Include="ORM\LINQToSQL\DataContextObjectInstantiationStatement.cs" />
-    <Compile Include="ORM\LINQToSQL\LINQQuery.cs" />
-    <Compile Include="ORM\LINQToSQL\LINQToSQLDatabaseAccessingMethod.cs" />
-    <Compile Include="ORM\LINQToSQL\LINQToSQLEntity.cs" />
-    <Compile Include="ORM\NHibernate\HQLQuery.cs" />
-    <Compile Include="ORM\NHibernate\SessionObjectInstantiationStatement.cs" />
-    <Compile Include="ORM\ORMContext.cs" />
+    <Compile Include="ORM\DatabaseAccessingMethodCallStatement.cs" />
+    <Compile Include="ORM\DatabaseEntityDeclaration.cs" />
+    <Compile Include="ORM\DatabaseEntityObject.cs" />
+    <Compile Include="ORM\DatabaseEntityObjectInstantiationStatement.cs" />
+    <Compile Include="ORM\DatabaseEntityObjectUpdateStatement.cs" />
+    <Compile Include="ORM\DataContextInitializationStatement.cs" />
+    <Compile Include="ORM\Mapping.cs" />
+    <Compile Include="ORM\DatabaseQuery.cs" />
+    <Compile Include="ORM\NHibernate.cs" />
+    <Compile Include="ORM\ORMToolType.cs" />
+    <Compile Include="ORM\QueryConfiguration.cs" />
+    <Compile Include="ORM\DataContextObjectInstantiationStatement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ORM\EntityFramework\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

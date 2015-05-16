@@ -5,6 +5,6 @@ namespace Detector.Models
 {
     public interface ModelBase
     {
-        CompilationUnit CompilationUnit { get; }
+        CompilationInfo CompilationInfo { get; }
     }
 }

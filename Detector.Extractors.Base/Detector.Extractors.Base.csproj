@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseAccessingMethodCallsExtractor.cs" />
-    <Compile Include="DatabaseEntityExtractor.cs" />
+    <Compile Include="DatabaseEntityDeclarationsExtractor.cs" />
+    <Compile Include="DataContextDeclarationsExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

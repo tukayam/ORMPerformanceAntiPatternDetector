@@ -1,32 +1,35 @@
 ﻿using Detector.Models.ORM;
-using Detector.Models.ORM.LINQToSQL;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public sealed class RoslynLINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityExtractor<LINQToSQLEntity>
+    public sealed class RoslynLINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationsExtractor<LINQToSQL>
     {
-        private List<LINQToSQLEntity> entities;
-        public IEnumerable<LINQToSQLEntity> Entities
+        private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
+
+        public IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> EntityDeclarations
         {
-            get { return entities; }
+            get
+            {
+                return _entities;
+            }
         }
 
         public RoslynLINQToSQLDatabaseEntityExtractor()
             : base()
         {
-            entities = new List<LINQToSQLEntity>();
+            _entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
         }
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (node.AttributeLists.ToString().Contains("TableAttribute"))
             {
-                entities.Add(new LINQToSQLEntity(node.Identifier.ToString()) { });
+                _entities.Add(new DatabaseEntityDeclaration<LINQToSQL>(node.Identifier.ToString()) { });
             }
-            ORMContext.Entities = entities;
+
             base.VisitClassDeclaration(node);
         }
     }

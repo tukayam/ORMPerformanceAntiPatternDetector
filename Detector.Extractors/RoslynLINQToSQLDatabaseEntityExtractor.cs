@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public sealed class LINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityExtractor<LINQToSQLEntity>
+    public sealed class RoslynLINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityExtractor<LINQToSQLEntity>
     {
         private List<LINQToSQLEntity> entities;
         public IEnumerable<LINQToSQLEntity> Entities
@@ -14,7 +14,7 @@ namespace Detector.Extractors.DatabaseEntities
             get { return entities; }
         }
 
-        public LINQToSQLDatabaseEntityExtractor()
+        public RoslynLINQToSQLDatabaseEntityExtractor()
             : base()
         {
             entities = new List<LINQToSQLEntity>();

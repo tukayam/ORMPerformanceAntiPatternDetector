@@ -101,8 +101,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccessingMethodCallsExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityExtractor.cs" />
+    <Compile Include="RoslynDatabaseAccessingMethodCallsExtractor.cs" />
+    <Compile Include="RoslynLINQToSQLDatabaseEntityExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

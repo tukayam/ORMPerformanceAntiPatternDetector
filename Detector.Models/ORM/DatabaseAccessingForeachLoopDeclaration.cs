@@ -1,6 +1,6 @@
 ﻿namespace Detector.Models.ORM
 {
-    public sealed class DatabaseAccessingForeachLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T> where T : ORMToolType
+    public sealed class DatabaseAccessingForeachLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T>, ForEachLoopDeclarationBase where T : ORMToolType
     {
     }
 }

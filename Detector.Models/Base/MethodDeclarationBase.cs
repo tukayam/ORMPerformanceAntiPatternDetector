@@ -1,6 +1,6 @@
 ﻿namespace Detector.Models
 {
-    public class MethodDeclaration
+    public class MethodDeclarationBase
     {
         public string MethodName { get; set; }
     }

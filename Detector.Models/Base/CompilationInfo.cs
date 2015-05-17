@@ -5,7 +5,7 @@
         public string FilePath { get; private set; }
         public string FileName { get; private set; }
         
-        public MethodDeclaration ParentMethodDeclaration { get; private set; }
+        public MethodDeclarationBase ParentMethodDeclaration { get; private set; }
 
         public CompilationInfo(string filePath, string fileName)
         {
@@ -13,7 +13,7 @@
             this.FileName = fileName;
         }
 
-        public void SetParentMethodDeclaration(MethodDeclaration parentMethodDeclaration)
+        public void SetParentMethodDeclaration(MethodDeclarationBase parentMethodDeclaration)
         {
             this.ParentMethodDeclaration = parentMethodDeclaration;
         }

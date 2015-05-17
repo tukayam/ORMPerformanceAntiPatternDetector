@@ -7,6 +7,7 @@ namespace Detector.DetectionRules
     public class ExcessiveDataDetectionRuleTests
     {
         [TestMethod]
+        [Ignore]
         public void DetectsExcessiveDataAntiPattern_When_ThereIsOneQueryInTheTreeThatFetchesEagerlyAndEagerlyFetchedEntityIsNotUsed()
         {
             //Arrange

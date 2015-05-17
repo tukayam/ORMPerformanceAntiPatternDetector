@@ -1,6 +1,7 @@
 ﻿using Detector.Extractors.DatabaseEntities;
 using Detector.Extractors.Tests.Helper;
 using Detector.Models.ORM;
+using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -129,7 +130,75 @@ namespace Detector.Extractors.Tests
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
 
-            IEnumerable<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
+            IEnumerable<DatabaseAccessingForeachLoopDeclaration<LINQToSQL>> result = target.DatabaseAccessingForeachLoopDeclarations;
+
+            //Assert
+            Assert.IsTrue(result.Count() == 1);
+        }
+
+        [TestMethod]
+        public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsInAForLoop()
+        {
+            //Arrange
+            string textToPlaceInMainMethod = @" 
+									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
+                                    var employees = (from e in dc.Employees
+											where (e.EmployeeID == empId)
+											select e);
+                                    
+                                    List<int> employeeIds=new List<int>();
+                                    for (int i = 0; i < employees.Count(); i++)
+                                    {
+                                        employeeIds.Add(employees.ToList()[i].EmployeeID);
+                                    }
+            
+									return employeeIds;";
+
+            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+
+            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+
+            //Act
+            target.Visit(solGenerator.GetRootNodeForMainDocument());
+
+            IEnumerable<DatabaseAccessingForLoopDeclaration<LINQToSQL>> result = target.DatabaseAccessingForLoopDeclarations;
+
+            //Assert
+            Assert.IsTrue(result.Count() == 1);
+        }
+
+        [TestMethod]
+        public void DetectsWhileLoop_When_ThereIsAWhileLoop()
+        {
+            //Arrange
+            string textToPlaceInMainMethod = @" 
+									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
+                                    var employees = (from e in dc.Employees
+											where (e.EmployeeID == empId)
+											select e);
+                                    
+                                    List<int> employeeIds=new List<int>();
+                                    int i = employees.Count() - 1;
+                                    while(i>=0)
+                                    {
+                                        employeeIds.Add(employees.ToList()[i].EmployeeID);
+                                        i--;
+                                    }
+            
+									return employeeIds;";
+
+            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+
+            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+
+            //Act
+            target.Visit(solGenerator.GetRootNodeForMainDocument());
+
+            IEnumerable<WhileLoopDeclaration> result = target.WhileLoopDeclarations;
 
             //Assert
             Assert.IsTrue(result.Count() == 1);

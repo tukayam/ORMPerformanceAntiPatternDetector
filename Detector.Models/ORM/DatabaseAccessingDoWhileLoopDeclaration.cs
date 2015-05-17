@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Detector.Models.ORM
 {
-    public class DatabaseAccessingDoWhileLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T> where T : ORMToolType
+    public class DatabaseAccessingDoWhileLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T>, DoWhileLoopDeclarationBase where T : ORMToolType
     {
     }
 }

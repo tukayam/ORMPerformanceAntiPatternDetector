@@ -1,6 +1,6 @@
 ﻿namespace Detector.Models.ORM
 {
-    public class DatabaseAccessingForLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T> where T : ORMToolType
+    public class DatabaseAccessingForLoopDeclaration<T> : DatabaseAccessingLoopDeclaration<T>, ForLoopDeclarationBase where T : ORMToolType
     {
     }
 }

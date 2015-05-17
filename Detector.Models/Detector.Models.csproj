@@ -69,19 +69,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compilation\CompilationUnit.cs" />
+    <Compile Include="Base\CompilationInfo.cs" />
+    <Compile Include="Base\DoWhileLoopDeclarationBase.cs" />
+    <Compile Include="Base\ForEachLoopDeclarationBase.cs" />
+    <Compile Include="Base\ForLoopDeclarationBase.cs" />
+    <Compile Include="Base\LoopDeclarationBase.cs" />
+    <Compile Include="Base\SyntaxNodeBase.cs" />
     <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForeachLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingLoopDeclaration.cs" />
-    <Compile Include="MethodDeclaration.cs" />
+    <Compile Include="Base\MethodDeclarationBase.cs" />
     <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
     <Compile Include="ORM\DataContextDeclaration.cs" />
     <Compile Include="ORM\EntityFramework.cs" />
     <Compile Include="ORM\LINQToSQL.cs" />
-    <Compile Include="ORM\ModelBase.cs" />
-    <Compile Include="ORMSyntaxTree.cs" />
+    <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="ORM\ORMSyntaxTree.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityDeclaration.cs" />
     <Compile Include="ORM\DatabaseEntityObject.cs" />
@@ -95,8 +100,13 @@
     <Compile Include="ORM\QueryConfiguration.cs" />
     <Compile Include="ORM\DataContextObjectInstantiationStatement.cs" />
     <Compile Include="ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs" />
+    <Compile Include="Others\DoWhileLoopDeclaration.cs" />
+    <Compile Include="Others\ForEachLoopDeclaration.cs" />
+    <Compile Include="Others\ForLoopDeclaration.cs" />
+    <Compile Include="Others\WhileLoopDeclaration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ORM\DatabaseAccessingWhileLoopDeclaration.cs" />
+    <Compile Include="Base\WhileLoopDeclarationBase.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

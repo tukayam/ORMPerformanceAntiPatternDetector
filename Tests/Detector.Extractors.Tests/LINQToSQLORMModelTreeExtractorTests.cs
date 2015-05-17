@@ -11,9 +11,9 @@ using System.Linq;
 namespace Detector.Extractors.Tests
 {
     [TestClass]
-    public class LINQToSQLORMSyntaxTreeExtractorTests
+    public class LINQToSQLORMModelTreeExtractorTests
     {
-        LINQToSQLORMSyntaxTreeExtractor target;
+        LINQToSQLORMModelTreeExtractor target;
         DatabaseEntityDeclarationsExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
         [TestInitialize]
         public void Initialize()
@@ -40,7 +40,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -66,7 +66,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -93,7 +93,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -125,7 +125,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -158,7 +158,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -193,7 +193,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMModelTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());

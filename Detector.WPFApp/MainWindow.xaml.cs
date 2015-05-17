@@ -77,9 +77,6 @@ namespace Detector.Extractors
 
                     SyntaxNode root = await Task.Run(() => document.GetSyntaxRootAsync());
 
-                    RoslynSyntaxTreeWalker rw = new RoslynSyntaxTreeWalker();
-                    rw.Visit(root);
-
                     SyntaxTree tree = await Task.Run(() => document.GetSyntaxTreeAsync());
                     SemanticModel model = await Task.Run(() => document.GetSemanticModelAsync());
 
@@ -116,9 +113,7 @@ namespace Detector.Extractors
 
                     SyntaxNode root = await Task.Run(() => document.GetSyntaxRootAsync());
 
-                    RoslynSyntaxTreeWalker rw = new RoslynSyntaxTreeWalker();
-                    rw.Visit(root);
-
+              
                     SyntaxTree tree = await Task.Run(() => document.GetSyntaxTreeAsync());
                     SemanticModel model = await Task.Run(() => document.GetSemanticModelAsync());
 

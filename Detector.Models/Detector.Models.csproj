@@ -74,7 +74,9 @@
     <Compile Include="Base\ForEachLoopDeclarationBase.cs" />
     <Compile Include="Base\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\LoopDeclarationBase.cs" />
-    <Compile Include="Base\SyntaxNodeBase.cs" />
+    <Compile Include="Base\ModelTreeBase.cs" />
+    <Compile Include="Base\Node.cs" />
+    <Compile Include="Base\NodeBase.cs" />
     <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForeachLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForLoopDeclaration.cs" />
@@ -86,7 +88,8 @@
     <Compile Include="ORM\EntityFramework.cs" />
     <Compile Include="ORM\LINQToSQL.cs" />
     <Compile Include="Base\ModelBase.cs" />
-    <Compile Include="ORM\ORMSyntaxTree.cs" />
+    <Compile Include="ORM\ORMModelNode.cs" />
+    <Compile Include="ORM\ORMModelTree.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityDeclaration.cs" />
     <Compile Include="ORM\DatabaseEntityObject.cs" />

@@ -10,7 +10,7 @@ using Detector.Models.Others;
 
 namespace Detector.Extractors
 {
-    public sealed class LINQToSQLORMSyntaxTreeExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
+    public sealed class LINQToSQLORMModelTreeExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
     {
         public List<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
         public List<DatabaseAccessingForeachLoopDeclaration<LINQToSQL>> DatabaseAccessingForeachLoopDeclarations { get; private set; }
@@ -19,8 +19,6 @@ namespace Detector.Extractors
         public List<ForEachLoopDeclaration> ForeachLoopDeclarations { get; private set; }
         public List<ForLoopDeclaration> ForLoopDeclarations { get; private set; }
         public List<WhileLoopDeclaration> WhileLoopDeclarations { get; private set; }
-        public List<DoWhileLoopDeclaration> DoWhileLoopDeclarations { get; private set; }
-
 
         private readonly List<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
         private readonly SemanticModel _model;
@@ -28,7 +26,7 @@ namespace Detector.Extractors
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
         private Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>> _databaseQueries;
 
-        public LINQToSQLORMSyntaxTreeExtractor(SemanticModel model
+        public LINQToSQLORMModelTreeExtractor(SemanticModel model
             , DatabaseEntityDeclarationsExtractor<LINQToSQL> databaseEntityDeclarationsExtractor)
             : base()
         {
@@ -44,7 +42,6 @@ namespace Detector.Extractors
             this.ForeachLoopDeclarations = new List<ForEachLoopDeclaration>();
             this.ForLoopDeclarations = new List<ForLoopDeclaration>();
             this.WhileLoopDeclarations = new List<WhileLoopDeclaration>();
-            this.DoWhileLoopDeclarations = new List<DoWhileLoopDeclaration>();
         }
 
         public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
@@ -150,12 +147,6 @@ namespace Detector.Extractors
             //  }
 
             base.VisitWhileStatement(node);
-        }
-
-        public override void VisitDoStatement(DoStatementSyntax node)
-        {
-            VisitChildren(node);
-            base.VisitDoStatement(node);
         }
 
         public void VisitChildren(SyntaxNode node)

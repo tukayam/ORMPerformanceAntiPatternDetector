@@ -5,7 +5,7 @@ namespace Detector.Main
 {
     public interface SyntaxTreeWalker
     {
-        ORMSyntaxTree ORMSyntaxTree { get; }
+        ORMModelTree ORMSyntaxTree { get; }
 
         void Visit(SyntaxNode syntaxNode);
     }

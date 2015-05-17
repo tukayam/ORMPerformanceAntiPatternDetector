@@ -2,7 +2,7 @@
 
 namespace Detector.Models.ORM
 {
-    public class DatabaseAccessingMethodCallStatement<T> : ModelBase where T : ORMToolType
+    public class DatabaseAccessingMethodCallStatement<T> : Models.ModelBase where T : ORMToolType
     {
         public CompilationInfo CompilationInfo { get; private set; }
 

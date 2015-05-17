@@ -7,7 +7,7 @@ namespace Detector.Main
 {
     public class RoslynORMSyntaxTreeListExtractor
     {
-        public List<ORMSyntaxTree> ORMSyntaxTreeList { get; private set; }
+        public List<ORMModelTree> ORMSyntaxTreeList { get; private set; }
         private SyntaxTreeWalker syntaxTreeWalker;
 
         public RoslynORMSyntaxTreeListExtractor(SyntaxTreeWalker syntaxTreeWalker)

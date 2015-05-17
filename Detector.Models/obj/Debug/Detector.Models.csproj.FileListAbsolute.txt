@@ -16,4 +16,3 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\System.Composition.Runtime.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\System.Composition.TypedParts.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\System.Reflection.Metadata.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\obj\Debug\Detector.Models.csprojResolveAssemblyReference.cache

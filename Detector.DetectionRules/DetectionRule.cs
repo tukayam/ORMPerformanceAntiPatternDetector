@@ -5,9 +5,9 @@ namespace Detector.Extractors.DetectionRules
 {
     public abstract class DetectionRule
     {
-        protected ORMSyntaxTree SyntaxTree { get; private set; }
+        protected ORMModelTree SyntaxTree { get; private set; }
         
-        public bool AppliesToSyntaxTree(ORMSyntaxTree ORMSyntaxTree)
+        public bool AppliesToSyntaxTree(ORMModelTree ORMSyntaxTree)
         {
             this.SyntaxTree = ORMSyntaxTree;
             return GetRuleFunction().Invoke();

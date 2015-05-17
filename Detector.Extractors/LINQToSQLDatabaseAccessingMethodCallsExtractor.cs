@@ -9,35 +9,37 @@ using Detector.Models.ORM;
 
 namespace Detector.Extractors
 {
-    public sealed class RoslynDatabaseAccessingMethodCallsExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
+    public sealed class LINQToSQLDatabaseAccessingMethodCallsExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
     {
         public List<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
 
         private readonly DatabaseEntityDeclarationsExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
         private readonly SemanticModel _model;
 
+        private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
         private Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>> _databaseQueries;
 
-        public RoslynDatabaseAccessingMethodCallsExtractor(SemanticModel model
+        public LINQToSQLDatabaseAccessingMethodCallsExtractor(SemanticModel model
             , DatabaseEntityDeclarationsExtractor<LINQToSQL> databaseEntityDeclarationsExtractor)
             : base()
         {
             this._model = model;
             this._databaseEntityDeclarationsExtractor = databaseEntityDeclarationsExtractor;
 
+            this._databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax>();
             this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>>();
             this.DatabaseAccessingMethodCalls = new List<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
         }
 
         public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
         {
-            ObjectCreationExpressionSyntax sy = node.DescendantNodes().OfType<ObjectCreationExpressionSyntax>().FirstOrDefault();
-
-            if (sy != null)
+            foreach (var queryExp in node.DescendantNodes().OfType<QueryExpressionSyntax>())
             {
-                var ti = _model.GetTypeInfo(sy);
+                if (QueryIsDatabaseQuery(queryExp) && !_databaseQueryVariables.ContainsKey(node))
+                {
+                    _databaseQueryVariables.Add(node, queryExp);
+                }
             }
-            var ty = _model.GetTypeInfo(node);
             base.VisitVariableDeclaration(node);
         }
 
@@ -47,10 +49,35 @@ namespace Detector.Extractors
         /// <param name="node"></param>
         public override void VisitInvocationExpression(InvocationExpressionSyntax node)
         {
-            //Invocation might be happening on the same line as the query expression
-            IEnumerable<QueryExpressionSyntax> queryExpressionsInsideInvocationExpression = node.DescendantNodes().OfType<QueryExpressionSyntax>();
+            ExtractDatabaseAccessingMethodsThatIncludeAQuery(node);
+            ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(node);
 
-            foreach (QueryExpressionSyntax queryExpression in queryExpressionsInsideInvocationExpression)
+            base.VisitInvocationExpression(node);
+        }
+
+        private void ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(InvocationExpressionSyntax node)
+        {
+            //Invocation might be happening on an earlier defined query variable            
+            IEnumerable<MemberAccessExpressionSyntax> memberAccessExpressions = node.DescendantNodes().OfType<MemberAccessExpressionSyntax>();
+            foreach (var item in memberAccessExpressions)
+            {
+                foreach (var identifierNameSyntax in item.DescendantNodes().OfType<IdentifierNameSyntax>())
+                {
+                    VariableDeclarationSyntax variableDeclarationSyntax = _databaseQueryVariables.Keys.Where(k=>k.DescendantTokens().Any(t => t == identifierNameSyntax.Identifier)).FirstOrDefault();
+                    if (variableDeclarationSyntax != null)
+                    {
+                        this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[_databaseQueryVariables[variableDeclarationSyntax]]));
+                    }
+                }
+            }
+        }
+
+        private void ExtractDatabaseAccessingMethodsThatIncludeAQuery(InvocationExpressionSyntax node)
+        {
+            //Invocation might be happening on the same line as the query expression
+            IEnumerable<QueryExpressionSyntax> queryExpressions = node.DescendantNodes().OfType<QueryExpressionSyntax>();
+
+            foreach (QueryExpressionSyntax queryExpression in queryExpressions)
             {
                 this.VisitQueryExpression(queryExpression);
                 if (_databaseQueries.ContainsKey(queryExpression))
@@ -59,8 +86,6 @@ namespace Detector.Extractors
                 }
                 break;
             }
-
-            base.VisitInvocationExpression(node);
         }
 
         public override void VisitQueryExpression(QueryExpressionSyntax node)
@@ -70,7 +95,7 @@ namespace Detector.Extractors
                 if (QueryIsDatabaseQuery(node))
                 {
                     string queryText = node.GetText().ToString();
-                    IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
+                    List<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
                     DatabaseQuery<LINQToSQL> query = new DatabaseQuery<LINQToSQL>(queryText, databaseEntityDeclarationsUsedInQuery);
                     _databaseQueries.Add(node, query);
                 }
@@ -93,17 +118,23 @@ namespace Detector.Extractors
             return false;
         }
 
-        private IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
+        private List<DatabaseEntityDeclaration<LINQToSQL>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
         {
+            List<DatabaseEntityDeclaration<LINQToSQL>> result = new List<DatabaseEntityDeclaration<LINQToSQL>>();
             foreach (var qeNode in query.DescendantNodes())
             {
                 ITypeSymbol typeOfNode = _model.GetTypeInfo(qeNode).Type;
-
-                foreach (var entityType in _databaseEntityDeclarationsExtractor.EntityDeclarations.Where(e => typeOfNode.ToString().Contains(e.Name)))
+                if (typeOfNode != null)
                 {
-                    yield return new DatabaseEntityDeclaration<LINQToSQL>(entityType.Name);
+                    var entityDeclarationInQuery = _databaseEntityDeclarationsExtractor.EntityDeclarations.Where(e => typeOfNode.ToString().Contains(e.Name)).FirstOrDefault();
+                    if (entityDeclarationInQuery != null && !result.Exists(e => e == entityDeclarationInQuery))
+                    {
+                        result.Add(entityDeclarationInQuery);
+                    }
                 }
             }
+
+            return result;
         }
     }
 }

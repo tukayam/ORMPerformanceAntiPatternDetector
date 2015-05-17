@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public sealed class RoslynLINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationsExtractor<LINQToSQL>
+    public sealed class LINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationsExtractor<LINQToSQL>
     {
         private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
 
@@ -17,7 +17,7 @@ namespace Detector.Extractors.DatabaseEntities
             }
         }
 
-        public RoslynLINQToSQLDatabaseEntityExtractor()
+        public LINQToSQLDatabaseEntityExtractor()
             : base()
         {
             _entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();

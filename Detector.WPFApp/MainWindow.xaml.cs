@@ -89,7 +89,7 @@ namespace Detector.Extractors
                     //    .AddSyntaxTrees(new SyntaxTree[] { tree });
                    // var model = compilation.GetSemanticModel(tree);
 
-                    var RoslynLINQToSQLDatabaseEntityExtractor = new RoslynLINQToSQLDatabaseEntityExtractor();
+                    var RoslynLINQToSQLDatabaseEntityExtractor = new LINQToSQLDatabaseEntityExtractor();
                     RoslynLINQToSQLDatabaseEntityExtractor.Visit(root);
 
                     entities.AddRange(RoslynLINQToSQLDatabaseEntityExtractor.EntityDeclarations);

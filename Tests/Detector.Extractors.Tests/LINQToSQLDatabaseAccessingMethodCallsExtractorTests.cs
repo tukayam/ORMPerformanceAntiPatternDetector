@@ -10,9 +10,9 @@ using System.Linq;
 namespace Detector.Extractors.Tests
 {
     [TestClass]
-    public class RoslynDatabaseAccessingMethodCallsExtractorTests
+    public class LINQToSQLDatabaseAccessingMethodCallsExtractorTests
     {
-        RoslynDatabaseAccessingMethodCallsExtractor target;
+        LINQToSQLDatabaseAccessingMethodCallsExtractor target;
         DatabaseEntityDeclarationsExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
         [TestInitialize]
         public void Initialize()
@@ -39,7 +39,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new RoslynDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -65,7 +65,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new RoslynDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -74,7 +74,7 @@ namespace Detector.Extractors.Tests
 
             //Assert
             Assert.IsTrue(result[0].DatabaseQuery.EntityDeclarations.Count() == 1);
-            Assert.IsTrue(result[0].DatabaseQuery.EntityDeclarations.ToList()[0].Name == "L2S_Northwind.Employee");
+            Assert.IsTrue(result[0].DatabaseQuery.EntityDeclarations[0].Name == "L2S_Northwind.Employee");
         }
 
         [TestMethod]
@@ -92,7 +92,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new RoslynDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -124,7 +124,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new RoslynDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());

@@ -9,22 +9,22 @@ using Detector.Models.ORM;
 
 namespace Detector.Extractors
 {
-    public sealed class LINQToSQLDatabaseAccessingMethodCallsExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
+    public sealed class LINQToSQLORMSyntaxTreeExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
     {
         public List<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
 
-        private readonly DatabaseEntityDeclarationsExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
+        private readonly List<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
         private readonly SemanticModel _model;
 
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
         private Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>> _databaseQueries;
 
-        public LINQToSQLDatabaseAccessingMethodCallsExtractor(SemanticModel model
+        public LINQToSQLORMSyntaxTreeExtractor(SemanticModel model
             , DatabaseEntityDeclarationsExtractor<LINQToSQL> databaseEntityDeclarationsExtractor)
             : base()
         {
             this._model = model;
-            this._databaseEntityDeclarationsExtractor = databaseEntityDeclarationsExtractor;
+            this._databaseEntityDeclarations = databaseEntityDeclarationsExtractor.EntityDeclarations.ToList();
 
             this._databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax>();
             this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>>();
@@ -33,6 +33,8 @@ namespace Detector.Extractors
 
         public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
         {
+            this.Visit(node.DescendantNodes().First());
+
             foreach (var queryExp in node.DescendantNodes().OfType<QueryExpressionSyntax>())
             {
                 if (QueryIsDatabaseQuery(queryExp) && !_databaseQueryVariables.ContainsKey(node))
@@ -49,37 +51,17 @@ namespace Detector.Extractors
         /// <param name="node"></param>
         public override void VisitInvocationExpression(InvocationExpressionSyntax node)
         {
+            this.Visit(node.DescendantNodes().First());
+
             ExtractDatabaseAccessingMethodsThatIncludeAQuery(node);
             ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(node);
-
             base.VisitInvocationExpression(node);
-        }
-
-        private void ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(InvocationExpressionSyntax node)
-        {
-            //Invocation might be happening on an earlier defined query variable            
-            IEnumerable<MemberAccessExpressionSyntax> memberAccessExpressions = node.DescendantNodes().OfType<MemberAccessExpressionSyntax>();
-            foreach (var item in memberAccessExpressions)
-            {
-                foreach (var identifierNameSyntax in item.DescendantNodes().OfType<IdentifierNameSyntax>())
-                {
-                    VariableDeclarationSyntax variableDeclarationSyntax = _databaseQueryVariables.Keys.Where(k=>k.DescendantTokens().Any(t => t == identifierNameSyntax.Identifier)).FirstOrDefault();
-                    if (variableDeclarationSyntax != null)
-                    {
-                        this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[_databaseQueryVariables[variableDeclarationSyntax]]));
-                    }
-                }
-            }
         }
 
         private void ExtractDatabaseAccessingMethodsThatIncludeAQuery(InvocationExpressionSyntax node)
         {
-            //Invocation might be happening on the same line as the query expression
-            IEnumerable<QueryExpressionSyntax> queryExpressions = node.DescendantNodes().OfType<QueryExpressionSyntax>();
-
-            foreach (QueryExpressionSyntax queryExpression in queryExpressions)
+            foreach (QueryExpressionSyntax queryExpression in node.DescendantNodes().OfType<QueryExpressionSyntax>())
             {
-                this.VisitQueryExpression(queryExpression);
                 if (_databaseQueries.ContainsKey(queryExpression))
                 {
                     this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[queryExpression]));
@@ -88,8 +70,23 @@ namespace Detector.Extractors
             }
         }
 
+        private void ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(InvocationExpressionSyntax node)
+        {
+            //Invocation might be happening on an earlier defined query variable            
+            var variableDeclarationSyntax = from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
+                                            from v in _databaseQueryVariables.Keys
+                                            where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
+                                            select v;
+
+            if (variableDeclarationSyntax != null && variableDeclarationSyntax.Count() == 1)
+            {
+                this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[_databaseQueryVariables[variableDeclarationSyntax.First()]]));
+            }
+        }
+
         public override void VisitQueryExpression(QueryExpressionSyntax node)
         {
+            this.Visit(node.DescendantNodes().First());
             if (!_databaseQueries.ContainsKey(node))
             {
                 if (QueryIsDatabaseQuery(node))
@@ -109,7 +106,7 @@ namespace Detector.Extractors
             {
                 ITypeSymbol typeOfNode = _model.GetTypeInfo(qeNode).Type;
                 if (typeOfNode != null
-                    && _databaseEntityDeclarationsExtractor.EntityDeclarations.Any(e => typeOfNode.ToString().Contains(e.Name)))
+                    && _databaseEntityDeclarations.Any(e => typeOfNode.ToString().Contains(e.Name)))
                 {
                     return true;
                 }
@@ -126,7 +123,7 @@ namespace Detector.Extractors
                 ITypeSymbol typeOfNode = _model.GetTypeInfo(qeNode).Type;
                 if (typeOfNode != null)
                 {
-                    var entityDeclarationInQuery = _databaseEntityDeclarationsExtractor.EntityDeclarations.Where(e => typeOfNode.ToString().Contains(e.Name)).FirstOrDefault();
+                    var entityDeclarationInQuery = _databaseEntityDeclarations.Where(e => typeOfNode.ToString().Contains(e.Name)).FirstOrDefault();
                     if (entityDeclarationInQuery != null && !result.Exists(e => e == entityDeclarationInQuery))
                     {
                         result.Add(entityDeclarationInQuery);

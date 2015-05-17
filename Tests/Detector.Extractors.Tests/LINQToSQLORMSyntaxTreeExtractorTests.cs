@@ -10,9 +10,9 @@ using System.Linq;
 namespace Detector.Extractors.Tests
 {
     [TestClass]
-    public class LINQToSQLDatabaseAccessingMethodCallsExtractorTests
+    public class LINQToSQLORMSyntaxTreeExtractorTests
     {
-        LINQToSQLDatabaseAccessingMethodCallsExtractor target;
+        LINQToSQLORMSyntaxTreeExtractor target;
         DatabaseEntityDeclarationsExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
         [TestInitialize]
         public void Initialize()
@@ -39,7 +39,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -65,7 +65,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -92,7 +92,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());
@@ -103,7 +103,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsInALoop()
+        public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsInAForEachLoop()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -124,7 +124,7 @@ namespace Detector.Extractors.Tests
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
-            target = new LINQToSQLDatabaseAccessingMethodCallsExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
+            target = new LINQToSQLORMSyntaxTreeExtractor(semanticModelForMainClass, _databaseEntityDeclarationsExtractor);
 
             //Act
             target.Visit(solGenerator.GetRootNodeForMainDocument());

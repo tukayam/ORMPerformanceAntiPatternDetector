@@ -70,6 +70,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compilation\CompilationUnit.cs" />
+    <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
+    <Compile Include="ORM\DatabaseAccessingForeachLoopDeclaration.cs" />
+    <Compile Include="ORM\DatabaseAccessingForLoopDeclaration.cs" />
+    <Compile Include="ORM\DatabaseAccessingLoopDeclaration.cs" />
     <Compile Include="MethodDeclaration.cs" />
     <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
@@ -90,7 +94,9 @@
     <Compile Include="ORM\ORMToolType.cs" />
     <Compile Include="ORM\QueryConfiguration.cs" />
     <Compile Include="ORM\DataContextObjectInstantiationStatement.cs" />
+    <Compile Include="ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ORM\DatabaseAccessingWhileLoopDeclaration.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

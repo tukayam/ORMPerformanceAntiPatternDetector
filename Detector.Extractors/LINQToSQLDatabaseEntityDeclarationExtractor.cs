@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public sealed class LINQToSQLDatabaseEntityExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationsExtractor<LINQToSQL>
+    public sealed class LINQToSQLDatabaseEntityDeclarationExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationExtractor<LINQToSQL>
     {
         private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
 
-        public IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> EntityDeclarations
+        public IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations
         {
             get
             {
@@ -17,7 +17,7 @@ namespace Detector.Extractors.DatabaseEntities
             }
         }
 
-        public LINQToSQLDatabaseEntityExtractor()
+        public LINQToSQLDatabaseEntityDeclarationExtractor()
             : base()
         {
             _entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();

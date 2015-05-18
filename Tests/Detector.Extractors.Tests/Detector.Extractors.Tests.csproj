@@ -119,10 +119,10 @@
   <ItemGroup>
     <Compile Include="Helper\RoslynSolutionGenerator.cs" />
     <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
-    <Compile Include="LINQToSQLORMModelTreeExtractor_ModelTreeTests.cs" />
-    <Compile Include="LINQToSQLORMModelTreeExtractorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyAnnotaterTests.cs" />
+    <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractorTests.cs" />
+    <Compile Include="LINQToSQLLoopDeclarationExtractorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">

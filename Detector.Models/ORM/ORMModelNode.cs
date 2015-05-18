@@ -21,7 +21,5 @@ namespace Detector.Models.ORM
                 throw new NotImplementedException();
             }
         }
-
-
     }
 }

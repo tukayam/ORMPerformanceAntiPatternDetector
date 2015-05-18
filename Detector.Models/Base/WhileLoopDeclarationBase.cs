@@ -1,4 +1,4 @@
-﻿namespace Detector.Models
+﻿namespace Detector.Models.Base
 {
     public interface WhileLoopDeclarationBase : LoopDeclarationBase
     {

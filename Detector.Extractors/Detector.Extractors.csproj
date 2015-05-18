@@ -101,8 +101,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LINQToSQLORMModelTreeExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityExtractor.cs" />
+    <Compile Include="LINQToSQLLoopDeclarationExtractor.cs" />
+    <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
+    <Compile Include="LINQToSQLDatabaseQueryExtractor.cs" />
+    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="MyAnnotator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

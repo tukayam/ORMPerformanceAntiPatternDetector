@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
-    public interface DataContextDeclarationsExtractor<T> where T : ORMToolType
+    public interface DataContextDeclarationExtractor<T> where T : ORMToolType
     {
         IEnumerable<DataContextDeclaration<T>> DataContextDeclarations { get; }
     }

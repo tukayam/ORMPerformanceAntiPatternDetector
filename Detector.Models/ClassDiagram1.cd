@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Detector.Models.Base.CompilationInfo" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAACAAAAAAAAAAAAAAAAAAgAAAABAAABAAAA=</HashCode>
+      <FileName>Base\CompilationInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.DatabaseAccessingLoopDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseAccessingLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORMModelTree" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ORM\ORMModelTree.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingDoWhileLoopDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseAccessingDoWhileLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingForeachLoopDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseAccessingForeachLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingForLoopDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseAccessingForLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCallStatement&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCallStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCallStatementOnQueryDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCallStatementOnQueryDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCallStatementOnQueryVariable&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="9.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCallStatementOnQueryVariable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingWhileLoopDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingWhileLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntityDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityObject&lt;T&gt;" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntityObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityObjectCallStatement&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="7.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgA=</HashCode>
+      <FileName>ORM\DatabaseEntityObjectCallStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityObjectInstantiationStatement&lt;T&gt;" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ORM\DatabaseEntityObjectInstantiationStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityObjectRelatedEntitySelectCallStatement&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="8.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntityObjectUpdateStatement&lt;T&gt;" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ORM\DatabaseEntityObjectUpdateStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseQuery&lt;T&gt;" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAIA=</HashCode>
+      <FileName>ORM\DatabaseQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DataContextDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DataContextDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DataContextInitializationStatement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DataContextInitializationStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.EntityFramework" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\EntityFramework.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.LINQToSQL" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\LINQToSQL.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.NHibernate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\NHibernate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.ORMModelNode&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAA=</HashCode>
+      <FileName>ORM\ORMModelNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.VariableDeclarationInsideDatabaseAccessingLoop&lt;T&gt;" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.Base.Mapping&lt;T&gt;" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>ORM\Mapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.Base.QueryConfiguration" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\QueryConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.Others.DoWhileLoopDeclaration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Others\DoWhileLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.Others.ForEachLoopDeclaration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Others\ForEachLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.Others.ForLoopDeclaration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Others\ForLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.Others.MethodDeclaration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAAAgA=</HashCode>
+      <FileName>Others\MethodDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.Others.WhileLoopDeclaration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Others\WhileLoopDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Detector.Models.Base.Node&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Base\GenericNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.Base.MethodDeclarationBase" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Base\MethodDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.Base.ModelTreeBase" Collapsed="true">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Base\ModelTreeBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.Base.Node" Collapsed="true">
+    <Position X="12.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Node.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.Base.NodeBase" Collapsed="true">
+    <Position X="12.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Base\NodeBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.DoWhileLoopDeclarationBase" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\DoWhileLoopDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.ForEachLoopDeclarationBase" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\ForEachLoopDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.ForLoopDeclarationBase" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\ForLoopDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.LoopDeclarationBase" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\LoopDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.ModelBase" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Base\ModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.WhileLoopDeclarationBase" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\WhileLoopDeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Detector.Models.ORM.ORMToolType" Collapsed="true">
+    <Position X="15.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\ORMToolType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

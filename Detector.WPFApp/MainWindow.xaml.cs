@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using Detector.Extractors.DatabaseEntities;
-using Detector.Main;
-using Detector.Models.ORM.Base;
 using Detector.Models.ORM;
 
 namespace Detector.Extractors
@@ -86,10 +84,10 @@ namespace Detector.Extractors
                     //    .AddSyntaxTrees(new SyntaxTree[] { tree });
                    // var model = compilation.GetSemanticModel(tree);
 
-                    var RoslynLINQToSQLDatabaseEntityExtractor = new LINQToSQLDatabaseEntityExtractor();
+                    var RoslynLINQToSQLDatabaseEntityExtractor = new LINQToSQLDatabaseEntityDeclarationExtractor();
                     RoslynLINQToSQLDatabaseEntityExtractor.Visit(root);
 
-                    entities.AddRange(RoslynLINQToSQLDatabaseEntityExtractor.EntityDeclarations);
+                    entities.AddRange(RoslynLINQToSQLDatabaseEntityExtractor.DatabaseEntityDeclarations);
                 }
             }
 

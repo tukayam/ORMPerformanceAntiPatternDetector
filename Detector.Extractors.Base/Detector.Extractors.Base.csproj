@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccessingMethodCallsExtractor.cs" />
-    <Compile Include="DatabaseEntityDeclarationsExtractor.cs" />
-    <Compile Include="DataContextDeclarationsExtractor.cs" />
+    <Compile Include="DatabaseAccessingLoopDeclarationExtractor.cs" />
+    <Compile Include="DatabaseAccessingMethodCallExtractor.cs" />
+    <Compile Include="DatabaseEntityDeclarationExtractor.cs" />
+    <Compile Include="DatabaseQueryExtractor.cs" />
+    <Compile Include="DataContextDeclarationExtractor.cs" />
+    <Compile Include="LoopDeclarationExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

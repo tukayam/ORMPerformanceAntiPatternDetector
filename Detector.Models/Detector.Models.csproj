@@ -75,6 +75,7 @@
     <Compile Include="Base\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\LoopDeclarationBase.cs" />
     <Compile Include="Base\ModelTreeBase.cs" />
+    <Compile Include="Base\GenericNode.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Base\NodeBase.cs" />
     <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
@@ -82,6 +83,8 @@
     <Compile Include="ORM\DatabaseAccessingForLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingLoopDeclaration.cs" />
     <Compile Include="Base\MethodDeclarationBase.cs" />
+    <Compile Include="ORM\DatabaseAccessingMethodCallStatementOnQueryDeclaration.cs" />
+    <Compile Include="ORM\DatabaseAccessingMethodCallStatementOnQueryVariable.cs" />
     <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
     <Compile Include="ORM\DataContextDeclaration.cs" />
@@ -101,11 +104,11 @@
     <Compile Include="ORM\NHibernate.cs" />
     <Compile Include="ORM\ORMToolType.cs" />
     <Compile Include="ORM\QueryConfiguration.cs" />
-    <Compile Include="ORM\DataContextObjectInstantiationStatement.cs" />
     <Compile Include="ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs" />
     <Compile Include="Others\DoWhileLoopDeclaration.cs" />
     <Compile Include="Others\ForEachLoopDeclaration.cs" />
     <Compile Include="Others\ForLoopDeclaration.cs" />
+    <Compile Include="Others\MethodDeclaration.cs" />
     <Compile Include="Others\WhileLoopDeclaration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ORM\DatabaseAccessingWhileLoopDeclaration.cs" />

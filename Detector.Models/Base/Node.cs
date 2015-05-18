@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Detector.Models.Base
+﻿namespace Detector.Models.Base
 {
-    public interface Node<T> where T: ModelBase
+    public interface Node : NodeBase
     {
-        T Model { get; }
 
-        IEnumerable<NodeBase> ChildNodes { get; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Detector.Models.Compilation;
+﻿
+using Detector.Models.Base;
 
 namespace Detector.Models.ORM
 {

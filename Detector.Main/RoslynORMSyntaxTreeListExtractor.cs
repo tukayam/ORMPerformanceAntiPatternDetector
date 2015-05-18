@@ -1,4 +1,4 @@
-﻿using Detector.Models.Compilation;
+﻿using Detector.Models.Base;
 using System.Collections.Generic;
 using Detector.Models;
 using System;

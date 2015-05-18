@@ -7,15 +7,19 @@ using Detector.Extractors.DatabaseEntities;
 using Detector.Extractors.Base;
 using Detector.Models.ORM;
 using Detector.Models.Others;
+using Detector.Models;
+using Detector.Models.Base;
+using System;
 
 namespace Detector.Extractors
 {
     public sealed class LINQToSQLORMModelTreeExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
     {
+        public List<MethodDeclaration> MethodDeclarations { get; private set; }
         public List<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
         public List<DatabaseAccessingForeachLoopDeclaration<LINQToSQL>> DatabaseAccessingForeachLoopDeclarations { get; private set; }
         public List<DatabaseAccessingForLoopDeclaration<LINQToSQL>> DatabaseAccessingForLoopDeclarations { get; private set; }
-      
+
         public List<ForEachLoopDeclaration> ForeachLoopDeclarations { get; private set; }
         public List<ForLoopDeclaration> ForLoopDeclarations { get; private set; }
         public List<WhileLoopDeclaration> WhileLoopDeclarations { get; private set; }
@@ -38,10 +42,21 @@ namespace Detector.Extractors
             this.DatabaseAccessingMethodCalls = new List<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
             this.DatabaseAccessingForeachLoopDeclarations = new List<DatabaseAccessingForeachLoopDeclaration<LINQToSQL>>();
             this.DatabaseAccessingForLoopDeclarations = new List<DatabaseAccessingForLoopDeclaration<LINQToSQL>>();
-         
+
             this.ForeachLoopDeclarations = new List<ForEachLoopDeclaration>();
             this.ForLoopDeclarations = new List<ForLoopDeclaration>();
             this.WhileLoopDeclarations = new List<WhileLoopDeclaration>();
+        }
+
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            VisitChildren(node);
+
+            var compilationInfo = new CompilationInfo("filePath", "fileName", 0);
+            var methodDeclaration = new MethodDeclaration(node.Identifier.Text.ToString(), compilationInfo);
+
+            MethodDeclarations.Add(methodDeclaration);
+            base.VisitMethodDeclaration(node);
         }
 
         public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
@@ -132,19 +147,7 @@ namespace Detector.Extractors
         {
             VisitChildren(node);
 
-            //DatabaseAccessingWhileLoopDeclaration<LINQToSQL> dbAccessingLoop = (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
-            //                                                                 from v in _databaseQueryVariables.Keys
-            //                                                                 where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
-            //                                                                 select new DatabaseAccessingWhileLoopDeclaration<LINQToSQL>()).FirstOrDefault();
-
-            //if (dbAccessingLoop != null)
-            //{
-            //    DatabaseAccessingWhileLoopDeclarations.Add(dbAccessingLoop);
-            //}
-            //else
-            //{
             WhileLoopDeclarations.Add(new WhileLoopDeclaration());
-            //  }
 
             base.VisitWhileStatement(node);
         }
@@ -165,7 +168,7 @@ namespace Detector.Extractors
         {
             var dbAccessingMethodCalls = (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
                                           where _databaseQueries.ContainsKey(q)
-                                          select new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[q]));
+                                          select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(_databaseQueries[q], new CompilationInfo("", "", 0)));
 
             this.DatabaseAccessingMethodCalls.AddRange(dbAccessingMethodCalls.ToList());
         }
@@ -179,7 +182,7 @@ namespace Detector.Extractors
 
             if (variableDeclarationSyntax.FirstOrDefault() != null && variableDeclarationSyntax.Count() == 1)
             {
-                this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatement<LINQToSQL>(_databaseQueries[_databaseQueryVariables[variableDeclarationSyntax.First()]]));
+                this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatementOnQueryVariable<LINQToSQL>(_databaseQueries[_databaseQueryVariables[variableDeclarationSyntax.First()]], new CompilationInfo("", "", 0)));
             }
         }
 
@@ -217,5 +220,20 @@ namespace Detector.Extractors
             return result;
         }
 
+        public ORMModelTree GetORMModelTree()
+        {
+            var allModels = new List<ModelBase>();
+            allModels.AddRange(MethodDeclarations);
+            allModels.AddRange(DatabaseAccessingMethodCalls);
+            allModels.AddRange(DatabaseAccessingForeachLoopDeclarations);
+            allModels.AddRange(DatabaseAccessingForLoopDeclarations);
+            allModels.AddRange(ForeachLoopDeclarations);
+            allModels.AddRange(ForLoopDeclarations);
+            allModels.AddRange(WhileLoopDeclarations);
+
+
+            //  ORMModelTree ORMModelTree = new ORMModelTree();
+            return null;
+        }
     }
 }

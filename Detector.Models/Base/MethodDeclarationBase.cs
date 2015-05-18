@@ -1,7 +1,7 @@
-﻿namespace Detector.Models
+﻿namespace Detector.Models.Base
 {
-    public class MethodDeclarationBase
+    public interface MethodDeclarationBase : ModelBase
     {
-        public string MethodName { get; set; }
+        string MethodName { get; }
     }
 }

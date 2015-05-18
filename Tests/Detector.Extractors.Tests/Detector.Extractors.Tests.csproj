@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="Helper\RoslynSolutionGenerator.cs" />
     <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
+    <Compile Include="LINQToSQLORMModelTreeExtractor_ModelTreeTests.cs" />
     <Compile Include="LINQToSQLORMModelTreeExtractorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyAnnotaterTests.cs" />

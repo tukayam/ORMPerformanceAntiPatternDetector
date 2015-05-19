@@ -123,6 +123,7 @@
     <Compile Include="MyAnnotaterTests.cs" />
     <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractorTests.cs" />
     <Compile Include="LINQToSQLLoopDeclarationExtractorTests.cs" />
+    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">

@@ -9,7 +9,7 @@ namespace Detector.Extractors.DatabaseEntities
     {
         private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
 
-        public IEnumerable<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations
+        public List<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations
         {
             get
             {

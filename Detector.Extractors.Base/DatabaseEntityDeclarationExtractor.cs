@@ -5,6 +5,6 @@ namespace Detector.Extractors.DatabaseEntities
 {
     public interface DatabaseEntityDeclarationExtractor<T> where T : ORMToolType
     {
-        IEnumerable<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
+        List<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
     }
 }

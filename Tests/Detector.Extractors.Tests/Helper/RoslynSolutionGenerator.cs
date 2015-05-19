@@ -16,6 +16,10 @@ namespace Detector.Extractors.Tests.Helper
         DocumentId EmployeeClassDocumentId;
         DocumentId MainClassDocumentId;
 
+        public RoslynSolutionGenerator()
+            : this(string.Empty)
+        { }
+
         public RoslynSolutionGenerator(string textToPlaceInMethod)
         {
             projectId = ProjectId.CreateNewId();
@@ -38,6 +42,12 @@ namespace Detector.Extractors.Tests.Helper
         public SyntaxNode GetRootNodeForMainDocument()
         {
             Document document = RoslynSolution.GetDocument(MainClassDocumentId);
+            return document.GetSyntaxRootAsync().Result;
+        }
+
+        public SyntaxNode GetRootForEntityDocument()
+        {
+            Document document = RoslynSolution.GetDocument(EmployeeClassDocumentId);
             return document.GetSyntaxRootAsync().Result;
         }
 

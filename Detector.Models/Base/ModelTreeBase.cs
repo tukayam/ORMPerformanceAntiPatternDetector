@@ -8,6 +8,5 @@ namespace Detector.Models.Base
         NodeBase RootNode { get; }
 
         IEnumerable<NodeBase> OfType<ModelBase>();
-        void GenerateFromModelList(List<ModelBase> models);
     }
 }

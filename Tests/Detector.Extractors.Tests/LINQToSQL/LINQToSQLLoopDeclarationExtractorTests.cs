@@ -4,7 +4,7 @@ using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
 using System.Collections.Generic;
 using Moq;
-using Detector.Extractors.Tests.Helper;
+using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis;
 using Detector.Models.Others;
 

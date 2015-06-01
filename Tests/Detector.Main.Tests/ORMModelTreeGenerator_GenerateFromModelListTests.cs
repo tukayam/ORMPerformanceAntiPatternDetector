@@ -1,25 +1,21 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Detector.Models.Others;
+﻿using Detector.Models;
 using Detector.Models.Base;
 using Detector.Models.ORM;
+using Detector.Models.Others;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
-namespace Detector.Models.Tests.ORM
+namespace Detector.Extractors.Tests
 {
-    /// <summary>
-    /// Summary description for ORMModelTree_GenerateFromModelListTests
-    /// </summary>
     [TestClass]
-    public class ORMModelTree_GenerateFromModelListTests
+    public class LINQToSQLORMModelTreeGeneratorTests
     {
-        ORMModelTree target;
+        ORMModelTreeGenerator target;
 
         [TestInitialize]
         public void Initialize()
         {
-            target = new ORMModelTree(null);
+            target = new ORMModelTreeGenerator();
         }
 
         [TestMethod]
@@ -43,13 +39,13 @@ namespace Detector.Models.Tests.ORM
             models.AddRange(dataContextInitializationStatements);
             models.AddRange(methodDeclarations);
 
-            //Act
-            target.GenerateFromModelList(models);
+            //Act           
+            ORMModelTree tree = target.GenerateFromModelList(models);
 
             //Assert
-            Assert.IsTrue(target.RootNode == methodDec);
-            Assert.IsTrue(target.RootNode.ChildNodes[0] == dataContextDec);
-            Assert.IsTrue(target.RootNode.ChildNodes[1] == dataAccessingMethodCallOnQueryDec);
+            Assert.IsTrue(tree.RootNode == methodDec);
+            Assert.IsTrue(tree.RootNode.ChildNodes[0] == dataContextDec);
+            Assert.IsTrue(tree.RootNode.ChildNodes[1] == dataAccessingMethodCallOnQueryDec);
         }
     }
 }

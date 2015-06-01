@@ -1,11 +1,9 @@
-﻿using Microsoft.CodeAnalysis;
-using System;
+﻿using Detector.Extractors.DatabaseEntities;
+using Detector.Models.ORM;
+using Microsoft.CodeAnalysis;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Detector.Extractors.Tests.Helper
+namespace Detector.Extractors.Tests.RoslynSolutionGenerators
 {
     public class RoslynSolutionGenerator
     {
@@ -162,6 +160,5 @@ namespace Detector.Extractors.Tests.Helper
 
             return text;
         }
-
     }
 }

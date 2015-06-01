@@ -87,6 +87,7 @@
     <Compile Include="ORM\DatabaseAccessingMethodCallStatementOnQueryVariable.cs" />
     <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
+    <Compile Include="ORM\DatabaseQueryVariable.cs" />
     <Compile Include="ORM\DataContextDeclaration.cs" />
     <Compile Include="ORM\EntityFramework.cs" />
     <Compile Include="ORM\LINQToSQL.cs" />

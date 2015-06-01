@@ -101,10 +101,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LINQToSQLLoopDeclarationExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseQueryExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
+    <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractor.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseQueryExtractor.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="MyAnnotator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

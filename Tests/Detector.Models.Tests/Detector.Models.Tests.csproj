@@ -111,10 +111,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ORM\ORMModelTree_GenerateFromModelListTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ORM\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>

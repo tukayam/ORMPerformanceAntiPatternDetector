@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Extractors.DatabaseEntities;
-using Detector.Extractors.Tests.Helper;
 using Microsoft.CodeAnalysis;
+using Detector.Extractors.Tests.RoslynSolutionGenerators;
 
 namespace Detector.Extractors.Tests
 {

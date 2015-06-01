@@ -26,11 +26,11 @@ namespace Detector.Extractors
         }
 
         public LINQToSQLDatabaseQueryExtractor(SemanticModel model
-            , DatabaseEntityDeclarationExtractor<LINQToSQL> databaseEntityDeclarationsExtractor)
+            , List<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations)
             : base()
         {
             this._model = model;
-            this._databaseEntityDeclarations = databaseEntityDeclarationsExtractor.DatabaseEntityDeclarations.ToList();
+            this._databaseEntityDeclarations = databaseEntityDeclarations;
 
             this._databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax>();
             this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>>();

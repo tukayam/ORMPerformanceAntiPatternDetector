@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Detector.Extractors.Tests.Helper
+namespace Detector.Extractors.Tests.RoslynSolutionGenerators
 {
     public static class RoslynSyntaxTreeParser
     {

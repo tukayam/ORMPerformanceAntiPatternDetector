@@ -117,13 +117,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Helper\RoslynSolutionGenerator.cs" />
-    <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
+    <Compile Include="RoslynSolutionGenerators\RoslynSolutionGenerator.cs" />
+    <Compile Include="RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyAnnotaterTests.cs" />
-    <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractorTests.cs" />
-    <Compile Include="LINQToSQLLoopDeclarationExtractorTests.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractorTests.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractorTests.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractorTests.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractorTests.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseQueryExtractorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">

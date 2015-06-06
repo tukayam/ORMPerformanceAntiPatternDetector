@@ -75,7 +75,6 @@
     <Compile Include="Base\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\LoopDeclarationBase.cs" />
     <Compile Include="Base\ModelTreeBase.cs" />
-    <Compile Include="Base\GenericNode.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Base\NodeBase.cs" />
     <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
@@ -106,6 +105,7 @@
     <Compile Include="ORM\ORMToolType.cs" />
     <Compile Include="ORM\QueryConfiguration.cs" />
     <Compile Include="ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs" />
+    <Compile Include="Others\Document.cs" />
     <Compile Include="Others\DoWhileLoopDeclaration.cs" />
     <Compile Include="Others\ForEachLoopDeclaration.cs" />
     <Compile Include="Others\ForLoopDeclaration.cs" />

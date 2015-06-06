@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Detector.Models.Base;
 
 namespace Detector.Models.ORM
 {
-    public class DatabaseQuery<T> where T : ORMToolType
+    public class DatabaseQuery<T> : ModelBase where T : ORMToolType
     {
         public DatabaseQueryVariable DatabaseQueryVariable { get; private set; }
         /// <summary>
@@ -11,6 +13,14 @@ namespace Detector.Models.ORM
         public List<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
 
         public string QueryAsString { get; private set; }
+
+        public CompilationInfo CompilationInfo
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public DatabaseQuery(string queryAsString, List<DatabaseEntityDeclaration<T>> entityDeclarations)
         {

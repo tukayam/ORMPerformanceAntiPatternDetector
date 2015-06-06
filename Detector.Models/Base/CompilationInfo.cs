@@ -2,18 +2,13 @@
 {
     public class CompilationInfo
     {
-        public string FilePath { get; private set; }
-        public string FileName { get; private set; }
-        
-        public int LineNumberStart { get; private set; }
+        public int SpanStart { get; private set; }
 
         public MethodDeclarationBase ParentMethodDeclaration { get; private set; }
 
-        public CompilationInfo(string filePath, string fileName, int lineNumberStart)
+        public CompilationInfo(int spanStart)
         {
-            this.FilePath = filePath;
-            this.FileName = fileName;
-            this.LineNumberStart = lineNumberStart;
+            this.SpanStart = spanStart;
         }
 
         public void SetParentMethodDeclaration(MethodDeclarationBase parentMethodDeclaration)

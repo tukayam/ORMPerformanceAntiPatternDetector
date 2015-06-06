@@ -3,7 +3,7 @@ using Detector.Models.Base;
 
 namespace Detector.Models.ORM
 {
-    public abstract class DatabaseEntityObjectCallStatement<T> : Models.ModelBase where T : ORMToolType
+    public abstract class DatabaseEntityObjectCallStatement<T> : ModelBase where T : ORMToolType
     {
         public CompilationInfo CompilationInfo { get; private set; }
 

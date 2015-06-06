@@ -1,25 +1,22 @@
 ﻿using Detector.Models.Base;
-using System;
 using System.Collections.Generic;
+using System;
 
 namespace Detector.Models.ORM
 {
-    public abstract class ORMModelNode<T> : Node<T> where T : ModelBase
+    public class ORMModelNode : Node
     {
-        public IEnumerable<NodeBase> ChildNodes
+        public List<NodeBase> ChildNodes { get; private set; }
+        public ModelBase Model { get; private set; }
+
+        public ORMModelNode(ModelBase model)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            this.Model = model;
         }
 
-        public T Model
+        public void SetChildNodes(List<NodeBase> childNodes)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            this.ChildNodes = childNodes;
         }
     }
 }

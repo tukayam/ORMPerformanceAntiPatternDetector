@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\SyntaxNodeExtensions.cs" />
     <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
     <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractor.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />

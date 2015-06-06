@@ -2,7 +2,7 @@
 
 namespace Detector.Models.ORM
 {
-    public class DataContextInitializationStatement : ModelBase
+    public class DataContextInitializationStatement<T> : ModelBase where T : ORMToolType
     {
         public CompilationInfo CompilationInfo
         {

@@ -1,5 +1,4 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.Base;
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -43,8 +42,8 @@ namespace Detector.Extractors
         {
             var dbAccessingMethodCalls = (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
                                           from dq in _databaseQueries
-                                          where dq.IsSameQueryAs<LINQToSQL>(q)
-                                          select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(dq, new CompilationInfo("", "", 0)));
+                                          where dq.IsSameQueryAs(q)
+                                          select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(dq, node.GetCompilationInfo()));
 
             this.DatabaseAccessingMethodCalls.AddRange(dbAccessingMethodCalls.ToList());
         }
@@ -59,7 +58,7 @@ namespace Detector.Extractors
             if (databaseQuery != null)
             {
                 this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatementOnQueryVariable<LINQToSQL>(
-                    databaseQuery, new CompilationInfo("", "", 0), databaseQuery.DatabaseQueryVariable));
+                    databaseQuery, node.GetCompilationInfo(), databaseQuery.DatabaseQueryVariable));
             }
         }
     }

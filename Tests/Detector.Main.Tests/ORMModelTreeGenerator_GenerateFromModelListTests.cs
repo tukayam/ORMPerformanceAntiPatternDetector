@@ -1,4 +1,5 @@
-﻿using Detector.Models;
+﻿using Detector.Main;
+using Detector.Models;
 using Detector.Models.Base;
 using Detector.Models.ORM;
 using Detector.Models.Others;
@@ -10,27 +11,29 @@ namespace Detector.Extractors.Tests
     [TestClass]
     public class LINQToSQLORMModelTreeGeneratorTests
     {
-        ORMModelTreeGenerator target;
+        ORMModelTreeGenerator<LINQToSQL> target;
 
         [TestInitialize]
         public void Initialize()
         {
-            target = new ORMModelTreeGenerator();
+            target = new ORMModelTreeGenerator<LINQToSQL>();
         }
 
         [TestMethod]
-        public void OrdersNodesCorrectly_When_AllModelsAreFromSameFile()
+        public void OrdersNodesCorrectly_When_NodesForSameDocumentAreSent()
         {
             //Arrange
-            var methodCompilationInfo = new CompilationInfo("C:\\something.cs", "something.cs", 5);
+            var methodCompilationInfo = new CompilationInfo(300);
             var methodDec = new MethodDeclaration("GetSomething", methodCompilationInfo);
             List<MethodDeclaration> methodDeclarations = new List<MethodDeclaration>() { methodDec };
 
-            var dataContextCompilationInfo = new CompilationInfo("C:\\something.cs", "something.cs", 7);
-            var dataContextDec = new DataContextInitializationStatement(dataContextCompilationInfo);
-            List<DataContextInitializationStatement> dataContextInitializationStatements = new List<DataContextInitializationStatement>() { dataContextDec };
+            var dataContextCompilationInfo = new CompilationInfo(500);
+            dataContextCompilationInfo.SetParentMethodDeclaration(methodDec);
+            var dataContextDec = new DataContextInitializationStatement<LINQToSQL>(dataContextCompilationInfo);
+            var dataContextInitializationStatements = new List<DataContextInitializationStatement<LINQToSQL>>() { dataContextDec };
 
-            var dataAccessingMethodCallOnQueryCompilationInfo = new CompilationInfo("C:\\something.cs", "something.cs", 10);
+            var dataAccessingMethodCallOnQueryCompilationInfo = new CompilationInfo(1000);
+            dataAccessingMethodCallOnQueryCompilationInfo.SetParentMethodDeclaration(methodDec);
             var dataAccessingMethodCallOnQueryDec = new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(null, dataAccessingMethodCallOnQueryCompilationInfo);
             List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>> dataAccessingMethodCallOnQueryDecs = new List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>>() { dataAccessingMethodCallOnQueryDec };
 

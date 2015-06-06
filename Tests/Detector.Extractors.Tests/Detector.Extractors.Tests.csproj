@@ -117,6 +117,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="HelpersTests\SyntaxNodeExtensions_GetCompilationInfoTests.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSolutionGenerator.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

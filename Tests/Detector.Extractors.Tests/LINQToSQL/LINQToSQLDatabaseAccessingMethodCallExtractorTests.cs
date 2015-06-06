@@ -115,37 +115,5 @@ namespace Detector.Extractors.Tests
             //Assert
             Assert.IsTrue(result.Count == 1);
         }
-
-        [TestMethod]
-        public void DetectedDatabaseAccessingMethodCallCompilationInfoIsCorrect_When_DBAccessingMethodIsOnQueryVariable()
-        {
-            //Arrange
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                    var query = (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e);
-									return query.SingleOrDefault<Employee>();";
-
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
-            var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
-            databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e", _entityDeclarations, new DatabaseQueryVariable("query")));
-
-            target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
-
-            //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
-            List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
-
-            //Assert
-            Assert.IsTrue(result[0].CompilationInfo.FileName == "MainClass.cs");
-            Assert.IsTrue(result[0].CompilationInfo.LineNumberStart == 10);
-            Assert.IsTrue(result[0].CompilationInfo.ParentMethodDeclaration.MethodName == "GetEmployeeById");
-            Assert.IsTrue(result[0].CompilationInfo.FilePath == "GetEmployeeById");
-        }
     }
 }

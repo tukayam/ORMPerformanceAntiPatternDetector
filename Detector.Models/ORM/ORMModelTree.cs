@@ -12,7 +12,12 @@ namespace Detector.Models
             private set;
         }
 
+        public ORMModelTree()
+        {
+        }
+
         public ORMModelTree(NodeBase rootNode)
+            : this()
         {
             this.RootNode = rootNode;
         }

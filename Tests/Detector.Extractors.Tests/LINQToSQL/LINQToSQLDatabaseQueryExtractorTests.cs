@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Models.ORM;
 using System.Collections.Generic;
 using Detector.Extractors.Tests.RoslynSolutionGenerators;
@@ -27,7 +26,7 @@ namespace Detector.Extractors.Tests
 											select e);
 									return query.SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
@@ -54,7 +53,7 @@ namespace Detector.Extractors.Tests
 											where (e.EmployeeID == empId)
 											select e).SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
@@ -89,7 +88,7 @@ namespace Detector.Extractors.Tests
 											where (e.EmployeeID == empId)
 											select e).SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 

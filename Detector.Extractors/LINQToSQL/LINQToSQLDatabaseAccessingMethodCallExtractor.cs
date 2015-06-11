@@ -31,6 +31,7 @@ namespace Detector.Extractors
             this.DatabaseAccessingMethodCalls = new List<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
         }
 
+
         public override void VisitInvocationExpression(InvocationExpressionSyntax node)
         {
             ExtractDatabaseAccessingMethodsThatIncludeAQuery(node);

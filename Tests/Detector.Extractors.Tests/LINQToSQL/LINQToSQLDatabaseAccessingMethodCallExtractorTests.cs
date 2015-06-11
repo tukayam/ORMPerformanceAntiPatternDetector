@@ -35,7 +35,7 @@ namespace Detector.Extractors.Tests
 											where (e.EmployeeID == empId)
 											select e).SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
@@ -66,7 +66,7 @@ namespace Detector.Extractors.Tests
 											where (e.EmployeeID == empId)
 											select e).SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
 
@@ -98,7 +98,7 @@ namespace Detector.Extractors.Tests
 											select e);
 									return query.SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
             SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();

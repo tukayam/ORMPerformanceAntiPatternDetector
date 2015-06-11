@@ -20,8 +20,8 @@ namespace Detector.Extractors.Tests
         public void DetectsDatabaseEntityDeclaration_When_DocumentWithLINQToSQLEntityClassRootIsVisited()
         {
             //Arrange
-            var solGen = new RoslynSolutionGenerator();
-            SyntaxNode root = solGen.GetRootForEntityDocument();
+            var solGen = new RoslynSimpleSolutionGenerator();
+            SyntaxNode root = solGen.GetRootNodeForEntityDocument();
 
             //Act
             target.Visit(root);

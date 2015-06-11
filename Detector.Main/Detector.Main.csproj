@@ -101,8 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ORMModelNodeGenerator.cs" />
-    <Compile Include="ORMModelNodeGeneratorBase.cs" />
+    <Compile Include="ORMModelTreeGeneratorBase.cs" />
     <Compile Include="ORMModelTreeGenerator.cs" />
     <Compile Include="RoslynORMSyntaxTreeListExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

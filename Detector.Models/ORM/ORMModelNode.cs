@@ -1,6 +1,5 @@
 ﻿using Detector.Models.Base;
 using System.Collections.Generic;
-using System;
 
 namespace Detector.Models.ORM
 {
@@ -12,6 +11,7 @@ namespace Detector.Models.ORM
         public ORMModelNode(ModelBase model)
         {
             this.Model = model;
+            this.ChildNodes = new List<NodeBase>();
         }
 
         public void SetChildNodes(List<NodeBase> childNodes)

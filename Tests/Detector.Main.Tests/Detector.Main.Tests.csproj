@@ -118,7 +118,6 @@
     <Compile Include="RoslynSyntaxTreeWalkerTests.cs" />
     <Compile Include="RoslynSyntaxTreeWalker_VisitMethodDeclarationTests.cs" />
     <Compile Include="RoslynSyntaxTreeWalker_VisitConstructorDeclarationTests.cs" />
-    <Compile Include="ORMModelNodeGeneratorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Main\Detector.Main.csproj">

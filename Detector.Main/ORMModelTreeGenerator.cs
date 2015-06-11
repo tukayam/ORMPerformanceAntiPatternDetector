@@ -1,46 +1,81 @@
 ﻿using System.Collections.Generic;
 using Detector.Models;
 using Detector.Models.ORM;
+using System;
+using Detector.Models.Others;
+using System.Linq;
+using Detector.Models.Base;
 
 namespace Detector.Main
 {
-    public sealed class ORMModelTreeGenerator<T> where T : ORMToolType
+    public sealed class ORMModelTreeGenerator<T> : ORMModelTreeGeneratorBase<T> where T : ORMToolType
     {
-      private  ORMModelNodeGenerator<T> _ORMModelNodeGenerator;
+        public ORMModelTree ORMModelTree { get; private set; }
+        private ORMModelNode _LastVisitedNode;
+
+        #region -- Visit methods --
+
+        public void Visit(ModelBase model)
+        {
+            if (model is MethodDeclarationBase)
+            {
+                this.Visit(model as MethodDeclarationBase);
+            }
+            else
+            {
+                var node = new ORMModelNode(model);
+
+                if (_LastVisitedNode is LoopDeclarationBase)
+                {
+                    _LastVisitedNode.ChildNodes.Add(node);
+                }
+                else
+                {
+                    ORMModelTree.RootNode.ChildNodes.Add(node);
+                    _LastVisitedNode = node;
+                }
+            }
+        }
+
+        private void Visit(MethodDeclarationBase model)
+        {
+            if (this.ORMModelTree.RootNode != null)
+            {
+                throw new ArgumentException("There can only be one MethodDeclaration in an ORMModelTree.");
+            }
+            var rootNode = new ORMModelNode(model);
+            this.ORMModelTree = new ORMModelTree(rootNode);
+
+            SetLastVisitedNode(rootNode);
+        }
+
+        private void SetLastVisitedNode(ORMModelNode node)
+        {
+            _LastVisitedNode = node;
+        }
+
+        #endregion      
 
         public ORMModelTreeGenerator()
         {
-            _ORMModelNodeGenerator = new ORMModelNodeGenerator<T>();
-        }
-
-        public ORMModelTree GetORMModelTree()
-        {
-            var allModels = new List<ModelBase>();
-            //allModels.AddRange(MethodDeclarations);
-            //allModels.AddRange(DatabaseAccessingMethodCalls);
-            //allModels.AddRange(DatabaseAccessingForeachLoopDeclarations);
-            //allModels.AddRange(DatabaseAccessingForLoopDeclarations);
-            //allModels.AddRange(ForeachLoopDeclarations);
-            //allModels.AddRange(ForLoopDeclarations);
-            //allModels.AddRange(WhileLoopDeclarations);
-
-
-            //  ORMModelTree ORMModelTree = new ORMModelTree();
-            return null;
+            ORMModelTree = new ORMModelTree();
         }
 
         public ORMModelTree GenerateFromModelList(List<ModelBase> models)
         {
             models.Sort(new ModelBaseComparer());
-            //   this.RootNode = models[0];
+
+            if (models.First() is MethodDeclarationBase == false)
+            {
+                throw new ArgumentException("ORMModelTree rootnode must be a MethodDeclaration. First model in the list should be the rootnode and it is not deriven from MethodDeclarationBase.");
+            }
 
             foreach (var model in models)
             {
-                _ORMModelNodeGenerator.Visit(model);
-                // ORMModelNode node = new ORMModelNode(model);
+                this.Visit(model);
             }
 
-            return null;
+            return this.ORMModelTree;
         }
 
         internal class ModelBaseComparer : IComparer<ModelBase>
@@ -49,7 +84,7 @@ namespace Detector.Main
             {
                 int lineNumberX = x.CompilationInfo.SpanStart;
                 int lineNumberY = y.CompilationInfo.SpanStart;
-                return lineNumberX < lineNumberY ? 1 : lineNumberX > lineNumberY ? -1 : 0;
+                return lineNumberX > lineNumberY ? 1 : lineNumberX > lineNumberY ? -1 : 0;
             }
         }
     }

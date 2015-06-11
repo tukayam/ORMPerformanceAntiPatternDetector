@@ -20,7 +20,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void OrdersNodesCorrectly_When_NodesForSameDocumentAreSent()
+        public void GeneratesTree_When_ModelsForSameDocumentAreSent()
         {
             //Arrange
             var methodCompilationInfo = new CompilationInfo(300);
@@ -46,9 +46,9 @@ namespace Detector.Extractors.Tests
             ORMModelTree tree = target.GenerateFromModelList(models);
 
             //Assert
-            Assert.IsTrue(tree.RootNode == methodDec);
-            Assert.IsTrue(tree.RootNode.ChildNodes[0] == dataContextDec);
-            Assert.IsTrue(tree.RootNode.ChildNodes[1] == dataAccessingMethodCallOnQueryDec);
+            Assert.IsTrue(tree.RootNode.Model == methodDec);
+            Assert.IsTrue(tree.RootNode.ChildNodes[0].Model == dataContextDec);
+            Assert.IsTrue(tree.RootNode.ChildNodes[1].Model == dataAccessingMethodCallOnQueryDec);
         }
     }
 }

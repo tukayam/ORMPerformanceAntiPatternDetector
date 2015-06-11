@@ -1,0 +1,166 @@
+﻿using Microsoft.CodeAnalysis;
+
+namespace Detector.Extractors.Tests.RoslynSolutionGenerators
+{
+    /// <summary>
+    /// Generates Roslyn Solution with expected real life code
+    /// </summary>
+    public class RoslynComplexSolutionGenerator
+    {
+        Solution RoslynSolution;
+        ProjectId projectId;
+        DocumentId DataContextClassId;
+        DocumentId OrderEntityDeclarationClassId;
+        DocumentId EmployeeEntityDeclarationClassId;
+        DocumentId MainClassId;
+        DocumentId EmployeeRepositoryClassId;
+        DocumentId OrderRepositoryClassId;
+
+        public RoslynComplexSolutionGenerator()
+            : this(string.Empty)
+        { }
+
+        public RoslynComplexSolutionGenerator(string textToPlaceInMethod)
+        {
+            projectId = ProjectId.CreateNewId();
+            DataContextClassId = DocumentId.CreateNewId(projectId);
+            OrderEntityDeclarationClassId = DocumentId.CreateNewId(projectId);
+            EmployeeEntityDeclarationClassId = DocumentId.CreateNewId(projectId);
+            MainClassId = DocumentId.CreateNewId(projectId);
+
+            RoslynSolution = GetRoslynSolution(textToPlaceInMethod);
+        }
+
+        public SemanticModel GetSemanticModelForMainClass()
+        {
+            var document = RoslynSolution.GetDocument(MainClassId);
+            var model = document.GetSemanticModelAsync().Result;
+
+            return model;
+        }
+
+        public SyntaxNode GetRootNodeForMainDocument()
+        {
+            Document document = RoslynSolution.GetDocument(MainClassId);
+            return document.GetSyntaxRootAsync().Result;
+        }
+
+        public SyntaxNode GetRootNodeForEntityDocument()
+        {
+            Document document = RoslynSolution.GetDocument(EmployeeEntityDeclarationClassId);
+            return document.GetSyntaxRootAsync().Result;
+        }
+
+        private Solution GetRoslynSolution(string textToPlaceInMethod)
+        {
+            var solution = new AdhocWorkspace().CurrentSolution
+                .AddProject(projectId, "MyProject", "MyProject", LanguageNames.CSharp)
+                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(object).Assembly))
+                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.Linq.DataContext).Assembly))
+                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.DataTable).Assembly))
+                .AddDocument(DataContextClassId, "DataContext.cs", GetDataContextCSharpDocumentText())
+                .AddDocument(OrderEntityDeclarationClassId, "Order.cs", GetOrderClassCSharpDocumentText())
+                .AddDocument(EmployeeEntityDeclarationClassId, "Employee.cs", GetEmployeeClassCSharpDocumentText())
+                .AddDocument(MainClassId, "MainClass.cs", GetMainClassCSharpDocumentText(textToPlaceInMethod));
+
+            return solution;
+        }
+
+        private string GetDataContextCSharpDocumentText()
+        {
+            string text = @" using System.Data.Linq;
+                            using System.Data.Linq.Mapping;
+                            using System.Linq;
+						namespace L2S_Northwind
+						{
+                            [global::System.Data.Linq.Mapping.DatabaseAttribute]
+                            public partial class NorthWindDataClassesDataContext : System.Data.Linq.DataContext
+                            {
+                                   partial void OnCreated();
+                                    private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+                                    public NorthWindDataClassesDataContext() :
+                                        base("", mappingSource)
+                                    {
+                                        OnCreated();
+                                    }
+
+                                    public System.Data.Linq.Table<Employee> Employees
+                                    {
+                                        get
+                                        {
+                                            return this.GetTable<Employee>();
+                                        }
+                                    }
+
+                                    public System.Data.Linq.Table<Order> Orders
+                                    {
+                                        get
+                                        {
+                                            return this.GetTable<Order>();
+                                        }
+                                    }
+                            }                            
+                        }";
+
+            return text;
+        }
+
+        private string GetOrderClassCSharpDocumentText()
+        {
+            string text = @" using System.Data.Linq;
+                            using System.Data.Linq.Mapping;
+                            using System.Linq;
+						namespace L2S_Northwind
+						{
+                            [global::System.Data.Linq.Mapping.TableAttribute]
+                            public partial class Order
+                            {
+                                [global::System.Data.Linq.Mapping.ColumnAttribute]
+                                public int OrderID;
+                            }          
+                        }";
+
+            return text;
+        }
+
+        private string GetEmployeeClassCSharpDocumentText()
+        {
+            string text = @" using System.Data.Linq;
+                            using System.Data.Linq.Mapping;
+                            using System.Linq;
+						namespace L2S_Northwind
+						{
+                            [global::System.Data.Linq.Mapping.TableAttribute]
+                            public partial class Employee
+                            {
+                                 [global::System.Data.Linq.Mapping.ColumnAttribute]
+                                 public int EmployeeID;
+
+                                 [global::System.Data.Linq.Mapping.AssociationAttribute]
+                                 public EntitySet<Order> Orders;
+                            }       
+                        }";
+
+            return text;
+        }
+
+        private string GetMainClassCSharpDocumentText(string textToPlaceInMethod)
+        {
+            string text = @" using System.Data.Linq;
+                            using System.Data.Linq.Mapping;
+                            using System.Linq;
+						namespace L2S_Northwind
+						{
+                            public class ClassUnderTest
+							{
+								public static Employee GetEmployeeById(int empId)
+								{
+									" + textToPlaceInMethod + @"
+								}
+							}    
+                        }";
+
+            return text;
+        }
+    }
+}

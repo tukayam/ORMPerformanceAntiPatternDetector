@@ -1,11 +1,8 @@
-﻿using Detector.Extractors.DatabaseEntities;
-using Detector.Models.ORM;
-using Microsoft.CodeAnalysis;
-using System.Collections.Generic;
+﻿using Microsoft.CodeAnalysis;
 
 namespace Detector.Extractors.Tests.RoslynSolutionGenerators
 {
-    public class RoslynSolutionGenerator
+    public class RoslynSimpleSolutionGenerator
     {
         Solution RoslynSolution;
         ProjectId projectId;
@@ -14,11 +11,11 @@ namespace Detector.Extractors.Tests.RoslynSolutionGenerators
         DocumentId EmployeeClassDocumentId;
         DocumentId MainClassDocumentId;
 
-        public RoslynSolutionGenerator()
+        public RoslynSimpleSolutionGenerator()
             : this(string.Empty)
         { }
 
-        public RoslynSolutionGenerator(string textToPlaceInMethod)
+        public RoslynSimpleSolutionGenerator(string textToPlaceInMethod)
         {
             projectId = ProjectId.CreateNewId();
             DataContextClassDocumentId = DocumentId.CreateNewId(projectId);
@@ -43,7 +40,7 @@ namespace Detector.Extractors.Tests.RoslynSolutionGenerators
             return document.GetSyntaxRootAsync().Result;
         }
 
-        public SyntaxNode GetRootForEntityDocument()
+        public SyntaxNode GetRootNodeForEntityDocument()
         {
             Document document = RoslynSolution.GetDocument(EmployeeClassDocumentId);
             return document.GetSyntaxRootAsync().Result;

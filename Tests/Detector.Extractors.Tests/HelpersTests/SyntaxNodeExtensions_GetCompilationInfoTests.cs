@@ -27,7 +27,7 @@ namespace Detector.Extractors.Tests.HelpersTests
 											select e);
 									return query.SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
             VariableDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<VariableDeclarationSyntax>().First();
 
             //Act
@@ -41,7 +41,7 @@ namespace Detector.Extractors.Tests.HelpersTests
         public void SetsParentMethodDeclarationToNull_When_NodeIsNotInsideAMethod()
         {
             //Arrange
-            var solGenerator = new RoslynSolutionGenerator(string.Empty);
+            var solGenerator = new RoslynSimpleSolutionGenerator(string.Empty);
             ClassDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<ClassDeclarationSyntax>().First();
 
             //Act
@@ -62,7 +62,7 @@ namespace Detector.Extractors.Tests.HelpersTests
 											select e);
 									return query.SingleOrDefault<Employee>();";
 
-            var solGenerator = new RoslynSolutionGenerator(textToPlaceInMainMethod);
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
             VariableDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<VariableDeclarationSyntax>().First();
 
             //Act

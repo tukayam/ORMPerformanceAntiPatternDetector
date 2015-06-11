@@ -4,6 +4,7 @@ namespace Detector.Models.Base
 {
     public interface NodeBase
     {
-        List<NodeBase> ChildNodes { get; }
+        ModelBase Model { get; }
+        List<NodeBase> ChildNodes { get; }        
     }
 }

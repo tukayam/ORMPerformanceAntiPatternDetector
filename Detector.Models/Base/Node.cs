@@ -2,6 +2,6 @@
 {
     public interface Node : NodeBase
     {
-        ModelBase Model { get; }
+        
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.Tests
 {
@@ -13,7 +14,7 @@ namespace Detector.Extractors.Tests
         LINQToSQLDatabaseQueryExtractor target;
 
         [TestMethod]
-        public void ExtractsQuery_When_QueryVariableIsDeclared()
+        public async Task ExtractsOneDatabaseQueryObject_When_QueryVariableIsDeclared()
         {
             //Arrange
             List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
@@ -28,19 +29,47 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
 
             target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
             //Assert
             Assert.IsTrue(target.DatabaseQueries.ToList().Count == 1);
         }
 
         [TestMethod]
-        public void ExtractsOneQueryWithCorrectAmountOfUsedEntities_When_NoQueryVariableIsDeclared()
+        public async Task ExtractsDatabaseQueryWithQueryVariable_When_QueryVariableIsDeclared()
+        {
+            //Arrange
+            List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
+            entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+
+            string textToPlaceInMainMethod = @" 
+									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
+                                    var query = (from e in dc.Employees
+											where (e.EmployeeID == empId)
+											select e);
+									return query.SingleOrDefault<Employee>();";
+
+            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
+
+            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
+
+            target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+
+            //Act
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            var result = target.DatabaseQueries.ToList().First();
+
+            //Assert
+            Assert.IsTrue(result.DatabaseQueryVariable.VariableName == "query");
+        }
+
+        [TestMethod]
+        public async Task ExtractsOneQueryWithCorrectAmountOfUsedEntities_When_NoQueryVariableIsDeclared()
         {
             //Arrange
             List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
@@ -55,12 +84,12 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
 
             target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
             //Assert
             var listResult = target.DatabaseQueries.ToList();
@@ -75,7 +104,7 @@ namespace Detector.Extractors.Tests
         /// </summary>
         [TestMethod]
         [Ignore]
-        public void ExtractsOneQueryWithCorrectQueryText_When_NoQueryVariableIsDeclared()
+        public async Task ExtractsOneQueryWithCorrectQueryText_When_NoQueryVariableIsDeclared()
         {
             //Arrange
             List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
@@ -90,12 +119,12 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
 
             target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
             //Assert
             var listResult = target.DatabaseQueries.ToList();

@@ -13,6 +13,8 @@ namespace Detector.Extractors
     {
         public List<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
 
+        public Dictionary<DatabaseAccessingMethodCallStatement<LINQToSQL>, SyntaxNode> DatabaseAccessingMethodCallsAndSyntaxNodes { get; private set; }
+
         private readonly List<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
         private readonly List<DatabaseQuery<LINQToSQL>> _databaseQueries;
 
@@ -29,8 +31,8 @@ namespace Detector.Extractors
             this._databaseQueries = databaseQueries;
 
             this.DatabaseAccessingMethodCalls = new List<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
+            this.DatabaseAccessingMethodCallsAndSyntaxNodes = new Dictionary<DatabaseAccessingMethodCallStatement<LINQToSQL>, SyntaxNode>();
         }
-
 
         public override void VisitInvocationExpression(InvocationExpressionSyntax node)
         {
@@ -41,12 +43,16 @@ namespace Detector.Extractors
 
         private void ExtractDatabaseAccessingMethodsThatIncludeAQuery(InvocationExpressionSyntax node)
         {
-            var dbAccessingMethodCalls = (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
-                                          from dq in _databaseQueries
-                                          where dq.IsSameQueryAs(q)
-                                          select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(dq, node.GetCompilationInfo()));
+            DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL> dbAccessingMethodCall = (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
+                                                                                                        from dq in _databaseQueries
+                                                                                                        where dq.IsSameQueryAs(q)
+                                                                                                        select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(dq, node.GetCompilationInfo())).FirstOrDefault();
 
-            this.DatabaseAccessingMethodCalls.AddRange(dbAccessingMethodCalls.ToList());
+            if (dbAccessingMethodCall != null)
+            {
+                this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
+                this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);
+            }
         }
 
         private void ExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(InvocationExpressionSyntax node)
@@ -58,8 +64,11 @@ namespace Detector.Extractors
 
             if (databaseQuery != null)
             {
-                this.DatabaseAccessingMethodCalls.Add(new DatabaseAccessingMethodCallStatementOnQueryVariable<LINQToSQL>(
-                    databaseQuery, node.GetCompilationInfo(), databaseQuery.DatabaseQueryVariable));
+                var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatementOnQueryVariable<LINQToSQL>(
+                    databaseQuery, node.GetCompilationInfo(), databaseQuery.DatabaseQueryVariable);
+
+                this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
+                this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);
             }
         }
     }

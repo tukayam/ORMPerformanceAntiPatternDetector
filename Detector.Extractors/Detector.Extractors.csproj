@@ -103,10 +103,13 @@
   <ItemGroup>
     <Compile Include="Helpers\SyntaxNodeExtensions.cs" />
     <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
+    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolution.cs" />
     <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractor.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseQueryExtractor.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
+    <Compile Include="LINQToSQL\GodClass.cs" />
+    <Compile Include="LINQToSQL\ORMModelTreeExtractor.cs" />
     <Compile Include="MyAnnotator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

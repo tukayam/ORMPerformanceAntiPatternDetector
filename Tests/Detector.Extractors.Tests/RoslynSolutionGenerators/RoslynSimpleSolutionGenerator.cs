@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.Tests.RoslynSolutionGenerators
 {
@@ -26,27 +27,25 @@ namespace Detector.Extractors.Tests.RoslynSolutionGenerators
             RoslynSolution = GetRoslynSolution(textToPlaceInMethod);
         }
 
-        public SemanticModel GetSemanticModelForMainClass()
+        public async Task<SemanticModel> GetSemanticModelForMainClass()
         {
             var document = RoslynSolution.GetDocument(MainClassDocumentId);
-            var model = document.GetSemanticModelAsync().Result;
-
-            return model;
+            return await document.GetSemanticModelAsync();
         }
 
-        public SyntaxNode GetRootNodeForMainDocument()
+        public async Task<SyntaxNode> GetRootNodeForMainDocument()
         {
             Document document = RoslynSolution.GetDocument(MainClassDocumentId);
-            return document.GetSyntaxRootAsync().Result;
+            return await document.GetSyntaxRootAsync();
         }
 
-        public SyntaxNode GetRootNodeForEntityDocument()
+        public async Task<SyntaxNode> GetRootNodeForEntityDocument()
         {
             Document document = RoslynSolution.GetDocument(EmployeeClassDocumentId);
-            return document.GetSyntaxRootAsync().Result;
+            return await document.GetSyntaxRootAsync();
         }
 
-        private Solution GetRoslynSolution(string textToPlaceInMethod)
+        public Solution GetRoslynSolution(string textToPlaceInMethod)
         {
             var solution = new AdhocWorkspace().CurrentSolution
                 .AddProject(projectId, "MyProject", "MyProject", LanguageNames.CSharp)

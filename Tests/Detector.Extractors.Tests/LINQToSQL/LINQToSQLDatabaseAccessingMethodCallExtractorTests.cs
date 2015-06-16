@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Models.ORM;
-using Detector.Extractors.DatabaseEntities;
 using System.Collections.Generic;
-using Moq;
 using Microsoft.CodeAnalysis;
 using Detector.Extractors.Tests.RoslynSolutionGenerators;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.Tests
 {
@@ -25,7 +24,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnSameSentenceAsQuery()
+        public async Task DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnSameSentenceAsQuery()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -37,7 +36,7 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
 
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
             databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
@@ -47,7 +46,7 @@ namespace Detector.Extractors.Tests
             target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
             List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
 
@@ -56,7 +55,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void DetectsDatabaseAccessingMethodCallWithCorrectDatabaseEntities_When_DBAccessingMethodIsOnSameSentenceAsQuery()
+        public async Task DetectsDatabaseAccessingMethodCallWithCorrectDatabaseEntities_When_DBAccessingMethodIsOnSameSentenceAsQuery()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -68,7 +67,7 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
 
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
             databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
@@ -78,7 +77,7 @@ namespace Detector.Extractors.Tests
             target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
             List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
 
@@ -88,7 +87,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnQueryVariable()
+        public async Task DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnQueryVariable()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -100,7 +99,7 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass = solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
             databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
 											where (e.EmployeeID == empId)
@@ -109,7 +108,7 @@ namespace Detector.Extractors.Tests
             target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
 
             //Act
-            target.Visit(solGenerator.GetRootNodeForMainDocument());
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
             List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
 
             //Assert

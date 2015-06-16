@@ -74,6 +74,7 @@
     <Compile Include="Base\ForEachLoopDeclarationBase.cs" />
     <Compile Include="Base\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\LoopDeclarationBase.cs" />
+    <Compile Include="Base\MethodCall.cs" />
     <Compile Include="Base\ModelTreeBase.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Base\NodeBase.cs" />

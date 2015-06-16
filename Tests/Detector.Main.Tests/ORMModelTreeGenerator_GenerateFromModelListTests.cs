@@ -19,36 +19,36 @@ namespace Detector.Extractors.Tests
             target = new ORMModelTreeGenerator<LINQToSQL>();
         }
 
-        [TestMethod]
-        public void GeneratesTree_When_ModelsForSameDocumentAreSent()
-        {
-            //Arrange
-            var methodCompilationInfo = new CompilationInfo(300);
-            var methodDec = new MethodDeclaration("GetSomething", methodCompilationInfo);
-            List<MethodDeclaration> methodDeclarations = new List<MethodDeclaration>() { methodDec };
+        //[TestMethod]
+        //public void GeneratesTree_When_ModelsForSameDocumentAreSent()
+        //{
+        //    //Arrange
+        //    var methodCompilationInfo = new CompilationInfo(300);
+        //    var methodDec = new MethodDeclaration("GetSomething", methodCompilationInfo);
+        //    List<MethodDeclaration> methodDeclarations = new List<MethodDeclaration>() { methodDec };
 
-            var dataContextCompilationInfo = new CompilationInfo(500);
-            dataContextCompilationInfo.SetParentMethodDeclaration(methodDec);
-            var dataContextDec = new DataContextInitializationStatement<LINQToSQL>(dataContextCompilationInfo);
-            var dataContextInitializationStatements = new List<DataContextInitializationStatement<LINQToSQL>>() { dataContextDec };
+        //    var dataContextCompilationInfo = new CompilationInfo(500);
+        //    dataContextCompilationInfo.SetParentMethodDeclaration(methodDec);
+        //    var dataContextDec = new DataContextInitializationStatement<LINQToSQL>(dataContextCompilationInfo);
+        //    var dataContextInitializationStatements = new List<DataContextInitializationStatement<LINQToSQL>>() { dataContextDec };
 
-            var dataAccessingMethodCallOnQueryCompilationInfo = new CompilationInfo(1000);
-            dataAccessingMethodCallOnQueryCompilationInfo.SetParentMethodDeclaration(methodDec);
-            var dataAccessingMethodCallOnQueryDec = new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(null, dataAccessingMethodCallOnQueryCompilationInfo);
-            List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>> dataAccessingMethodCallOnQueryDecs = new List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>>() { dataAccessingMethodCallOnQueryDec };
+        //    var dataAccessingMethodCallOnQueryCompilationInfo = new CompilationInfo(1000);
+        //    dataAccessingMethodCallOnQueryCompilationInfo.SetParentMethodDeclaration(methodDec);
+        //    var dataAccessingMethodCallOnQueryDec = new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>(null, dataAccessingMethodCallOnQueryCompilationInfo);
+        //    List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>> dataAccessingMethodCallOnQueryDecs = new List<DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>>() { dataAccessingMethodCallOnQueryDec };
 
-            List<ModelBase> models = new List<ModelBase>();
-            models.AddRange(dataAccessingMethodCallOnQueryDecs);
-            models.AddRange(dataContextInitializationStatements);
-            models.AddRange(methodDeclarations);
+        //    List<ModelBase> models = new List<ModelBase>();
+        //    models.AddRange(dataAccessingMethodCallOnQueryDecs);
+        //    models.AddRange(dataContextInitializationStatements);
+        //    models.AddRange(methodDeclarations);
 
-            //Act           
-            ORMModelTree tree = target.GenerateFromModelList(models);
+        //    //Act           
+        //    ORMModelTree tree = target.GenerateFromModelList(models);
 
-            //Assert
-            Assert.IsTrue(tree.RootNode.Model == methodDec);
-            Assert.IsTrue(tree.RootNode.ChildNodes[0].Model == dataContextDec);
-            Assert.IsTrue(tree.RootNode.ChildNodes[1].Model == dataAccessingMethodCallOnQueryDec);
-        }
+        //    //Assert
+        //    Assert.IsTrue(tree.RootNode.Model == methodDec);
+        //    Assert.IsTrue(tree.RootNode.ChildNodes[0].Model == dataContextDec);
+        //    Assert.IsTrue(tree.RootNode.ChildNodes[1].Model == dataAccessingMethodCallOnQueryDec);
+        //}
     }
 }

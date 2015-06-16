@@ -56,7 +56,12 @@ namespace Detector.Extractors
                 {
                     string queryText = node.GetText().ToString();
                     List<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
-                    DatabaseQuery<LINQToSQL> query = new DatabaseQuery<LINQToSQL>(queryText, databaseEntityDeclarationsUsedInQuery);
+
+                    var queryVariable = (from qv in _databaseQueryVariables
+                                         where qv.Value == node
+                                         select new DatabaseQueryVariable(qv.Key.Variables[0].Identifier.Text)).FirstOrDefault();
+
+                    var query = new DatabaseQuery<LINQToSQL>(queryText, databaseEntityDeclarationsUsedInQuery, queryVariable);
                     _databaseQueries.Add(node, query);
                 }
             }

@@ -2,6 +2,7 @@
 using Detector.Extractors.DatabaseEntities;
 using Microsoft.CodeAnalysis;
 using Detector.Extractors.Tests.RoslynSolutionGenerators;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.Tests
 {
@@ -17,11 +18,11 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public void DetectsDatabaseEntityDeclaration_When_DocumentWithLINQToSQLEntityClassRootIsVisited()
+        public async Task DetectsDatabaseEntityDeclaration_When_DocumentWithLINQToSQLEntityClassRootIsVisited()
         {
             //Arrange
             var solGen = new RoslynSimpleSolutionGenerator();
-            SyntaxNode root = solGen.GetRootNodeForEntityDocument();
+            SyntaxNode root = await solGen.GetRootNodeForEntityDocument();
 
             //Act
             target.Visit(root);
@@ -29,5 +30,7 @@ namespace Detector.Extractors.Tests
             //Assert
             Assert.IsTrue(target.DatabaseEntityDeclarations.Count == 1);
         }
+
+      
     }
 }

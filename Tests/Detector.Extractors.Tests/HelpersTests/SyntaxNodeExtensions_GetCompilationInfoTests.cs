@@ -7,6 +7,8 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
 using Detector.Models.Base;
 using Detector.Extractors.Helpers;
+using Microsoft.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.Tests.HelpersTests
 {
@@ -17,7 +19,7 @@ namespace Detector.Extractors.Tests.HelpersTests
     public class SyntaxNodeExtensions_GetCompilationInfoTests
     {
         [TestMethod]
-        public void SetsParentMethodDeclarationCorrectly_When_NodeIsInsideAMethod()
+        public async Task SetsParentMethodDeclarationCorrectly_When_NodeIsInsideAMethod()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -28,7 +30,8 @@ namespace Detector.Extractors.Tests.HelpersTests
 									return query.SingleOrDefault<Employee>();";
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-            VariableDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<VariableDeclarationSyntax>().First();
+            SyntaxNode rootNode = await solGenerator.GetRootNodeForMainDocument();
+            var dataContextVariableDecSyntaxNode= rootNode.DescendantNodes().OfType<VariableDeclarationSyntax>().First();
 
             //Act
             CompilationInfo result = dataContextVariableDecSyntaxNode.GetCompilationInfo();
@@ -38,11 +41,12 @@ namespace Detector.Extractors.Tests.HelpersTests
         }
 
         [TestMethod]
-        public void SetsParentMethodDeclarationToNull_When_NodeIsNotInsideAMethod()
+        public async Task SetsParentMethodDeclarationToNull_When_NodeIsNotInsideAMethod()
         {
             //Arrange
             var solGenerator = new RoslynSimpleSolutionGenerator(string.Empty);
-            ClassDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<ClassDeclarationSyntax>().First();
+            SyntaxNode rootNode = await solGenerator.GetRootNodeForMainDocument();
+            ClassDeclarationSyntax dataContextVariableDecSyntaxNode = rootNode.DescendantNodes().OfType<ClassDeclarationSyntax>().First();
 
             //Act
             CompilationInfo result = dataContextVariableDecSyntaxNode.GetCompilationInfo();
@@ -52,7 +56,7 @@ namespace Detector.Extractors.Tests.HelpersTests
         }
 
         [TestMethod]
-        public void SetsSpanStartCorrectly()
+        public async Task SetsSpanStartCorrectly()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
@@ -63,7 +67,8 @@ namespace Detector.Extractors.Tests.HelpersTests
 									return query.SingleOrDefault<Employee>();";
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-            VariableDeclarationSyntax dataContextVariableDecSyntaxNode = solGenerator.GetRootNodeForMainDocument().DescendantNodes().OfType<VariableDeclarationSyntax>().First();
+            SyntaxNode rootNode = await solGenerator.GetRootNodeForMainDocument();
+            VariableDeclarationSyntax dataContextVariableDecSyntaxNode = rootNode.DescendantNodes().OfType<VariableDeclarationSyntax>().First();
 
             //Act
             CompilationInfo result = dataContextVariableDecSyntaxNode.GetCompilationInfo();

@@ -51,8 +51,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ExcessiveDataDetectionRuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Detector.DetectionRules\Detector.DetectionRules.csproj">
+      <Project>{865301c5-9047-4207-9a92-3f67f5f97e70}</Project>
+      <Name>Detector.DetectionRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Detector.Models\Detector.Models.csproj">
+      <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
+      <Name>Detector.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

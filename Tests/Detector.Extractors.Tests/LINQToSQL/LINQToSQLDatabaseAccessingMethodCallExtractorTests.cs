@@ -36,12 +36,12 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
 
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
             databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
 											where (e.EmployeeID == empId)
-											select e", _entityDeclarations));
+											select e", _entityDeclarations, null));
 
             target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
 
@@ -67,12 +67,12 @@ namespace Detector.Extractors.Tests
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
-            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
+            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
 
             var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
             databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
 											where (e.EmployeeID == empId)
-											select e", _entityDeclarations));
+											select e", _entityDeclarations, null));
 
             target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
 

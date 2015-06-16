@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DetectionRule.cs" />
     <Compile Include="ExcessiveDataDetectionRule.cs" />
+    <Compile Include="OneByOneProcessingDetectionRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

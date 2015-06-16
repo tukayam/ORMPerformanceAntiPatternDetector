@@ -34,10 +34,11 @@ namespace Detector.Extractors
 
         public override void VisitForEachStatement(ForEachStatementSyntax node)
         {
-            DatabaseAccessingForeachLoopDeclaration<LINQToSQL> dbAccessingForEach = (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
-                                                                                     from v in _databaseQueryVariables.Keys
-                                                                                     where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
-                                                                                     select new DatabaseAccessingForeachLoopDeclaration<LINQToSQL>()).FirstOrDefault();
+            DatabaseAccessingForeachLoopDeclaration<LINQToSQL> dbAccessingForEach =
+                (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
+                 from v in _databaseQueryVariables.Keys
+                 where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
+                 select new DatabaseAccessingForeachLoopDeclaration<LINQToSQL>()).FirstOrDefault();
 
             if (dbAccessingForEach != null)
             {
@@ -53,10 +54,11 @@ namespace Detector.Extractors
 
         public override void VisitForStatement(ForStatementSyntax node)
         {
-            DatabaseAccessingForLoopDeclaration<LINQToSQL> dbAccessingFor = (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
-                                                                             from v in _databaseQueryVariables.Keys
-                                                                             where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
-                                                                             select new DatabaseAccessingForLoopDeclaration<LINQToSQL>()).FirstOrDefault();
+            DatabaseAccessingForLoopDeclaration<LINQToSQL> dbAccessingFor =
+                (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
+                 from v in _databaseQueryVariables.Keys
+                 where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
+                 select new DatabaseAccessingForLoopDeclaration<LINQToSQL>()).FirstOrDefault();
 
             if (dbAccessingFor != null)
             {

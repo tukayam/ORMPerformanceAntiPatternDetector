@@ -7,12 +7,12 @@ namespace Detector.Models.ORM
     {
         public CompilationInfo CompilationInfo { get; private set; }
 
-        public DatabaseEntityObject<T> DatabaseEntityObject { get; private set; }
+        public DatabaseEntityVariable<T> CalledDatabaseEntityVariable { get; private set; }
 
-        public DatabaseEntityObjectCallStatement(CompilationInfo compilationUnit, DatabaseEntityObject<T> databaseEntityObject)
+        public DatabaseEntityObjectCallStatement(DatabaseEntityVariable<T> calledDatabaseEntityVariable, CompilationInfo compilationUnit)
         {
             this.CompilationInfo = compilationUnit;
-            this.DatabaseEntityObject = databaseEntityObject;
+            this.CalledDatabaseEntityVariable = calledDatabaseEntityVariable;
         }
     }
 }

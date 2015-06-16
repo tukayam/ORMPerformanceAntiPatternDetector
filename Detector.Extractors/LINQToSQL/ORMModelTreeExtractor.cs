@@ -41,11 +41,11 @@ namespace Detector.Extractors
 
         private void ExtractDatabaseAccessingMethodsThatIncludeAQuery(InvocationExpressionSyntax node)
         {
-            DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL> dbAccessingMethodCall
+            DatabaseAccessingMethodCallStatement<LINQToSQL> dbAccessingMethodCall
                 = (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
                    from dq in _databaseQueries
                    where dq.IsSameQueryAs(q)
-                   select new DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>
+                   select new DatabaseAccessingMethodCallStatement<LINQToSQL>
                    (dq, node.GetCompilationInfo())).FirstOrDefault();
 
             if (dbAccessingMethodCall != null)
@@ -64,8 +64,8 @@ namespace Detector.Extractors
 
             if (databaseQuery != null)
             {
-                var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatementOnQueryVariable<LINQToSQL>(
-                                   databaseQuery, node.GetCompilationInfo(), databaseQuery.DatabaseQueryVariable);
+                var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<LINQToSQL>(
+                                   databaseQuery, node.GetCompilationInfo());
 
                 if (dbAccessingMethodCall != null)
                 {

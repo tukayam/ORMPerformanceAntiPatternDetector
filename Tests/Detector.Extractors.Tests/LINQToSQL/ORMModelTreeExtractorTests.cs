@@ -46,19 +46,21 @@ namespace Detector.Extractors.Tests
             Assert.IsTrue(result.RootNode.Model is MethodDeclaration);
             Assert.IsTrue((result.RootNode as MethodDeclaration).MethodName == "GetCustomer");
 
-            Assert.IsTrue(result.RootNode.ChildNodes[0] is DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>);
+            Assert.IsTrue(result.RootNode.ChildNodes[0] is DatabaseAccessingMethodCallStatement<LINQToSQL>);
         }
 
         [TestMethod]
-        public async Task ExtractsORMModelTree_When_MethodHasADbAccessingMethodCallStatement2()
+        public async Task ExtractsORMModelTree_When_RoslynSimpleSolutionGeneratorIsUsed()
         {
             //Arrange
             string textToPlaceInMainMethod = @" 
 									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
+                                    
                                     var query = (from e in dc.Employees
 											where (e.EmployeeID == empId)
 											select e);
 									return query.SingleOrDefault<Employee>();";
+
 
             var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
 
@@ -79,9 +81,10 @@ namespace Detector.Extractors.Tests
 
             //Assert
             Assert.IsTrue(result.RootNode.Model is MethodDeclaration);
-            Assert.IsTrue((result.RootNode as MethodDeclaration).MethodName == "GetCustomer");
+            Assert.IsTrue((result.RootNode.Model as MethodDeclaration).MethodName == "GetEmployeeById");
 
-            Assert.IsTrue(result.RootNode.ChildNodes[0] is DatabaseAccessingMethodCallStatementOnQueryDeclaration<LINQToSQL>);
+            Assert.IsTrue(result.RootNode.ChildNodes[0].Model is DataContextDeclaration<LINQToSQL>);
+            Assert.IsTrue(result.RootNode.ChildNodes[1].Model is DatabaseAccessingMethodCallStatement<LINQToSQL>);
         }
 
         private async Task ExtractEntityDeclarations(Solution solution)

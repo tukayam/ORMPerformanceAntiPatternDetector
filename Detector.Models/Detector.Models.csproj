@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\NodeList.cs" />
     <Compile Include="Base\CompilationInfo.cs" />
     <Compile Include="Base\DoWhileLoopDeclarationBase.cs" />
     <Compile Include="Base\ForEachLoopDeclarationBase.cs" />
@@ -78,15 +79,14 @@
     <Compile Include="Base\ModelTreeBase.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Base\NodeBase.cs" />
+    <Compile Include="Base\VariableDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingDoWhileLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForeachLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingForLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingLoopDeclaration.cs" />
     <Compile Include="Base\MethodDeclarationBase.cs" />
-    <Compile Include="ORM\DatabaseAccessingMethodCallStatementOnQueryDeclaration.cs" />
-    <Compile Include="ORM\DatabaseAccessingMethodCallStatementOnQueryVariable.cs" />
     <Compile Include="ORM\DatabaseEntityObjectCallStatement.cs" />
-    <Compile Include="ORM\DatabaseEntityObjectRelatedEntitySelectCallStatement.cs" />
+    <Compile Include="ORM\DatabaseEntityVariableRelatedEntityCallStatement.cs" />
     <Compile Include="ORM\DatabaseQueryVariable.cs" />
     <Compile Include="ORM\DataContextDeclaration.cs" />
     <Compile Include="ORM\EntityFramework.cs" />
@@ -96,8 +96,7 @@
     <Compile Include="ORM\ORMModelTree.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityDeclaration.cs" />
-    <Compile Include="ORM\DatabaseEntityObject.cs" />
-    <Compile Include="ORM\DatabaseEntityObjectInstantiationStatement.cs" />
+    <Compile Include="ORM\DatabaseEntityVariable.cs" />
     <Compile Include="ORM\DatabaseEntityObjectUpdateStatement.cs" />
     <Compile Include="ORM\DataContextInitializationStatement.cs" />
     <Compile Include="ORM\Mapping.cs" />

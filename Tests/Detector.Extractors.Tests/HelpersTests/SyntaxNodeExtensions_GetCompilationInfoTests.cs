@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;

@@ -1,18 +1,18 @@
 ﻿using Detector.Models;
 using System;
 
-namespace Detector.Extractors.DetectionRules
+namespace Detector.DetectionRules
 {
     public abstract class DetectionRule
     {
-        protected ORMModelTree SyntaxTree { get; private set; }
+        protected ORMModelTree ORMModelTree { get; private set; }
         
-        public bool AppliesToSyntaxTree(ORMModelTree ORMSyntaxTree)
+        public bool AppliesToModelTree(ORMModelTree ORMModelTree)
         {
-            this.SyntaxTree = ORMSyntaxTree;
+            this.ORMModelTree = ORMModelTree;
             return GetRuleFunction().Invoke();
         }
 
-        public abstract Func<bool> GetRuleFunction();
+        protected abstract Func<bool> GetRuleFunction();
     }
 }

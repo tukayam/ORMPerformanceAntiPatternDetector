@@ -2,6 +2,6 @@
 {
     public class DatabaseEntityObjectUpdateStatement<T> where T : ORMToolType
     {
-        public DatabaseEntityObject<T> DatabaseEntityObject { get; private set; }
+        public DatabaseEntityVariable<T> DatabaseEntityObject { get; private set; }
     }
 }

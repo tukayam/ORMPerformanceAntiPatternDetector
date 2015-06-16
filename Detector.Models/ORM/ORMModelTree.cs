@@ -20,11 +20,6 @@ namespace Detector.Models
             : this()
         {
             this.RootNode = rootNode;
-        }
-
-        public IEnumerable<NodeBase> OfType<ModelBase>()
-        {
-            throw new NotImplementedException();
-        }
+        }        
     }
 }

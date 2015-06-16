@@ -104,7 +104,6 @@
     <Compile Include="ORM\NHibernate.cs" />
     <Compile Include="ORM\ORMToolType.cs" />
     <Compile Include="ORM\QueryConfiguration.cs" />
-    <Compile Include="ORM\VariableDeclarationInsideDatabaseAccessingLoop.cs" />
     <Compile Include="Others\Document.cs" />
     <Compile Include="Others\DoWhileLoopDeclaration.cs" />
     <Compile Include="Others\ForEachLoopDeclaration.cs" />

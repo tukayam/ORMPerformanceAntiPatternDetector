@@ -124,7 +124,6 @@
     <Compile Include="RoslynSolutionGenerators\RoslynSimpleSolutionGenerator.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyAnnotaterTests.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractorTests.cs" />
     <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractorTests.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractorTests.cs" />

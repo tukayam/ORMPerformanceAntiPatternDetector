@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\ORMModelTreeGenerator.cs" />
     <Compile Include="OneByOneProcessingDetectionRuleTests.cs" />
     <Compile Include="ExcessiveDataDetectionRuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

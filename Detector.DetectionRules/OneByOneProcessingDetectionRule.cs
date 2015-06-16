@@ -10,10 +10,10 @@ namespace Detector.DetectionRules
     {
         protected override Func<bool> GetRuleFunction()
         {
-            return TreeHasLazyFetchingDatabaseAccessingMethodAndRelatedEntitiesAreCalledOnReturnedObject;
+            return TreeHasLazyFetchingDatabaseAccessingMethodCallAndRelatedEntitiesAreCalledOnReturnedObject;
         }
 
-        public bool TreeHasLazyFetchingDatabaseAccessingMethodAndRelatedEntitiesAreCalledOnReturnedObject()
+        public bool TreeHasLazyFetchingDatabaseAccessingMethodCallAndRelatedEntitiesAreCalledOnReturnedObject()
         {
             List<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>().ToList();
             List<NodeBase> databaseEntityVariableRelatedEntityCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseEntityVariableRelatedEntityCallStatement<T>>().ToList();

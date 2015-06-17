@@ -5,14 +5,12 @@ using Microsoft.CodeAnalysis;
 using Detector.Models.ORM;
 using Detector.Extractors.DatabaseEntities;
 using Detector.Models.Base;
-using System.Linq;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System;
 using Detector.Extractors.Base;
 
 namespace Detector.Extractors
 {
-    public class GodClass :IGodClass
+    public class GodClass : IGodClass
     {
         public List<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; private set; }
         public List<DatabaseQuery<LINQToSQL>> DatabaseQueries { get; private set; }
@@ -36,14 +34,14 @@ namespace Detector.Extractors
 
         public async Task ExtractFromRoslynSolutionAsync(Solution solution)
         {
-            ExtractEntityDeclarations(solution);
-            ExtractDatabaseQueries(solution);
-            ExtractDatabaseAccessingMethodCalls(solution);
+            await ExtractEntityDeclarationsAsync(solution);
+            await ExtractDatabaseQueriesAsync(solution);
+            await ExtractDatabaseAccessingMethodCallsAsync(solution);
 
-            GenerateORMModelTreeForEachDatabaseAccessingMethod(solution);
+            await GenerateORMModelTreeForEachDatabaseAccessingMethodAsync(solution);
         }
 
-        private async void ExtractEntityDeclarations(Solution solution)
+        private async Task ExtractEntityDeclarationsAsync(Solution solution)
         {
             foreach (var project in solution.Projects)
             {
@@ -60,7 +58,7 @@ namespace Detector.Extractors
             }
         }
 
-        private async void ExtractDatabaseQueries(Solution solution)
+        private async Task ExtractDatabaseQueriesAsync(Solution solution)
         {
             foreach (var project in solution.Projects)
             {
@@ -78,7 +76,7 @@ namespace Detector.Extractors
             }
         }
 
-        private async void ExtractDatabaseAccessingMethodCalls(Solution solution)
+        private async Task ExtractDatabaseAccessingMethodCallsAsync(Solution solution)
         {
             foreach (var project in solution.Projects)
             {
@@ -101,108 +99,27 @@ namespace Detector.Extractors
             }
         }
 
-        private async void ExtractAllInternalMethodCalls(Solution solution)
+        private async Task ExtractAllInternalMethodCallsAsync(Solution solution)
         {
             MethodDeclarations = new Dictionary<MethodDeclarationBase, SyntaxNode>();
         }
 
-        private async void GenerateORMModelTreeForEachDatabaseAccessingMethod(Solution solution)
+        private async Task GenerateORMModelTreeForEachDatabaseAccessingMethodAsync(Solution solution)
         {
             //foreach DbAccessingMethodCall, get SyntaxNode, find parent methodDeclaration
             foreach (var databaseAccessingMethodCallSyntaxNode in DatabaseAccessingMethodCalls.Values)
             {
-                SyntaxNode parentMethodDeclaration = null;
-                do
+                SyntaxNode parentMethodDeclaration = databaseAccessingMethodCallSyntaxNode.Parent;
+                while (!(parentMethodDeclaration is MethodDeclarationSyntax))
                 {
-                    parentMethodDeclaration = databaseAccessingMethodCallSyntaxNode.Parent;
-                } while (!(parentMethodDeclaration is MethodDeclarationSyntax));
-
-                //check if there are any direct calls to methodDeclaration found (in extracted all method calls)
-
-                ExtractCodeExecutionTrees(parentMethodDeclaration);
-
-                //check if the class of methodDeclaration found has interfaces and if any interface contain methoddeclaration, then check if any methodcalls exist to that interface methoddeclaration
-                SyntaxNode methodDeclarationOnInterface = GetMethodDeclarationOnInterface(parentMethodDeclaration);
-                ExtractCodeExecutionTrees(methodDeclarationOnInterface);
-
-                //check if the class of methodDeclaration found has abstract class derivation and if any interface contain methoddeclaration, then check if any methodcalls exist to that interface methoddeclaration
-                SyntaxNode methodDeclarationOnAbstractClass = GetMethodDeclarationOnAbstractClass(parentMethodDeclaration);
-                ExtractCodeExecutionTrees(methodDeclarationOnAbstractClass);
-            }
-
-            ConvertCodeExecutionPathsIntoORMModelTree();
-
-            ORMModelTrees = null;
-        }
-
-        private void ConvertCodeExecutionPathsIntoORMModelTree()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ExtractCodeExecutionTrees(SyntaxNode methodContainingDatabaseAccessingCall)
-        {
-            SyntaxNode calledMethod = methodContainingDatabaseAccessingCall;
-            List<SyntaxNode> callingMethods;
-            do
-            {
-                callingMethods = (from md in MethodCalls
-                                  where md.Key.CalledMethod == calledMethod
-                                  select md.Value).ToList();
-                foreach (var callingMethod in callingMethods)
-                {
-                    var codeExecutionPath = new List<SyntaxNode>();
-                    codeExecutionPath.Add(callingMethod);
-                    CodeExecutionPaths.Add(codeExecutionPath);
-
-                    calledMethod = callingMethod;
-                    ExtractCodeExecutionPaths(calledMethod, codeExecutionPath);
+                    parentMethodDeclaration = parentMethodDeclaration.Parent;
                 }
-            } while (callingMethods != null);
-        }
 
-        private void ExtractCodeExecutionPaths(SyntaxNode calledMethod, List<SyntaxNode> codeExecutionPath)
-        {
-            List<SyntaxNode> callingMethods = (from md in MethodCalls
-                                               where md.Key.CalledMethod == calledMethod
-                                               select md.Value).ToList();
-
-            foreach (var callingMethod in callingMethods)
-            {
-                var newQueue = new List<SyntaxNode>();
-                newQueue.AddRange(codeExecutionPath);
-
-                CodeExecutionPaths.Remove(codeExecutionPath);
-                CodeExecutionPaths.Add(newQueue);
-
-                ExtractCodeExecutionPaths(callingMethod, newQueue);
+                var modelTreeExtractor = new RoslynORMModelTreeExtractor(this.DatabaseQueries);
+                ORMModelTree tree = modelTreeExtractor.Extract((MethodDeclarationSyntax)parentMethodDeclaration);
+                ORMModelTrees.Add(tree);
             }
-        }
 
-        private SyntaxNode GetMethodDeclarationOnInterface(SyntaxNode methodDeclarationOnClass)
-        {
-            SyntaxNode methodDeclarationOnInterface = null;
-
-            SyntaxNode classDeclaration;
-            do
-            {
-                classDeclaration = methodDeclarationOnClass.Parent;
-            } while (!(classDeclaration is ClassDeclarationSyntax));
-
-            return null;
-        }
-
-        private SyntaxNode GetMethodDeclarationOnAbstractClass(SyntaxNode methodDeclarationOnClass)
-        {
-            SyntaxNode methodDeclarationOnInterface = null;
-
-            SyntaxNode classDeclaration;
-            do
-            {
-                classDeclaration = methodDeclarationOnClass.Parent;
-            } while (!(classDeclaration is ClassDeclarationSyntax));
-
-            return null;
         }
     }
 }

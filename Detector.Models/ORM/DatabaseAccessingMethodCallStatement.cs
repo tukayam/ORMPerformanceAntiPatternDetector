@@ -37,7 +37,8 @@ namespace Detector.Models.ORM
         public DatabaseAccessingMethodCallStatement(DatabaseQuery<T> databaseQuery, CompilationInfo compilationInfo )
         {
             this.CompilationInfo = compilationInfo;
-            DatabaseQuery = databaseQuery;
+            this.DatabaseQuery = databaseQuery;
+            this.LoadedEntityDeclarations = new List<DatabaseEntityDeclaration<T>>();
         }
 
         public void SetDataContext(DataContextInitializationStatement<T> dataContext)

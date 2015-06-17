@@ -142,6 +142,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+      <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
+      <Name>Detector.Extractors.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Detector.Extractors\Detector.Extractors.csproj">
       <Project>{200f6e6d-e6bd-4f1b-8ead-55ecbc09b9f3}</Project>
       <Name>Detector.Extractors</Name>

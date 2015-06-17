@@ -113,6 +113,10 @@
       <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
       <Name>Detector.Extractors.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Detector.Extractors\Detector.Extractors.csproj">
+      <Project>{200f6e6d-e6bd-4f1b-8ead-55ecbc09b9f3}</Project>
+      <Name>Detector.Extractors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>

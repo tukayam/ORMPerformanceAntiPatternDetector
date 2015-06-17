@@ -8,9 +8,8 @@
         <Label Name="lblSolutionName" HorizontalAlignment="Left" Margin="190,30,0,0" VerticalAlignment="Top" Width="260" Height="26"/>
         <Label Content="Choose ORM tool used in solution:" HorizontalAlignment="Left" Margin="70,98,0,0" VerticalAlignment="Top" Width="197"/>
         <ComboBox HorizontalAlignment="Left" Margin="358,102,0,0" VerticalAlignment="Top" Width="178"/>
-        <Button Name="btnExtractDatabaseAccessingCode" Content="Extract Entities" HorizontalAlignment="Left" Margin="70,166,0,0" VerticalAlignment="Top" Width="178" Height="30" Click="btnExtractEntities_Click"/>
+        <Button Name="btnDetectAntiPatterns" Content="Detect anti-patterns" HorizontalAlignment="Left" Margin="70,166,0,0" VerticalAlignment="Top" Width="178" Height="30" Click="btnDetectAntiPatterns_Click"/>
         <ListBox Name="lbResults" HorizontalAlignment="Left" Height="260" Margin="70,216,0,0" VerticalAlignment="Top" Width="668"/>
-        <Button x:Name="btnExtractDatabaseAccessingCode_Copy" Content="Extract DB Accessing Calls" HorizontalAlignment="Left" Margin="272,166,0,0" VerticalAlignment="Top" Width="178" Height="30" Click="btnExtractDatabaseAccessingCode_Click"/>
 
     </Grid>
 </Window>

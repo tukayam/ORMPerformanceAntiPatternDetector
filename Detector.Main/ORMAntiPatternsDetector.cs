@@ -1,4 +1,5 @@
-﻿using Detector.Extractors.Base;
+﻿using Detector.Extractors;
+using Detector.Extractors.Base;
 using Detector.Main.DetectionRules;
 using Detector.Models;
 using Detector.Models.AntiPatterns;
@@ -12,22 +13,15 @@ namespace Detector.Main
 {
     public class ORMAntiPatternsDetector<T> where T : ORMToolType
     {
-        IGodClass _godClass;
-        ORMModelTreeExtractor _ORMModelTreeExtractor;
-
-        public ORMAntiPatternsDetector(IGodClass godClass, ORMModelTreeExtractor ORMModelTreeExtractor)
-        {
-            _godClass = godClass;
-            _ORMModelTreeExtractor = ORMModelTreeExtractor;
-        }
-
         public async Task<List<AntiPatternBase>> Detect(Solution roslynSolution)
         {
-            await _godClass.ExtractFromRoslynSolutionAsync(roslynSolution);
+            var godClass = new GodClass();
+            await godClass.ExtractFromRoslynSolutionAsync(roslynSolution);
 
-            List<ORMModelTree> codeExecutionPaths = new List<ORMModelTree>();
-            foreach (var methodDeclaration in _godClass.MethodDeclarations)
+           var codeExecutionPaths = new List<ORMModelTree>();
+            foreach (var methodDeclaration in godClass.MethodDeclarations)
             {
+                ORMModelTreeExtractor _ORMModelTreeExtractor = new RoslynORMModelTreeExtractor(godClass.DatabaseQueries);
                 ORMModelTree ORMModelTree = _ORMModelTreeExtractor.Extract(methodDeclaration.Value as MethodDeclarationSyntax);
 
                 codeExecutionPaths.Add(ORMModelTree);

@@ -2,7 +2,7 @@
 using Detector.Models.ORM;
 using System.Collections.Generic;
 
-namespace Detector.Main
+namespace Detector.Extractors
 {
     interface ORMModelTreeGeneratorBase<T> where T:ORMToolType
     {

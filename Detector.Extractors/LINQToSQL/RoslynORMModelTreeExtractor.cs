@@ -6,18 +6,19 @@ using System.Linq;
 using System.Collections.Generic;
 using Detector.Extractors.Helpers;
 using Detector.Models.Others;
+using Detector.Extractors.Base;
 
 namespace Detector.Extractors
 {
     /// <summary>
-    /// Generates an ORMModelTree for a given MethodDeclarationSyntax (for a method)
+    /// Generates an ORMModelTree for a given MethodDeclarationSyntax
     /// </summary>
-    public class ORMModelTreeExtractor : CSharpSyntaxWalker
+    public class RoslynORMModelTreeExtractor : CSharpSyntaxWalker, ORMModelTreeExtractor
     {
         private ORMModelTree _ORMModelTree;
         private IEnumerable<DatabaseQuery<LINQToSQL>> _databaseQueries;
 
-        public ORMModelTreeExtractor(IEnumerable<DatabaseQuery<LINQToSQL>> databaseQueries)
+        public RoslynORMModelTreeExtractor(IEnumerable<DatabaseQuery<LINQToSQL>> databaseQueries)
         {
             this._databaseQueries = databaseQueries;
         }

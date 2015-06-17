@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 namespace Detector.Extractors.Tests
 {
     [TestClass]
-    public class ORMModelTreeExtractorTests
+    public class RoslynORMModelTreeExtractorTests
     {
-        ORMModelTreeExtractor target;
+        RoslynORMModelTreeExtractor target;
         List<DatabaseEntityDeclaration<LINQToSQL>> dbEntityDeclarations;
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace Detector.Extractors.Tests
             dbQueryExtractor.Visit(rootNodeCustomerRepository);
             var databaseQueries = dbQueryExtractor.DatabaseQueries;
 
-            target = new ORMModelTreeExtractor(databaseQueries);
+            target = new RoslynORMModelTreeExtractor(databaseQueries);
             //Act            
             ORMModelTree result = target.Extract(methodDeclarations.First());
 
@@ -75,7 +75,7 @@ namespace Detector.Extractors.Tests
             dbQueryExtractor.Visit(rootNode);
             var databaseQueries = dbQueryExtractor.DatabaseQueries;
 
-            target = new ORMModelTreeExtractor(databaseQueries);
+            target = new RoslynORMModelTreeExtractor(databaseQueries);
             //Act            
             ORMModelTree result = target.Extract(methodDeclarationSyntaxNode);
 

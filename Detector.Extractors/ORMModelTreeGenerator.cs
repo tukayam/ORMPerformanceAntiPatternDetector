@@ -2,11 +2,10 @@
 using Detector.Models;
 using Detector.Models.ORM;
 using System;
-using Detector.Models.Others;
 using System.Linq;
 using Detector.Models.Base;
 
-namespace Detector.Main
+namespace Detector.Extractors
 {
     public sealed class ORMModelTreeGenerator<T> : ORMModelTreeGeneratorBase<T> where T : ORMToolType
     {

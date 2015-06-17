@@ -101,13 +101,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ORMModelTreeGeneratorBase.cs" />
-    <Compile Include="ORMModelTreeGenerator.cs" />
-    <Compile Include="RoslynORMSyntaxTreeListExtractor.cs" />
+    <Compile Include="DetectionRules\DetectionRule.cs" />
+    <Compile Include="DetectionRules\DetectionRuleFactory.cs" />
+    <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
+    <Compile Include="DetectionRules\OneByOneProcessingDetectionRule.cs" />
+    <Compile Include="ORMAntiPatternsDetector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SyntaxTreeWalker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+      <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
+      <Name>Detector.Extractors.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>

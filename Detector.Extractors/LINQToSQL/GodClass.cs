@@ -8,10 +8,11 @@ using Detector.Models.Base;
 using System.Linq;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
+using Detector.Extractors.Base;
 
 namespace Detector.Extractors
 {
-    public class GodClass
+    public class GodClass :IGodClass
     {
         public List<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; private set; }
         public List<DatabaseQuery<LINQToSQL>> DatabaseQueries { get; private set; }
@@ -33,7 +34,7 @@ namespace Detector.Extractors
             ORMModelTrees = new List<ORMModelTree>();
         }
 
-        public async void ExtractFromRoslynSolution(Solution solution)
+        public async Task ExtractFromRoslynSolutionAsync(Solution solution)
         {
             ExtractEntityDeclarations(solution);
             ExtractDatabaseQueries(solution);

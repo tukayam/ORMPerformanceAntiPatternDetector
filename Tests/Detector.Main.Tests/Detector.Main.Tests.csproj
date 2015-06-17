@@ -111,13 +111,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DetectionRules\ExcessiveDataDetectionRuleTests.cs" />
+    <Compile Include="DetectionRules\Helpers\ORMModelTreeGenerator.cs" />
+    <Compile Include="DetectionRules\OneByOneProcessingDetectionRuleTests.cs" />
     <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
-    <Compile Include="ORMModelTreeGenerator_GenerateFromModelListTests.cs" />
-    <Compile Include="ORMSyntaxTreeListExtractorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoslynSyntaxTreeWalkerTests.cs" />
-    <Compile Include="RoslynSyntaxTreeWalker_VisitMethodDeclarationTests.cs" />
-    <Compile Include="RoslynSyntaxTreeWalker_VisitConstructorDeclarationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Main\Detector.Main.csproj">

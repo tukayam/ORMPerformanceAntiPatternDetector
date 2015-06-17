@@ -118,7 +118,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HelpersTests\SyntaxNodeExtensions_GetCompilationInfoTests.cs" />
-    <Compile Include="LINQToSQL\ORMModelTreeExtractorTests.cs" />
+    <Compile Include="LINQToSQL\RoslynORMModelTreeExtractorTests.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolutionTests.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynComplexSolutionGenerator.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSimpleSolutionGenerator.cs" />

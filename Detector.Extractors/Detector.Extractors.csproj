@@ -110,7 +110,9 @@
     <Compile Include="LINQToSQL\LINQToSQLDatabaseQueryExtractor.cs" />
     <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="LINQToSQL\GodClass.cs" />
-    <Compile Include="LINQToSQL\ORMModelTreeExtractor.cs" />
+    <Compile Include="LINQToSQL\RoslynORMModelTreeExtractor.cs" />
+    <Compile Include="ORMModelTreeGenerator.cs" />
+    <Compile Include="ORMModelTreeGeneratorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

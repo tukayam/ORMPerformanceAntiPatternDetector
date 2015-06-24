@@ -55,13 +55,13 @@ namespace Detector.Extractors
             //You must install the MSBuild Tools or this line will throw an exception:
             var solution = msWorkspace.OpenSolutionAsync(solutionPath).Result;
 
-            var ORMAntiPatternsDetector = new ORMAntiPatternsDetector<LINQToSQL>();
+            //var ORMAntiPatternsDetector = new ORMAntiPatternsDetector<LINQToSQL>();
 
-            List<AntiPatternBase> detectedAntiPatterns = await ORMAntiPatternsDetector.Detect(solution);
-            foreach (var antiPattern in detectedAntiPatterns)
-            {
-                Dispatcher.Invoke(new Action(() => lbResults.Items.Add(antiPattern.ToString())));
-            }
+            //List<AntiPatternBase> detectedAntiPatterns = await ORMAntiPatternsDetector.DetectAsync(solution);
+            //foreach (var antiPattern in detectedAntiPatterns)
+            //{
+            //    Dispatcher.Invoke(new Action(() => lbResults.Items.Add(antiPattern.ToString())));
+            //}
         }
     }
 }

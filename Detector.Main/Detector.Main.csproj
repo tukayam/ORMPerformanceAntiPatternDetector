@@ -105,7 +105,6 @@
     <Compile Include="DetectionRules\DetectionRuleFactory.cs" />
     <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
     <Compile Include="DetectionRules\OneByOneProcessingDetectionRule.cs" />
-    <Compile Include="ORMAntiPatternsDetector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +119,10 @@
     <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Detertor.Extractors.LINQToSQL40\Detertor.Extractors.LINQToSQL40.csproj">
+      <Project>{91bfb500-e859-4f36-96c0-930b2110be18}</Project>
+      <Name>Detertor.Extractors.LINQToSQL40</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

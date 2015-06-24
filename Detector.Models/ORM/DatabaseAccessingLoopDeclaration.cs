@@ -7,7 +7,7 @@ namespace Detector.Models
     public abstract class DatabaseAccessingLoopDeclaration<T> : LoopDeclarationBase where T : ORMToolType
     {
         public DatabaseAccessingMethodCallStatement<T> DatabaseAccessingMethodCallStatement { get; }
-        public DatabaseEntityVariable<T> DatabaseEntityVariableInLooop { get; }
+        public DatabaseEntityVariableDeclaration<T> DatabaseEntityVariableInLooop { get; }
 
         public CompilationInfo CompilationInfo
         {

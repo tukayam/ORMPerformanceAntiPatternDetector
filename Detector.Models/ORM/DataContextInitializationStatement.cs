@@ -7,7 +7,7 @@ namespace Detector.Models.ORM
         public CompilationInfo CompilationInfo { get; private set; }
         public DataContextDeclaration<T> DataContextDeclarationUsed { get; private set; }
 
-        public DataContextInitializationStatement(DataContextDeclaration<T> dataContextDeclarationUsed ,CompilationInfo compilationUnit)
+        public DataContextInitializationStatement(DataContextDeclaration<T> dataContextDeclarationUsed, CompilationInfo compilationUnit)
         {
             this.DataContextDeclarationUsed = dataContextDeclarationUsed;
             this.CompilationInfo = compilationUnit;

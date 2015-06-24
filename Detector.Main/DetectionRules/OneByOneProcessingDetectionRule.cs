@@ -16,8 +16,9 @@ namespace Detector.Main.DetectionRules
 
         public bool TreeHasLazyFetchingDatabaseAccessingMethodCallAndRelatedEntitiesAreCalledOnReturnedObject()
         {
-            List<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>().ToList();
+            IEnumerable<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>();
             List<NodeBase> databaseEntityVariableRelatedEntityCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseEntityVariableRelatedEntityCallStatement<T>>().ToList();
+
 
             foreach (NodeBase item in databaseAccessingMethodCalls)
             {

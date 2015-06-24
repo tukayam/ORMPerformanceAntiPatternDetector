@@ -5,6 +5,6 @@ namespace Detector.Extractors.Base
 {
     public interface DatabaseAccessingMethodCallExtractor<T> where T : ORMToolType
     {
-        List<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
+        HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
     }
 }

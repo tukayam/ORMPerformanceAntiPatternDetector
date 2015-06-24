@@ -1,10 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Models.ORM;
 using System.Collections.Generic;
-using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Detector.Extractors.LINQToSQL40;
+using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
 
 namespace Detector.Extractors.Tests
 {
@@ -14,57 +15,40 @@ namespace Detector.Extractors.Tests
         LINQToSQLDatabaseQueryExtractor target;
 
         [TestMethod]
-        public async Task ExtractsOneDatabaseQueryObject_When_QueryVariableIsDeclared()
+        public async Task ExtractsDatabaseQueryObjectWithAVariable_When_QueryIsInQuerySyntaxAndQueryIsAssignedToAVariable()
         {
             //Arrange
-            List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
-            entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnQueryVariableAndQueryInQuerySyntax();
 
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                    var query = (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e);
-									return query.SingleOrDefault<Employee>();";
-
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
-
-            target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+            LINQToSQLDatabaseQueryExtractor target
+                = await new TargetBuilder().Build(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            var result = target.DatabaseQueries.First();
 
             //Assert
-            Assert.IsTrue(target.DatabaseQueries.ToList().Count == 1);
+            Assert.IsTrue(target.DatabaseQueries.Count == 1);
+            Assert.IsTrue(result.DatabaseQueryVariable.VariableName == "query");
         }
 
         [TestMethod]
-        public async Task ExtractsDatabaseQueryWithQueryVariable_When_QueryVariableIsDeclared()
+        public async Task ExtractsDatabaseQueryObjectWithAVariable_When_QueryIsInMethodSyntaxAndQueryIsAssignedToAVariable()
         {
             //Arrange
-            List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
-            entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnQueryVariableAndQueryInMethodSyntax();
 
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                    var query = (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e);
-									return query.SingleOrDefault<Employee>();";
-
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
-
-            target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+            LINQToSQLDatabaseQueryExtractor target
+                = await new TargetBuilder().Build(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
-            var result = target.DatabaseQueries.ToList().First();
+            var result = target.DatabaseQueries.First();
 
             //Assert
+            Assert.IsTrue(target.DatabaseQueries.Count == 1);
             Assert.IsTrue(result.DatabaseQueryVariable.VariableName == "query");
         }
 
@@ -72,30 +56,20 @@ namespace Detector.Extractors.Tests
         public async Task ExtractsOneQueryWithCorrectAmountOfUsedEntities_When_NoQueryVariableIsDeclared()
         {
             //Arrange
-            List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
-            entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInMethodSyntax();
 
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                     
-									return (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e).SingleOrDefault<Employee>();";
-
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
-
-            target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+            LINQToSQLDatabaseQueryExtractor target
+                = await new TargetBuilder().Build(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            var result = target.DatabaseQueries;
 
             //Assert
-            var listResult = target.DatabaseQueries.ToList();
-            Assert.IsTrue(listResult.Count == 1);
-            Assert.IsTrue(listResult[0].EntityDeclarationsUsedInQuery.Count == 1);
-            Assert.IsTrue(listResult[0].EntityDeclarationsUsedInQuery[0].Name == "L2S_Northwind.Employee");
+            Assert.IsTrue(result.Count == 1);
+            Assert.IsTrue(result.First().EntityDeclarationsUsedInQuery.Count == 1);
+            Assert.IsTrue(result.First().EntityDeclarationsUsedInQuery.First().Name == "L2S_Northwind.Employee");
         }
 
         /// <summary>
@@ -107,31 +81,40 @@ namespace Detector.Extractors.Tests
         public async Task ExtractsOneQueryWithCorrectQueryText_When_NoQueryVariableIsDeclared()
         {
             //Arrange
-            List<DatabaseEntityDeclaration<LINQToSQL>> entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
-            entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInMethodSyntax();
 
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                     
-									return (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e).SingleOrDefault<Employee>();";
-
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass =await solGenerator.GetSemanticModelForMainClass();
-
-            target = new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+            LINQToSQLDatabaseQueryExtractor target
+                = await new TargetBuilder().Build(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            var result = target.DatabaseQueries;
 
             //Assert
-            var listResult = target.DatabaseQueries.ToList();
-            Assert.IsTrue(listResult.Count == 1);
-            Assert.IsTrue(listResult[0].QueryAsString == @"(from e in dc.Employees
+            Assert.IsTrue(result.Count == 1);
+            Assert.IsTrue(result.First().QueryTextInCSharp == @"(from e in dc.Employees
                                             where(e.EmployeeID == empId)
                                             select e)");
         }
+
+        public class TargetBuilder
+        {
+            HashSet<DatabaseEntityDeclaration<LINQToSQL>> entities;
+
+            public TargetBuilder()
+            {
+                entities = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>();
+                entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+            }
+
+            public async Task<LINQToSQLDatabaseQueryExtractor> Build(RoslynSimpleSolutionGenerator solutionGenerator)
+            {
+                SemanticModel semanticModelForMainClass = await solutionGenerator.GetSemanticModelForMainClass();
+
+                return new LINQToSQLDatabaseQueryExtractor(semanticModelForMainClass, entities);
+            }
+        }
+
     }
 }

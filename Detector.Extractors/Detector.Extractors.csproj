@@ -89,6 +89,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Reflection.Metadata, Version=1.0.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.Metadata.1.0.18-beta\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
       <Private>True</Private>
@@ -101,18 +102,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\SyntaxNodeExtensions.cs" />
-    <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolution.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDataContextInitializationStatementExtractor.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLLoopDeclarationExtractor.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDatabaseQueryExtractor.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
-    <Compile Include="LINQToSQL\GodClass.cs" />
-    <Compile Include="LINQToSQL\RoslynORMModelTreeExtractor.cs" />
-    <Compile Include="ORMModelTreeGenerator.cs" />
-    <Compile Include="ORMModelTreeGeneratorBase.cs" />
+    <Compile Include="ExecutionCodePathGenerator.cs" />
+    <Compile Include="ExecutionCodePathGeneratorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

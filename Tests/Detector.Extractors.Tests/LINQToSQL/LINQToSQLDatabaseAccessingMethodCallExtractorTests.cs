@@ -2,53 +2,32 @@
 using Detector.Models.ORM;
 using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
-using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Detector.Extractors.LINQToSQL40;
+using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
 
 namespace Detector.Extractors.Tests
 {
     [TestClass]
     public class LINQToSQLDatabaseAccessingMethodCallExtractorTests
     {
-        LINQToSQLDatabaseAccessingMethodCallExtractor target;
-
-        List<DatabaseEntityDeclaration<LINQToSQL>> _entityDeclarations;
-
-        [TestInitialize]
-        public void Initialize()
-        {
-            _entityDeclarations = new List<DatabaseEntityDeclaration<LINQToSQL>>()
-                                        {
-                                            new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee")
-                                        };
-        }
-
         [TestMethod]
         public async Task DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnSameSentenceAsQuery()
         {
             //Arrange
-            string textToPlaceInMainMethod = @" 
-									var dc = new NorthWindDataClassesDataContext();								
-									
-									return (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e).SingleOrDefault<Employee>();";
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInQuerySyntax();
 
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
-
-            var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
-            databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e", _entityDeclarations, null));
-
-            target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithNoVariable(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
 
-            List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
+            HashSet<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -58,61 +37,142 @@ namespace Detector.Extractors.Tests
         public async Task DetectsDatabaseAccessingMethodCallWithCorrectDatabaseEntities_When_DBAccessingMethodIsOnSameSentenceAsQuery()
         {
             //Arrange
-            string textToPlaceInMainMethod = @" 
-									var dc = new NorthWindDataClassesDataContext();								
-									
-									return (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e).SingleOrDefault<Employee>();";
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInQuerySyntax();
 
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
-
-            var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
-            databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e", _entityDeclarations, null));
-
-            target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithNoVariable(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
-
-            List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
+            DatabaseAccessingMethodCallStatement<LINQToSQL> result = target.DatabaseAccessingMethodCalls.First();
 
             //Assert
-            Assert.IsTrue(result[0].DatabaseQuery.EntityDeclarationsUsedInQuery.Count == 1);
-            Assert.IsTrue(result[0].DatabaseQuery.EntityDeclarationsUsedInQuery[0].Name == "L2S_Northwind.Employee");
+            Assert.IsTrue(result.DatabaseQuery.EntityDeclarationsUsedInQuery.Count == 1);
+            Assert.IsTrue(result.DatabaseQuery.EntityDeclarationsUsedInQuery.First().Name == "L2S_Northwind.Employee");
+        }
+
+        [TestMethod]
+        public async Task DetectsDatabaseAccessingMethodCall_When_QueryIsWrittenInMethodSyntax()
+        {
+            //Arrange
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInMethodSyntax();
+
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithNoVariable(solGenerator);
+
+            //Act
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            HashSet<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
+
+            //Assert
+            Assert.IsTrue(result.Count == 1);
         }
 
         [TestMethod]
         public async Task DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsOnQueryVariable()
         {
             //Arrange
-            string textToPlaceInMainMethod = @" 
-									NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-                                    var query = (from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e);
-									return query.SingleOrDefault<Employee>();";
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnQueryVariableAndQueryInQuerySyntax();
 
-            var solGenerator = new RoslynSimpleSolutionGenerator(textToPlaceInMainMethod);
-
-            SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
-            var databaseQueries = new List<DatabaseQuery<LINQToSQL>>();
-            databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
-											where (e.EmployeeID == empId)
-											select e", _entityDeclarations, new DatabaseQueryVariable("query")));
-
-            target = new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries);
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithVariable(solGenerator);
 
             //Act
             target.Visit(await solGenerator.GetRootNodeForMainDocument());
-            List<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
+            HashSet<DatabaseAccessingMethodCallStatement<LINQToSQL>> result = target.DatabaseAccessingMethodCalls;
 
             //Assert
             Assert.IsTrue(result.Count == 1);
         }
+
+        [TestMethod]
+        public async Task ExtractsDbAccessingMethodCallWithCorrectValues_When_MethodHasALazyLoadingDbAccessingMethodCall()
+        {
+            //Arrange
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInQuerySyntax();
+
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithNoVariable(solGenerator);
+
+            //Act
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            DatabaseAccessingMethodCallStatement<LINQToSQL> result = target.DatabaseAccessingMethodCalls.First();
+
+            //Assert3
+            Assert.IsNull(result.AssignedVariable);
+            Assert.IsTrue(result.DatabaseQuery.EntityDeclarationsUsedInQuery.First().Name == "Employee");
+            Assert.IsTrue(result.DatabaseQuery.DatabaseQueryVariable.VariableName == "query");
+            Assert.IsFalse(result.DoesEagerLoad);
+            Assert.IsTrue(result.LoadedEntityDeclarations.Count() == 1);
+            Assert.IsTrue(result.LoadedEntityDeclarations[0].Name == "Employee");
+        }
+
+        [TestMethod]
+        public async Task ExecutedQueryIsSQLQueryWithAJoin_When_DBAccessingMethodQueryReturnsEagerLoadedEntities()
+        {
+            //Arrange
+            var solGenerator = new RoslynSimpleSolutionGenerator()
+                           .WithDbAccessingMethodCallOnSameLineAsQueryInQuerySyntax();
+
+            LINQToSQLDatabaseAccessingMethodCallExtractor target
+                = await new TargetBuilder()
+                .BuildWithDatabaseQueryWithNoVariable(solGenerator);
+
+            //Act
+            target.Visit(await solGenerator.GetRootNodeForMainDocument());
+            DatabaseAccessingMethodCallStatement<LINQToSQL> result = target.DatabaseAccessingMethodCalls.First();
+
+            //Assert
+            Assert.IsTrue(result.ExecutedQuery.ToLower().Contains("join"));
+        }
+
+        public class TargetBuilder
+        {
+            LINQToSQLDatabaseAccessingMethodCallExtractor target;
+            HashSet<DatabaseEntityDeclaration<LINQToSQL>> _entityDeclarations;
+
+            public TargetBuilder()
+            {
+                _entityDeclarations = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>()
+                                        {
+                                            new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee")
+                                        };
+            }
+
+            public async Task<LINQToSQLDatabaseAccessingMethodCallExtractor> BuildWithDatabaseQueryWithNoVariable(RoslynSimpleSolutionGenerator solGenerator)
+            {
+                SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
+
+                var databaseQueries = new HashSet<DatabaseQuery<LINQToSQL>>();
+                databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
+											where (e.EmployeeID == empId)
+											select e", _entityDeclarations, null));
+
+                return new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries, null, null, null);
+            }
+
+            public async Task<LINQToSQLDatabaseAccessingMethodCallExtractor> BuildWithDatabaseQueryWithVariable(RoslynSimpleSolutionGenerator solGenerator)
+            {
+                SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
+
+                DatabaseQueryVariable dbQV = new DatabaseQueryVariable("query");
+
+                var databaseQueries = new HashSet<DatabaseQuery<LINQToSQL>>();
+                databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
+											where (e.EmployeeID == empId)
+											select e", _entityDeclarations, dbQV));
+
+                return new LINQToSQLDatabaseAccessingMethodCallExtractor(semanticModelForMainClass, _entityDeclarations, databaseQueries, null, null, null);
+            }
+        }
+
     }
 }

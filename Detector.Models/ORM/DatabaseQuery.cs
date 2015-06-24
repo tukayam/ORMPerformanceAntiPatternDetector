@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Detector.Models.Base;
 
 namespace Detector.Models.ORM
@@ -9,15 +8,15 @@ namespace Detector.Models.ORM
         /// <summary>
         /// Entity declarations that the query uses
         /// </summary>
-        public List<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
+        public HashSet<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
         public DatabaseQueryVariable DatabaseQueryVariable { get; private set; }
-        public string QueryAsString { get; private set; }
+        public string QueryTextInCSharp { get; private set; }
 
         public CompilationInfo CompilationInfo { get; private set; }
 
-        public DatabaseQuery(string queryAsString, List<DatabaseEntityDeclaration<T>> entityDeclarations, DatabaseQueryVariable databaseQueryVariable)
+        public DatabaseQuery(string queryTextInCSharp, HashSet<DatabaseEntityDeclaration<T>> entityDeclarations, DatabaseQueryVariable databaseQueryVariable)
         {
-            this.QueryAsString = queryAsString;
+            this.QueryTextInCSharp = queryTextInCSharp;
             this.EntityDeclarationsUsedInQuery = entityDeclarations;
             this.DatabaseQueryVariable = databaseQueryVariable;
         }

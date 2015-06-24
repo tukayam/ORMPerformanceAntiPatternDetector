@@ -5,6 +5,6 @@ namespace Detector.Extractors.Base
 {
     public interface DatabaseQueryExtractor<T> where T : ORMToolType
     {
-        IEnumerable<DatabaseQuery<T>> DatabaseQueries { get; }
+        HashSet<DatabaseQuery<T>> DatabaseQueries { get; }
     }
 }

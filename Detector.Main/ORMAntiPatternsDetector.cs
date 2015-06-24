@@ -1,4 +1,4 @@
-﻿using Detector.Extractors;
+﻿using Detector.Extractors.LINQToSQL40;
 using Detector.Main.DetectionRules;
 using Detector.Models.AntiPatterns;
 using Detector.Models.ORM;
@@ -10,7 +10,7 @@ namespace Detector.Main
 {
     public class ORMAntiPatternsDetector<T> where T : ORMToolType
     {
-        public async Task<List<AntiPatternBase>> Detect(Solution roslynSolution)
+        public async Task<List<AntiPatternBase>> DetectAsync(Solution roslynSolution)
         {
             var godClass = new GodClass();
             await godClass.ExtractFromRoslynSolutionAsync(roslynSolution);

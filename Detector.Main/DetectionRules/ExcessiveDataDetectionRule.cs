@@ -17,7 +17,7 @@ namespace Detector.Main.DetectionRules
 
         private bool TreeHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed()
         {
-            List<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>().ToList();
+            IEnumerable<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>();
 
             List<NodeBase> databaseEntityVariableRelatedEntityCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseEntityVariableRelatedEntityCallStatement<T>>().ToList();
 

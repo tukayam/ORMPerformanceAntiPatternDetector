@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Detector.Extractors.DatabaseEntities;
 using Microsoft.CodeAnalysis;
-using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using System.Threading.Tasks;
+using Detector.Extractors.LINQToSQL40;
+using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
 
 namespace Detector.Extractors.Tests
 {

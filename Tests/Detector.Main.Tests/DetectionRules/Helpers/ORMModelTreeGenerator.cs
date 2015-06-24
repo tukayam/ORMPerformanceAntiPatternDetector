@@ -12,7 +12,7 @@ namespace Detector.Main.Tests.DetectionRules.Helpers
         DatabaseEntityDeclaration<LINQToSQL> customerEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Customer");
         DatabaseEntityDeclaration<LINQToSQL> orderEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Order");
         DatabaseAccessingMethodCallStatement<LINQToSQL> dbAccessingMethodCall;
-        DatabaseEntityVariable<LINQToSQL> databaseEntityObject = new DatabaseEntityVariable<LINQToSQL>("customer1", null);
+        DatabaseEntityVariableDeclaration<LINQToSQL> databaseEntityObject = new DatabaseEntityVariableDeclaration<LINQToSQL>("customer1", null);
 
         public ORMModelTreeGenerator()
         {
@@ -47,20 +47,20 @@ namespace Detector.Main.Tests.DetectionRules.Helpers
 
         private DatabaseAccessingMethodCallStatement<LINQToSQL> GetDatabaseAccessingMethodCall()
         {
-            var entityDeclarationsUsedInQuery = new List<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
+            var entityDeclarationsUsedInQuery = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
             DatabaseQueryVariable databaseQueryVariable = null;
 
             var dbQuery = new DatabaseQuery<LINQToSQL>("(from c in dc.Customers where c.Id=1 select c)", entityDeclarationsUsedInQuery, databaseQueryVariable);
             return new DatabaseAccessingMethodCallStatement<LINQToSQL>(dbQuery, null);
 
         }
-
-        public void WithDatabaseAccessingMEthodCallLoadingVariable(DatabaseEntityVariable<LINQToSQL> dbEntityVariable)
+        
+        public void WithDatabaseAccessingMEthodCallLoadingVariable(DatabaseEntityVariableDeclaration<LINQToSQL> dbEntityVariable)
         {
             var customerEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Customer");
             var orderEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Order");
 
-            var entityDeclarationsUsedInQuery = new List<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
+            var entityDeclarationsUsedInQuery = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
             DatabaseQueryVariable databaseQueryVariable = null;
 
             var dbQuery = new DatabaseQuery<LINQToSQL>("(from c in dc.Customers where c.Id=1 select c)", entityDeclarationsUsedInQuery, databaseQueryVariable);

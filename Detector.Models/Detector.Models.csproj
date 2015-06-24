@@ -99,7 +99,7 @@
     <Compile Include="ORM\ORMModelTree.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntityDeclaration.cs" />
-    <Compile Include="ORM\DatabaseEntityVariable.cs" />
+    <Compile Include="ORM\DatabaseEntityVariableDeclaration.cs" />
     <Compile Include="ORM\DatabaseEntityObjectUpdateStatement.cs" />
     <Compile Include="ORM\DataContextInitializationStatement.cs" />
     <Compile Include="ORM\Mapping.cs" />
@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagramDatabaseAccessingLoopDeclarations.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,5 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.NHibernate40\bin\Debug\Detector.Extractors.NHibernate40.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.NHibernate40\bin\Debug\Detector.Extractors.NHibernate40.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.NHibernate40\obj\Debug\Detector.Extractors.NHibernate40.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.NHibernate40\obj\Debug\Detector.Extractors.NHibernate40.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.NHibernate40\obj\Debug\Detector.Extractors.NHibernate40.pdb

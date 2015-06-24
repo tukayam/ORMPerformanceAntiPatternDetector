@@ -1,7 +1,6 @@
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.WPFApp.Tests.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.WPFApp.Tests.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.WPFApp.exe
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
@@ -12,7 +11,6 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\System.Composition.Hosting.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.Desktop.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.WPFApp.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
@@ -26,8 +24,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\obj\Debug\Detector.WPFApp.Tests.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\obj\Debug\Detector.WPFApp.Tests.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Models.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Extractors.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Models.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Extractors.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Extractors.Base.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Extractors.Base.pdb

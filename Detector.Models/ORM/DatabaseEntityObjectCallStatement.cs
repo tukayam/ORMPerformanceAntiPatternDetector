@@ -7,9 +7,9 @@ namespace Detector.Models.ORM
     {
         public CompilationInfo CompilationInfo { get; private set; }
 
-        public DatabaseEntityVariable<T> CalledDatabaseEntityVariable { get; private set; }
+        public DatabaseEntityVariableDeclaration<T> CalledDatabaseEntityVariable { get; private set; }
 
-        public DatabaseEntityObjectCallStatement(DatabaseEntityVariable<T> calledDatabaseEntityVariable, CompilationInfo compilationUnit)
+        public DatabaseEntityObjectCallStatement(DatabaseEntityVariableDeclaration<T> calledDatabaseEntityVariable, CompilationInfo compilationUnit)
         {
             this.CompilationInfo = compilationUnit;
             this.CalledDatabaseEntityVariable = calledDatabaseEntityVariable;

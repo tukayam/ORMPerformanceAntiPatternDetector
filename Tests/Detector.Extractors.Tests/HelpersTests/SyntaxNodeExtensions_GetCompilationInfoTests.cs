@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Detector.Extractors.Tests.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
 using Detector.Models.Base;
-using Detector.Extractors.Helpers;
+using Detector.Extractors.Base.Helpers;
 using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
+using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
 
 namespace Detector.Extractors.Tests.HelpersTests
 {

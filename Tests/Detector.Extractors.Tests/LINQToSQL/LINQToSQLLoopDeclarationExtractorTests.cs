@@ -1,12 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
 using System.Collections.Generic;
 using Moq;
-using Detector.Extractors.Tests.RoslynSolutionGenerators;
-using Microsoft.CodeAnalysis;
-using Detector.Models.Others;
+using Detector.Extractors.LINQToSQL40;
 
 namespace Detector.Extractors.Tests
 {

@@ -1,6 +1,6 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
+using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -11,22 +11,27 @@ namespace Detector.Extractors.LINQToSQL40
 {
     public class LINQToSQLDatabaseQueryExtractor : CSharpSyntaxWalker, DatabaseQueryExtractor<LINQToSQL>
     {
-        private readonly HashSet<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
+        private readonly ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
         private readonly SemanticModel _model;
 
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
         private Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>> _databaseQueries;
 
-        public HashSet<DatabaseQuery<LINQToSQL>> DatabaseQueries
+        public ModelCollection<DatabaseQuery<LINQToSQL>> DatabaseQueries
         {
             get
             {
-                return new HashSet<DatabaseQuery<LINQToSQL>>(_databaseQueries.Values);
+                var queries = new ModelCollection<DatabaseQuery<LINQToSQL>>();
+                foreach (var item in _databaseQueries.Values)
+                {
+                    queries.Add(item);
+                }
+                return queries;
             }
         }
 
         public LINQToSQLDatabaseQueryExtractor(SemanticModel model
-            , HashSet<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations)
+            , ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations)
             : base()
         {
             this._model = model;
@@ -55,7 +60,7 @@ namespace Detector.Extractors.LINQToSQL40
                 if (QueryIsDatabaseQuery(node))
                 {
                     string queryText = node.GetText().ToString();
-                    HashSet<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
+                    ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
 
                     var queryVariable = (from qv in _databaseQueryVariables
                                          where qv.Value == node
@@ -83,9 +88,9 @@ namespace Detector.Extractors.LINQToSQL40
             return false;
         }
 
-        private HashSet<DatabaseEntityDeclaration<LINQToSQL>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
+        private ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
         {
-            var result = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>();
+            var result = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
             foreach (var qeNode in query.DescendantNodes())
             {
                 ITypeSymbol typeOfNode = _model.GetTypeInfo(qeNode).Type;

@@ -1,4 +1,5 @@
-﻿using Detector.Models.Base;
+﻿using System;
+using Detector.Models.Base;
 
 namespace Detector.Models.Others
 {
@@ -7,6 +8,8 @@ namespace Detector.Models.Others
         public CompilationInfo CompilationInfo { get; private set; }
 
         public string MethodName { get; private set; }
+
+        public string ContainingClassName { get; private set; }
 
         public MethodDeclaration(string methodName, CompilationInfo compilationInfo)
         {

@@ -1,10 +1,11 @@
 ﻿using Detector.Models.ORM;
+using Detector.Models.Others;
 using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
-    public interface DatabaseQueryExtractor<T> where T : ORMToolType
+    public interface DatabaseQueryExtractor<T> : Extractor where T : ORMToolType
     {
-        HashSet<DatabaseQuery<T>> DatabaseQueries { get; }
+        ModelCollection<DatabaseQuery<T>> DatabaseQueries { get; }
     }
 }

@@ -47,7 +47,7 @@ namespace Detector.Main.Tests.DetectionRules.Helpers
 
         private DatabaseAccessingMethodCallStatement<LINQToSQL> GetDatabaseAccessingMethodCall()
         {
-            var entityDeclarationsUsedInQuery = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
+            var entityDeclarationsUsedInQuery = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
             DatabaseQueryVariable databaseQueryVariable = null;
 
             var dbQuery = new DatabaseQuery<LINQToSQL>("(from c in dc.Customers where c.Id=1 select c)", entityDeclarationsUsedInQuery, databaseQueryVariable);
@@ -60,7 +60,7 @@ namespace Detector.Main.Tests.DetectionRules.Helpers
             var customerEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Customer");
             var orderEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>("Order");
 
-            var entityDeclarationsUsedInQuery = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
+            var entityDeclarationsUsedInQuery = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>() { customerEntityDeclaration };
             DatabaseQueryVariable databaseQueryVariable = null;
 
             var dbQuery = new DatabaseQuery<LINQToSQL>("(from c in dc.Customers where c.Id=1 select c)", entityDeclarationsUsedInQuery, databaseQueryVariable);

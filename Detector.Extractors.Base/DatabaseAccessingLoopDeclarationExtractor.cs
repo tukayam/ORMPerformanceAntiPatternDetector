@@ -1,11 +1,11 @@
 ﻿using Detector.Models;
 using Detector.Models.ORM;
-using System.Collections.Generic;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.Base
 {
-    public interface DatabaseAccessingLoopDeclarationExtractor<T> where T : ORMToolType
+    public interface DatabaseAccessingLoopDeclarationExtractor<T> :Extractor where T : ORMToolType
     {
-        List<DatabaseAccessingLoopDeclaration<T>> DatabaseAccessingLoopDeclarations { get; }
+        ModelCollection<DatabaseAccessingLoopDeclaration<T>> DatabaseAccessingLoopDeclarations { get; }
     }
 }

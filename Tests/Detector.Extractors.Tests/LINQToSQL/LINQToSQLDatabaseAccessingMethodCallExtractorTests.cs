@@ -7,6 +7,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Detector.Extractors.LINQToSQL40;
 using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.Tests
 {
@@ -137,11 +138,11 @@ namespace Detector.Extractors.Tests
         public class TargetBuilder
         {
             LINQToSQLDatabaseAccessingMethodCallExtractor target;
-            HashSet<DatabaseEntityDeclaration<LINQToSQL>> _entityDeclarations;
+            ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> _entityDeclarations;
 
             public TargetBuilder()
             {
-                _entityDeclarations = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>()
+                _entityDeclarations = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>()
                                         {
                                             new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee")
                                         };
@@ -151,7 +152,7 @@ namespace Detector.Extractors.Tests
             {
                 SemanticModel semanticModelForMainClass = await solGenerator.GetSemanticModelForMainClass();
 
-                var databaseQueries = new HashSet<DatabaseQuery<LINQToSQL>>();
+                var databaseQueries = new ModelCollection<DatabaseQuery<LINQToSQL>>();
                 databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
 											where (e.EmployeeID == empId)
 											select e", _entityDeclarations, null));
@@ -165,7 +166,7 @@ namespace Detector.Extractors.Tests
 
                 DatabaseQueryVariable dbQV = new DatabaseQueryVariable("query");
 
-                var databaseQueries = new HashSet<DatabaseQuery<LINQToSQL>>();
+                var databaseQueries = new ModelCollection<DatabaseQuery<LINQToSQL>>();
                 databaseQueries.Add(new DatabaseQuery<LINQToSQL>(@"from e in dc.Employees
 											where (e.EmployeeID == empId)
 											select e", _entityDeclarations, dbQV));

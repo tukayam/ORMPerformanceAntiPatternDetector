@@ -4,6 +4,7 @@ using Detector.Models.ORM;
 using System.Collections.Generic;
 using Moq;
 using Detector.Extractors.LINQToSQL40;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.Tests
 {
@@ -16,7 +17,7 @@ namespace Detector.Extractors.Tests
         [TestInitialize]
         public void Initialize()
         {
-            var entityDeclarations = new List<DatabaseEntityDeclaration<LINQToSQL>>();
+            var entityDeclarations = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
             entityDeclarations.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
             var mock = new Mock<DatabaseEntityDeclarationExtractor<LINQToSQL>>();
             mock.Setup(foo => foo.DatabaseEntityDeclarations).Returns(entityDeclarations);

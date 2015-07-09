@@ -9,12 +9,12 @@ namespace Detector.Extractors.Tests
     [TestClass]
     public class LINQToSQLDatabaseEntityDeclarationExtractorTests
     {
-        LINQToSQLDatabaseEntityDeclarationExtractor target;
+        LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument target;
 
         [TestInitialize]
         public void Initialize()
         {
-            target = new LINQToSQLDatabaseEntityDeclarationExtractor();
+            target = new LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument();
         }
 
         [TestMethod]

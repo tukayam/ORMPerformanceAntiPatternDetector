@@ -3,13 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow">
     <Grid Margin="0,0,0,-174">
-        <Button Name="btnChooseSolution" Content="Choose Solution to Detect Anti Patterns" HorizontalAlignment="Left" Margin="358,61,0,0" VerticalAlignment="Top" Width="380" Height="32" Click="btnChooseSolution_Click"/>
-        <Label Content="Solution chosen: " HorizontalAlignment="Left" Margin="70,30,0,0" VerticalAlignment="Top" Width="103"/>
-        <Label Name="lblSolutionName" HorizontalAlignment="Left" Margin="190,30,0,0" VerticalAlignment="Top" Width="260" Height="26"/>
-        <Label Content="Choose ORM tool used in solution:" HorizontalAlignment="Left" Margin="70,98,0,0" VerticalAlignment="Top" Width="197"/>
-        <ComboBox HorizontalAlignment="Left" Margin="358,102,0,0" VerticalAlignment="Top" Width="178"/>
-        <Button Name="btnDetectAntiPatterns" Content="Detect anti-patterns" HorizontalAlignment="Left" Margin="70,166,0,0" VerticalAlignment="Top" Width="178" Height="30" Click="btnDetectAntiPatterns_Click"/>
-        <ListBox Name="lbResults" HorizontalAlignment="Left" Height="260" Margin="70,216,0,0" VerticalAlignment="Top" Width="668"/>
-
+        <Button Name="btnChooseSolution" Content="Choose Solution" HorizontalAlignment="Left" Margin="40,23,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnChooseSolution_Click"/>
+        <Label Name="lblSolutionName" HorizontalAlignment="Left" Margin="170,26,0,0" VerticalAlignment="Top" Width="358" Height="26"/>
+        <Button Name="btnChooseORMTool" Content="Choose ORM Tool" HorizontalAlignment="Left" Margin="40,69,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnChooseORMTool_Click"/>
+        <Label x:Name="lblChosenORMTool" HorizontalAlignment="Left" Margin="170,69,0,0" VerticalAlignment="Top" Width="358" Height="26"/>
+        <Button x:Name="btnFindAntiPatterns" Content="Find Anti-Patterns" HorizontalAlignment="Left" Margin="605,174,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnDetectAntiPatterns_Click"/>
+        <Label x:Name="lblSandboxExtractingDocumentsInSolution" Content="Extracting C# documents in solution . . ." Visibility="Hidden" HorizontalAlignment="Left" Margin="40,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.947,1.154"/>
+        <Button x:Name="btnChooseDocuments" Content="Choose documents" HorizontalAlignment="Left" Margin="40,174,0,0" VerticalAlignment="Top" Width="119" Height="29" Click="btnChooseDocuments_Click"/>
     </Grid>
 </Window>

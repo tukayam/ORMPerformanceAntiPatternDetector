@@ -9,7 +9,7 @@ namespace Detector.Extractors.Tests
     [TestClass]
     public class LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolutionTests
     {
-        LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolution target;
+        LINQToSQLDatabaseEntityDeclarationExtractor target;
 
         [TestMethod]
         public async Task DetectsDatabaseEntityDeclarations_When_RoslynComplexSolutionIsUsed()
@@ -18,10 +18,10 @@ namespace Detector.Extractors.Tests
             var solGen = new RoslynComplexSolutionGenerator();          
             var solution = solGen.GetRoslynSolution();
 
-            target = new LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolution();
+            target = new LINQToSQLDatabaseEntityDeclarationExtractor();
 
             //Act
-            var result = await target.ExtractFromSolution(solution);
+            var result = await target.ExtractAsync(solution);
 
 
             //Assert

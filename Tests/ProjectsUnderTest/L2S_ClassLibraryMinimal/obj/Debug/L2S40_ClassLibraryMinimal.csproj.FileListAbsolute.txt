@@ -1,0 +1,5 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\L2S_ClassLibraryMinimal\bin\Debug\L2S_ClassLibraryMinimal.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\L2S_ClassLibraryMinimal\bin\Debug\L2S_ClassLibraryMinimal.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\L2S_ClassLibraryMinimal\obj\Debug\L2S40_ClassLibraryMinimal.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\L2S_ClassLibraryMinimal\obj\Debug\L2S_ClassLibraryMinimal.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\L2S_ClassLibraryMinimal\obj\Debug\L2S_ClassLibraryMinimal.pdb

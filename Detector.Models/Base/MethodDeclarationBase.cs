@@ -3,5 +3,6 @@
     public interface MethodDeclarationBase : ModelBase
     {
         string MethodName { get; }
+        string ContainingClassName { get; }
     }
 }

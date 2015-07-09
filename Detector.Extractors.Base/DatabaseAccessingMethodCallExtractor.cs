@@ -1,10 +1,11 @@
 ﻿using Detector.Models.ORM;
+using Detector.Models.Others;
 using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
-    public interface DatabaseAccessingMethodCallExtractor<T> where T : ORMToolType
+    public interface DatabaseAccessingMethodCallsExtractor<T> : Extractor where T : ORMToolType
     {
-        HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
+        ModelCollection<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
     }
 }

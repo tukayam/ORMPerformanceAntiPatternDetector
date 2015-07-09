@@ -1,10 +1,15 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Extractors.Base;
+using Detector.Models.ORM;
+using Detector.Models.Others;
+using Microsoft.CodeAnalysis;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public interface DatabaseEntityDeclarationExtractor<T> where T : ORMToolType
+    public interface DatabaseEntityDeclarationExtractor<T> : Extractor where T : ORMToolType
     {
-        List<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
+        ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
+        Task<ModelCollection<DatabaseEntityDeclaration<T>>> ExtractAsync(Solution solution);
     }
 }

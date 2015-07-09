@@ -13,7 +13,7 @@ namespace Detector.Extractors.LINQToSQL40
 {
     public class LINQToSQLLoopDeclarationExtractor : CSharpSyntaxWalker, DatabaseAccessingLoopDeclarationExtractor<LINQToSQL>, LoopDeclarationExtractor
     {
-        public List<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
+        public ModelCollection<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
         {
             get
             {

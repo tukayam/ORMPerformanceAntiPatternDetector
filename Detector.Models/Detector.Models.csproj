@@ -79,7 +79,7 @@
     <Compile Include="Base\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\LoopDeclarationBase.cs" />
     <Compile Include="Base\MethodCall.cs" />
-    <Compile Include="Base\ModelTreeBase.cs" />
+    <Compile Include="Base\CodeExecutionPath.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Base\NodeBase.cs" />
     <Compile Include="Base\VariableDeclaration.cs" />
@@ -112,6 +112,7 @@
     <Compile Include="Others\ForEachLoopDeclaration.cs" />
     <Compile Include="Others\ForLoopDeclaration.cs" />
     <Compile Include="Others\MethodDeclaration.cs" />
+    <Compile Include="Others\ModelCollection.cs" />
     <Compile Include="Others\WhileLoopDeclaration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ORM\DatabaseAccessingWhileLoopDeclaration.cs" />

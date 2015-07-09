@@ -1,0 +1,5 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF_Northwind\bin\Debug\EF_Northwind.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF_Northwind\bin\Debug\EF_Northwind.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF_Northwind\obj\Debug\EF62_CodeFirst_Northwind.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF_Northwind\obj\Debug\EF_Northwind.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF_Northwind\obj\Debug\EF_Northwind.pdb

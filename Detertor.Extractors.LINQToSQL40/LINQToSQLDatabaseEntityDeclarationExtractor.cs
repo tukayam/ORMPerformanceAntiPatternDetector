@@ -1,37 +1,37 @@
 ﻿using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public sealed class LINQToSQLDatabaseEntityDeclarationExtractor : CSharpSyntaxWalker, DatabaseEntityDeclarationExtractor<LINQToSQL>
+    public class LINQToSQLDatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<LINQToSQL>
     {
-        private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
+        public ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; private set; }
 
-        public List<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations
+        public async Task<ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>> ExtractAsync(Solution solution)
         {
-            get
+            foreach (var project in solution.Projects)
             {
-                return _entities;
-            }
-        }
+                foreach (var documentId in project.DocumentIds)
+                {
+                    var document = solution.GetDocument(documentId);
 
-        public LINQToSQLDatabaseEntityDeclarationExtractor()
-            : base()
-        {
-            _entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
-        }
+                    SyntaxNode root = await document.GetSyntaxRootAsync();
 
-        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
-        {
-            if (node.AttributeLists.ToString().Contains("TableAttribute"))
-            {
-                _entities.Add(new DatabaseEntityDeclaration<LINQToSQL>(node.Identifier.ToString()) { });
+                    var dbEntityDeclarationExtractor = new LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument();
+                    dbEntityDeclarationExtractor.Visit(root);
+                    foreach (var dbEntityDeclaration in dbEntityDeclarationExtractor.DatabaseEntityDeclarations)
+                    {
+                        DatabaseEntityDeclarations.Add(dbEntityDeclaration);
+                    }
+                }
             }
 
-            base.VisitClassDeclaration(node);
+            return DatabaseEntityDeclarations;
         }
     }
 }

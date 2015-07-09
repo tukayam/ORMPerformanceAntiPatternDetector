@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeExecutionPathsConstructor.cs" />
     <Compile Include="DetectionRules\DetectionRule.cs" />
     <Compile Include="DetectionRules\DetectionRuleFactory.cs" />
     <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />

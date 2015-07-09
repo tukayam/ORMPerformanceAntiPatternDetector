@@ -1,0 +1,7 @@
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\bin\Debug\Detector.CallGraphConstructor.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\bin\Debug\Detector.CallGraphConstructor.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\bin\Debug\Detector.Models.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\bin\Debug\Detector.Models.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\obj\Debug\Detector.CallGraphConstructor.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\obj\Debug\Detector.CallGraphConstructor.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.CallGraphConstructor\obj\Debug\Detector.CallGraphConstructor.pdb

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
-    public interface LoopDeclarationExtractor
+    public interface LoopDeclarationExtractor : Extractor
     {
         List<LoopDeclarationBase> LoopDeclarations { get; }
     }

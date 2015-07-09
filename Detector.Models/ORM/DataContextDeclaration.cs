@@ -2,7 +2,7 @@
 
 namespace Detector.Models.ORM
 {
-    public class DataContextDeclaration<T> where T : ORMToolType
+    public class DataContextDeclaration<T>:ModelBase where T : ORMToolType
     {
         public CompilationInfo CompilationInfo { get; private set; }
         public string Name { get; private set; }

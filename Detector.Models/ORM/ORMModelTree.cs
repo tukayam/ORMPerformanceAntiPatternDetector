@@ -4,7 +4,7 @@ using Detector.Models.Base;
 
 namespace Detector.Models
 {
-    public class ORMModelTree : ModelTreeBase
+    public class ORMModelTree 
     {
         public NodeBase RootNode
         {

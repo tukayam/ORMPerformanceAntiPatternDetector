@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Detector.Extractors.LINQToSQL40;
 using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.Tests
 {
@@ -53,7 +54,7 @@ namespace Detector.Extractors.Tests
         }
 
         [TestMethod]
-        public async Task ExtractsOneQueryWithCorrectAmountOfUsedEntities_When_NoQueryVariableIsDeclared()
+        public async Task ExtractsOneQueryWithCorrectAmountOfUsedEntities_When_QueryIsInMethodSyntaxAndNoQueryVariableIsDeclared()
         {
             //Arrange
             var solGenerator = new RoslynSimpleSolutionGenerator()
@@ -100,11 +101,11 @@ namespace Detector.Extractors.Tests
 
         public class TargetBuilder
         {
-            HashSet<DatabaseEntityDeclaration<LINQToSQL>> entities;
+            ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> entities;
 
             public TargetBuilder()
             {
-                entities = new HashSet<DatabaseEntityDeclaration<LINQToSQL>>();
+                entities = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
                 entities.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
             }
 

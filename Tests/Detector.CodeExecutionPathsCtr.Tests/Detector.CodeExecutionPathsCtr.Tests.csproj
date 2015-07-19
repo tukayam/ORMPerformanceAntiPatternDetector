@@ -55,7 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+    <ProjectReference Include="..\..\Extractors\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
       <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
       <Name>Detector.Extractors.Base</Name>
     </ProjectReference>
@@ -63,6 +63,9 @@
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

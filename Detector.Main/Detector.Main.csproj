@@ -109,11 +109,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+    <ProjectReference Include="..\Extractors\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
       <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
       <Name>Detector.Extractors.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Detector.Extractors\Detector.Extractors.csproj">
+    <ProjectReference Include="..\Extractors\Detector.Extractors\Detector.Extractors.csproj">
       <Project>{200f6e6d-e6bd-4f1b-8ead-55ecbc09b9f3}</Project>
       <Name>Detector.Extractors</Name>
     </ProjectReference>
@@ -121,12 +121,13 @@
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>
       <Name>Detector.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Detertor.Extractors.LINQToSQL40\Detertor.Extractors.LINQToSQL40.csproj">
+    <ProjectReference Include="..\Extractors\Detertor.Extractors.LINQToSQL40\Detector.Extractors.LINQToSQL40.csproj">
       <Project>{91bfb500-e859-4f36-96c0-930b2110be18}</Project>
-      <Name>Detertor.Extractors.LINQToSQL40</Name>
+      <Name>Detector.Extractors.LINQToSQL40</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

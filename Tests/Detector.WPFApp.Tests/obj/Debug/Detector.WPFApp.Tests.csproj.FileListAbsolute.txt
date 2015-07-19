@@ -25,3 +25,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\obj\Debug\Detector.WPFApp.Tests.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Models.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.Models.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.WPFApp.Tests\bin\Debug\Detector.WPFApp.Tests.dll.config

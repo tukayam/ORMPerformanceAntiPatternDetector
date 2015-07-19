@@ -41,3 +41,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Moq.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Detector.Extractors.Base.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Moq.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Main.Tests\bin\Debug\Detector.Main.Tests.dll.config

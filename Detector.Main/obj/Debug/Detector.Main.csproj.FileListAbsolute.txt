@@ -35,9 +35,10 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\System.Composition.Runtime.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\System.Composition.TypedParts.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\System.Reflection.Metadata.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Main.dll.config
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.Base.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.Base.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detertor.Extractors.LINQToSQL40.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.Base.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detector.Extractors.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Main\bin\Debug\Detertor.Extractors.LINQToSQL40.pdb

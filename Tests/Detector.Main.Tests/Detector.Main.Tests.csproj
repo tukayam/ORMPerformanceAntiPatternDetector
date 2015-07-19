@@ -126,7 +126,7 @@
     <Compile Include="Stubs\FakeORMToolType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
+    <ProjectReference Include="..\..\Extractors\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
       <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
       <Name>Detector.Extractors.Base</Name>
     </ProjectReference>
@@ -144,6 +144,7 @@
     <Analyzer Include="..\..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0-rc2\tools\analyzers\C#\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

@@ -18,19 +18,15 @@ namespace Detector.Main
 
         public async Task<IEnumerable<CodeExecutionPath>> Construct(Solution solution)
         {
-            DatabaseAccessingMethodCallsExtractor<T> dbAccessingMethodCallsExtractor=  _extractorFactory.GetDatabaseAccessingMethodCallsExtractor();
+            DatabaseEntityDeclarationExtractor<T> dbEntityDeclarationExtractor = _extractorFactory.GetDatabaseEntityDeclarationExtractor();
+            DatabaseAccessingMethodCallsExtractor<T> dbAccessingMethodCallsExtractor = _extractorFactory.GetDatabaseAccessingMethodCallsExtractor();
 
+            //Find all root methods
+            //Use call graph construction algorithm to generate code execution paths containing class, method, variable declarations
 
-            //Go through each file in the solution
-            //Call the db accessing method call extractor to get all the method calls
-            //Get CompilationInfo of each method call to get method declaration
-            //Create a code execution path for each method declaration
-            //Find all calls to the method declaration
-            //Create a new code execution path
-
-            //Fill in each method declaration in code execution path with new models
-
+            //Foreach code execution path, take the documents, send them to extractors, generate a new code execution path with ORM model
+            
             return null;
-                }
+        }
     }
 }

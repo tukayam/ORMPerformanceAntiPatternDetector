@@ -11,18 +11,18 @@ namespace Detector.Extractors.Tests
     [TestClass]
     public class LINQToSQLLoopDeclarationExtractorTests
     {
-        LINQToSQLLoopDeclarationExtractor target;
-        DatabaseEntityDeclarationExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
+        //LINQToSQLLoopDeclarationExtractor target;
+        //DatabaseEntityDeclarationExtractor<LINQToSQL> _databaseEntityDeclarationsExtractor;
 
-        [TestInitialize]
-        public void Initialize()
-        {
-            var entityDeclarations = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
-            entityDeclarations.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
-            var mock = new Mock<DatabaseEntityDeclarationExtractor<LINQToSQL>>();
-            mock.Setup(foo => foo.DatabaseEntityDeclarations).Returns(entityDeclarations);
-            _databaseEntityDeclarationsExtractor = mock.Object;
-        }        
+        //[TestInitialize]
+        //public void Initialize()
+        //{
+        //    var entityDeclarations = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
+        //    entityDeclarations.Add(new DatabaseEntityDeclaration<LINQToSQL>("L2S_Northwind.Employee"));
+        //    var mock = new Mock<DatabaseEntityDeclarationExtractor<LINQToSQL>>();
+        //    mock.Setup(foo => foo.DatabaseEntityDeclarations).Returns(entityDeclarations);
+        //    _databaseEntityDeclarationsExtractor = mock.Object;
+        //}        
 
         //[TestMethod]
         //public void DetectsDatabaseAccessingMethodCall_When_DBAccessingMethodIsInAForEachLoop()

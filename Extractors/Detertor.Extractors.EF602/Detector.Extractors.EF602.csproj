@@ -106,8 +106,6 @@
     <Compile Include="DatabaseQueryExtractor.cs" />
     <Compile Include="DataContextDeclarationExtractor.cs" />
     <Compile Include="LoopDeclarationExtractor.cs" />
-    <Compile Include="Preprocessors\DatabaseQueryExtractorPreprocessorStrategy.cs" />
-    <Compile Include="Preprocessors\LINQToSQLExtractorsPreprocessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

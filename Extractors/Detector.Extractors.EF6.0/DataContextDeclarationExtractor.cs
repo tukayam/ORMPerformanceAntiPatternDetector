@@ -2,13 +2,10 @@
 using Detector.Models.ORM;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
+//using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
 using System.Threading.Tasks;
-using Detector.Extractors.Base.Helpers;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System;
 
 namespace Detector.Extractors.EF60
 {
@@ -28,7 +25,6 @@ namespace Detector.Extractors.EF60
             _dataContextDeclarations = new ModelCollection<DataContextDeclaration<EntityFramework>>();
         }
 
-        SemanticModel _model;
         public async Task FindDataContextDeclarationsAsync(Solution solution)
         {
             foreach (var project in solution.Projects)
@@ -43,21 +39,17 @@ namespace Detector.Extractors.EF60
             {
                 SyntaxNode root = await document.GetSyntaxRootAsync();
                 SemanticModel semanticModel = await document.GetSemanticModelAsync();
-                var y = root.DescendantNodes();
-                foreach (var classDeclarationSyntax in root.DescendantNodes().OfType<ClassDeclarationSyntax>())
+               
+                foreach (ClassDeclarationSyntax classDeclarationSyntax in root.DescendantNodes().OfType<ClassDeclarationSyntax>())
                 {
-                    // ITypeSymbol symbol = ((ILocalSymbol)semanticModel.GetDeclaredSymbol(classDeclarationSyntax)).Type;
-                    //var xx = semanticModel.GetTypeInfo(classDeclarationSyntax);
-                    //if (InheritsFrom<DbContext>(symbol))
-                    //{
-                    //    var dataContextDecl = new DataContextDeclaration<EntityFramework>(classDeclarationSyntax.Identifier.Text, classDeclarationSyntax.GetCompilationInfo());
-                    //    DataContextDeclarations.Add(dataContextDecl);
-                    //}
+                    ISymbol symbol = semanticModel.GetDeclaredSymbol(classDeclarationSyntax);
+
+                    
                 }
             }
         }
 
-        private bool InheritsFrom<T>(ITypeSymbol symbol)
+        private bool InheritsFrom<T>(INamedTypeSymbol symbol)
         {
             while (true)
             {

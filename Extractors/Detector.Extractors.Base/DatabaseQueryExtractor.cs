@@ -1,11 +1,14 @@
 ﻿using Detector.Models.ORM;
 using Detector.Models.Others;
-using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
-    public interface DatabaseQueryExtractor<T> : Extractor where T : ORMToolType
+    public abstract class DatabaseQueryExtractor<T> : Extractor<T> where T : ORMToolType
     {
         ModelCollection<DatabaseQuery<T>> DatabaseQueries { get; }
+
+        public DatabaseQueryExtractor(Context<T> context)
+            : base(context)
+        { }
     }
 }

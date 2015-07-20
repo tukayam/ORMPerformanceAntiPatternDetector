@@ -4,8 +4,12 @@ using Detector.Models.Others;
 
 namespace Detector.Extractors.Base
 {
-    public interface DatabaseAccessingLoopDeclarationExtractor<T> :Extractor where T : ORMToolType
+    public abstract class DatabaseAccessingLoopDeclarationExtractor<T> : Extractor<T> where T : ORMToolType
     {
         ModelCollection<DatabaseAccessingLoopDeclaration<T>> DatabaseAccessingLoopDeclarations { get; }
+
+        public DatabaseAccessingLoopDeclarationExtractor(Context<T> context)
+            :base(context)
+        {   }
     }
 }

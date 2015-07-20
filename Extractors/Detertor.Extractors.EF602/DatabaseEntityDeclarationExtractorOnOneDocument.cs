@@ -1,16 +1,16 @@
-﻿using Detector.Extractors.DatabaseEntities;
-using Detector.Models.ORM;
+﻿using Detector.Models.ORM;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 
 namespace Detector.Extractors.EF602
 {
     public sealed class DatabaseEntityDeclarationExtractorOnOneDocument : CSharpSyntaxWalker
     {
-        private List<DatabaseEntityDeclaration<LINQToSQL>> _entities;
+        private List<DatabaseEntityDeclaration<EntityFramework>> _entities;
 
-        public List<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations
+        public List<DatabaseEntityDeclaration<EntityFramework>> DatabaseEntityDeclarations
         {
             get
             {
@@ -21,15 +21,12 @@ namespace Detector.Extractors.EF602
         public DatabaseEntityDeclarationExtractorOnOneDocument()
             : base()
         {
-            _entities = new List<DatabaseEntityDeclaration<LINQToSQL>>();
+            _entities = new List<DatabaseEntityDeclaration<EntityFramework>>();
         }
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (node.AttributeLists.ToString().Contains("TableAttribute"))
-            {
-                _entities.Add(new DatabaseEntityDeclaration<LINQToSQL>(node.Identifier.ToString()) { });
-            }
+           
 
             base.VisitClassDeclaration(node);
         }

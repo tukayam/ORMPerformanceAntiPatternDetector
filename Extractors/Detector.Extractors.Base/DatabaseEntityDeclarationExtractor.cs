@@ -2,14 +2,18 @@
 using Detector.Models.ORM;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Detector.Extractors.DatabaseEntities
 {
-    public interface DatabaseEntityDeclarationExtractor<T> : Extractor where T : ORMToolType
+    public abstract class DatabaseEntityDeclarationExtractor<T> : Extractor<T> where T : ORMToolType
     {
-        ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
-        Task<ModelCollection<DatabaseEntityDeclaration<T>>> ExtractAsync(Solution solution);
+        public abstract ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
+
+        public abstract Task FindDatabaseEntityDeclarationsAsync(Solution solution);
+
+        public DatabaseEntityDeclarationExtractor(Context<T> context)
+            : base(context)
+        { }
     }
 }

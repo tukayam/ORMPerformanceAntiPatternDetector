@@ -9,19 +9,19 @@ using System.Linq;
 
 namespace Detector.Extractors.EF602
 {
-    public class DatabaseQueryExtractor : CSharpSyntaxWalker, DatabaseQueryExtractor<LINQToSQL>
+    public class DatabaseQueryExtractor : DatabaseQueryExtractor<EntityFramework>
     {
-        private readonly ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
+        private readonly ModelCollection<DatabaseEntityDeclaration<EntityFramework>> _databaseEntityDeclarations;
         private readonly SemanticModel _model;
 
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
-        private Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>> _databaseQueries;
+        private Dictionary<QueryExpressionSyntax, DatabaseQuery<EntityFramework>> _databaseQueries;
 
-        public ModelCollection<DatabaseQuery<LINQToSQL>> DatabaseQueries
+        public ModelCollection<DatabaseQuery<EntityFramework>> DatabaseQueries
         {
             get
             {
-                var queries = new ModelCollection<DatabaseQuery<LINQToSQL>>();
+                var queries = new ModelCollection<DatabaseQuery<EntityFramework>>();
                 foreach (var item in _databaseQueries.Values)
                 {
                     queries.Add(item);
@@ -30,18 +30,14 @@ namespace Detector.Extractors.EF602
             }
         }
 
-        public DatabaseQueryExtractor(SemanticModel model
-            , ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations)
-            : base()
+        public DatabaseQueryExtractor(Context<EntityFramework> context)
+            : base(context)
         {
-            this._model = model;
-            this._databaseEntityDeclarations = databaseEntityDeclarations;
-
             this._databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax>();
-            this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>>();
+            this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<EntityFramework>>();
         }
 
-        public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
+        public void VisitVariableDeclaration(VariableDeclarationSyntax node)
         {
             foreach (var queryExp in node.DescendantNodes().OfType<QueryExpressionSyntax>())
             {
@@ -50,27 +46,26 @@ namespace Detector.Extractors.EF602
                     _databaseQueryVariables.Add(node, queryExp);
                 }
             }
-            base.VisitVariableDeclaration(node);
+           
         }
 
-        public override void VisitQueryExpression(QueryExpressionSyntax node)
+        public void VisitQueryExpression(QueryExpressionSyntax node)
         {
             if (!_databaseQueries.ContainsKey(node))
             {
                 if (QueryIsDatabaseQuery(node))
                 {
                     string queryText = node.GetText().ToString();
-                    ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
+                    ModelCollection<DatabaseEntityDeclaration<EntityFramework>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node);
 
                     var queryVariable = (from qv in _databaseQueryVariables
                                          where qv.Value == node
                                          select new DatabaseQueryVariable(qv.Key.Variables[0].Identifier.Text)).FirstOrDefault();
 
-                    var query = new DatabaseQuery<LINQToSQL>(queryText, databaseEntityDeclarationsUsedInQuery, queryVariable);
+                    var query = new DatabaseQuery<EntityFramework>(queryText, databaseEntityDeclarationsUsedInQuery, queryVariable);
                     _databaseQueries.Add(node, query);
                 }
             }
-            base.VisitQueryExpression(node);
         }
 
         private bool QueryIsDatabaseQuery(QueryExpressionSyntax query)
@@ -88,9 +83,9 @@ namespace Detector.Extractors.EF602
             return false;
         }
 
-        private ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
+        private ModelCollection<DatabaseEntityDeclaration<EntityFramework>> GetDatabaseEntityTypesInQuery(QueryExpressionSyntax query)
         {
-            var result = new ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>();
+            var result = new ModelCollection<DatabaseEntityDeclaration<EntityFramework>>();
             foreach (var qeNode in query.DescendantNodes())
             {
                 ITypeSymbol typeOfNode = _model.GetTypeInfo(qeNode).Type;

@@ -11,7 +11,7 @@ using Detector.Models.Others;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public class LINQToSQLLoopDeclarationExtractor : CSharpSyntaxWalker, DatabaseAccessingLoopDeclarationExtractor<LINQToSQL>, LoopDeclarationExtractor
+    public class LINQToSQLLoopDeclarationExtractor : DatabaseAccessingLoopDeclarationExtractor<LINQToSQL>
     {
         public ModelCollection<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
         {
@@ -31,8 +31,13 @@ namespace Detector.Extractors.LINQToSQL40
 
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
 
+        public LINQToSQLLoopDeclarationExtractor(Context<LINQToSQL> context)
+            :base(context)
+        {
 
-        public override void VisitForEachStatement(ForEachStatementSyntax node)
+        }
+
+        public void VisitForEachStatement(ForEachStatementSyntax node)
         {
             DatabaseAccessingForeachLoopDeclaration<LINQToSQL> dbAccessingForEach =
                 (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
@@ -48,11 +53,10 @@ namespace Detector.Extractors.LINQToSQL40
             {
                 LoopDeclarations.Add(new ForEachLoopDeclaration());
             }
-
-            base.VisitForEachStatement(node);
+            
         }
 
-        public override void VisitForStatement(ForStatementSyntax node)
+        public void VisitForStatement(ForStatementSyntax node)
         {
             DatabaseAccessingForLoopDeclaration<LINQToSQL> dbAccessingFor =
                 (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
@@ -68,14 +72,11 @@ namespace Detector.Extractors.LINQToSQL40
             {
                 LoopDeclarations.Add(new ForLoopDeclaration());
             }
-            base.VisitForStatement(node);
         }
 
-        public override void VisitWhileStatement(WhileStatementSyntax node)
+        public  void VisitWhileStatement(WhileStatementSyntax node)
         {
-            LoopDeclarations.Add(new WhileLoopDeclaration());
-
-            base.VisitWhileStatement(node);
+            LoopDeclarations.Add(new WhileLoopDeclaration());            
         }
 
     }

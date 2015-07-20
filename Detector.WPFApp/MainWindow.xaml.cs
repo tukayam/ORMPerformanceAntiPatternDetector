@@ -27,31 +27,7 @@ namespace Detector.Extractors
             InitializeComponent();
         }
 
-        private async void btnChooseSolution_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.ShowDialog();
-            if (dialog.FileName.EndsWith(".sln"))
-            {
-                _solutionPath = dialog.FileName;
-                lblSolutionName.Content = String.Concat(_solutionPath.Substring(0, 8), ".....", _solutionPath.Substring(_solutionPath.Length - 20, 20));
-
-                lblSandboxExtractingDocumentsInSolution.Visibility = Visibility.Visible;
-                _documentsInSolution = await GetDocumentsInSolutionAsync();
-                btnChooseDocuments.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void btnChooseDocuments_Click(object sender, RoutedEventArgs e)
-        {
-           // 
-        }
-
-        private async Task<HashSet<Document>> GetDocumentsInSolutionAsync()
-        {
-            return new HashSet<Document>();
-        }
-
+       
         private async void btnDetectAntiPatterns_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(_solutionPath))
@@ -86,9 +62,6 @@ namespace Detector.Extractors
             //}
         }
 
-        private void btnChooseORMTool_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
     }
 }

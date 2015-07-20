@@ -109,7 +109,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataContextDeclarationExtractorTests.cs" />
-    <Compile Include="Helpers\RoslynSolutionGenerators\RoslynProjectGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +131,10 @@
     <ProjectReference Include="..\..\Extractors\Detector.Extractors.EF6.0\Detector.Extractors.EF60.csproj">
       <Project>{6fb870bc-4ffa-47d7-bc6b-e655e17200dc}</Project>
       <Name>Detector.Extractors.EF60</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestBase\TestBase.csproj">
+      <Project>{2bdc1686-fb3d-4b09-af63-381addf8daf0}</Project>
+      <Name>TestBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

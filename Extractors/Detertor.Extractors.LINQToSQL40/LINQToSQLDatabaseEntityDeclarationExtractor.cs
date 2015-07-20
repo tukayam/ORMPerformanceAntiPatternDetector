@@ -1,18 +1,21 @@
 ﻿using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
 using Detector.Models.Others;
+using Detector.Extractors.Base;
 
 namespace Detector.Extractors.LINQToSQL40
 {
     public class LINQToSQLDatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<LINQToSQL>
     {
-        public ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; private set; }
+        public override ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; }
 
-        public async Task<ModelCollection<DatabaseEntityDeclaration<LINQToSQL>>> ExtractAsync(Solution solution)
+        public LINQToSQLDatabaseEntityDeclarationExtractor(Context<LINQToSQL> context)
+            : base(context)
+        { }
+
+        public override async Task FindDatabaseEntityDeclarationsAsync(Solution solution)
         {
             foreach (var project in solution.Projects)
             {
@@ -30,8 +33,6 @@ namespace Detector.Extractors.LINQToSQL40
                     }
                 }
             }
-
-            return DatabaseEntityDeclarations;
         }
     }
 }

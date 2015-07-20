@@ -42,3 +42,5 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.Tests\bin\Debug\Detertor.Extractors.LINQToSQL40.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.Tests\bin\Debug\Detector.Extractors.Base.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.Tests\bin\Debug\Detertor.Extractors.LINQToSQL40.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.Tests\bin\Debug\TestBase.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.Tests\bin\Debug\TestBase.pdb

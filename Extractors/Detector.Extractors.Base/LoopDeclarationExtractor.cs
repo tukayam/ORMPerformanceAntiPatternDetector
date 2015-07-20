@@ -1,10 +1,15 @@
 ﻿using Detector.Models.Base;
-using System.Collections.Generic;
+using Detector.Models.ORM;
+using Detector.Models.Others;
 
 namespace Detector.Extractors.Base
 {
-    public interface LoopDeclarationExtractor : Extractor
+    public abstract class LoopDeclarationExtractor<T> : Extractor<T> where T:ORMToolType
     {
-        List<LoopDeclarationBase> LoopDeclarations { get; }
+        public abstract ModelCollection<LoopDeclarationBase> LoopDeclarations { get; }
+
+        public LoopDeclarationExtractor(Context<T> context)
+            : base(context)
+        { }
     }
 }

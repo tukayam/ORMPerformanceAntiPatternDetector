@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public class LINQToSQLDatabaseQueryExtractor : CSharpSyntaxWalker, DatabaseQueryExtractor<LINQToSQL>
+    public class LINQToSQLDatabaseQueryExtractor : DatabaseQueryExtractor<LINQToSQL>
     {
         private readonly ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
         private readonly SemanticModel _model;
@@ -30,18 +30,14 @@ namespace Detector.Extractors.LINQToSQL40
             }
         }
 
-        public LINQToSQLDatabaseQueryExtractor(SemanticModel model
-            , ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations)
-            : base()
+        public LINQToSQLDatabaseQueryExtractor(Context<LINQToSQL> context)
+            : base(context)
         {
-            this._model = model;
-            this._databaseEntityDeclarations = databaseEntityDeclarations;
-
             this._databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax>();
             this._databaseQueries = new Dictionary<QueryExpressionSyntax, DatabaseQuery<LINQToSQL>>();
         }
 
-        public override void VisitVariableDeclaration(VariableDeclarationSyntax node)
+        public void VisitVariableDeclaration(VariableDeclarationSyntax node)
         {
             foreach (var queryExp in node.DescendantNodes().OfType<QueryExpressionSyntax>())
             {
@@ -50,10 +46,9 @@ namespace Detector.Extractors.LINQToSQL40
                     _databaseQueryVariables.Add(node, queryExp);
                 }
             }
-            base.VisitVariableDeclaration(node);
         }
 
-        public override void VisitQueryExpression(QueryExpressionSyntax node)
+        public void VisitQueryExpression(QueryExpressionSyntax node)
         {
             if (!_databaseQueries.ContainsKey(node))
             {
@@ -70,7 +65,6 @@ namespace Detector.Extractors.LINQToSQL40
                     _databaseQueries.Add(node, query);
                 }
             }
-            base.VisitQueryExpression(node);
         }
 
         private bool QueryIsDatabaseQuery(QueryExpressionSyntax query)

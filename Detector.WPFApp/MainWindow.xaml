@@ -3,12 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow">
     <Grid Margin="0,0,0,-174">
-        <Button Name="btnChooseSolution" Content="Choose Solution" HorizontalAlignment="Left" Margin="40,23,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnChooseSolution_Click"/>
-        <Label Name="lblSolutionName" HorizontalAlignment="Left" Margin="170,26,0,0" VerticalAlignment="Top" Width="358" Height="26"/>
-        <Button Name="btnChooseORMTool" Content="Choose ORM Tool" HorizontalAlignment="Left" Margin="40,69,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnChooseORMTool_Click"/>
-        <Label x:Name="lblChosenORMTool" HorizontalAlignment="Left" Margin="170,69,0,0" VerticalAlignment="Top" Width="358" Height="26"/>
-        <Button x:Name="btnFindAntiPatterns" Content="Find Anti-Patterns" HorizontalAlignment="Left" Margin="605,174,0,0" VerticalAlignment="Top" Width="103" Height="29" Click="btnDetectAntiPatterns_Click"/>
         <Label x:Name="lblSandboxExtractingDocumentsInSolution" Content="Extracting C# documents in solution . . ." Visibility="Hidden" HorizontalAlignment="Left" Margin="40,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.947,1.154"/>
-        <Button x:Name="btnChooseDocuments" Content="Choose documents" HorizontalAlignment="Left" Margin="40,174,0,0" VerticalAlignment="Top" Width="119" Height="29" Click="btnChooseDocuments_Click"/>
     </Grid>
 </Window>

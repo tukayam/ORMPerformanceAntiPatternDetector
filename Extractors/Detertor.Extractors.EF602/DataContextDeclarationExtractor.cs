@@ -3,30 +3,56 @@ using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
+using System.Data.Entity;
+using System.Threading.Tasks;
+using System.Linq;
+using Detector.Extractors.Base;
 
 namespace Detector.Extractors.EF602
 {
-    public  class DataContextDeclarationExtractor : CSharpSyntaxWalker
+    public class DataContextDeclarationExtractor : DataContextDeclarationExtractor<Detector.Models.ORM.EntityFramework>
     {
-        SemanticModel _model;
-        List<DataContextDeclaration<LINQToSQL>> DataContextDeclarations;
-
-        public DataContextDeclarationExtractor(SemanticModel model)
+        public DataContextDeclarationExtractor(Context<EntityFramework> context)
+            :base(context)
         {
-            _model = model;
+
         }
 
-        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
+        public override async Task ExtractDataContextDeclarationsAsync(Project project)
         {
-           // if(((ILocalSymbol)_model.GetDeclaredSymbol(node)).Type == typeof())
-
-            if (node.AttributeLists.ToString().Contains("DatabaseAttribute"))
+            foreach (var document in project.Documents)
             {
-                DataContextDeclarations.Add(new DataContextDeclaration<LINQToSQL>(node.Identifier.ToString(), node.GetCompilationInfo()));
-            }
+                SyntaxNode root = await document.GetSyntaxRootAsync();
+                SemanticModel semanticModel = await document.GetSemanticModelAsync();
 
-            base.VisitClassDeclaration(node);
+                foreach (ClassDeclarationSyntax classDeclarationSyntax in root.DescendantNodes().OfType<ClassDeclarationSyntax>())
+                {
+                    INamedTypeSymbol symbol = semanticModel.GetDeclaredSymbol(classDeclarationSyntax);
+
+                    if (InheritsFrom<DbContext>(symbol))
+                    {
+                        DataContextDeclarations.Add(new DataContextDeclaration<EntityFramework>(classDeclarationSyntax.Identifier.ToString(), classDeclarationSyntax.GetCompilationInfo()));
+                    }
+                }
+            }
+        }
+
+        private bool InheritsFrom<T>(INamedTypeSymbol symbol)
+        {
+            while (true)
+            {
+                if (symbol.ToString() == typeof(T).FullName)
+                {
+                    return true;
+                }
+                if (symbol.BaseType != null)
+                {
+                    symbol = symbol.BaseType;
+                    continue;
+                }
+                break;
+            }
+            return false;
         }
     }
 }

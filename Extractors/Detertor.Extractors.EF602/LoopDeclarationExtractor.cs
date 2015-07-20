@@ -11,9 +11,9 @@ using Detector.Models.Others;
 
 namespace Detector.Extractors.EF602
 {
-    public class LoopDeclarationExtractor : CSharpSyntaxWalker, DatabaseAccessingLoopDeclarationExtractor<LINQToSQL>, Detector.Extractors.Base.LoopDeclarationExtractor
+    public class LoopDeclarationExtractor : DatabaseAccessingLoopDeclarationExtractor<EntityFramework>
     {
-        public ModelCollection<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
+        public ModelCollection<DatabaseAccessingLoopDeclaration<EntityFramework>> DatabaseAccessingLoopDeclarations
         {
             get
             {
@@ -31,14 +31,17 @@ namespace Detector.Extractors.EF602
 
         private Dictionary<VariableDeclarationSyntax, QueryExpressionSyntax> _databaseQueryVariables;
 
+        public LoopDeclarationExtractor(Context<EntityFramework> context)
+            : base(context)
+        { }
 
-        public override void VisitForEachStatement(ForEachStatementSyntax node)
+        public void VisitForEachStatement(ForEachStatementSyntax node)
         {
-            DatabaseAccessingForeachLoopDeclaration<LINQToSQL> dbAccessingForEach =
+            DatabaseAccessingForeachLoopDeclaration<EntityFramework> dbAccessingForEach =
                 (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
                  from v in _databaseQueryVariables.Keys
                  where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
-                 select new DatabaseAccessingForeachLoopDeclaration<LINQToSQL>()).FirstOrDefault();
+                 select new DatabaseAccessingForeachLoopDeclaration<EntityFramework>()).FirstOrDefault();
 
             if (dbAccessingForEach != null)
             {
@@ -48,17 +51,16 @@ namespace Detector.Extractors.EF602
             {
                 LoopDeclarations.Add(new ForEachLoopDeclaration());
             }
-
-            base.VisitForEachStatement(node);
+            
         }
 
-        public override void VisitForStatement(ForStatementSyntax node)
+        public void VisitForStatement(ForStatementSyntax node)
         {
-            DatabaseAccessingForLoopDeclaration<LINQToSQL> dbAccessingFor =
+            DatabaseAccessingForLoopDeclaration<EntityFramework> dbAccessingFor =
                 (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
                  from v in _databaseQueryVariables.Keys
                  where n.Identifier.Text == v.DescendantNodes().OfType<VariableDeclaratorSyntax>().First().Identifier.Text
-                 select new DatabaseAccessingForLoopDeclaration<LINQToSQL>()).FirstOrDefault();
+                 select new DatabaseAccessingForLoopDeclaration<EntityFramework>()).FirstOrDefault();
 
             if (dbAccessingFor != null)
             {
@@ -68,14 +70,12 @@ namespace Detector.Extractors.EF602
             {
                 LoopDeclarations.Add(new ForLoopDeclaration());
             }
-            base.VisitForStatement(node);
         }
 
-        public override void VisitWhileStatement(WhileStatementSyntax node)
+        public void VisitWhileStatement(WhileStatementSyntax node)
         {
             LoopDeclarations.Add(new WhileLoopDeclaration());
-
-            base.VisitWhileStatement(node);
+            
         }
 
     }

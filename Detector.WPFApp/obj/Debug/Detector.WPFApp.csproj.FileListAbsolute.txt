@@ -47,3 +47,6 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.Extractors.Base.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.Extractors.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\bin\Debug\Detector.Extractors.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Views\Page_Start.g.cs
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Detector.WPFApp_MarkupCompile.lref
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.WPFApp\obj\Debug\Views\Page_Start.baml

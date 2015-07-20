@@ -101,6 +101,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConcreteContext.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="DatabaseAccessingLoopDeclarationExtractor.cs" />
     <Compile Include="DatabaseAccessingMethodCallExtractor.cs" />
     <Compile Include="DatabaseEntityDeclarationExtractor.cs" />
@@ -113,8 +115,6 @@
     <Compile Include="IGodClass.cs" />
     <Compile Include="LoopDeclarationExtractor.cs" />
     <Compile Include="ORMModelTreeExtractorBase.cs" />
-    <Compile Include="Preprocessors\PreprocessorFactory.cs" />
-    <Compile Include="Preprocessors\PreprocessorStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

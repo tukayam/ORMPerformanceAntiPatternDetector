@@ -1,8 +1,8 @@
 ﻿using Detector.Extractors.EF60;
-using Detector.Extractors.EF60.Tests.Helpers.RoslynSolutionGenerators;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
+using TestBase;
 
 namespace Detector.Extractors.EF60Tests
 {
@@ -13,7 +13,7 @@ namespace Detector.Extractors.EF60Tests
         public async Task DetectsDbContextClass_When_ThereIsOneDbContextDeclaredInAProject()
         {
             //Arrange
-            Solution EF60_NWSolution = await new RoslynProjectGenerator().GetEF60_NWSolutionAsync();
+            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetEF60_NWSolutionAsync();
             var target = new DataContextDeclarationExtractor();
 
             //Act

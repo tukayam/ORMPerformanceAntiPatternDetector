@@ -1,0 +1,54 @@
+﻿using Detector.Extractors.Base;
+using Detector.Models.ORM;
+using Microsoft.CodeAnalysis;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using TestBase.RoslynSolutionGenerators;
+using TestBase.Stubs;
+
+namespace Detector.Extractors.EF602.Tests
+{
+    [TestClass]
+    public class DatabaseEntityDeclarationExtractorTests
+    {
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public async Task ThrowsException_When_DataContextDeclarationsInContextIsNullOrEmpty()
+        {
+            //Arrange  
+            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
+            //ToDo: Change to TargetBuilder
+            Context<EntityFramework> context = new ContextStub<EntityFramework>();
+            var target = new DatabaseEntityDeclarationExtractor(context);
+
+            //Act
+            await target.FindDatabaseEntityDeclarationsAsync(EF60_NWSolution);
+        }
+
+        [TestMethod]
+        public async Task DetectsThreeDatabaseEntityDeclarations_When_EF60_NWProjectIsUsed()
+        {
+            //Arrange  
+            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
+
+            //ToDo: Use target builder instead
+            Context<EntityFramework> context = new ContextStub<EntityFramework>();
+
+            var target = new DatabaseEntityDeclarationExtractor(context);
+
+            //Act
+            await target.FindDatabaseEntityDeclarationsAsync(EF60_NWSolution);
+
+            //Assert
+            Assert.IsTrue(target.DatabaseEntityDeclarations.Count == 3);
+
+            IEnumerable<string> dbEntityNames = target.DatabaseEntityDeclarations.Select(d => d.Name);
+            Assert.IsTrue(dbEntityNames.Contains("Employee"));
+            Assert.IsTrue(dbEntityNames.Contains("Order"));
+            Assert.IsTrue(dbEntityNames.Contains("OrderItem"));
+        }
+    }
+}

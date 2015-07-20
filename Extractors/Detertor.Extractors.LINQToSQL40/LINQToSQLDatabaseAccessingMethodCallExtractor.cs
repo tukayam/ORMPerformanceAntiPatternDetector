@@ -10,7 +10,7 @@ using Detector.Models.Others;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public class LINQToSQLDatabaseAccessingMethodCallExtractor : CSharpSyntaxWalker, DatabaseAccessingMethodCallsExtractor<LINQToSQL>
+    public class LINQToSQLDatabaseAccessingMethodCallExtractor : DatabaseAccessingMethodCallsExtractor<LINQToSQL>
     {
         public ModelCollection<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
 
@@ -26,50 +26,16 @@ namespace Detector.Extractors.LINQToSQL40
         private List<DataContextInitializationStatement<LINQToSQL>> _dataContextInitializationStatements;
         private List<VariableDeclarationSyntax> _dataLoadOptionsVariables;
         
-        public LINQToSQLDatabaseAccessingMethodCallExtractor(SemanticModel model
-             , ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> databaseEntityDeclarations
-             , ModelCollection<DatabaseQuery<LINQToSQL>> databaseQueries
-             , List<VariableDeclarationSyntax> dataLoadOptionsVariables
-             , List<DataContextInitializationStatement<LINQToSQL>> dataContextInitializationStatements
-             , ModelCollection<DataContextDeclaration<LINQToSQL>> dataContextDeclarations
-           )
-            : base()
-        {
-            this._model = model;
-            this._databaseEntityDeclarations = databaseEntityDeclarations;
-            this._dataContextDeclarations = dataContextDeclarations;
-            this._databaseQueries = databaseQueries;
-            this._dataLoadOptionsVariables = dataLoadOptionsVariables;
-            this._dataContextInitializationStatements = dataContextInitializationStatements;
-
+        public LINQToSQLDatabaseAccessingMethodCallExtractor(Context<LINQToSQL> context)
+            : base(context)
+        {         
             this.DatabaseAccessingMethodCalls = new ModelCollection<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
             this.DatabaseAccessingMethodCallsAndSyntaxNodes = new Dictionary<DatabaseAccessingMethodCallStatement<LINQToSQL>, SyntaxNode>();
 
             this._dataContextInitializationStatementsAndLoadedDatabaseEntityDeclarations = new Dictionary<DataContextInitializationStatement<LINQToSQL>, List<DatabaseEntityVariableDeclaration<LINQToSQL>>>();
         }
 
-        private void MatchLoadedDatabaseEntityDeclarationsForDataContextInitializationStatement(List<VariableDeclarationSyntax> dataLoadOptionsVariables, List<DataContextInitializationStatement<LINQToSQL>> dataContextInitializationStatements)
-        {
-            foreach (VariableDeclarationSyntax dataLoadOptionsVariableSyntax in dataLoadOptionsVariables)
-            {
-
-            }
-        }
-
-
-
-        //public override void VisitAssignmentExpression(AssignmentExpressionSyntax node)
-        //{
-        //    VariableDeclarationSyntax assignedDataContextVariable = TryGetAssignedDataContextInstance(node);
-        //    if (assignedDataContextVariable != null)
-        //    {
-        //        assignedDataContextVariable.DescendantNodes().Where(x=>x.Get)
-        //    }
-        //    base.VisitAssignmentExpression(node);
-        //}
-
-
-        public override void VisitInvocationExpression(InvocationExpressionSyntax node)
+        public  void VisitInvocationExpression(InvocationExpressionSyntax node)
         {
             //Implement chain of responsibility pattern here
             bool dbAccessingCallFound = TryExtractDatabaseAccessingMethodsThatIncludeAQueryInQuerySyntax(node);
@@ -82,7 +48,6 @@ namespace Detector.Extractors.LINQToSQL40
             {
                 TryExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(node);
             }
-            base.VisitInvocationExpression(node);
         }
 
         private VariableDeclarationSyntax TryGetInvokedDataLoadOptionsVariable(InvocationExpressionSyntax node)

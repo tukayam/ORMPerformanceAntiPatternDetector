@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Detector.Extractors.Base.Preprocessors;
+﻿using Detector.Models.ORM;
 
 namespace Detector.Extractors.Base
 {
-    public interface Extractor
+    public abstract class Extractor<T> where T:ORMToolType
     {
-       // PreprocessorStrategy GetPreprocessor();
+        public Context<T> Context { get; }
+
+        public Extractor(Context<T> context)
+        {
+            Context = context;
+        }
     }
 }

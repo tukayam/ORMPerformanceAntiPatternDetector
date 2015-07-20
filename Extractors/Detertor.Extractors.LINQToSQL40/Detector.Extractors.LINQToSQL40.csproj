@@ -95,11 +95,9 @@
     <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument.cs" />
     <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="LINQToSQLDatabaseQueryExtractor.cs" />
-    <Compile Include="LINQToSQLDataContextDeclarationExtractor.cs" />
+    <Compile Include="DataContextDeclarationExtractor.cs" />
     <Compile Include="LINQToSQLDataLoadOptionsExtractor.cs" />
     <Compile Include="LINQToSQLLoopDeclarationExtractor.cs" />
-    <Compile Include="Preprocessors\DatabaseQueryExtractorPreprocessorStrategy.cs" />
-    <Compile Include="Preprocessors\LINQToSQLExtractorsPreprocessorFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

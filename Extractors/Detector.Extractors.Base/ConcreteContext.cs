@@ -4,26 +4,19 @@ using System;
 
 namespace Detector.Extractors.Base
 {
-    public sealed class ConcreteContext<T> : Context<T> where T:ORMToolType
+    public sealed class ConcreteContext<T> : Context<T> where T : ORMToolType
     {
-        private ModelCollection<DataContextDeclaration<T>> _dataContextDeclarations;
-        public ModelCollection<DataContextDeclaration<T>> DataContextDeclarations
-        {
-            get
-            {
-                return _dataContextDeclarations;
-            }
-
-            set
-            {
-                _dataContextDeclarations = value;
-            }
-        }
-
+        public ModelCollection<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
+        public ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
+       
         private static volatile ConcreteContext<T> instance;
         private static object syncRoot = new Object();
 
-        private ConcreteContext() { }
+        private ConcreteContext()
+        {
+            DataContextDeclarations = new ModelCollection<DataContextDeclaration<T>>();
+            DatabaseEntityDeclarations = new ModelCollection<DatabaseEntityDeclaration<T>>();
+        }
 
         public static ConcreteContext<T> Instance
         {

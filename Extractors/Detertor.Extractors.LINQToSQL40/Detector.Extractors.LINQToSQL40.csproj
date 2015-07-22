@@ -92,7 +92,6 @@
   <ItemGroup>
     <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
     <Compile Include="LINQToSQLDatabaseContextInitializationStatementExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument.cs" />
     <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="LINQToSQLDatabaseQueryExtractor.cs" />
     <Compile Include="DataContextDeclarationExtractor.cs" />

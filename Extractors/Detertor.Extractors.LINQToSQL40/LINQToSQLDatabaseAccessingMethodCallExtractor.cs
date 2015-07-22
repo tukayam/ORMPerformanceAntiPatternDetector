@@ -83,7 +83,7 @@ namespace Detector.Extractors.LINQToSQL40
                 (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
                  from dq in _databaseQueries
                  where dq.IsSameQueryAs(q)
-                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(dq, node.GetCompilationInfo())).FirstOrDefault();
+                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(dq, node.GetCompilationInfo(_model))).FirstOrDefault();
 
             if (dbAccessingMethodCall != null)
             {
@@ -99,7 +99,7 @@ namespace Detector.Extractors.LINQToSQL40
             DatabaseAccessingMethodCallStatement<LINQToSQL> dbAccessingMethodCall =
                 (from q in node.DescendantNodes().OfType<IdentifierNameSyntax>()
                  where _model.GetSymbolInfo(q).Symbol.GetType().BaseType == typeof(System.Data.Linq.DataContext)
-                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(null, node.GetCompilationInfo())).FirstOrDefault();
+                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(null, node.GetCompilationInfo(_model))).FirstOrDefault();
 
             if (dbAccessingMethodCall != null)
             {
@@ -120,7 +120,7 @@ namespace Detector.Extractors.LINQToSQL40
             if (databaseQuery != null)
             {
                 var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<LINQToSQL>(
-                    databaseQuery, node.GetCompilationInfo());
+                    databaseQuery, node.GetCompilationInfo(_model));
 
                 this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
                 this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);

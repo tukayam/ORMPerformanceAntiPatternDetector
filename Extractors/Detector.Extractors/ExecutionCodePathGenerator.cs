@@ -81,8 +81,8 @@ namespace Detector.Extractors
         {
             public int Compare(ModelBase x, ModelBase y)
             {
-                int lineNumberX = x.CompilationInfo.SpanStart;
-                int lineNumberY = y.CompilationInfo.SpanStart;
+                int lineNumberX = x.CompilationInfo.SyntaxNode.SpanStart;
+                int lineNumberY = y.CompilationInfo.SyntaxNode.SpanStart;
                 return lineNumberX > lineNumberY ? 1 : lineNumberX > lineNumberY ? -1 : 0;
             }
         }

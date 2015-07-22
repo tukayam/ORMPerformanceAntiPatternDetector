@@ -2,36 +2,30 @@
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
-using Detector.Models.Others;
 using Detector.Extractors.Base;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Detector.Extractors.Base.Helpers;
+using Detector.Extractors.Base.ExtensionMethods;
+using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 
 namespace Detector.Extractors.LINQToSQL40
 {
     public class LINQToSQLDatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<LINQToSQL>
     {
-        public override ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> DatabaseEntityDeclarations { get; }
-
         public LINQToSQLDatabaseEntityDeclarationExtractor(Context<LINQToSQL> context)
             : base(context)
         { }
 
-        public override async Task FindDatabaseEntityDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution)
         {
-            foreach (var project in solution.Projects)
+            Dictionary<ClassDeclarationSyntax, SemanticModel> classes = await solution.GetClassesSignedWithAttributeType<TableAttribute>();
+
+            foreach (var item in classes.Keys)
             {
-                foreach (var documentId in project.DocumentIds)
-                {
-                    var document = solution.GetDocument(documentId);
+                var dbEntityDeclaration = new DatabaseEntityDeclaration<LINQToSQL>(item.Identifier.ToString(), item.GetCompilationInfo(classes[item]));
 
-                    SyntaxNode root = await document.GetSyntaxRootAsync();
-
-                    var dbEntityDeclarationExtractor = new LINQToSQLDatabaseEntityDeclarationExtractorOnOneDocument();
-                    dbEntityDeclarationExtractor.Visit(root);
-                    foreach (var dbEntityDeclaration in dbEntityDeclarationExtractor.DatabaseEntityDeclarations)
-                    {
-                        DatabaseEntityDeclarations.Add(dbEntityDeclaration);
-                    }
-                }
+                DatabaseEntityDeclarations.Add(dbEntityDeclaration);
             }
         }
     }

@@ -34,8 +34,9 @@ namespace Detector.Extractors.EF602.Tests
             //Arrange  
             Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
 
-            //ToDo: Use target builder instead
             Context<EntityFramework> context = new ContextStub<EntityFramework>();
+            var dataContextDecExtr = new DataContextDeclarationExtractor(context);
+            await dataContextDecExtr.FindDataContextDeclarationsAsync(EF60_NWSolution);
 
             var target = new DatabaseEntityDeclarationExtractor(context);
 

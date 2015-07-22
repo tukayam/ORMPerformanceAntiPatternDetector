@@ -45,7 +45,7 @@ namespace Detector.Extractors.LINQToSQL40
                 if (dataContextDeclaration != null)
                 {
                     this._dataContextVariables.Add(node);
-                    var dataContextInitializationStatement = new DataContextInitializationStatement<LINQToSQL>(dataContextDeclaration, node.GetCompilationInfo());
+                    var dataContextInitializationStatement = new DataContextInitializationStatement<LINQToSQL>(dataContextDeclaration, node.GetCompilationInfo(_model));
                     this._dataContextInitializationStatements.Add(dataContextInitializationStatement);
                 }
             }

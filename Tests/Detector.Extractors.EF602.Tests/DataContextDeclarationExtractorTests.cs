@@ -1,4 +1,9 @@
-﻿using Detector.Extractors.Base;
+﻿
+
+
+
+
+using Detector.Extractors.Base;
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,6 +19,7 @@ namespace Detector.Extractors.EF602.Tests
     {
         [TestMethod]
         [TestCategory("IntegrationTest")]
+
         public async Task DetectsDbContextClasses_When_EF60_NWProjectIsCompiled()
         {
             //Arrange  
@@ -34,6 +40,9 @@ namespace Detector.Extractors.EF602.Tests
             {
                 Assert.IsTrue(item.Name == "NWDbContext");
             }
+
+            Assert.IsTrue(target.DataContextDeclarations.Count == 1);
+            Assert.IsTrue(context.DataContextDeclarations == target.DataContextDeclarations);
         }
 
         [TestMethod]

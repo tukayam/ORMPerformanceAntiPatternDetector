@@ -1,14 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
-using Detector.Models.ORM;
 using Microsoft.CodeAnalysis.MSBuild;
-using Detector.Main;
-using Detector.Models.AntiPatterns;
 using Detector.Models.Base;
-using Detector.Models.Others;
 
 namespace Detector.Extractors
 {
@@ -18,10 +12,7 @@ namespace Detector.Extractors
     public partial class MainWindow : Window
     {
         string _solutionPath = "";
-
-        HashSet<Document> _documentsInSolution;
-
-
+        
         public MainWindow()
         {
             InitializeComponent();

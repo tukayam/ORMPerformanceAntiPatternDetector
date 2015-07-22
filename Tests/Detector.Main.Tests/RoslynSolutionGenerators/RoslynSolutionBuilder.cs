@@ -34,7 +34,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
         {
             return this._roslynSolution;
         }
-       
+
         public RoslynSolutionBuilder WithTwoDocumentsContainingOneCodeExecutionPath()
         {
             DocumentId mainClassDocumentId = DocumentId.CreateNewId(_projectId);
@@ -53,17 +53,16 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
         private static DatabaseAccessingMethodCallsExtractor<FakeORMToolType> GetDDAccessingMethodCallExtractorReturningOneMethodCall()
         {
             //Create fake database query for db accessing method call
-            var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee");
+            var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee",null);
             var dbEntityDeclarationsReturnedByDbQuery = new ModelCollection<DatabaseEntityDeclaration<FakeORMToolType>>() { dbEntityDeclaration };
             var dbQueryVariable = new DatabaseQueryVariable("query");
             DatabaseQuery<FakeORMToolType> dbQuery = new DatabaseQuery<FakeORMToolType>("", dbEntityDeclarationsReturnedByDbQuery, dbQueryVariable);
 
             //Create fake CompilationInfo for db accessing method call
-            var methodDeclarationCompilationInfo = new CompilationInfo(10);
+            var methodDeclarationCompilationInfo = new CompilationInfo(null, null);
             var methodDeclarationContainingDbAccessingMethodCall = new MethodDeclaration("GetEmployee", methodDeclarationCompilationInfo);
 
-            var dbAccessingMethodCallCompilationInfo = new CompilationInfo(40);
-            dbAccessingMethodCallCompilationInfo.SetParentMethodDeclaration(methodDeclarationContainingDbAccessingMethodCall);
+            var dbAccessingMethodCallCompilationInfo = new CompilationInfo(null, null);
 
             //Create fake db accessing method call
             DatabaseAccessingMethodCallStatement<FakeORMToolType> dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<FakeORMToolType>(dbQuery, dbAccessingMethodCallCompilationInfo);

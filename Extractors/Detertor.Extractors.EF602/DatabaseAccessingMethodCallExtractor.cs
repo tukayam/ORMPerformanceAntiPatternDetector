@@ -66,7 +66,7 @@ namespace Detector.Extractors.EF602
                 (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
                  from dq in _databaseQueries
                  where dq.IsSameQueryAs(q)
-                 select new DatabaseAccessingMethodCallStatement<EntityFramework>(dq, node.GetCompilationInfo())).FirstOrDefault();
+                 select new DatabaseAccessingMethodCallStatement<EntityFramework>(dq, node.GetCompilationInfo(_model))).FirstOrDefault();
 
             if (dbAccessingMethodCall != null)
             {
@@ -82,7 +82,7 @@ namespace Detector.Extractors.EF602
             DatabaseAccessingMethodCallStatement<EntityFramework> dbAccessingMethodCall =
                 (from q in node.DescendantNodes().OfType<IdentifierNameSyntax>()
                  where _model.GetSymbolInfo(q).Symbol.GetType().BaseType == typeof(DbContext)
-                 select new DatabaseAccessingMethodCallStatement<EntityFramework>(null, node.GetCompilationInfo())).FirstOrDefault();
+                 select new DatabaseAccessingMethodCallStatement<EntityFramework>(null, node.GetCompilationInfo(_model))).FirstOrDefault();
 
             if (dbAccessingMethodCall != null)
             {
@@ -103,7 +103,7 @@ namespace Detector.Extractors.EF602
             if (databaseQuery != null)
             {
                 var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<EntityFramework>(
-                    databaseQuery, node.GetCompilationInfo());
+                    databaseQuery, node.GetCompilationInfo(_model));
 
                 this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
                 this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);

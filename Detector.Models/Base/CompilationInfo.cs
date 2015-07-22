@@ -1,21 +1,18 @@
-﻿using Detector.Models.Others;
+﻿using Microsoft.CodeAnalysis;
 
 namespace Detector.Models.Base
 {
     public class CompilationInfo
     {
-        public int SpanStart { get; private set; }
-        public MethodDeclarationBase ParentMethodDeclaration { get; private set; }
-        public Document ContainingDocument { get;private set; }
+        public SyntaxNode SyntaxNode { get; private set; }
+        public Document ContainingDocument { get; private set; }
+        public Project ContainingProject { get; private set; }
+        public SemanticModel SemanticModel { get; private set; }
 
-        public CompilationInfo(int spanStart)
+        public CompilationInfo(SyntaxNode syntaxNode, SemanticModel semanticModel)
         {
-            this.SpanStart = spanStart;
-        }
-
-        public void SetParentMethodDeclaration(MethodDeclarationBase parentMethodDeclaration)
-        {
-            this.ParentMethodDeclaration = parentMethodDeclaration;
+            this.SyntaxNode = syntaxNode;
+            this.SemanticModel = semanticModel;
         }
     }
 }

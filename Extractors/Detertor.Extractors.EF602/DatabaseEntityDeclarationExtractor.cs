@@ -1,9 +1,15 @@
 ﻿using Detector.Extractors.DatabaseEntities;
 using Detector.Models.ORM;
-using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
 using Detector.Extractors.Base;
+using System.Linq;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Detector.Extractors.Base.ExtensionMethods;
+using Detector.Models.Base;
+using Detector.Extractors.Base.Helpers;
+using System.Collections.Generic;
+using System;
 
 namespace Detector.Extractors.EF602
 {
@@ -13,41 +19,34 @@ namespace Detector.Extractors.EF602
             : base(context)
         { }
 
-        public override ModelCollection<DatabaseEntityDeclaration<EntityFramework>> DatabaseEntityDeclarations { get; }
-
-        public override async Task FindDatabaseEntityDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution)
         {
-            foreach (var project in solution.Projects)
+            foreach (var dataContextClassDeclarationSyntax in Context.DataContextDeclarations)
             {
-                foreach (var documentId in project.DocumentIds)
+                CompilationInfo compInfo = dataContextClassDeclarationSyntax.CompilationInfo;
+                foreach (var propertyDeclarationSyntax in compInfo.SyntaxNode.DescendantNodes().OfType<PropertyDeclarationSyntax>())
                 {
-                    var document = solution.GetDocument(documentId);
+                    SemanticModel model = compInfo.SemanticModel;
+                    if (model.IsOfType<IQueryable>(propertyDeclarationSyntax))
+                    {
+                        TypeSyntax propertyType = propertyDeclarationSyntax.Type;
+                        //Get T from DbSet<T> or IQueryable<T>
+                        string entityClassName = (propertyType as GenericNameSyntax).TypeArgumentList.Arguments[0].ToFullString();
 
-                    SyntaxNode root = await document.GetSyntaxRootAsync();
+                        Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName);
 
-                    //Go through the datacontext declarations and get all DbSet typed properties and then the type T used in DbSet<T>
+                        if (entityClass.Count != 1)
+                        {
+                            throw new Exception(String.Format("EntityClass for type {0} was not found correctly. Instead found class signatures are: {1}", entityClassName, entityClass.Keys.ToString()));
+                        }
 
-                    //foreach (var dbEntityDeclaration in dbEntityDeclarationExtractor.DatabaseEntityDeclarations)
-                    //{
-                    //    DatabaseEntityDeclarations.Add(dbEntityDeclaration);
-                    //}
+                        ClassDeclarationSyntax entityClassDeclarationSyntax = entityClass.Keys.First();
+                        SemanticModel modelForEntityClass = entityClass[entityClassDeclarationSyntax];
+                        DatabaseEntityDeclarations.Add(new DatabaseEntityDeclaration<EntityFramework>(entityClassName,
+                            entityClassDeclarationSyntax.GetCompilationInfo(modelForEntityClass)));
+                    }
                 }
             }
         }
-
-        //private ModelCollection<DatabaseEntityDeclaration<EntityFramework>> FindDatabaseEntityDeclarationsInDocument(SyntaxNode node)
-        //{
-        //    var dataContextDeclarations = this.Context.DataContextDeclarations;
-
-        //    if (dataContextDeclarations.Count < 1)
-        //    {
-        //        throw new ArgumentException("DataContextDeclarations are required before DatabaseEntityDeclarations can be detected for a solution using Entity Framework.");
-        //    }
-
-        //    if (node.AttributeLists.ToString().Contains("TableAttribute"))
-        //    {
-        //        _entities.Add(new DatabaseEntityDeclaration<EntityFramework>(node.Identifier.ToString()) { });
-        //    }
-        //}
     }
 }

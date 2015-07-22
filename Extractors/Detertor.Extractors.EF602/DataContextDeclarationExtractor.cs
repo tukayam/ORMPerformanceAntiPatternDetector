@@ -1,58 +1,31 @@
 ﻿using Detector.Extractors.Base.Helpers;
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Data.Entity;
 using System.Threading.Tasks;
-using System.Linq;
 using Detector.Extractors.Base;
+using Detector.Extractors.Base.ExtensionMethods;
+using System.Collections.Generic;
 
 namespace Detector.Extractors.EF602
 {
     public class DataContextDeclarationExtractor : DataContextDeclarationExtractor<Detector.Models.ORM.EntityFramework>
     {
         public DataContextDeclarationExtractor(Context<EntityFramework> context)
-            :base(context)
+            : base(context)
         {
 
         }
 
-        public override async Task ExtractDataContextDeclarationsAsync(Project project)
+        protected override async Task ExtractDataContextDeclarationsAsync(Solution solution)
         {
-            foreach (var document in project.Documents)
+            Dictionary<ClassDeclarationSyntax,SemanticModel> classes = await solution.GetClassesOfType<DbContext>();
+
+            foreach (var item in classes.Keys)
             {
-                SyntaxNode root = await document.GetSyntaxRootAsync();
-                SemanticModel semanticModel = await document.GetSemanticModelAsync();
-
-                foreach (ClassDeclarationSyntax classDeclarationSyntax in root.DescendantNodes().OfType<ClassDeclarationSyntax>())
-                {
-                    INamedTypeSymbol symbol = semanticModel.GetDeclaredSymbol(classDeclarationSyntax);
-
-                    if (InheritsFrom<DbContext>(symbol))
-                    {
-                        DataContextDeclarations.Add(new DataContextDeclaration<EntityFramework>(classDeclarationSyntax.Identifier.ToString(), classDeclarationSyntax.GetCompilationInfo()));
-                    }
-                }
+                DataContextDeclarations.Add(new DataContextDeclaration<EntityFramework>(item.Identifier.ToString(), item.GetCompilationInfo(classes[item])));
             }
-        }
-
-        private bool InheritsFrom<T>(INamedTypeSymbol symbol)
-        {
-            while (true)
-            {
-                if (symbol.ToString() == typeof(T).FullName)
-                {
-                    return true;
-                }
-                if (symbol.BaseType != null)
-                {
-                    symbol = symbol.BaseType;
-                    continue;
-                }
-                break;
-            }
-            return false;
         }
     }
 }

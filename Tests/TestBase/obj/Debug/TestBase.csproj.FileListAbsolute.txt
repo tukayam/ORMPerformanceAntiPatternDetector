@@ -31,3 +31,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\TestBase\bin\Debug\Detector.Models.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\TestBase\bin\Debug\Detector.Models.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\TestBase\bin\Debug\Detector.Extractors.Base.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\TestBase\bin\Debug\TestBase.dll.config

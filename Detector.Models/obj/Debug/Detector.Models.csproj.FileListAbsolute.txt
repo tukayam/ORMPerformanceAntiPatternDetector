@@ -17,3 +17,17 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\System.Composition.TypedParts.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\System.Reflection.Metadata.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\obj\Debug\Detector.Models.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml

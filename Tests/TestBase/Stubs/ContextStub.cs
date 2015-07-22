@@ -6,18 +6,13 @@ namespace TestBase.Stubs
 {
     public class ContextStub<T> : Context<T> where T : ORMToolType
     {
-        private ModelCollection<DataContextDeclaration<T>> _dataContextDeclarations;
-        public ModelCollection<DataContextDeclaration<T>> DataContextDeclarations
-        {
-            get
-            {
-                return _dataContextDeclarations;
-            }
+        public ModelCollection<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
+        public ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
 
-            set
-            {
-                _dataContextDeclarations = value;
-            }
+        public ContextStub()
+        {
+            DataContextDeclarations = new ModelCollection<DataContextDeclaration<T>>();
+            DatabaseEntityDeclarations = new ModelCollection<DatabaseEntityDeclaration<T>>();
         }
     }
 }

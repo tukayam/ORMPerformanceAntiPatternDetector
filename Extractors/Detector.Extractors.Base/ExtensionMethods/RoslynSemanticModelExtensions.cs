@@ -30,55 +30,29 @@ namespace Detector.Extractors.Base.ExtensionMethods
 
         private static bool InheritsFrom<T>(INamedTypeSymbol symbol)
         {
-            while (true)
-            {
-                if (symbol.ToString().EndsWith(typeof(T).FullName))
-                {
-                    return true;
-                }
-                if (symbol.BaseType != null)
-                {
-                    symbol = symbol.BaseType;
-                    continue;
-                }
-                break;
-            }
-            return false;
+            return InheritsFrom(symbol, typeof(T).ToString());
         }
-        private static bool InheritsFrom(INamedTypeSymbol symbol, string typeName)
-        {
-            while (true)
-            {
-                if (symbol.ToString().EndsWith(typeName))
-                {
-                    return true;
-                }
-                if (symbol.BaseType != null)
-                {
-                    symbol = symbol.BaseType;
-                    continue;
-                }
-                break;
-            }
-            return false;
-        }
+
         private static bool InheritsFrom<T>(IPropertySymbol symbol)
         {
             ITypeSymbol symbolType = symbol.Type;
+            return InheritsFrom(symbolType, typeof(T).ToString());
+        }
 
-            string typeToCheckFull = typeof(T).FullName;
-            string typeToCheckShort = typeof(T).Name;
+        private static bool InheritsFrom(ITypeSymbol symbolType, string typeToCheck)
+        {
             while (true)
             {
-                if (symbolType.ToString().EndsWith(typeToCheckShort))
+                if (symbolType.ToString().EndsWith(typeToCheck))
                 {
                     return true;
                 }
-                else if (symbolType.AllInterfaces.Any(x => x.ToString() == typeToCheckFull))
+                else if (symbolType.AllInterfaces.Any(x => x.ToString().EndsWith(typeToCheck)))
                 {
                     return true;
                 }
-                else if (symbolType.BaseType != null)
+                else if (symbolType.BaseType != null
+                    && !symbolType.BaseType.ToString().EndsWith("Object"))
                 {
                     symbolType = symbolType.BaseType;
                     continue;

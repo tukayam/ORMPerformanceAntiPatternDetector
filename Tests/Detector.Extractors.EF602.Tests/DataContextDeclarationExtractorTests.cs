@@ -1,14 +1,8 @@
-﻿
-
-
-
-
-using Detector.Extractors.Base;
+﻿using Detector.Extractors.Base;
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using TestBase;
 using TestBase.RoslynSolutionGenerators;
 using TestBase.Stubs;
 
@@ -19,7 +13,6 @@ namespace Detector.Extractors.EF602.Tests
     {
         [TestMethod]
         [TestCategory("IntegrationTest")]
-
         public async Task DetectsDbContextClasses_When_EF60_NWProjectIsCompiled()
         {
             //Arrange  

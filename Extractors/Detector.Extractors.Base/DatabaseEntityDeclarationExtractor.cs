@@ -13,6 +13,7 @@ namespace Detector.Extractors.DatabaseEntities
         public async Task FindDatabaseEntityDeclarationsAsync(Solution solution)
         {
             await ExtractDatabaseEntityDeclarationsAsync(solution);
+            Context.DatabaseEntityDeclarations = DatabaseEntityDeclarations;
         }
 
         protected abstract Task ExtractDatabaseEntityDeclarationsAsync(Solution solution);

@@ -7,126 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Detector.Extractors.Base.Helpers;
 using Detector.Models.Others;
+using System;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public class LINQToSQLDatabaseAccessingMethodCallExtractor : DatabaseAccessingMethodCallsExtractor<LINQToSQL>
+    public class LINQToSQLDatabaseAccessingMethodCallExtractor : DatabaseAccessingMethodCallExtractor<LINQToSQL>
     {
-        public ModelCollection<DatabaseAccessingMethodCallStatement<LINQToSQL>> DatabaseAccessingMethodCalls { get; private set; }
-
-        public Dictionary<DatabaseAccessingMethodCallStatement<LINQToSQL>, SyntaxNode> DatabaseAccessingMethodCallsAndSyntaxNodes { get; private set; }
-
-        private readonly ModelCollection<DatabaseEntityDeclaration<LINQToSQL>> _databaseEntityDeclarations;
-        private readonly ModelCollection<DatabaseQuery<LINQToSQL>> _databaseQueries;
-        private readonly ModelCollection<DataContextDeclaration<LINQToSQL>> _dataContextDeclarations;
-        private readonly SemanticModel _model;
-
-        private Dictionary<DataContextInitializationStatement<LINQToSQL>, List<DatabaseEntityVariableDeclaration<LINQToSQL>>> _dataContextInitializationStatementsAndLoadedDatabaseEntityDeclarations;
-        private List<VariableDeclarationSyntax> _dataContextVariables;
-        private List<DataContextInitializationStatement<LINQToSQL>> _dataContextInitializationStatements;
-        private List<VariableDeclarationSyntax> _dataLoadOptionsVariables;
-        
         public LINQToSQLDatabaseAccessingMethodCallExtractor(Context<LINQToSQL> context)
             : base(context)
-        {         
-            this.DatabaseAccessingMethodCalls = new ModelCollection<DatabaseAccessingMethodCallStatement<LINQToSQL>>();
-            this.DatabaseAccessingMethodCallsAndSyntaxNodes = new Dictionary<DatabaseAccessingMethodCallStatement<LINQToSQL>, SyntaxNode>();
-
-            this._dataContextInitializationStatementsAndLoadedDatabaseEntityDeclarations = new Dictionary<DataContextInitializationStatement<LINQToSQL>, List<DatabaseEntityVariableDeclaration<LINQToSQL>>>();
-        }
-
-        public  void VisitInvocationExpression(InvocationExpressionSyntax node)
-        {
-            //Implement chain of responsibility pattern here
-            bool dbAccessingCallFound = TryExtractDatabaseAccessingMethodsThatIncludeAQueryInQuerySyntax(node);
-            if (!dbAccessingCallFound)
-            {
-                dbAccessingCallFound = TryExtractDatabaseAccessingMethodsThatIncludeAQueryInMethodSyntax(node);
-            }
-
-            if (!dbAccessingCallFound)
-            {
-                TryExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(node);
-            }
-        }
-
-        private VariableDeclarationSyntax TryGetInvokedDataLoadOptionsVariable(InvocationExpressionSyntax node)
-        {
-            foreach (var variableDeclarationSyntax in node.DescendantNodes().OfType<VariableDeclarationSyntax>())
-            {
-                var foundVariableDecSyntax = _dataLoadOptionsVariables.Where(x => x == variableDeclarationSyntax).FirstOrDefault();
-                if (foundVariableDecSyntax != null)
-                {
-                    return foundVariableDecSyntax;
-                }
-            }
-            return null;
-        }
-
-        private VariableDeclarationSyntax TryGetAssignedDataContextInstance(AssignmentExpressionSyntax node)
-        {
-            foreach (var variableDeclarationSyntax in node.DescendantNodes().OfType<VariableDeclarationSyntax>())
-            {
-                var foundVariableDecSyntax = _dataContextVariables.Where(x => x == variableDeclarationSyntax).FirstOrDefault();
-                if (foundVariableDecSyntax != null)
-                {
-                    return foundVariableDecSyntax;
-                }
-            }
-            return null;
-        }
-
-        private bool TryExtractDatabaseAccessingMethodsThatIncludeAQueryInQuerySyntax(InvocationExpressionSyntax node)
-        {
-            
-            DatabaseAccessingMethodCallStatement<LINQToSQL> dbAccessingMethodCall =
-                (from q in node.DescendantNodes().OfType<QueryExpressionSyntax>()
-                 from dq in _databaseQueries
-                 where dq.IsSameQueryAs(q)
-                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(dq, node.GetCompilationInfo(_model))).FirstOrDefault();
-
-            if (dbAccessingMethodCall != null)
-            {
-                this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
-                this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);
-                return true;
-            }
-            return false;
-        }
-
-        private bool TryExtractDatabaseAccessingMethodsThatIncludeAQueryInMethodSyntax(InvocationExpressionSyntax node)
-        {
-            DatabaseAccessingMethodCallStatement<LINQToSQL> dbAccessingMethodCall =
-                (from q in node.DescendantNodes().OfType<IdentifierNameSyntax>()
-                 where _model.GetSymbolInfo(q).Symbol.GetType().BaseType == typeof(System.Data.Linq.DataContext)
-                 select new DatabaseAccessingMethodCallStatement<LINQToSQL>(null, node.GetCompilationInfo(_model))).FirstOrDefault();
-
-            if (dbAccessingMethodCall != null)
-            {
-                this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
-                this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);
-                return true;
-            }
-            return false;
-        }
-
-        private bool TryExtractDatabaseAccessingMethodsThatInvokeAMethodOnAQueryVariable(InvocationExpressionSyntax node)
-        {
-            DatabaseQuery<LINQToSQL> databaseQuery = (from n in node.DescendantNodes().OfType<IdentifierNameSyntax>()
-                                                      from v in _databaseQueries.Where(dq => dq.DatabaseQueryVariable != null)
-                                                      where n.Identifier.Text == v.DatabaseQueryVariable.VariableName
-                                                      select v).FirstOrDefault();
-
-            if (databaseQuery != null)
-            {
-                var dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<LINQToSQL>(
-                    databaseQuery, node.GetCompilationInfo(_model));
-
-                this.DatabaseAccessingMethodCalls.Add(dbAccessingMethodCall);
-                this.DatabaseAccessingMethodCallsAndSyntaxNodes.Add(dbAccessingMethodCall, node);
-                return true;
-            }
-            return false;
-        }
+        { }
     }
 }

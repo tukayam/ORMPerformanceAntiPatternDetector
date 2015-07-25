@@ -19,7 +19,7 @@ namespace Detector.Main
         public async Task<IEnumerable<CodeExecutionPath>> Construct(Solution solution)
         {
             DatabaseEntityDeclarationExtractor<T> dbEntityDeclarationExtractor = _extractorFactory.GetDatabaseEntityDeclarationExtractor();
-            DatabaseAccessingMethodCallsExtractor<T> dbAccessingMethodCallsExtractor = _extractorFactory.GetDatabaseAccessingMethodCallsExtractor();
+            DatabaseAccessingMethodCallExtractor<T> dbAccessingMethodCallsExtractor = _extractorFactory.GetDatabaseAccessingMethodCallsExtractor();
 
             //Find all root methods
             //Use call graph construction algorithm to generate code execution paths containing class, method, variable declarations

@@ -35,15 +35,13 @@ namespace Detector.Extractors.EF602
 
                         Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName);
 
-                        if (entityClass.Count != 1)
+                        if (entityClass.Keys.Count > 0)
                         {
-                            throw new Exception(String.Format("EntityClass for type {0} was not found correctly. Instead found class signatures are: {1}", entityClassName, entityClass.Keys.ToString()));
+                            ClassDeclarationSyntax entityClassDeclarationSyntax = entityClass.Keys.First();
+                            SemanticModel modelForEntityClass = entityClass[entityClassDeclarationSyntax];
+                            DatabaseEntityDeclarations.Add(new DatabaseEntityDeclaration<EntityFramework>(entityClassName,
+                                entityClassDeclarationSyntax.GetCompilationInfo(modelForEntityClass)));
                         }
-
-                        ClassDeclarationSyntax entityClassDeclarationSyntax = entityClass.Keys.First();
-                        SemanticModel modelForEntityClass = entityClass[entityClassDeclarationSyntax];
-                        DatabaseEntityDeclarations.Add(new DatabaseEntityDeclaration<EntityFramework>(entityClassName,
-                            entityClassDeclarationSyntax.GetCompilationInfo(modelForEntityClass)));
                     }
                 }
             }

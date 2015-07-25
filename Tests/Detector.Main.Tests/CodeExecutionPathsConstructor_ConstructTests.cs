@@ -30,13 +30,13 @@ namespace Detector.Main.Tests
             private CodeExecutionPathsConstructor<FakeORMToolType> _target;
             private ExtractorFactory<FakeORMToolType> _extractorFactory;
 
-            private Mock<DatabaseAccessingMethodCallsExtractor<FakeORMToolType>> _mockDatabaseAccessingMethodCallsExtractor;
+            private Mock<DatabaseAccessingMethodCallExtractor<FakeORMToolType>> _mockDatabaseAccessingMethodCallsExtractor;
 
             public TargetBuilder()
             {
                 var mockExtractorsFactory = new Mock<ExtractorFactory<FakeORMToolType>>();
 
-                _mockDatabaseAccessingMethodCallsExtractor = new Mock<DatabaseAccessingMethodCallsExtractor<FakeORMToolType>>();
+                _mockDatabaseAccessingMethodCallsExtractor = new Mock<DatabaseAccessingMethodCallExtractor<FakeORMToolType>>();
 
                 mockExtractorsFactory.Setup(m => m.GetDatabaseAccessingMethodCallsExtractor()).Returns(_mockDatabaseAccessingMethodCallsExtractor.Object);
 

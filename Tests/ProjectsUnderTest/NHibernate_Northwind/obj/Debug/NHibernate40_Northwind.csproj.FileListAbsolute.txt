@@ -2,3 +2,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\NHibernate_Northwind\bin\Debug\NHibernate40_Northwind.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\NHibernate_Northwind\obj\Debug\NHibernate40_Northwind.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\NHibernate_Northwind\obj\Debug\NHibernate40_Northwind.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\NHibernate_Northwind\obj\Debug\NHibernate40_Northwind.csprojResolveAssemblyReference.cache

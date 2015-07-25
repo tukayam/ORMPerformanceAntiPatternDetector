@@ -45,17 +45,3 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Models.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Collections.Immutable.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Models.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.CSharp.Desktop.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.Desktop.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.Desktop.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Composition.AttributedModel.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Composition.Convention.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Composition.Hosting.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Composition.Runtime.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Composition.TypedParts.xml
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Reflection.Metadata.xml

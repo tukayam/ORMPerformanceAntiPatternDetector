@@ -4,7 +4,7 @@ namespace Detector.Extractors.Base
 {
     public interface ExtractorFactory<T> where T:ORMToolType
     {
-        DatabaseAccessingMethodCallsExtractor<T> GetDatabaseAccessingMethodCallsExtractor();
+        DatabaseAccessingMethodCallExtractor<T> GetDatabaseAccessingMethodCallsExtractor();
         DatabaseEntities.DatabaseEntityDeclarationExtractor<T> GetDatabaseEntityDeclarationExtractor();
     }
 }

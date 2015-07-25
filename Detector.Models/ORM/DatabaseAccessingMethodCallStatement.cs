@@ -1,4 +1,5 @@
 ﻿using Detector.Models.Base;
+using Detector.Models.Others;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,8 +12,10 @@ namespace Detector.Models.ORM
         /// </summary>
         public string ExecutedQuery { get; private set; }
 
-        public DatabaseQuery<T> DatabaseQuery { get; private set; }
-        
+        public ModelCollection<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
+        public DatabaseQueryVariable<T> DatabaseQueryVariable { get; private set; }
+        public string QueryTextInCSharp { get; private set; }
+
         public DataContextInitializationStatement<T> DataContext { get; private set; }        
 
         /// <summary>
@@ -38,10 +41,16 @@ namespace Detector.Models.ORM
 
         public CompilationInfo CompilationInfo { get; private set; }
 
-        public DatabaseAccessingMethodCallStatement(DatabaseQuery<T> databaseQuery, CompilationInfo compilationInfo )
+        public DatabaseAccessingMethodCallStatement(string queryTextInCSharp
+            , ModelCollection<DatabaseEntityDeclaration<T>> entityDeclarations
+            , DatabaseQueryVariable<T> databaseQueryVariable
+            , CompilationInfo compilationInfo)
         {
+            this.QueryTextInCSharp = queryTextInCSharp;
+            this.EntityDeclarationsUsedInQuery = entityDeclarations;
+            this.DatabaseQueryVariable = databaseQueryVariable;
             this.CompilationInfo = compilationInfo;
-            this.DatabaseQuery = databaseQuery;
+
             this.LoadedEntityDeclarations = new List<DatabaseEntityDeclaration<T>>();
         }
 
@@ -58,6 +67,6 @@ namespace Detector.Models.ORM
         public void SetAssignedVariable(VariableDeclaration assignedVariable)
         {
             AssignedVariable = assignedVariable;
-        }
+        }       
     }
 }

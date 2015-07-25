@@ -30,3 +30,4 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Models\obj\Debug\Detector.Models.csprojResolveAssemblyReference.cache

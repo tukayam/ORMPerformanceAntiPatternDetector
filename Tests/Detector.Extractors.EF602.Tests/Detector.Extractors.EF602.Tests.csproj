@@ -109,10 +109,9 @@
   <ItemGroup>
     <Compile Include="DataContextDeclarationExtractorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DatabaseAccessingMethodCallExtractorTests.cs" />
     <Compile Include="DatabaseEntityDeclarationExtractorTests.cs" />
     <Compile Include="TargetBuilders\DataContextDeclarationExtractorTargetBuilder.cs" />
-    <Compile Include="DatabaseQueryExtractorTests.cs" />
+    <Compile Include="DatabaseAccessingMethodCallsExtractorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Models\Detector.Models.csproj">

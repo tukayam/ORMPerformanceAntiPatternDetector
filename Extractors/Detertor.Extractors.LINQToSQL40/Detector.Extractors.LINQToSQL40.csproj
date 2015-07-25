@@ -93,7 +93,6 @@
     <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
     <Compile Include="LINQToSQLDatabaseContextInitializationStatementExtractor.cs" />
     <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseQueryExtractor.cs" />
     <Compile Include="DataContextDeclarationExtractor.cs" />
     <Compile Include="LINQToSQLDataLoadOptionsExtractor.cs" />
     <Compile Include="LINQToSQLLoopDeclarationExtractor.cs" />

@@ -56,8 +56,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
             var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee",null);
             var dbEntityDeclarationsReturnedByDbQuery = new ModelCollection<DatabaseEntityDeclaration<FakeORMToolType>>() { dbEntityDeclaration };
             var dbQueryVariable = new DatabaseQueryVariable<FakeORMToolType>(null);
-            DatabaseQuery<FakeORMToolType> dbQuery = new DatabaseQuery<FakeORMToolType>("", dbEntityDeclarationsReturnedByDbQuery, dbQueryVariable,null);
-
+           
             //Create fake CompilationInfo for db accessing method call
             var methodDeclarationCompilationInfo = new CompilationInfo(null, null);
             var methodDeclarationContainingDbAccessingMethodCall = new MethodDeclaration("GetEmployee", methodDeclarationCompilationInfo);
@@ -65,7 +64,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
             var dbAccessingMethodCallCompilationInfo = new CompilationInfo(null, null);
 
             //Create fake db accessing method call
-            DatabaseAccessingMethodCallStatement<FakeORMToolType> dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<FakeORMToolType>(dbQuery, dbAccessingMethodCallCompilationInfo);
+            DatabaseAccessingMethodCallStatement<FakeORMToolType> dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<FakeORMToolType>("", dbEntityDeclarationsReturnedByDbQuery,dbQueryVariable, dbAccessingMethodCallCompilationInfo);
 
             var fakeDbAccessingMethodCallExt = new Mock<DatabaseAccessingMethodCallExtractor<FakeORMToolType>>();
             var dbAccessingMethodCallsToReturn = new ModelCollection<DatabaseAccessingMethodCallStatement<FakeORMToolType>>() { dbAccessingMethodCall };

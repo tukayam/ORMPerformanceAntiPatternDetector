@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Detector.Extractors.Properties {
+namespace Detector.WPFApp.Properties {
     using System;
     
     

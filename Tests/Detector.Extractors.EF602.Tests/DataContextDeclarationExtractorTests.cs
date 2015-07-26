@@ -2,6 +2,7 @@
 using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using System.Threading.Tasks;
 using TestBase.RoslynSolutionGenerators;
 using TestBase.Stubs;
@@ -27,13 +28,10 @@ namespace Detector.Extractors.EF602.Tests
             await target.FindDataContextDeclarationsAsync(EF60_NWSolution);
 
             //Assert
-            Assert.IsTrue(target.DataContextDeclarations.Count == 1);
+            var item = target.DataContextDeclarations.First();
 
-            foreach (var item in target.DataContextDeclarations)
-            {
-                Assert.IsTrue(item.Name == "NWDbContext");
-            }
-
+            Assert.IsTrue(target.DataContextDeclarations.Count == 1);           
+            Assert.IsTrue(item.Name == "NWDbContext");
             Assert.IsTrue(target.DataContextDeclarations.Count == 1);
             Assert.IsTrue(context.DataContextDeclarations == target.DataContextDeclarations);
         }

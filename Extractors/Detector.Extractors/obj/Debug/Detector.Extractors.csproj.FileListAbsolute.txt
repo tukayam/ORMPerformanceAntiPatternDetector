@@ -38,14 +38,3 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors\bin\Debug\Detector.Extractors.Base.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors\bin\Debug\Detector.Extractors.Base.pdb
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors\bin\Debug\Detector.Extractors.dll.config
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Extractors.dll.config
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Extractors.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Extractors.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Extractors.Base.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Models.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\System.Collections.Immutable.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Extractors.Base.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\bin\Debug\Detector.Models.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\obj\Debug\Detector.Extractors.csprojResolveAssemblyReference.cache
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\obj\Debug\Detector.Extractors.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors\obj\Debug\Detector.Extractors.pdb

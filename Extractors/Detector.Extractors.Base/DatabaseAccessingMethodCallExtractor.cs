@@ -62,7 +62,6 @@ namespace Detector.Extractors.Base
             }
         }
 
-
         private void GetDatabaseQueries(SyntaxNode root, SemanticModel semanticModel)
         {
             foreach (var node in root.DescendantNodes().OfType<InvocationExpressionSyntax>())

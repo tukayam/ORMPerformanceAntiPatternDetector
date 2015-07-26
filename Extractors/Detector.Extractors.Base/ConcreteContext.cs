@@ -9,7 +9,6 @@ namespace Detector.Extractors.Base
         public ModelCollection<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
         public ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
         public ModelCollection<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
-        public ModelCollection<DatabaseQuery<T>> DatabaseQueries { get; set; }
         public ModelCollection<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
 
         private static volatile ConcreteContext<T> instance;

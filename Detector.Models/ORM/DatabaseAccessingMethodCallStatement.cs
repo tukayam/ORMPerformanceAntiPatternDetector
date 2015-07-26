@@ -1,5 +1,6 @@
 ﻿using Detector.Models.Base;
 using Detector.Models.Others;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

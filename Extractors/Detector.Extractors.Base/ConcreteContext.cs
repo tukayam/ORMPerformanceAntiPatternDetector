@@ -14,7 +14,7 @@ namespace Detector.Extractors.Base
         private static volatile ConcreteContext<T> instance;
         private static object syncRoot = new Object();
 
-        private ConcreteContext()
+        public ConcreteContext()
         {
             DataContextDeclarations = new ModelCollection<DataContextDeclaration<T>>();
             DatabaseEntityDeclarations = new ModelCollection<DatabaseEntityDeclaration<T>>();

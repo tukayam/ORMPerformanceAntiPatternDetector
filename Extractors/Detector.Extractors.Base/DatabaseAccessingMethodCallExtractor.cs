@@ -5,6 +5,7 @@ using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Detector.Extractors.Base
         public ModelCollection<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; }
 
         public DatabaseAccessingMethodCallExtractor(Context<T> context)
-            :base(context)
+            : base(context)
         {
             DatabaseAccessingMethodCalls = new ModelCollection<DatabaseAccessingMethodCallStatement<T>>();
             DatabaseQueryVariables = new ModelCollection<DatabaseQueryVariable<T>>();
@@ -27,15 +28,22 @@ namespace Detector.Extractors.Base
             _databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, SyntaxNode>();
         }
 
-        public async Task FindDatabaseQueriesAsync(Solution solution)
+        public async Task FindDatabaseAccessingMethodCallsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
+            progress.Report(new ExtractionProgress("Started finding Database Accessing Method Calls..."));
+            int totalAmountOfDocs = GetTotalAmountOfDocuments(solution);
+
+            int counter = 0;
             foreach (var project in solution.Projects)
             {
                 foreach (var document in project.Documents)
                 {
+                    counter++;
+                    progress.Report(GetExtractionProgress(totalAmountOfDocs, counter));
+
                     SyntaxNode root = await document.GetSyntaxRootAsync();
                     SemanticModel semanticModel = await document.GetSemanticModelAsync();
-                    GetQueryVariables(root, semanticModel);
+                    GetQueryVariables(root, semanticModel, progress);
                     GetDatabaseQueries(root, semanticModel);
                 }
             }
@@ -44,8 +52,31 @@ namespace Detector.Extractors.Base
             Context.DatabaseQueryVariables = DatabaseQueryVariables;
         }
 
-        private void GetQueryVariables(SyntaxNode root, SemanticModel semanticModel)
+        private int _totalAmountOfDocuments;
+        private int GetTotalAmountOfDocuments(Solution solution)
         {
+            if (_totalAmountOfDocuments == 0)
+            {
+                int counter = 0;
+                foreach (var project in solution.Projects)
+                {
+                    foreach (var document in project.Documents)
+                    {
+                        counter++;
+                    }
+                }
+                _totalAmountOfDocuments = counter;
+            }
+            return _totalAmountOfDocuments;
+        }
+
+        private ExtractionProgress GetExtractionProgress(int total, int counter)
+        {
+            return new ExtractionProgress(counter * 100 / total);
+        }
+
+        private void GetQueryVariables(SyntaxNode root, SemanticModel semanticModel, IProgress<ExtractionProgress> progress)
+        {            
             foreach (var node in root.DescendantNodes().OfType<VariableDeclarationSyntax>())
             {
                 foreach (var queryExp in node.DescendantNodes())
@@ -87,7 +118,7 @@ namespace Detector.Extractors.Base
             foreach (var qeNode in query.DescendantNodes())
             {
                 result = model.IsOfType(qeNode, Context.DatabaseEntityDeclarations.Select(e => e.Name));
-                if(result)
+                if (result)
                 {
                     break;
                 }

@@ -1,6 +1,7 @@
 ﻿using Detector.Models.ORM;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
+using System;
 using System.Threading.Tasks;
 
 namespace Detector.Extractors.Base
@@ -15,13 +16,13 @@ namespace Detector.Extractors.Base
             DataContextDeclarations = new ModelCollection<DataContextDeclaration<T>>();
         }
 
-        public async Task FindDataContextDeclarationsAsync(Solution solution)
+        public async Task FindDataContextDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
-            await ExtractDataContextDeclarationsAsync(solution);
+            await ExtractDataContextDeclarationsAsync(solution, progress);
 
             Context.DataContextDeclarations = DataContextDeclarations;
         }
 
-        protected abstract Task ExtractDataContextDeclarationsAsync(Solution solution);
+        protected abstract Task ExtractDataContextDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress);
     }
 }

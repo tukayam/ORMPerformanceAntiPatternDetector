@@ -18,7 +18,7 @@ namespace Detector.Extractors.Tests
         public async Task DetectsDatabaseEntityDeclarations_When_RoslynComplexSolutionIsUsed()
         {
             //Arrange
-            var solGen = new RoslynComplexSolutionGenerator();          
+            var solGen = new RoslynComplexSolutionGenerator();
             var solution = solGen.GetRoslynSolution();
 
             //ToDo: change to use TargetBuilder
@@ -26,8 +26,9 @@ namespace Detector.Extractors.Tests
 
             target = new LINQToSQLDatabaseEntityDeclarationExtractor(context);
 
+            var progressIndicator = new ProgressStub();
             //Act
-            await target.FindDatabaseEntityDeclarationsAsync(solution);
+            await target.FindDatabaseEntityDeclarationsAsync(solution, progressIndicator);
             var result = target.DatabaseEntityDeclarations;
 
             //Assert

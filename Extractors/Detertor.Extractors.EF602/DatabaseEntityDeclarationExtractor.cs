@@ -19,10 +19,18 @@ namespace Detector.Extractors.EF602
             : base(context)
         { }
 
-        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
+            string extractionNote = "Started extracting Database Entity Declarations by finding all IQueryable<T> properties in Data Context Declarations";
+            progress.Report(new ExtractionProgress(extractionNote));
+            int totalAmountOfDataContextClasses = GetTotalAmountOfDataContextClasses();
+
+            int counter = 0;
             foreach (var dataContextClassDeclarationSyntax in Context.DataContextDeclarations)
             {
+                counter++;
+                progress.Report(GetExtractionProgress(totalAmountOfDataContextClasses, counter));
+
                 CompilationInfo compInfo = dataContextClassDeclarationSyntax.CompilationInfo;
                 foreach (var propertyDeclarationSyntax in compInfo.SyntaxNode.DescendantNodes().OfType<PropertyDeclarationSyntax>())
                 {
@@ -33,7 +41,7 @@ namespace Detector.Extractors.EF602
                         //Get T from DbSet<T> or IQueryable<T>
                         string entityClassName = (propertyType as GenericNameSyntax).TypeArgumentList.Arguments[0].ToFullString();
 
-                        Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName);
+                        Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName, progress);
 
                         if (entityClass.Keys.Count > 0)
                         {
@@ -45,6 +53,23 @@ namespace Detector.Extractors.EF602
                     }
                 }
             }
+        }
+
+        private int _totalAmountOfDataContextClasses;
+        private int GetTotalAmountOfDataContextClasses()
+        {
+            if (_totalAmountOfDataContextClasses == 0)
+            {
+                _totalAmountOfDataContextClasses = Context.DataContextDeclarations.Count;
+            }
+            return _totalAmountOfDataContextClasses;
+        }
+
+        private ExtractionProgress GetExtractionProgress(int totalAmountOfDataContextClasses, int counter)
+        {
+            int percentage = counter * 100 / totalAmountOfDataContextClasses;
+
+            return new ExtractionProgress(percentage);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Detector.Extractors.Base;
 using Detector.Extractors.Base.ExtensionMethods;
 using System.Collections.Generic;
+using System;
 
 namespace Detector.Extractors.EF602
 {
@@ -18,9 +19,12 @@ namespace Detector.Extractors.EF602
 
         }
 
-        protected override async Task ExtractDataContextDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDataContextDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
-            Dictionary<ClassDeclarationSyntax,SemanticModel> classes = await solution.GetClassesOfType<DbContext>();
+            string extractionNote = "Started extracting Data Context Declarations by finding classes of type DbContext";
+            progress.Report(new ExtractionProgress(extractionNote));
+
+            Dictionary<ClassDeclarationSyntax,SemanticModel> classes = await solution.GetClassesOfType<DbContext>(progress);
 
             foreach (var item in classes.Keys)
             {

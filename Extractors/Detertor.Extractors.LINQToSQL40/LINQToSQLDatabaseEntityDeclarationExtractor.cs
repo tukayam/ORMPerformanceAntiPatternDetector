@@ -8,6 +8,7 @@ using Detector.Extractors.Base.Helpers;
 using Detector.Extractors.Base.ExtensionMethods;
 using System.Collections.Generic;
 using System.Data.Linq.Mapping;
+using System;
 
 namespace Detector.Extractors.LINQToSQL40
 {
@@ -17,7 +18,7 @@ namespace Detector.Extractors.LINQToSQL40
             : base(context)
         { }
 
-        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
             Dictionary<ClassDeclarationSyntax, SemanticModel> classes = await solution.GetClassesSignedWithAttributeType<TableAttribute>();
 

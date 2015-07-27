@@ -36,3 +36,12 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.Base\bin\Debug\System.Composition.TypedParts.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.Base\bin\Debug\System.Reflection.Metadata.xml
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Detector.Extractors.Base\bin\Debug\Detector.Extractors.Base.dll.config
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Extractors.Base.dll.config
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Extractors.Base.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Extractors.Base.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Models.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\System.Collections.Immutable.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\bin\Debug\Detector.Models.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\obj\Debug\Detector.Extractors.Base.csprojResolveAssemblyReference.cache
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\obj\Debug\Detector.Extractors.Base.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Extractors\Detector.Extractors.Base\obj\Debug\Detector.Extractors.Base.pdb

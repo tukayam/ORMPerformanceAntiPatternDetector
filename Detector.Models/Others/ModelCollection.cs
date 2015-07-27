@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Detector.Models.Others
 {
-    public class ModelCollection<T>:HashSet<T> where T : ModelBase
+    public class ModelCollection<T> : HashSet<T> where T : ModelBase
     {
         //HashSet<T> _container;
 

@@ -109,6 +109,7 @@
     <Compile Include="DataContextDeclarationExtractor.cs" />
     <Compile Include="ExtensionMethods\RoslynSolutionExtensions.cs" />
     <Compile Include="ExtensionMethods\RoslynSemanticModelExtensions.cs" />
+    <Compile Include="ExtractionProgress.cs" />
     <Compile Include="Extractor.cs" />
     <Compile Include="ExtractorFactory.cs" />
     <Compile Include="Helpers\DatabaseQueryExtensions.cs" />

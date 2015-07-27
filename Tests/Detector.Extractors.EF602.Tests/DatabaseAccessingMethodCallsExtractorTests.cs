@@ -22,15 +22,17 @@ namespace Detector.Extractors.EF602.Tests
             //Arrange
             Solution solution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
 
+            var progressIndicator = new ProgressStub();
+
             var context = new ContextStub<EntityFramework>();
             var dataContextDecExtr = new DataContextDeclarationExtractor(context);
-            await dataContextDecExtr.FindDataContextDeclarationsAsync(solution);
+            await dataContextDecExtr.FindDataContextDeclarationsAsync(solution, progressIndicator);
             var dbEntityExtractor = new DatabaseEntityDeclarationExtractor(context);
-            await dbEntityExtractor.FindDatabaseEntityDeclarationsAsync(solution);
+            await dbEntityExtractor.FindDatabaseEntityDeclarationsAsync(solution, progressIndicator);
             var target = new DatabaseAccessingMethodCallExtractor(context);
 
             //Act
-            await target.FindDatabaseQueriesAsync(solution);
+            await target.FindDatabaseAccessingMethodCallsAsync(solution, progressIndicator);
             var result = target.DatabaseAccessingMethodCalls;
 
             //Assert

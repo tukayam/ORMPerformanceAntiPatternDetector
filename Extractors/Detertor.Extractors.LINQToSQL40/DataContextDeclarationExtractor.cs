@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using System.Data.Linq.Mapping;
 using System.Threading.Tasks;
+using System;
 
 namespace Detector.Extractors.LINQToSQL40
 {
@@ -16,7 +17,7 @@ namespace Detector.Extractors.LINQToSQL40
             : base(context)
         { }
 
-        protected override async Task ExtractDataContextDeclarationsAsync(Solution solution)
+        protected override async Task ExtractDataContextDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
             Dictionary<ClassDeclarationSyntax, SemanticModel> classes = await solution.GetClassesSignedWithAttributeType<DatabaseAttribute>();
             foreach (var classDeclarationSyntax in classes.Keys)

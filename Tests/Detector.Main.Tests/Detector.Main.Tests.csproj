@@ -115,11 +115,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DetectionRules\ExcessiveDataDetectionRuleTests.cs" />
-    <Compile Include="DetectionRules\OneByOneProcessingDetectionRuleTests.cs" />
     <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CodeExecutionPathsConstructor_ConstructTests.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSolutionBuilder.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Stubs\FakeORMToolType.cs" />
@@ -146,9 +143,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DetectionRules\Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

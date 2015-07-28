@@ -1,4 +1,5 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Models.ORM.DatabaseQueries;
+using Detector.Models.ORM.ORMTools;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Detector.Extractors.Base.Helpers

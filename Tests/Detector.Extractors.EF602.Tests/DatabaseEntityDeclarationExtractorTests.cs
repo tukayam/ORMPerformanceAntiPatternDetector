@@ -1,5 +1,5 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -19,14 +19,16 @@ namespace Detector.Extractors.EF602.Tests
             //Arrange  
             Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
 
+            var progressIndicator = new ProgressStub();
+
             Context<EntityFramework> context = new ContextStub<EntityFramework>();
             var dataContextDecExtr = new DataContextDeclarationExtractor(context);
-            await dataContextDecExtr.FindDataContextDeclarationsAsync(EF60_NWSolution);
+            await dataContextDecExtr.FindDataContextDeclarationsAsync(EF60_NWSolution, progressIndicator);
 
             var target = new DatabaseEntityDeclarationExtractor(context);
 
             //Act
-            await target.FindDatabaseEntityDeclarationsAsync(EF60_NWSolution);
+            await target.FindDatabaseEntityDeclarationsAsync(EF60_NWSolution, progressIndicator);
 
             //Assert
             Assert.IsTrue(target.DatabaseEntityDeclarations.Count == 3);

@@ -114,9 +114,7 @@
     <Compile Include="ExtractorFactory.cs" />
     <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
     <Compile Include="Helpers\SyntaxNodeExtensions.cs" />
-    <Compile Include="IGodClass.cs" />
     <Compile Include="LoopDeclarationExtractor.cs" />
-    <Compile Include="ORMModelTreeExtractorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

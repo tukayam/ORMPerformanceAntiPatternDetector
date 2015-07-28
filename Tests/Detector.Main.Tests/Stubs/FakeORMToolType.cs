@@ -1,8 +1,8 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Main.Tests.Stubs
 {
-    public class FakeORMToolType:ORMToolType
+    public class FakeORMToolType : ORMToolType
     {
     }
 }

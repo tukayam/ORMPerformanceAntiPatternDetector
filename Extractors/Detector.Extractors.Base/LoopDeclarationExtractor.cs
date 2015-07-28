@@ -1,5 +1,5 @@
 ﻿using Detector.Models.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 
 namespace Detector.Extractors.Base

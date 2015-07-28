@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Linq;
 using System.Data.Entity;
+using TestBase.Stubs;
 
 namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
 {
@@ -15,6 +16,13 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
     public class RoslynSemanticModelExtensions_GetClassesOfTypeTests
     {
         Solution EF60_NWSolution;
+        ProgressStub progressIndicator;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            progressIndicator = new ProgressStub();
+        }
 
         [TestMethod]
         public async Task FindClasses_When_GenericMethodIsCalledAndTypeIsClassTypeItself()
@@ -24,7 +32,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
 
             //Act
             Dictionary<ClassDeclarationSyntax, SemanticModel> result
-                = await solution.GetClassesOfType<Order>();
+                = await solution.GetClassesOfType<Order>(progressIndicator);
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -40,7 +48,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
 
             //Act
             Dictionary<ClassDeclarationSyntax, SemanticModel> result
-                = await solution.GetClassesOfType<DbContext>();
+                = await solution.GetClassesOfType<DbContext>(progressIndicator);
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -55,7 +63,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType<IRepository>();
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType<IRepository>(progressIndicator);
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -70,7 +78,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("IRepository");
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("IRepository", progressIndicator);
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -85,7 +93,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("DbContext");
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("DbContext", progressIndicator);
 
             //Assert
             Assert.IsTrue(result.Count == 1);

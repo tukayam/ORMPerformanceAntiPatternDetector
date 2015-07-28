@@ -1,5 +1,5 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
@@ -24,8 +24,10 @@ namespace Detector.Extractors.EF602.Tests
 
             var target = new DataContextDeclarationExtractor(context);
 
+            var progressIndicator = new ProgressStub();
+
             //Act
-            await target.FindDataContextDeclarationsAsync(EF60_NWSolution);
+            await target.FindDataContextDeclarationsAsync(EF60_NWSolution, progressIndicator);
 
             //Assert
             var item = target.DataContextDeclarations.First();
@@ -46,8 +48,10 @@ namespace Detector.Extractors.EF602.Tests
             Context<EntityFramework> context = new ContextStub<EntityFramework>();
             var target = new DataContextDeclarationExtractor(context);
 
+            var progressIndicator = new ProgressStub();
+
             //Act
-            await target.FindDataContextDeclarationsAsync(EF60_NWSolution);
+            await target.FindDataContextDeclarationsAsync(EF60_NWSolution, progressIndicator);
 
             //Assert
             Assert.IsTrue(target.DataContextDeclarations.Count == 15);

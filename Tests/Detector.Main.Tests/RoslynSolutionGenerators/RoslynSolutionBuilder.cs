@@ -2,6 +2,9 @@
 using Detector.Main.Tests.Stubs;
 using Detector.Models.Base;
 using Detector.Models.ORM;
+using Detector.Models.ORM.DatabaseAccessingMethodCalls;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.DatabaseQueries;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Moq;
@@ -64,7 +67,8 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
             var dbAccessingMethodCallCompilationInfo = new CompilationInfo(null, null);
 
             //Create fake db accessing method call
-            DatabaseAccessingMethodCallStatement<FakeORMToolType> dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<FakeORMToolType>("", dbEntityDeclarationsReturnedByDbQuery,dbQueryVariable, dbAccessingMethodCallCompilationInfo);
+            DatabaseAccessingMethodCallStatement<FakeORMToolType> dbAccessingMethodCall = new DatabaseAccessingMethodCallStatement<FakeORMToolType>("", dbEntityDeclarationsReturnedByDbQuery, dbAccessingMethodCallCompilationInfo);
+            dbAccessingMethodCall.SetDatabaseQueryVariable(dbQueryVariable);
 
             var fakeDbAccessingMethodCallExt = new Mock<DatabaseAccessingMethodCallExtractor<FakeORMToolType>>();
             var dbAccessingMethodCallsToReturn = new ModelCollection<DatabaseAccessingMethodCallStatement<FakeORMToolType>>() { dbAccessingMethodCall };

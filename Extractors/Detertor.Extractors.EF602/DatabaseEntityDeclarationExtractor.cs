@@ -10,6 +10,8 @@ using Detector.Models.Base;
 using Detector.Extractors.Base.Helpers;
 using System.Collections.Generic;
 using System;
+using Detector.Models.ORM.ORMTools;
+using Detector.Models.ORM.DatabaseEntities;
 
 namespace Detector.Extractors.EF602
 {
@@ -21,7 +23,7 @@ namespace Detector.Extractors.EF602
 
         protected override async Task ExtractDatabaseEntityDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
-            string extractionNote = "Started extracting Database Entity Declarations by finding all IQueryable<T> properties in Data Context Declarations";
+            string extractionNote = "Extracting Database Entity Declarations by finding all IQueryable<T> properties in Data Context Declarations";
             progress.Report(new ExtractionProgress(extractionNote));
             int totalAmountOfDataContextClasses = GetTotalAmountOfDataContextClasses();
 

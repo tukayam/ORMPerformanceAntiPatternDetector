@@ -9,6 +9,8 @@ using Detector.Extractors.Base.ExtensionMethods;
 using System.Collections.Generic;
 using System.Data.Linq.Mapping;
 using System;
+using Detector.Models.ORM.ORMTools;
+using Detector.Models.ORM.DatabaseEntities;
 
 namespace Detector.Extractors.LINQToSQL40
 {

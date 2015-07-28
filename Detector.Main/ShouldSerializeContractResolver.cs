@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Reflection;
 
@@ -12,7 +14,9 @@ namespace Detector.Main
         {
             JsonProperty property = base.CreateProperty(member, memberSerialization);
 
-            if (property.PropertyName == "CompilationInfo")
+            if (property.PropertyType == typeof(SyntaxNode)
+                || property.PropertyType == typeof(MethodDeclarationSyntax)
+                || property.PropertyType == typeof(SemanticModel))
             {
                 property.ShouldSerialize =
                     instance =>

@@ -1,4 +1,8 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Models.ORM.DatabaseAccessingMethodCalls;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.DatabaseQueries;
+using Detector.Models.ORM.DataContexts;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 using System;
 

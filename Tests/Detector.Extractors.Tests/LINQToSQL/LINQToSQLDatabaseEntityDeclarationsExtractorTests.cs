@@ -6,6 +6,7 @@ using Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators;
 using Detector.Models.ORM;
 using Detector.Extractors.Base;
 using TestBase.Stubs;
+using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Extractors.Tests
 {

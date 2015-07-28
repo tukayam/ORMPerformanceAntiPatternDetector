@@ -1,4 +1,5 @@
 ﻿using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Extractors.Base
 {

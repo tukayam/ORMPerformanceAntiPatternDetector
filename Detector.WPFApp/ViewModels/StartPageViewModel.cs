@@ -1,4 +1,5 @@
 ﻿using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Win32;

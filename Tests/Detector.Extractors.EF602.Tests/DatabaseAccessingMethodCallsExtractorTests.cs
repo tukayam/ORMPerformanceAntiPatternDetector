@@ -1,11 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using TestBase.Stubs;
-using Detector.Models.ORM;
-using Detector.Extractors.Base;
 using Microsoft.CodeAnalysis;
 using TestBase.RoslynSolutionGenerators;
+using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Extractors.EF602.Tests
 {

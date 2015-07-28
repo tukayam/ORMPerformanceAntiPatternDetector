@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Detector.Extractors.Base.Helpers;
 using System.Data.Linq;
+using Detector.Models.ORM.ORMTools;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.DataContexts;
 
 namespace Detector.Extractors.EF602
 {

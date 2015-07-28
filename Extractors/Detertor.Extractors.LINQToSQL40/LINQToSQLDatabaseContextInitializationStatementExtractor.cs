@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Detector.Extractors.Base.Helpers;
 using System.Data.Linq;
+using Detector.Models.ORM.ORMTools;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.DataContexts;
 
 namespace Detector.Extractors.LINQToSQL40
 {
@@ -14,7 +17,7 @@ namespace Detector.Extractors.LINQToSQL40
         private readonly List<DataContextDeclaration<LINQToSQL>> _dataContextDeclarations;
         private readonly SemanticModel _model;
 
-        private Dictionary<DataContextInitializationStatement<LINQToSQL>, List<DatabaseEntityVariableDeclaration<LINQToSQL>>> _dataContextInitializationStatementsAndLoadedDatabaseEntityDeclarations;
+        private Dictionary<DataContextInitializationStatement<LINQToSQL>, List<Models.ORM.DatabaseEntities.DatabaseEntityVariableDeclaration<LINQToSQL>>> _dataContextInitializationStatementsAndLoadedDatabaseEntityDeclarations;
         private List<VariableDeclarationSyntax> _dataContextVariables;
         public List<DataContextInitializationStatement<LINQToSQL>> _dataContextInitializationStatements { get; private set; }
         private List<VariableDeclarationSyntax> _dataLoadOptionsVariables;

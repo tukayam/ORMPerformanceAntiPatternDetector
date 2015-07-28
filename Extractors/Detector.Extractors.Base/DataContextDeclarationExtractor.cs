@@ -1,4 +1,6 @@
 ﻿using Detector.Models.ORM;
+using Detector.Models.ORM.DataContexts;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using System;

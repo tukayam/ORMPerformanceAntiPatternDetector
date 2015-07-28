@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Detector.Models;
-using Detector.Models.ORM;
 using System;
 using System.Linq;
 using Detector.Models.Base;
+using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Extractors
 {

@@ -1,9 +1,8 @@
 ﻿using Detector.Extractors.Base;
 using Detector.Extractors.EF602;
 using Detector.Main;
-using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 using System;
-using System.Threading;
 
 namespace Detector.ConsoleApp
 {

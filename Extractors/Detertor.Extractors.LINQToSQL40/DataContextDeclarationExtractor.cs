@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Data.Linq.Mapping;
 using System.Threading.Tasks;
 using System;
+using Detector.Models.ORM.ORMTools;
+using Detector.Models.ORM.DataContexts;
 
 namespace Detector.Extractors.LINQToSQL40
 {

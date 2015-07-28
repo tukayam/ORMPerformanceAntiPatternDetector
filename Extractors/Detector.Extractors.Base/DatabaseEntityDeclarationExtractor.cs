@@ -1,5 +1,6 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using System;

@@ -1,5 +1,5 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Extractors.EF602
 {

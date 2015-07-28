@@ -105,11 +105,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeExecutionPathsConstructor.cs" />
-    <Compile Include="DetectionRules\DetectionRule.cs" />
-    <Compile Include="DetectionRules\DetectionRuleFactory.cs" />
-    <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
-    <Compile Include="DetectionRules\OneByOneProcessingDetectionRule.cs" />
     <Compile Include="ExtractionManager.cs" />
     <Compile Include="IExtractionManager.cs" />
     <Compile Include="ISerializer.cs" />
@@ -122,10 +117,6 @@
     <ProjectReference Include="..\Extractors\Detector.Extractors.Base\Detector.Extractors.Base.csproj">
       <Project>{97f1e032-107e-4946-beb3-4ad63332f86f}</Project>
       <Name>Detector.Extractors.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Extractors\Detector.Extractors\Detector.Extractors.csproj">
-      <Project>{200f6e6d-e6bd-4f1b-8ead-55ecbc09b9f3}</Project>
-      <Name>Detector.Extractors</Name>
     </ProjectReference>
     <ProjectReference Include="..\Detector.Models\Detector.Models.csproj">
       <Project>{68e7fe5d-639e-4bb0-b6cd-9d3adf984d6e}</Project>

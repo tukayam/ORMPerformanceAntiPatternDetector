@@ -1,12 +1,14 @@
 ﻿using Detector.Extractors.Base;
 using Detector.Models.ORM;
+using Detector.Models.ORM.DataContexts;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 using System;
 using TestBase.Stubs;
 
 namespace TestBase.TargetBuilders
 {
-    public abstract class TargetBuilderBase<T,Y> where T:ORMToolType where Y:Extractor<T>,new()
+    public abstract class TargetBuilderBase<T, Y> where T : ORMToolType where Y : Extractor<T>, new()
     {
         private Context<T> _context;
         private Y _target;
@@ -16,7 +18,7 @@ namespace TestBase.TargetBuilders
         /// For example: new ConcreteTargetBuilder<LINQToSQL,DatabaseContextDeclarationExtractor<LINQToSQL>>(e=> new DatabaseContextDeclarationExtractor(e));
         /// </summary>
         /// <param name="contextCreationDelegate"></param>
-        public TargetBuilderBase(Func<Context<T>,Y> contextCreationDelegate)
+        public TargetBuilderBase(Func<Context<T>, Y> contextCreationDelegate)
         {
             _context = new ContextStub<T>();
             _target = contextCreationDelegate(_context);

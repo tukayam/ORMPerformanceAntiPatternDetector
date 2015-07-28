@@ -1,6 +1,10 @@
 ﻿using Detector.Extractors.Base.ExtensionMethods;
 using Detector.Extractors.Base.Helpers;
 using Detector.Models.ORM;
+using Detector.Models.ORM.DatabaseAccessingMethodCalls;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.DatabaseQueries;
+using Detector.Models.ORM.ORMTools;
 using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -30,7 +34,7 @@ namespace Detector.Extractors.Base
 
         public async Task FindDatabaseAccessingMethodCallsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
-            progress.Report(new ExtractionProgress("Started finding Database Accessing Method Calls..."));
+            progress.Report(new ExtractionProgress("Finding Database Accessing Method Calls..."));
             int totalAmountOfDocs = GetTotalAmountOfDocuments(solution);
 
             int counter = 0;
@@ -42,9 +46,8 @@ namespace Detector.Extractors.Base
                     progress.Report(GetExtractionProgress(totalAmountOfDocs, counter));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
-                    SemanticModel semanticModel = await document.GetSemanticModelAsync();
-                    GetQueryVariables(root, semanticModel, progress);
-                    GetDatabaseQueries(root, semanticModel);
+                    SemanticModel semanticModel = await document.GetSemanticModelAsync();                    
+                    GetDatabaseAccessingCalls(root, semanticModel);
                 }
             }
 
@@ -75,38 +78,20 @@ namespace Detector.Extractors.Base
             return new ExtractionProgress(counter * 100 / total);
         }
 
-        private void GetQueryVariables(SyntaxNode root, SemanticModel semanticModel, IProgress<ExtractionProgress> progress)
-        {            
-            foreach (var node in root.DescendantNodes().OfType<VariableDeclarationSyntax>())
-            {
-                foreach (var queryExp in node.DescendantNodes())
-                {
-                    if (QueryIsDatabaseQuery(queryExp, semanticModel)
-                            && !_databaseQueryVariables.ContainsKey(node))
-                    {
-                        _databaseQueryVariables.Add(node, queryExp);
-
-                        var dbQueryVar = new DatabaseQueryVariable<T>(node.GetCompilationInfo(semanticModel));
-                        this.DatabaseQueryVariables.Add(dbQueryVar);
-                    }
-                }
-            }
-        }
-
-        private void GetDatabaseQueries(SyntaxNode root, SemanticModel semanticModel)
+        private void GetDatabaseAccessingCalls(SyntaxNode root, SemanticModel semanticModel)
         {
-            foreach (var node in root.DescendantNodes().OfType<InvocationExpressionSyntax>())
+            List<SyntaxNode> nodesToCheck = new List<SyntaxNode>();
+            nodesToCheck.AddRange(root.DescendantNodes().OfType<InvocationExpressionSyntax>());
+            nodesToCheck.AddRange(root.DescendantNodes().OfType<AssignmentExpressionSyntax>());
+
+            foreach (var node in nodesToCheck)
             {
                 if (QueryIsDatabaseQuery(node, semanticModel))
                 {
                     string queryText = node.GetText().ToString();
                     ModelCollection<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);
 
-                    var queryVariable = (from qv in _databaseQueryVariables
-                                         where qv.Value == node
-                                         select new DatabaseQueryVariable<T>(qv.Key.GetCompilationInfo(semanticModel))).FirstOrDefault();
-
-                    var query = new DatabaseAccessingMethodCallStatement<T>(queryText, databaseEntityDeclarationsUsedInQuery, queryVariable, node.GetCompilationInfo(semanticModel));
+                    var query = new DatabaseAccessingMethodCallStatement<T>(queryText, databaseEntityDeclarationsUsedInQuery, node.GetCompilationInfo(semanticModel));
                     DatabaseAccessingMethodCalls.Add(query);
                 }
             }

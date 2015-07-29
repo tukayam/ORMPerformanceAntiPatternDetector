@@ -19,9 +19,9 @@ namespace EF60_NW
         {
             using (NWDbContext dbContext = new NWDbContext())
             {
-               return (from c in dbContext.Customers
-                             where c.CustomerID == id
-                             select c).First();
+                return (from c in dbContext.Customers
+                        where c.CustomerID == id
+                        select c).First();
             }
         }
 
@@ -37,7 +37,7 @@ namespace EF60_NW
         {
             using (NWDbContext dbContext = new NWDbContext())
             {
-                var query=dbContext.Customers.Where(c => c.CustomerID == id).First();
+                var query = dbContext.Customers.Where(c => c.CustomerID == id).First();
                 return query;
             }
         }
@@ -48,13 +48,13 @@ namespace EF60_NW
             {
                 var query = dbContext.Customers.AsQueryable();
                 query = query.Where(c => c.CustomerID == id);
-                return query.First() ;
+                return query.First();
             }
         }
 
         public IQueryable<Customer> GetAllCustomers()
         {
-            using (NWDbContext dbContext=new NWDbContext())
+            using (NWDbContext dbContext = new NWDbContext())
             {
                 return dbContext.Customers;
             }

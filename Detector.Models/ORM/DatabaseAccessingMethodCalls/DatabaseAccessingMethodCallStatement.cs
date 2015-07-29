@@ -49,12 +49,7 @@ namespace Detector.Models.ORM.DatabaseAccessingMethodCalls
             get
             {
                 var syntaxNode= this.CompilationInfo.SyntaxNode;
-                if (syntaxNode.Parent is MethodDeclarationSyntax)
-                {
-                    return syntaxNode.Parent as MethodDeclarationSyntax;
-                }
-
-                return null;
+                return syntaxNode.AncestorsAndSelf().OfType<MethodDeclarationSyntax>().First();
             }
         }
 
@@ -64,7 +59,7 @@ namespace Detector.Models.ORM.DatabaseAccessingMethodCalls
             {
                 if (ParentMethodDeclarationSyntax != null)
                 {
-                    return ParentMethodDeclarationSyntax.ToString();
+                    return ParentMethodDeclarationSyntax.Identifier.ToString();
                 }
                 return string.Empty;
             }

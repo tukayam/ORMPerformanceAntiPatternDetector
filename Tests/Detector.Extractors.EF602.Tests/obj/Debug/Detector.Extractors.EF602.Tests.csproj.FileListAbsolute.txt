@@ -42,3 +42,6 @@ D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPat
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\obj\Debug\Detector.Extractors.EF602.Tests.csprojResolveAssemblyReference.cache
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\obj\Debug\Detector.Extractors.EF602.Tests.dll
 D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\obj\Debug\Detector.Extractors.EF602.Tests.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\bin\Debug\SharpTestsEx.dll
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\bin\Debug\SharpTestsEx.pdb
+D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.Extractors.EF602.Tests\bin\Debug\SharpTestsEx.xml

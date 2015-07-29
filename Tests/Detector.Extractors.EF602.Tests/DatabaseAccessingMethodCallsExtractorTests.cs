@@ -4,6 +4,8 @@ using TestBase.Stubs;
 using Microsoft.CodeAnalysis;
 using TestBase.RoslynSolutionGenerators;
 using Detector.Models.ORM.ORMTools;
+using System.Linq;
+using SharpTestsEx;
 
 namespace Detector.Extractors.EF602.Tests
 {
@@ -15,7 +17,7 @@ namespace Detector.Extractors.EF602.Tests
         /// </summary>
         /// <returns></returns>
         [TestMethod]
-        public async Task ExtractsDatabaseAccessingMethodCalls_When_EF60_NWProjectIsUsed()
+        public async Task ExtractsDatabaseAccessingMethodCallsWithRightParentMethodNames_When_EF60_NWProjectIsUsed()
         {
             //Arrange
             Solution solution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\ProjectsUnderTest\EF60_NW\EF60_NW.sln");
@@ -32,9 +34,16 @@ namespace Detector.Extractors.EF602.Tests
             //Act
             await target.FindDatabaseAccessingMethodCallsAsync(solution, progressIndicator);
             var result = target.DatabaseAccessingMethodCalls;
+            var parentMethodNames = result.Select(d => d.ParentMethodName);
 
             //Assert
-            Assert.IsTrue(target.DatabaseAccessingMethodCalls.Count == 7);
+            //Assert.IsTrue(target.DatabaseAccessingMethodCalls.Count == 6);
+            Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingQuerySyntaxAndAssignToVariable"));
+            Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingQuerySyntax"));
+            Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingMethodSyntax"));
+            Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingMethodSyntaxAndAssignToVariable"));
+            Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingMethodSyntaxAndQueryIsChangedInMultipleLines"));
+            Assert.IsTrue(parentMethodNames.Contains("DoSomething"));
         }
     }
 }

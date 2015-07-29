@@ -5,12 +5,12 @@ namespace Detector.Models.ORM.DatabaseQueries
 {
     public class DatabaseQueryVariable<T> : ModelBase where T : ORMToolType
     {
-        //public string VariableName { get; private set; }
+        public string VariableName { get; private set; }
         public CompilationInfo CompilationInfo { get; private set; }
 
-        public DatabaseQueryVariable(CompilationInfo compilationInfo)
+        public DatabaseQueryVariable(string variableName, CompilationInfo compilationInfo)
         {
-            // this.VariableName = variableName;
+            this.VariableName = variableName;
             this.CompilationInfo = compilationInfo;
         }
     }

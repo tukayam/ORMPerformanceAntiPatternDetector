@@ -1,6 +1,5 @@
 ﻿using Detector.Extractors.Base.ExtensionMethods;
 using Detector.Extractors.Base.Helpers;
-using Detector.Models.ORM;
 using Detector.Models.ORM.DatabaseAccessingMethodCalls;
 using Detector.Models.ORM.DatabaseEntities;
 using Detector.Models.ORM.DatabaseQueries;
@@ -46,8 +45,11 @@ namespace Detector.Extractors.Base
                     progress.Report(GetExtractionProgress(totalAmountOfDocs, counter));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
-                    SemanticModel semanticModel = await document.GetSemanticModelAsync();                    
-                    GetDatabaseAccessingCalls(root, semanticModel);
+                    SemanticModel semanticModel = await document.GetSemanticModelAsync();
+
+                    GetDatabaseQueryVariablesInDocument(root, semanticModel);
+                    GetDatabaseAccessingSelectStatementsInQuerySyntax(root, semanticModel);
+                    GetDatabaseAccessingCallsInMethodSyntax(root, semanticModel);
                 }
             }
 
@@ -78,29 +80,123 @@ namespace Detector.Extractors.Base
             return new ExtractionProgress(counter * 100 / total);
         }
 
-        private void GetDatabaseAccessingCalls(SyntaxNode root, SemanticModel semanticModel)
+        private void GetDatabaseQueryVariablesInDocument(SyntaxNode root, SemanticModel semanticModel)
         {
-            List<SyntaxNode> nodesToCheck = new List<SyntaxNode>();
-            nodesToCheck.AddRange(root.DescendantNodes().OfType<InvocationExpressionSyntax>());
-            nodesToCheck.AddRange(root.DescendantNodes().OfType<AssignmentExpressionSyntax>());
-
-            foreach (var node in nodesToCheck)
+            foreach (var node in root.DescendantNodes().OfType<VariableDeclarationSyntax>())
             {
-                if (QueryIsDatabaseQuery(node, semanticModel))
-                {
-                    string queryText = node.GetText().ToString();
-                    ModelCollection<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);
+                var varDeclarator = node.DescendantNodes().OfType<VariableDeclaratorSyntax>().First();
 
-                    var query = new DatabaseAccessingMethodCallStatement<T>(queryText, databaseEntityDeclarationsUsedInQuery, node.GetCompilationInfo(semanticModel));
-                    DatabaseAccessingMethodCalls.Add(query);
+                if (SyntaxNodeIsDatabaseQuery(varDeclarator, semanticModel)
+                        && !_databaseQueryVariables.ContainsKey(node))
+                {
+                    var dbQueryVar = new DatabaseQueryVariable<T>(node.Variables[0].Identifier.ToString(), node.GetCompilationInfo(semanticModel));
+                    this.DatabaseQueryVariables.Add(dbQueryVar);
                 }
             }
         }
 
-        private bool QueryIsDatabaseQuery(SyntaxNode query, SemanticModel model)
+        private void GetDatabaseAccessingSelectStatementsInQuerySyntax(SyntaxNode rootOfDocument, SemanticModel semanticModel)
+        {
+            foreach (var invocationExpSyntax in rootOfDocument.DescendantNodes().OfType<InvocationExpressionSyntax>())
+            {
+                //If Query is defined within the same line
+                var queryExpSyntax = invocationExpSyntax.DescendantNodes().OfType<QueryExpressionSyntax>().FirstOrDefault();
+                if (queryExpSyntax != null)
+                {
+                    if (SyntaxNodeIsDatabaseQuery(queryExpSyntax, semanticModel))
+                    {
+                        AddDatabaseAccessingCall(invocationExpSyntax, semanticModel);
+                    }
+                }
+                //else if invocation is done on an already defined query variable 
+                else
+                {
+                    MemberAccessExpressionSyntax memberAccessExpSyntax = invocationExpSyntax.DescendantNodes().OfType<MemberAccessExpressionSyntax>().FirstOrDefault();
+
+                    if (memberAccessExpSyntax != null)
+                    {
+                        var queryVariable = (from identifier in memberAccessExpSyntax.DescendantNodes().OfType<IdentifierNameSyntax>()
+                                             from queryVar in DatabaseQueryVariables
+                                             where identifier.Identifier.ToString() == queryVar.VariableName
+                                             select queryVar).FirstOrDefault();
+
+                        if (queryVariable != null)
+                        {
+                            AddDatabaseAccessingCall(invocationExpSyntax, semanticModel, queryVariable);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void GetDatabaseAccessingCallsInMethodSyntax(SyntaxNode rootOfDocument, SemanticModel semanticModel)
+        {
+            List<SyntaxNode> nodesToCheck = new List<SyntaxNode>();
+            nodesToCheck.AddRange(rootOfDocument.DescendantNodes().OfType<InvocationExpressionSyntax>());
+
+            foreach (var node in nodesToCheck)
+            {
+                if (SyntaxNodeIsDatabaseQuery(node, semanticModel))
+                {
+                    AddDatabaseAccessingCall(node, semanticModel);
+                }
+            }
+        }
+
+        private void AddDatabaseAccessingCall(SyntaxNode node, SemanticModel semanticModel)
+        {
+            AddDatabaseAccessingCall(node, semanticModel, null);
+        }
+
+        private void AddDatabaseAccessingCall(SyntaxNode node, SemanticModel semanticModel, DatabaseQueryVariable<T> queryVariableUsedInCall)
+        {
+            string queryText = node.GetText().ToString();
+            ModelCollection<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);
+            var compilationInfo = node.GetCompilationInfo(semanticModel);
+
+
+            if (!AncestorNodeForSameLineIsAlreadyFound(node))
+            {
+                RemoveAnyDescendantNodeAlreadyFound(node);
+                var result = new DatabaseAccessingMethodCallStatement<T>(queryText, databaseEntityDeclarationsUsedInQuery, compilationInfo);
+
+                if (queryVariableUsedInCall != null)
+                {
+                    result.SetDatabaseQueryVariable(queryVariableUsedInCall);
+                }
+
+                DatabaseAccessingMethodCalls.Add(result);
+            }
+            
+        }
+
+        private bool AncestorNodeForSameLineIsAlreadyFound(SyntaxNode node)
+        {
+            DatabaseAccessingMethodCallStatement<T> existingDbAccessingCall = (from d in DatabaseAccessingMethodCalls
+                                                                               from x in d.CompilationInfo.SyntaxNode.DescendantNodes()
+                                                                               where x.Span.ToString() == node.Span.ToString()
+                                                                               select d).FirstOrDefault();
+
+            return existingDbAccessingCall != null;
+        }
+
+        private void RemoveAnyDescendantNodeAlreadyFound(SyntaxNode node)
+        {
+            DatabaseAccessingMethodCallStatement<T> existingDbAccessingCall;
+            foreach (var item in node.DescendantNodes())
+            {
+                existingDbAccessingCall = DatabaseAccessingMethodCalls.FirstOrDefault(x => x.CompilationInfo.SyntaxNode.Span.ToString() == node.Span.ToString());
+                if (existingDbAccessingCall != null)
+                {
+                    DatabaseAccessingMethodCalls.Remove(existingDbAccessingCall);
+                }
+            }
+        }
+
+        private bool SyntaxNodeIsDatabaseQuery(SyntaxNode node, SemanticModel model)
         {
             bool result = false;
-            foreach (var qeNode in query.DescendantNodes())
+            foreach (var qeNode in node.DescendantNodes())
             {
                 result = model.IsOfType(qeNode, Context.DatabaseEntityDeclarations.Select(e => e.Name));
                 if (result)

@@ -20,7 +20,7 @@ namespace EF60_NW
             foreach (var customer in customers)
             {
                 var purchasesByOrder = from o in customer.Orders
-                                     select o.OrderItems.Sum(x => x.Price);
+                                       select o.OrderItems.Sum(x => x.Price);
 
                 int totalPurchased = 0;
                 foreach (var item in purchasesByOrder)

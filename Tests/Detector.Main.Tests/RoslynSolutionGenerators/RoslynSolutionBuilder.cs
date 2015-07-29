@@ -56,10 +56,10 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
         private static DatabaseAccessingMethodCallExtractor<FakeORMToolType> GetDDAccessingMethodCallExtractorReturningOneMethodCall()
         {
             //Create fake database query for db accessing method call
-            var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee",null);
+            var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee", null);
             var dbEntityDeclarationsReturnedByDbQuery = new ModelCollection<DatabaseEntityDeclaration<FakeORMToolType>>() { dbEntityDeclaration };
-            var dbQueryVariable = new DatabaseQueryVariable<FakeORMToolType>(null);
-           
+            var dbQueryVariable = new DatabaseQueryVariable<FakeORMToolType>("", null);
+
             //Create fake CompilationInfo for db accessing method call
             var methodDeclarationCompilationInfo = new CompilationInfo(null, null);
             var methodDeclarationContainingDbAccessingMethodCall = new MethodDeclaration("GetEmployee", methodDeclarationCompilationInfo);

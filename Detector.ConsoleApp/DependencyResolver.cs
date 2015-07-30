@@ -14,11 +14,11 @@ namespace Detector.ConsoleApp
             var dataContextDecExt = new DataContextDeclarationExtractor(context);
             var dbEntityExt = new DatabaseEntityDeclarationExtractor(context);
             var dbAccessingMethodCallExt = new DatabaseAccessingMethodCallExtractor(context);
-
+            var codeExecutionPathExt = new CodeExecutionPathExtractor(context);
             var progressIndicator = new Progress<ExtractionProgress>((e) => ProgressChanged(e));
             var serializer = new NewtonsoftSerializer<EntityFramework>();
 
-            IExtractionManager extractionManager = new ExtractionManager<EntityFramework>(dataContextDecExt, dbEntityExt, dbAccessingMethodCallExt, progressIndicator, serializer);
+            IExtractionManager extractionManager = new ExtractionManager<EntityFramework>(dataContextDecExt, dbEntityExt, dbAccessingMethodCallExt, codeExecutionPathExt, progressIndicator, serializer);
             return extractionManager;
         }
 

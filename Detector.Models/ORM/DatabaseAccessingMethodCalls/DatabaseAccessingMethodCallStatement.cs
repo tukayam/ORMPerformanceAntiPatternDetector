@@ -49,7 +49,7 @@ namespace Detector.Models.ORM.DatabaseAccessingMethodCalls
             get
             {
                 var syntaxNode= this.CompilationInfo.SyntaxNode;
-                return syntaxNode.AncestorsAndSelf().OfType<MethodDeclarationSyntax>().First();
+                return syntaxNode.AncestorsAndSelf().OfType<MethodDeclarationSyntax>().FirstOrDefault();
             }
         }
 

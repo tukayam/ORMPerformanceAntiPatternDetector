@@ -10,7 +10,7 @@
 
         public void SomeMethodCallingIRepository()
         {
-            var customers = repository.GetAllCustomers();
+            var customers = repository.GetCustomerUsingMethodSyntaxAndAssignToVariable(1);           
         }
 
         public void SomeMethodCallingConcreteRepository()

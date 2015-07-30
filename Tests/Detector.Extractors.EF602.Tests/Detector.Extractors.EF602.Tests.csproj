@@ -115,6 +115,7 @@
     <Compile Include="DatabaseEntityDeclarationExtractorTests.cs" />
     <Compile Include="TargetBuilders\DataContextDeclarationExtractorTargetBuilder.cs" />
     <Compile Include="DatabaseAccessingMethodCallsExtractorTests.cs" />
+    <Compile Include="CodeExecutionPathExtractorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Detector.Models\Detector.Models.csproj">

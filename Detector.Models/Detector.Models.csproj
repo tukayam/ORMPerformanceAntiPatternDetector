@@ -97,16 +97,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\NodeList.cs" />
+    <Compile Include="Base\CodeExecutionPaths\MethodCall.cs" />
     <Compile Include="Base\CompilationInfo.cs" />
-    <Compile Include="Base\DoWhileLoopDeclarationBase.cs" />
-    <Compile Include="Base\ForEachLoopDeclarationBase.cs" />
-    <Compile Include="Base\ForLoopDeclarationBase.cs" />
-    <Compile Include="Base\LoopDeclarationBase.cs" />
-    <Compile Include="Base\MethodCall.cs" />
-    <Compile Include="Base\CodeExecutionPath.cs" />
-    <Compile Include="Base\Node.cs" />
-    <Compile Include="Base\NodeBase.cs" />
+    <Compile Include="Base\Loops\DoWhileLoopDeclarationBase.cs" />
+    <Compile Include="Base\Loops\ForEachLoopDeclarationBase.cs" />
+    <Compile Include="Base\Loops\ForLoopDeclarationBase.cs" />
+    <Compile Include="Base\Loops\LoopDeclarationBase.cs" />
+    <Compile Include="Base\CodeExecutionPaths\CodeExecutionPath.cs" />
     <Compile Include="Base\VariableDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingAddStatement.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingDeleteStatement.cs" />
@@ -114,7 +111,6 @@
     <Compile Include="ORM\DatabaseAccessingLoops\DatabaseAccessingForeachLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingLoops\DatabaseAccessingForLoopDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingLoops\DatabaseAccessingLoopDeclaration.cs" />
-    <Compile Include="Base\MethodDeclarationBase.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingSelectStatement.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingUpdateStatement.cs" />
     <Compile Include="ORM\DatabaseEntities\DatabaseEntityObjectCallStatement.cs" />
@@ -135,12 +131,11 @@
     <Compile Include="Others\DoWhileLoopDeclaration.cs" />
     <Compile Include="Others\ForEachLoopDeclaration.cs" />
     <Compile Include="Others\ForLoopDeclaration.cs" />
-    <Compile Include="Others\MethodDeclaration.cs" />
     <Compile Include="Others\ModelCollection.cs" />
     <Compile Include="Others\WhileLoopDeclaration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ORM\DatabaseAccessingLoops\DatabaseAccessingWhileLoopDeclaration.cs" />
-    <Compile Include="Base\WhileLoopDeclarationBase.cs" />
+    <Compile Include="Base\Loops\WhileLoopDeclarationBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

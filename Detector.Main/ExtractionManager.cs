@@ -12,18 +12,21 @@ namespace Detector.Main
         private DataContextDeclarationExtractor<T> _dataContextDeclarationExtractor;
         private DatabaseEntityDeclarationExtractor<T> _databaseEntityDeclarationExtractor;
         private DatabaseAccessingMethodCallExtractor<T> _databaseAccessingMethodCallExtractor;
+        private CodeExecutionPathExtractor<T> _codeExecutionPathExtractor;
         IProgress<ExtractionProgress> _progressIndicator;
         private ISerializer<T> _serializer;
 
         public ExtractionManager(DataContextDeclarationExtractor<T> dataContextDeclarationExtractor
             , DatabaseEntityDeclarationExtractor<T> databaseEntityDeclarationExtractor
             , DatabaseAccessingMethodCallExtractor<T> databaseAccessingMethodCallExtractor
+            ,CodeExecutionPathExtractor<T> codeExecutionPathExtractor
             , IProgress<ExtractionProgress> progressIndicator
             , ISerializer<T> serializer)
         {
             _dataContextDeclarationExtractor = dataContextDeclarationExtractor;
             _databaseEntityDeclarationExtractor = databaseEntityDeclarationExtractor;
             _databaseAccessingMethodCallExtractor = databaseAccessingMethodCallExtractor;
+            _codeExecutionPathExtractor = codeExecutionPathExtractor;
             _progressIndicator = progressIndicator;
             _serializer = serializer;
         }
@@ -48,6 +51,11 @@ namespace Detector.Main
             await _databaseAccessingMethodCallExtractor.FindDatabaseAccessingMethodCallsAsync(solution, _progressIndicator);
             _progressIndicator.Report(new ExtractionProgress("Saving Database Accessing Method Calls into json file."));
             await _serializer.Serialize(_databaseAccessingMethodCallExtractor.DatabaseAccessingMethodCalls, solutionUnderTest);
+            _progressIndicator.Report(new ExtractionProgress("Done"));
+
+            await _codeExecutionPathExtractor.ExtractCodeExecutionPathsAsync(solution, _progressIndicator);
+            _progressIndicator.Report(new ExtractionProgress("Saving Code Execution Paths into json file."));
+            await _serializer.Serialize(_codeExecutionPathExtractor.CodeExecutionPaths, solutionUnderTest);
             _progressIndicator.Report(new ExtractionProgress("Done"));
         }
     }

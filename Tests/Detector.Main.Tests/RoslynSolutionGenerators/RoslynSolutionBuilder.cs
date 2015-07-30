@@ -62,7 +62,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
 
             //Create fake CompilationInfo for db accessing method call
             var methodDeclarationCompilationInfo = new CompilationInfo(null, null);
-            var methodDeclarationContainingDbAccessingMethodCall = new MethodDeclaration("GetEmployee", methodDeclarationCompilationInfo);
+           // var methodDeclarationContainingDbAccessingMethodCall = new MethodDeclaration("GetEmployee", methodDeclarationCompilationInfo);
 
             var dbAccessingMethodCallCompilationInfo = new CompilationInfo(null, null);
 

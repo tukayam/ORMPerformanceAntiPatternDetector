@@ -5,7 +5,6 @@ using Microsoft.CodeAnalysis;
 using TestBase.RoslynSolutionGenerators;
 using Detector.Models.ORM.ORMTools;
 using System.Linq;
-using SharpTestsEx;
 
 namespace Detector.Extractors.EF602.Tests
 {

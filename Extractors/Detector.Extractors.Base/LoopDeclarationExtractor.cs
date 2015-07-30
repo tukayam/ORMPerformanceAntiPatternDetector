@@ -1,12 +1,12 @@
 ﻿using Detector.Models.Base;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
+using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
     public abstract class LoopDeclarationExtractor<T> : Extractor<T> where T:ORMToolType
     {
-        public abstract ModelCollection<LoopDeclarationBase> LoopDeclarations { get; }
+        public abstract HashSet<LoopDeclarationBase> LoopDeclarations { get; }
 
         public LoopDeclarationExtractor(Context<T> context)
             : base(context)

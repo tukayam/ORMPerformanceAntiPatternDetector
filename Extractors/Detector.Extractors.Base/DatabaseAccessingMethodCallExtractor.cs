@@ -4,7 +4,6 @@ using Detector.Models.ORM.DatabaseAccessingMethodCalls;
 using Detector.Models.ORM.DatabaseEntities;
 using Detector.Models.ORM.DatabaseQueries;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -19,14 +18,14 @@ namespace Detector.Extractors.Base
     {
         private Dictionary<VariableDeclarationSyntax, SyntaxNode> _databaseQueryVariables;
 
-        public ModelCollection<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
-        public ModelCollection<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; }
+        public HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
+        public HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; }
 
         public DatabaseAccessingMethodCallExtractor(Context<T> context)
             : base(context)
         {
-            DatabaseAccessingMethodCalls = new ModelCollection<DatabaseAccessingMethodCallStatement<T>>();
-            DatabaseQueryVariables = new ModelCollection<DatabaseQueryVariable<T>>();
+            DatabaseAccessingMethodCalls = new HashSet<DatabaseAccessingMethodCallStatement<T>>();
+            DatabaseQueryVariables = new HashSet<DatabaseQueryVariable<T>>();
 
             _databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, SyntaxNode>();
         }
@@ -151,7 +150,7 @@ namespace Detector.Extractors.Base
         private void AddDatabaseAccessingCall(SyntaxNode node, SemanticModel semanticModel, DatabaseQueryVariable<T> queryVariableUsedInCall)
         {
             string queryText = node.GetText().ToString();
-            ModelCollection<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);
+            HashSet<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);
             var compilationInfo = node.GetCompilationInfo(semanticModel);
 
 
@@ -208,9 +207,9 @@ namespace Detector.Extractors.Base
             return result;
         }
 
-        private ModelCollection<DatabaseEntityDeclaration<T>> GetDatabaseEntityTypesInQuery(SyntaxNode query, SemanticModel model)
+        private HashSet<DatabaseEntityDeclaration<T>> GetDatabaseEntityTypesInQuery(SyntaxNode query, SemanticModel model)
         {
-            var result = new ModelCollection<DatabaseEntityDeclaration<T>>();
+            var result = new HashSet<DatabaseEntityDeclaration<T>>();
             foreach (var qeNode in query.DescendantNodes())
             {
                 ITypeSymbol typeOfNode = model.GetTypeInfo(qeNode).Type;

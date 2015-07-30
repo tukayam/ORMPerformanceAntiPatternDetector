@@ -1,18 +1,19 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Models.Base;
 using Detector.Models.ORM.DatabaseAccessingMethodCalls;
 using Detector.Models.ORM.DatabaseEntities;
 using Detector.Models.ORM.DatabaseQueries;
 using Detector.Models.ORM.DataContexts;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
+using System.Collections.Generic;
 
 namespace Detector.Extractors.Base
 {
     public interface Context<T> where T : ORMToolType
     {
-        ModelCollection<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
-        ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
-        ModelCollection<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
-        ModelCollection<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
+        HashSet<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
+        HashSet<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
+        HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
+        HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
+        HashSet<CodeExecutionPath> CodeExecutionPaths { get; set; }
     }
 }

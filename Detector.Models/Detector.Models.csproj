@@ -131,7 +131,6 @@
     <Compile Include="Others\DoWhileLoopDeclaration.cs" />
     <Compile Include="Others\ForEachLoopDeclaration.cs" />
     <Compile Include="Others\ForLoopDeclaration.cs" />
-    <Compile Include="Others\ModelCollection.cs" />
     <Compile Include="Others\WhileLoopDeclaration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ORM\DatabaseAccessingLoops\DatabaseAccessingWhileLoopDeclaration.cs" />

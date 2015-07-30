@@ -3,7 +3,6 @@ using Detector.Models.ORM.DatabaseEntities;
 using Detector.Models.ORM.DatabaseQueries;
 using Detector.Models.ORM.DataContexts;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +16,7 @@ namespace Detector.Models.ORM.DatabaseAccessingMethodCalls
         /// </summary>
         public string ExecutedQuery { get; private set; }
 
-        public ModelCollection<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
+        public HashSet<DatabaseEntityDeclaration<T>> EntityDeclarationsUsedInQuery { get; private set; }
         public DatabaseQueryVariable<T> DatabaseQueryVariable { get; private set; }
         public string QueryTextInCSharp { get; private set; }
 
@@ -68,7 +67,7 @@ namespace Detector.Models.ORM.DatabaseAccessingMethodCalls
         public CompilationInfo CompilationInfo { get; private set; }
 
         public DatabaseAccessingMethodCallStatement(string queryTextInCSharp
-            , ModelCollection<DatabaseEntityDeclaration<T>> entityDeclarations            
+            , HashSet<DatabaseEntityDeclaration<T>> entityDeclarations            
             , CompilationInfo compilationInfo)
         {
             this.QueryTextInCSharp = queryTextInCSharp;

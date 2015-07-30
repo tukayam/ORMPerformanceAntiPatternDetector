@@ -57,7 +57,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
         {
             //Create fake database query for db accessing method call
             var dbEntityDeclaration = new DatabaseEntityDeclaration<FakeORMToolType>("Employee", null);
-            var dbEntityDeclarationsReturnedByDbQuery = new ModelCollection<DatabaseEntityDeclaration<FakeORMToolType>>() { dbEntityDeclaration };
+            var dbEntityDeclarationsReturnedByDbQuery = new HashSet<DatabaseEntityDeclaration<FakeORMToolType>>() { dbEntityDeclaration };
             var dbQueryVariable = new DatabaseQueryVariable<FakeORMToolType>("", null);
 
             //Create fake CompilationInfo for db accessing method call
@@ -71,7 +71,7 @@ namespace Detector.Main.Tests.RoslynSolutionGenerators
             dbAccessingMethodCall.SetDatabaseQueryVariable(dbQueryVariable);
 
             var fakeDbAccessingMethodCallExt = new Mock<DatabaseAccessingMethodCallExtractor<FakeORMToolType>>();
-            var dbAccessingMethodCallsToReturn = new ModelCollection<DatabaseAccessingMethodCallStatement<FakeORMToolType>>() { dbAccessingMethodCall };
+            var dbAccessingMethodCallsToReturn = new HashSet<DatabaseAccessingMethodCallStatement<FakeORMToolType>>() { dbAccessingMethodCall };
             fakeDbAccessingMethodCallExt.Setup(f => f.DatabaseAccessingMethodCalls).Returns(dbAccessingMethodCallsToReturn);
             return fakeDbAccessingMethodCallExt.Object;
         }

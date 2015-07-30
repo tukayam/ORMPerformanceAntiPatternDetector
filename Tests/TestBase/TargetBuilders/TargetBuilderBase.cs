@@ -1,9 +1,8 @@
 ﻿using Detector.Extractors.Base;
-using Detector.Models.ORM;
 using Detector.Models.ORM.DataContexts;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
 using System;
+using System.Collections.Generic;
 using TestBase.Stubs;
 
 namespace TestBase.TargetBuilders
@@ -24,7 +23,7 @@ namespace TestBase.TargetBuilders
             _target = contextCreationDelegate(_context);
         }
 
-        public void SetDataContextDeclarationsInContext(ModelCollection<DataContextDeclaration<T>> dataContextDeclarations)
+        public void SetDataContextDeclarationsInContext(HashSet<DataContextDeclaration<T>> dataContextDeclarations)
         {
             _context.DataContextDeclarations = dataContextDeclarations;
         }

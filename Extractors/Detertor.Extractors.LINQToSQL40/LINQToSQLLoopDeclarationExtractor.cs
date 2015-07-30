@@ -12,7 +12,7 @@ namespace Detector.Extractors.LINQToSQL40
 {
     public class LINQToSQLLoopDeclarationExtractor : DatabaseAccessingLoopDeclarationExtractor<LINQToSQL>
     {
-        public ModelCollection<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
+        public HashSet<DatabaseAccessingLoopDeclaration<LINQToSQL>> DatabaseAccessingLoopDeclarations
         {
             get
             {

@@ -12,7 +12,7 @@ namespace Detector.Extractors.EF602
 {
     public class LoopDeclarationExtractor : DatabaseAccessingLoopDeclarationExtractor<EntityFramework>
     {
-        public ModelCollection<DatabaseAccessingLoopDeclaration<EntityFramework>> DatabaseAccessingLoopDeclarations
+        public HashSet<DatabaseAccessingLoopDeclaration<EntityFramework>> DatabaseAccessingLoopDeclarations
         {
             get
             {

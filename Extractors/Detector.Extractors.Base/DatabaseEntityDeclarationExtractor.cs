@@ -1,16 +1,16 @@
 ﻿using Detector.Extractors.Base;
 using Detector.Models.ORM.DatabaseEntities;
 using Detector.Models.ORM.ORMTools;
-using Detector.Models.Others;
 using Microsoft.CodeAnalysis;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Detector.Extractors.DatabaseEntities
 {
     public abstract class DatabaseEntityDeclarationExtractor<T> : Extractor<T> where T : ORMToolType
     {
-        public ModelCollection<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
+        public HashSet<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; }
 
         public async Task FindDatabaseEntityDeclarationsAsync(Solution solution, IProgress<ExtractionProgress> progress)
         {
@@ -23,7 +23,7 @@ namespace Detector.Extractors.DatabaseEntities
         public DatabaseEntityDeclarationExtractor(Context<T> context)
             : base(context)
         {
-            DatabaseEntityDeclarations = new ModelCollection<DatabaseEntityDeclaration<T>>();
+            DatabaseEntityDeclarations = new HashSet<DatabaseEntityDeclaration<T>>();
         }
     }
 }

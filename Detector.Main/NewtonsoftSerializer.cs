@@ -1,5 +1,4 @@
 ﻿using System;
-using Detector.Models.Others;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Collections;
@@ -17,22 +16,22 @@ namespace Detector.Main
 {
     public class NewtonsoftSerializer<T> : ISerializer<T> where T : ORMToolType
     {
-        public async Task Serialize(ModelCollection<DatabaseEntityDeclaration<T>> collection, string solutionUnderTest)
+        public async Task Serialize(HashSet<DatabaseEntityDeclaration<T>> collection, string solutionUnderTest)
         {
             await SerializeBase(collection, solutionUnderTest, "DatabaseEntityDeclarations");
         }
 
-        public async Task Serialize(ModelCollection<DatabaseAccessingMethodCallStatement<T>> collection, string solutionUnderTest)
+        public async Task Serialize(HashSet<DatabaseAccessingMethodCallStatement<T>> collection, string solutionUnderTest)
         {
             await SerializeBase(collection, solutionUnderTest, "DatabaseAccessingMethodCallStatements");
         }
 
-        public async Task Serialize(ModelCollection<DatabaseQueryVariable<T>> collection, string solutionUnderTest)
+        public async Task Serialize(HashSet<DatabaseQueryVariable<T>> collection, string solutionUnderTest)
         {
             await SerializeBase(collection, solutionUnderTest, "DatabaseQueryVariables");
         }
 
-        public async Task Serialize(ModelCollection<DataContextDeclaration<T>> collection, string solutionUnderTest)
+        public async Task Serialize(HashSet<DataContextDeclaration<T>> collection, string solutionUnderTest)
         {
             await SerializeBase(collection, solutionUnderTest, "DataContextDeclarations");
         }

@@ -13,3 +13,7 @@ _ReSharper.*
 Ankh.NoLoad
 *.pdb
 *.exe
+*.dll
+*.pdb
+*.exe
+.vs/ORMPerformanceAntiPatternDetector/v14/.suo

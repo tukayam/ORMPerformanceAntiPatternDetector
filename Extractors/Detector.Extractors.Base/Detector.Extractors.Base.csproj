@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtractionStrategies\ClassDeclarationSyntaxExtractionBasedOnAttributeSignature.cs" />
     <Compile Include="ExtractorBuilder.cs" />
     <Compile Include="ExtractionStrategies\ClassDeclarationSyntaxExtractionBasedOnClassDerivation.cs" />
     <Compile Include="ExtractionStrategies\Parameters\DataContextDeclarationsParameter.cs" />

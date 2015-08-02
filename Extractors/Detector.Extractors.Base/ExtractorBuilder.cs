@@ -27,6 +27,22 @@ namespace Detector.Extractors.Base
             _solutionParameter = new SolutionParameter("solution", solution);
         }
 
+        public ExtractorBuilder<T> WithDataContextDeclarationsDerivedFromBaseClass(string baseClassName)
+        {
+            var baseClassNameParameter = new StringParameter("baseClassName", baseClassName);
+
+            _dataContextDeclarationExtractionStrategy = new ClassDeclarationSyntaxExtractionBasedOnClassDerivation<T>(_solutionParameter, baseClassNameParameter);
+            return this;
+        }
+
+        public ExtractorBuilder<T> WithDataContextDeclarationsSignedWithAttribute(string attributeName)
+        {
+            var attributeNameParameter = new StringParameter("attributeName", attributeName);
+
+            _dataContextDeclarationExtractionStrategy = new ClassDeclarationSyntaxExtractionBasedOnAttributeSignature<T>(_solutionParameter, attributeNameParameter);
+            return this;
+        }
+
         public ExtractorBuilder<T> WithDbEntitiesDerivedFromBaseClass(string baseClassName)
         {
             var baseClassNameParameter = new StringParameter("baseClassName", baseClassName);
@@ -38,7 +54,7 @@ namespace Detector.Extractors.Base
         public ExtractorBuilder<T> WithDbEntitiesAsGenericTypeOnIQueryablesInDataContextClasses()
         {
             var dataContextDeclarationsParameter = new DataContextDeclarationsParameter<T>("dataContextClassDeclarations", _dataContextDeclarations);
-            _dataContextDeclarationExtractionStrategy = new ClassDeclarationSyntaxExtractionBasedOnIQueryablePropertiesInClassSet<T>(_solutionParameter, dataContextDeclarationsParameter);
+            _databaseEntityDeclarationExtractionStrategy = new ClassDeclarationSyntaxExtractionBasedOnIQueryablePropertiesInClassSet<T>(_solutionParameter, dataContextDeclarationsParameter);
             return this;
         }
 

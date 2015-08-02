@@ -13,7 +13,7 @@ namespace Detector.Extractors.Base.ExtensionMethods
         {
             int totalNumber = GetTotalNumberOfDocuments(solution);
             string type = typeof(T).ToString();
-           // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", type)));
+            // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", type)));
 
             int counter = 0;
             var result = new Dictionary<ClassDeclarationSyntax, SemanticModel>();
@@ -60,13 +60,13 @@ namespace Detector.Extractors.Base.ExtensionMethods
 
         private static ExtractionProgress GetExtractionProgress(int totalNumber, int counter)
         {
-            return new ExtractionProgress( counter * 100 / totalNumber);
+            return new ExtractionProgress(counter * 100 / totalNumber);
         }
 
         public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesOfType(this Solution solution, string typeName)
         {
             int totalNumber = GetTotalNumberOfDocuments(solution);
-           // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", typeName)));
+            // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", typeName)));
 
             int counter = 0;
             var result = new Dictionary<ClassDeclarationSyntax, SemanticModel>();
@@ -75,7 +75,7 @@ namespace Detector.Extractors.Base.ExtensionMethods
                 foreach (var document in project.Documents)
                 {
                     counter++;
-                  //  progress.Report(GetExtractionProgress(totalNumber, counter));
+                    //  progress.Report(GetExtractionProgress(totalNumber, counter));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
                     SemanticModel semanticModel = await document.GetSemanticModelAsync();
@@ -95,6 +95,11 @@ namespace Detector.Extractors.Base.ExtensionMethods
 
         public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesSignedWithAttributeType<T>(this Solution solution)
         {
+            return await solution.GetClassesSignedWithAttributeType(typeof(T).ToString());
+        }
+
+        public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesSignedWithAttributeType(this Solution solution, string typeName)
+        {
             var result = new Dictionary<ClassDeclarationSyntax, SemanticModel>();
             foreach (var project in solution.Projects)
             {
@@ -105,7 +110,7 @@ namespace Detector.Extractors.Base.ExtensionMethods
 
                     foreach (ClassDeclarationSyntax classDeclarationSyntax in root.DescendantNodes().OfType<ClassDeclarationSyntax>())
                     {
-                        if (classDeclarationSyntax.AttributeLists.ToString().Contains(typeof(T).ToString()))
+                        if (classDeclarationSyntax.AttributeLists.ToString().Contains(typeName))
                         {
                             result.Add(classDeclarationSyntax, semanticModel);
                         }

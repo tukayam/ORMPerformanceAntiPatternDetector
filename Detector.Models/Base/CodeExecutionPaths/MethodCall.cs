@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Detector.Models.Base.CodeExecutionPaths
 {
-    public class MethodCall : ModelBase
+    public class MethodCall : Model
     {
         public CompilationInfo CompilationInfo { get; private set; }
 

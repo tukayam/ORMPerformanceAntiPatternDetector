@@ -26,7 +26,7 @@ namespace Detector.Extractors.EF602.Tests
             var context = new ContextStub<EntityFramework>();
             var dataContextDecExtr = new DataContextDeclarationExtractor(context);
             await dataContextDecExtr.FindDataContextDeclarationsAsync(solution, progressIndicator);
-            var dbEntityExtractor = new DatabaseEntityDeclarationExtractor(context);
+            var dbEntityExtractor = new DatabaseEntityDeclarationExtractorUsingDbContextProperties(context);
             await dbEntityExtractor.FindDatabaseEntityDeclarationsAsync(solution, progressIndicator);
             var target = new DatabaseAccessingMethodCallExtractor(context);
 

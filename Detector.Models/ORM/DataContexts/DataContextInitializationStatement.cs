@@ -3,7 +3,7 @@ using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Models.ORM.DataContexts
 {
-    public class DataContextInitializationStatement<T> : ModelBase where T : ORMToolType
+    public class DataContextInitializationStatement<T> : Model where T : ORMToolType
     {
         public CompilationInfo CompilationInfo { get; private set; }
         public DataContextDeclaration<T> DataContextDeclarationUsed { get; private set; }

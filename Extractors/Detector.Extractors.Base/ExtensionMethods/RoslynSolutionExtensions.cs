@@ -9,11 +9,11 @@ namespace Detector.Extractors.Base.ExtensionMethods
 {
     public static class RoslynSolutionExtensions
     {
-        public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesOfType<T>(this Solution solution, IProgress<ExtractionProgress> progress)
+        public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesOfType<T>(this Solution solution)
         {
             int totalNumber = GetTotalNumberOfDocuments(solution);
             string type = typeof(T).ToString();
-            progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", type)));
+           // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", type)));
 
             int counter = 0;
             var result = new Dictionary<ClassDeclarationSyntax, SemanticModel>();
@@ -22,7 +22,7 @@ namespace Detector.Extractors.Base.ExtensionMethods
                 foreach (var document in project.Documents)
                 {
                     counter++;
-                    progress.Report(GetExtractionProgress(totalNumber, counter));
+                    //progress.Report(GetExtractionProgress(totalNumber, counter));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
                     SemanticModel semanticModel = await document.GetSemanticModelAsync();
@@ -63,10 +63,10 @@ namespace Detector.Extractors.Base.ExtensionMethods
             return new ExtractionProgress( counter * 100 / totalNumber);
         }
 
-        public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesOfType(this Solution solution, string typeName, IProgress<ExtractionProgress> progress)
+        public static async Task<Dictionary<ClassDeclarationSyntax, SemanticModel>> GetClassesOfType(this Solution solution, string typeName)
         {
             int totalNumber = GetTotalNumberOfDocuments(solution);
-            progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", typeName)));
+           // progress.Report(new ExtractionProgress(string.Format("Finding classes of type {0}", typeName)));
 
             int counter = 0;
             var result = new Dictionary<ClassDeclarationSyntax, SemanticModel>();
@@ -75,7 +75,7 @@ namespace Detector.Extractors.Base.ExtensionMethods
                 foreach (var document in project.Documents)
                 {
                     counter++;
-                    progress.Report(GetExtractionProgress(totalNumber, counter));
+                  //  progress.Report(GetExtractionProgress(totalNumber, counter));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
                     SemanticModel semanticModel = await document.GetSemanticModelAsync();

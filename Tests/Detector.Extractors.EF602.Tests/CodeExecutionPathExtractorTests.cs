@@ -5,7 +5,6 @@ using Microsoft.CodeAnalysis;
 using TestBase.RoslynSolutionGenerators;
 using Detector.Models.ORM.ORMTools;
 using System.Linq;
-using Detector.Extractors.Base;
 
 namespace Detector.Extractors.EF602.Tests
 {
@@ -23,7 +22,7 @@ namespace Detector.Extractors.EF602.Tests
             var context = new ContextStub<EntityFramework>();
             var dataContextDecExtr = new DataContextDeclarationExtractor(context);
             await dataContextDecExtr.FindDataContextDeclarationsAsync(solution, progressIndicator);
-            var dbEntityExtractor = new DatabaseEntityDeclarationExtractor(context);
+            var dbEntityExtractor = new DatabaseEntityDeclarationExtractorUsingDbContextProperties(context);
             await dbEntityExtractor.FindDatabaseEntityDeclarationsAsync(solution, progressIndicator);
             var dbAccessingMethodCallsExtractor = new DatabaseAccessingMethodCallExtractor(context);
             await dbAccessingMethodCallsExtractor.FindDatabaseAccessingMethodCallsAsync(solution, progressIndicator);

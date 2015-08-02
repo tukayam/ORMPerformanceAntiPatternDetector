@@ -4,8 +4,8 @@ namespace Detector.Models.Base
 {
     public class CodeExecutionPath
     {
-        List<ModelBase> _models;
-        public IEnumerable<ModelBase> Models
+        List<Model> _models;
+        public IEnumerable<Model> Models
         {
             get
             {
@@ -15,10 +15,10 @@ namespace Detector.Models.Base
 
         public CodeExecutionPath()
         {
-            _models = new List<ModelBase>();
+            _models = new List<Model>();
         }
 
-        public void AddModel(ModelBase model)
+        public void AddModel(Model model)
         {
             _models.Add(model);
         }

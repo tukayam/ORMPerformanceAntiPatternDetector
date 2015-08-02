@@ -1,6 +1,6 @@
 ﻿namespace Detector.Models.Base
 {
-    public interface LoopDeclarationBase : ModelBase
+    public interface LoopDeclarationBase : Model
     {
     }
 }

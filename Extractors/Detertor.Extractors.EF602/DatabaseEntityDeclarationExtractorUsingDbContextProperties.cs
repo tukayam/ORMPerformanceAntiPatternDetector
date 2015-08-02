@@ -1,5 +1,4 @@
 ﻿using Detector.Extractors.DatabaseEntities;
-using Detector.Models.ORM;
 using Microsoft.CodeAnalysis;
 using System.Threading.Tasks;
 using Detector.Extractors.Base;
@@ -15,9 +14,12 @@ using Detector.Models.ORM.DatabaseEntities;
 
 namespace Detector.Extractors.EF602
 {
-    public class DatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<EntityFramework>
+    /// <summary>
+    /// Extracts Database Entity Declarations in a solution by detecting T in IQueryable<T> in each DataContext class
+    /// </summary>
+    public class DatabaseEntityDeclarationExtractorUsingDbContextProperties : DatabaseEntityDeclarationExtractor<EntityFramework>
     {
-        public DatabaseEntityDeclarationExtractor(Context<EntityFramework> context)
+        public DatabaseEntityDeclarationExtractorUsingDbContextProperties(Context<EntityFramework> context)
             : base(context)
         { }
 
@@ -43,7 +45,7 @@ namespace Detector.Extractors.EF602
                         //Get T from DbSet<T> or IQueryable<T>
                         string entityClassName = (propertyType as GenericNameSyntax).TypeArgumentList.Arguments[0].ToFullString();
 
-                        Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName, progress);
+                        Dictionary<ClassDeclarationSyntax, SemanticModel> entityClass = await solution.GetClassesOfType(entityClassName);
 
                         if (entityClass.Keys.Count > 0)
                         {

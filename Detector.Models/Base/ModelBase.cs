@@ -1,9 +1,12 @@
-﻿using Detector.Models.Base;
-
-namespace Detector.Models
+﻿namespace Detector.Models.Base
 {
-    public interface ModelBase
+    public abstract class ModelBase : Model
     {
-        CompilationInfo CompilationInfo { get; }
+        public CompilationInfo CompilationInfo { get; private set; }
+
+        public ModelBase(CompilationInfo compilationInfo)
+        {
+            CompilationInfo = compilationInfo;
+        }
     }
 }

@@ -4,7 +4,7 @@ using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Models.ORM.DatabaseEntities
 {
-    public abstract class DatabaseEntityObjectCallStatement<T> : ModelBase where T : ORMToolType
+    public abstract class DatabaseEntityObjectCallStatement<T> : Model where T : ORMToolType
     {
         public CompilationInfo CompilationInfo { get; private set; }
 

@@ -26,7 +26,7 @@ namespace Detector.Extractors.EF602
             string extractionNote = "Extracting Data Context Declarations by finding classes of type DbContext";
             progress.Report(new ExtractionProgress(extractionNote));
 
-            Dictionary<ClassDeclarationSyntax,SemanticModel> classes = await solution.GetClassesOfType<DbContext>(progress);
+            Dictionary<ClassDeclarationSyntax,SemanticModel> classes = await solution.GetClassesOfType<DbContext>();
 
             foreach (var item in classes.Keys)
             {

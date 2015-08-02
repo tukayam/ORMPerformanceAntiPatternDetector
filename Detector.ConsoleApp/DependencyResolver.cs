@@ -12,7 +12,7 @@ namespace Detector.ConsoleApp
         {
             var context = new ConcreteContext<EntityFramework>();
             var dataContextDecExt = new DataContextDeclarationExtractor(context);
-            var dbEntityExt = new DatabaseEntityDeclarationExtractor(context);
+            var dbEntityExt = new DatabaseEntityDeclarationExtractorUsingDbContextProperties(context);
             var dbAccessingMethodCallExt = new DatabaseAccessingMethodCallExtractor(context);
             var codeExecutionPathExt = new CodeExecutionPathExtractor(context);
             var progressIndicator = new Progress<ExtractionProgress>((e) => ProgressChanged(e));

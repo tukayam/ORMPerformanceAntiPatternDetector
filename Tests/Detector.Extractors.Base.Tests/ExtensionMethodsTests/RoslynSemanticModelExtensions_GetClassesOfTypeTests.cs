@@ -32,7 +32,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
 
             //Act
             Dictionary<ClassDeclarationSyntax, SemanticModel> result
-                = await solution.GetClassesOfType<Order>(progressIndicator);
+                = await solution.GetClassesOfType<Order>();
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -48,7 +48,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
 
             //Act
             Dictionary<ClassDeclarationSyntax, SemanticModel> result
-                = await solution.GetClassesOfType<DbContext>(progressIndicator);
+                = await solution.GetClassesOfType<DbContext>();
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -63,7 +63,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType<IRepository>(progressIndicator);
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType<IRepository>();
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -78,7 +78,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("IRepository", progressIndicator);
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("IRepository");
 
             //Assert
             Assert.IsTrue(result.Count == 1);
@@ -93,7 +93,7 @@ namespace Detector.Extractors.Base.Tests.ExtensionMethodsTests
             var solution = await GetEF60_NWSolution();
 
             //Act
-            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("DbContext", progressIndicator);
+            Dictionary<ClassDeclarationSyntax, SemanticModel> result = await solution.GetClassesOfType("DbContext");
 
             //Assert
             Assert.IsTrue(result.Count == 1);

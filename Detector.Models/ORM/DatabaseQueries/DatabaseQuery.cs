@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Detector.Models.ORM.DatabaseQueries
 {
-    public class DatabaseQuery<T> : ModelBase where T : ORMToolType
+    public class DatabaseQuery<T> : Model where T : ORMToolType
     {
         /// <summary>
         /// Entity declarations that the query uses

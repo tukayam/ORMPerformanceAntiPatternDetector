@@ -3,7 +3,7 @@ using Detector.Models.ORM.ORMTools;
 
 namespace Detector.Models.ORM.DatabaseQueries
 {
-    public class DatabaseQueryVariable<T> : ModelBase where T : ORMToolType
+    public class DatabaseQueryVariable<T> : Model where T : ORMToolType
     {
         public string VariableName { get; private set; }
         public CompilationInfo CompilationInfo { get; private set; }

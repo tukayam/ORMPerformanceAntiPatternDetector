@@ -1,9 +1,0 @@
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.DetectionRules.Tests.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.DetectionRules.Tests.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.DetectionRules.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.Models.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.DetectionRules.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\bin\Debug\Detector.Models.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\obj\Debug\Detector.DetectionRules.Tests.csprojResolveAssemblyReference.cache
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\obj\Debug\Detector.DetectionRules.Tests.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\Detector.DetectionRules.Tests\obj\Debug\Detector.DetectionRules.Tests.pdb

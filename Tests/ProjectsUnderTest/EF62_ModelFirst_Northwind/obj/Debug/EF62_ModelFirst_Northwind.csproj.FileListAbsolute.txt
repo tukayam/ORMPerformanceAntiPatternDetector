@@ -1,4 +1,0 @@
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF62_ModelFirst_Northwind\bin\Debug\EF62_ModelFirst_Northwind.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF62_ModelFirst_Northwind\bin\Debug\EF62_ModelFirst_Northwind.pdb
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF62_ModelFirst_Northwind\obj\Debug\EF62_ModelFirst_Northwind.dll
-D:\School\Thesis Bug prediction with antipatterns\Projects\ORMPerformanceAntiPatternDetector\Tests\ProjectsUnderTest\EF62_ModelFirst_Northwind\obj\Debug\EF62_ModelFirst_Northwind.pdb

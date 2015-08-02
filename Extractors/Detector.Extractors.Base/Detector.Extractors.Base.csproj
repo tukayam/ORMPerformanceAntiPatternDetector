@@ -101,21 +101,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeExecutionPathExtractor.cs" />
-    <Compile Include="ConcreteContext.cs" />
-    <Compile Include="Context.cs" />
-    <Compile Include="DatabaseAccessingLoopDeclarationExtractor.cs" />
-    <Compile Include="DatabaseEntityDeclarationExtractor.cs" />
-    <Compile Include="DatabaseAccessingMethodCallExtractor.cs" />
-    <Compile Include="DataContextDeclarationExtractor.cs" />
+    <Compile Include="ExtractorBuilder.cs" />
+    <Compile Include="ExtractionStrategies\ClassDeclarationSyntaxExtractionBasedOnClassDerivation.cs" />
+    <Compile Include="ExtractionStrategies\Parameters\DataContextDeclarationsParameter.cs" />
+    <Compile Include="ExtractionStrategies\ReturnTypes\ClassExtractionReturnType.cs" />
+    <Compile Include="ExtractionStrategies\ReturnTypes\ExtractionReturnTypeBase.cs" />
+    <Compile Include="Observables\ExtractionTracker.cs" />
+    <Compile Include="Observers\ExtractorReporter.cs" />
+    <Compile Include="Old\CodeExecutionPathExtractor.cs" />
+    <Compile Include="Old\ConcreteContext.cs" />
+    <Compile Include="Old\Context.cs" />
+    <Compile Include="Old\DatabaseAccessingLoopDeclarationExtractor.cs" />
+    <Compile Include="Old\DatabaseEntityDeclarationExtractor.cs" />
+    <Compile Include="Old\DatabaseAccessingMethodCallExtractor.cs" />
+    <Compile Include="Old\DataContextDeclarationExtractor.cs" />
     <Compile Include="ExtensionMethods\RoslynSolutionExtensions.cs" />
     <Compile Include="ExtensionMethods\RoslynSemanticModelExtensions.cs" />
     <Compile Include="ExtractionProgress.cs" />
-    <Compile Include="Extractor.cs" />
-    <Compile Include="ExtractorFactory.cs" />
+    <Compile Include="ExtractionStrategies\ClassDeclarationSyntaxExtractionBasedOnIQueryablePropertiesInClassSet.cs" />
+    <Compile Include="ExtractionStrategies\ExtractionStrategy.cs" />
+    <Compile Include="ExtractionStrategies\Parameters\Parameter.cs" />
+    <Compile Include="ExtractionStrategies\Parameters\SolutionParameter.cs" />
+    <Compile Include="ExtractionStrategies\Parameters\StringParameter.cs" />
+    <Compile Include="Old\Extractor.cs" />
+    <Compile Include="Old\ExtractorFactory.cs" />
     <Compile Include="Helpers\DatabaseQueryExtensions.cs" />
     <Compile Include="Helpers\SyntaxNodeExtensions.cs" />
-    <Compile Include="LoopDeclarationExtractor.cs" />
+    <Compile Include="Old\LoopDeclarationExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

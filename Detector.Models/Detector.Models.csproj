@@ -99,11 +99,13 @@
   <ItemGroup>
     <Compile Include="Base\CodeExecutionPaths\MethodCall.cs" />
     <Compile Include="Base\CompilationInfo.cs" />
+    <Compile Include="Base\DeclarationBase.cs" />
     <Compile Include="Base\Loops\DoWhileLoopDeclarationBase.cs" />
     <Compile Include="Base\Loops\ForEachLoopDeclarationBase.cs" />
     <Compile Include="Base\Loops\ForLoopDeclarationBase.cs" />
     <Compile Include="Base\Loops\LoopDeclarationBase.cs" />
     <Compile Include="Base\CodeExecutionPaths\CodeExecutionPath.cs" />
+    <Compile Include="Base\ModelBase.cs" />
     <Compile Include="Base\VariableDeclaration.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingAddStatement.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingDeleteStatement.cs" />
@@ -119,7 +121,7 @@
     <Compile Include="ORM\DataContexts\DataContextDeclaration.cs" />
     <Compile Include="ORM\ORMTools\EntityFramework.cs" />
     <Compile Include="ORM\ORMTools\LINQToSQL.cs" />
-    <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Base\Model.cs" />
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingMethodCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntities\DatabaseEntityDeclaration.cs" />
     <Compile Include="ORM\DatabaseEntities\DatabaseEntityVariableDeclaration.cs" />

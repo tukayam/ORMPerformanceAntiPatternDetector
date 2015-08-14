@@ -117,7 +117,6 @@
   <ItemGroup>
     <Compile Include="Helper\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoslynSolutionGenerators\RoslynSolutionBuilder.cs" />
     <Compile Include="RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />
     <Compile Include="Stubs\FakeORMToolType.cs" />
   </ItemGroup>

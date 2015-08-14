@@ -27,25 +27,29 @@ namespace Detector.Extractors.Base
         public async Task ExtractCodeExecutionPathsAsync(Solution solution, IProgress<ExtractionProgress> progressIndicator)
         {
             progressIndicator.Report(new ExtractionProgress("Extracting code execution paths..."));
+            await GetInitialCodeExecutionPaths(solution, progressIndicator);
 
+        }
+
+        private async Task GetInitialCodeExecutionPaths(Solution solution, IProgress<ExtractionProgress> progressIndicator)
+        {
             Dictionary<MethodDeclarationSyntax, HashSet<ISymbol>> methodDecAndTheirSymbolsContainingDbAccessingMethodCalls = GetMethodDeclarationsAndTheirSymbolsForDbAccessingMethodCalls();
 
             int totalForProgress = GetTotalAmountForProgress(solution, methodDecAndTheirSymbolsContainingDbAccessingMethodCalls);
             int counter = 0;
 
-            foreach (var methodDeclarationAndSymbol in methodDecAndTheirSymbolsContainingDbAccessingMethodCalls)
+            foreach (var project in solution.Projects)
             {
-                foreach (var project in solution.Projects)
+                foreach (var document in project.Documents)
                 {
-                    foreach (var document in project.Documents)
+                    counter++;
+                    progressIndicator.Report(new ExtractionProgress(counter * 100 / totalForProgress));
+
+                    SyntaxNode root = await document.GetSyntaxRootAsync();
+                    SemanticModel semanticModel = await document.GetSemanticModelAsync();
+                    var invocations = root.DescendantNodes().OfType<InvocationExpressionSyntax>();
+                    foreach (var methodDeclarationAndSymbol in methodDecAndTheirSymbolsContainingDbAccessingMethodCalls)
                     {
-                        counter++;
-                        progressIndicator.Report(new ExtractionProgress(counter * 100 / totalForProgress));
-
-                        SyntaxNode root = await document.GetSyntaxRootAsync();
-                        SemanticModel semanticModel = await document.GetSemanticModelAsync();
-                        var invocations = root.DescendantNodes().OfType<InvocationExpressionSyntax>();
-
                         if (invocations != null && invocations.Count() > 0)
                         {
                             foreach (var symbolToMethodDeclarationOnClassOrInterface in methodDeclarationAndSymbol.Value)
@@ -103,6 +107,11 @@ namespace Detector.Extractors.Base
             }
 
             return methodDecAndTheirSymbolsContainingDbAccessingMethodCalls;
+        }
+
+        private void AddRelatedEntityUsage(Solution solution, IProgress<ExtractionProgress> progressIndicator)
+        {
+
         }
 
         private int GetTotalAmountForProgress(Solution solution, Dictionary<MethodDeclarationSyntax, HashSet<ISymbol>> methodDecAndTheirSymbolsContainingDbAccessingMethodCalls)

@@ -130,10 +130,7 @@ namespace Detector.Extractors.Base
 
         private void GetDatabaseAccessingCallsInMethodSyntax(SyntaxNode rootOfDocument, SemanticModel semanticModel)
         {
-            List<SyntaxNode> nodesToCheck = new List<SyntaxNode>();
-            nodesToCheck.AddRange(rootOfDocument.DescendantNodes().OfType<InvocationExpressionSyntax>());
-
-            foreach (var node in nodesToCheck)
+            foreach (var node in rootOfDocument.DescendantNodes().OfType<InvocationExpressionSyntax>())
             {
                 if (SyntaxNodeIsDatabaseQuery(node, semanticModel))
                 {

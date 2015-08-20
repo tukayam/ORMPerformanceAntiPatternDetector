@@ -19,13 +19,13 @@ namespace Detector.Extractors.Base
         private Dictionary<VariableDeclarationSyntax, SyntaxNode> _databaseQueryVariables;
 
         public HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCalls { get; }
-        public HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; }
+        public HashSet<DatabaseQueryVariableDeclaration<T>> DatabaseQueryVariables { get; }
 
         public DatabaseAccessingMethodCallExtractor(Context<T> context)
             : base(context)
         {
             DatabaseAccessingMethodCalls = new HashSet<DatabaseAccessingMethodCallStatement<T>>();
-            DatabaseQueryVariables = new HashSet<DatabaseQueryVariable<T>>();
+            DatabaseQueryVariables = new HashSet<DatabaseQueryVariableDeclaration<T>>();
 
             _databaseQueryVariables = new Dictionary<VariableDeclarationSyntax, SyntaxNode>();
         }
@@ -88,7 +88,7 @@ namespace Detector.Extractors.Base
                 if (SyntaxNodeIsDatabaseQuery(varDeclarator, semanticModel)
                         && !_databaseQueryVariables.ContainsKey(node))
                 {
-                    var dbQueryVar = new DatabaseQueryVariable<T>(node.Variables[0].Identifier.ToString(), node.GetCompilationInfo(semanticModel));
+                    var dbQueryVar = new DatabaseQueryVariableDeclaration<T>(node.Variables[0].Identifier.ToString(), node.GetCompilationInfo(semanticModel));
                     this.DatabaseQueryVariables.Add(dbQueryVar);
                 }
             }
@@ -144,7 +144,7 @@ namespace Detector.Extractors.Base
             AddDatabaseAccessingCall(node, semanticModel, null);
         }
 
-        private void AddDatabaseAccessingCall(SyntaxNode node, SemanticModel semanticModel, DatabaseQueryVariable<T> queryVariableUsedInCall)
+        private void AddDatabaseAccessingCall(SyntaxNode node, SemanticModel semanticModel, DatabaseQueryVariableDeclaration<T> queryVariableUsedInCall)
         {
             string queryText = node.GetText().ToString();
             HashSet<DatabaseEntityDeclaration<T>> databaseEntityDeclarationsUsedInQuery = GetDatabaseEntityTypesInQuery(node, semanticModel);

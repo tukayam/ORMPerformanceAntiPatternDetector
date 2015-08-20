@@ -26,7 +26,7 @@ namespace Detector.Main
             await SerializeBase(collection, solutionUnderTest, "DatabaseAccessingMethodCallStatements");
         }
 
-        public async Task Serialize(HashSet<DatabaseQueryVariable<T>> collection, string solutionUnderTest)
+        public async Task Serialize(HashSet<DatabaseQueryVariableDeclaration<T>> collection, string solutionUnderTest)
         {
             await SerializeBase(collection, solutionUnderTest, "DatabaseQueryVariables");
         }

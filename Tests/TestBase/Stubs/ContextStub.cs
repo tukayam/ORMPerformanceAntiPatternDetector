@@ -15,7 +15,7 @@ namespace TestBase.Stubs
         public HashSet<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
         public HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
         public HashSet<DatabaseQuery<T>> DatabaseQueries { get; set; }
-        public HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
+        public HashSet<DatabaseQueryVariableDeclaration<T>> DatabaseQueryVariables { get; set; }
         public HashSet<CodeExecutionPath> CodeExecutionPaths { get; set; }
 
         public ContextStub()
@@ -24,7 +24,7 @@ namespace TestBase.Stubs
             DatabaseEntityDeclarations = new HashSet<DatabaseEntityDeclaration<T>>();
             DatabaseAccessingMethodCallStatements = new HashSet<DatabaseAccessingMethodCallStatement<T>>();
             DatabaseQueries = new HashSet<DatabaseQuery<T>>();
-            DatabaseQueryVariables = new HashSet<DatabaseQueryVariable<T>>();
+            DatabaseQueryVariables = new HashSet<DatabaseQueryVariableDeclaration<T>>();
         }
     }
 }

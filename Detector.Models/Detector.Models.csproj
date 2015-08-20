@@ -117,7 +117,7 @@
     <Compile Include="ORM\DatabaseAccessingMethodCalls\DatabaseAccessingUpdateStatement.cs" />
     <Compile Include="ORM\DatabaseEntities\DatabaseEntityObjectCallStatement.cs" />
     <Compile Include="ORM\DatabaseEntities\DatabaseEntityVariableRelatedEntityCallStatement.cs" />
-    <Compile Include="ORM\DatabaseQueries\DatabaseQueryVariable.cs" />
+    <Compile Include="ORM\DatabaseQueries\DatabaseQueryVariableDeclaration.cs" />
     <Compile Include="ORM\DataContexts\DataContextDeclaration.cs" />
     <Compile Include="ORM\ORMTools\EntityFramework.cs" />
     <Compile Include="ORM\ORMTools\LINQToSQL.cs" />
@@ -144,6 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagramDatabaseAccessingLoopDeclarations.cd" />
+    <None Include="DeclarationObjects.cd" />
+    <None Include="..\..\..\Deliverables\Thesis\Images\ModelBase.cd">
+      <Link>ModelBase.cd</Link>
+    </None>
+    <None Include="ObjectModel.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

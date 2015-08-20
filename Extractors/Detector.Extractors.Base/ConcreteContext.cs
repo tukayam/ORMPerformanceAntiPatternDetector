@@ -14,7 +14,7 @@ namespace Detector.Extractors.Base
         public HashSet<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
         public HashSet<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
         public HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
-        public HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
+        public HashSet<DatabaseQueryVariableDeclaration<T>> DatabaseQueryVariables { get; set; }
         public HashSet<CodeExecutionPath> CodeExecutionPaths { get; set; }
 
         private static volatile ConcreteContext<T> instance;

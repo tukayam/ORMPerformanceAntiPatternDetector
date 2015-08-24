@@ -105,6 +105,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DetectionRules\DetectionRule.cs" />
+    <Compile Include="DetectionRules\DetectionRuleFactory.cs" />
+    <Compile Include="DetectionRules\DuplicateObjectTrackingDetectionRule.cs" />
+    <Compile Include="DetectionRules\ExcessiveDataDetectionRule.cs" />
+    <Compile Include="DetectionRules\InefficientLazyLoadingDetectionRule.cs" />
+    <Compile Include="DetectionRules\OneByOneProcessingDetectionRule.cs" />
+    <Compile Include="DetectionRules\SameQueryExecutionDetectionRule.cs" />
+    <Compile Include="DetectionRules\SlowBulkUpdateDetectionRule.cs" />
+    <Compile Include="DetectionRules\UnnecessaryObjectTrackingDetectionRule.cs" />
     <Compile Include="ExtractionManager.cs" />
     <Compile Include="IExtractionManager.cs" />
     <Compile Include="ISerializer.cs" />

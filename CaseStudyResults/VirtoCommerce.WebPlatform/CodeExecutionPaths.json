@@ -1,0 +1,3984 @@
+[
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Infrastructure\\Interceptors\\InterceptionContext.cs[1332..1353))"
+        },
+        "MethodContainingCall": "After",
+        "CalledMethodName": "After"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Infrastructure\\ServiceBase.cs[670..736))"
+        },
+        "MethodContainingCall": "LoadObjectSettings",
+        "CalledMethodName": "GetObjectSettings"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Infrastructure\\ServiceBase.cs[2075..2122))"
+        },
+        "MethodContainingCall": "SaveObjectSettings",
+        "CalledMethodName": "SaveSettings"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Infrastructure\\ServiceBase.cs[2496..2565))"
+        },
+        "MethodContainingCall": "RemoveObjectSettings",
+        "CalledMethodName": "RemoveObjectSettings"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Repositories\\PlatformDatabaseInitializer.cs[616..642))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreatePermissions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Repositories\\PlatformDatabaseInitializer.cs[657..677))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateRoles"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Repositories\\PlatformDatabaseInitializer.cs[692..715))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateAccounts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\ApiAccountProvider.cs[1033..1060))"
+        },
+        "MethodContainingCall": "GetAccountByAppId",
+        "CalledMethodName": "LoadApiAccount"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\Authentication\\ApiKeys\\ApiKeysAuthenticationHandler.cs[486..564))"
+        },
+        "MethodContainingCall": "ExtractUserIdFromRequest",
+        "CalledMethodName": "GetAccountByAppId"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\Authentication\\Hmac\\HmacAuthenticationHandler.cs[713..799))"
+        },
+        "MethodContainingCall": "ExtractUserIdFromRequest",
+        "CalledMethodName": "GetAccountByAppId"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\Authentication\\Hmac\\HmacAuthenticationHandler.cs[848..887))"
+        },
+        "MethodContainingCall": "ExtractUserIdFromRequest",
+        "CalledMethodName": "IsValidSignature"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\PermissionService.cs[2399..2432))"
+        },
+        "MethodContainingCall": "GetUserWithPermissions",
+        "CalledMethodName": "LoadUserWithPermissions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\RoleManagementService.cs[3417..3440))"
+        },
+        "MethodContainingCall": "AddOrUpdateRole",
+        "CalledMethodName": "GetRole"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\RoleManagementService.cs[2937..2989))"
+        },
+        "MethodContainingCall": "AddOrUpdateRole",
+        "CalledMethodName": "AddOrUpdatePermissions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Settings\\SettingManager.cs[7401..7432))"
+        },
+        "MethodContainingCall": "SetValue",
+        "CalledMethodName": "SaveSettings"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Web\\Controllers\\Api\\SecurityController.cs[17343..17389))"
+        },
+        "MethodContainingCall": "GetUserExtended",
+        "CalledMethodName": "GetUserExtended"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Common\\Expressions\\ConditionExpressionTree.cs[594..620))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetConditionExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Common\\Expressions\\ConditionExpressionTree.cs[594..620))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetConditionExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\Promotions\\Rewards\\AmountBasedReward.cs[1113..1128))"
+        },
+        "MethodContainingCall": "ToString",
+        "CalledMethodName": "ToString"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\Promotions\\Rewards\\CartSubtotalReward.cs[628..643))"
+        },
+        "MethodContainingCall": "ToString",
+        "CalledMethodName": "ToString"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\Promotions\\Rewards\\GiftReward.cs[1000..1015))"
+        },
+        "MethodContainingCall": "ToString",
+        "CalledMethodName": "ToString"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[1109..1141))"
+        },
+        "MethodContainingCall": "OnModelCreating",
+        "CalledMethodName": "InheritanceMapping"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[8901..8938))"
+        },
+        "MethodContainingCall": "GetAllCategoryParents",
+        "CalledMethodName": "GetAllCategoryParents"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[15823..15844))"
+        },
+        "MethodContainingCall": "RemoveItems",
+        "CalledMethodName": "GetItemByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[14291..14329))"
+        },
+        "MethodContainingCall": "GetAllCategoryProperties",
+        "CalledMethodName": "GetCatalogProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[14079..14119))"
+        },
+        "MethodContainingCall": "GetAllCategoryProperties",
+        "CalledMethodName": "GetAllCategoryProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[16507..16539))"
+        },
+        "MethodContainingCall": "RemoveCategories",
+        "CalledMethodName": "RemoveCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[17527..17558))"
+        },
+        "MethodContainingCall": "RemoveCatalogs",
+        "CalledMethodName": "RemoveCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[12438..12463))"
+        },
+        "MethodContainingCall": "GetPropertyCatalog",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[13375..13405))"
+        },
+        "MethodContainingCall": "GetCatalogProperties",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[14229..14263))"
+        },
+        "MethodContainingCall": "GetAllCategoryProperties",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[17772..17790))"
+        },
+        "MethodContainingCall": "RemoveCatalogs",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[12990..13017))"
+        },
+        "MethodContainingCall": "GetPropertyCategory",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[13973..14015))"
+        },
+        "MethodContainingCall": "GetAllCategoryProperties",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[16952..16971))"
+        },
+        "MethodContainingCall": "RemoveCategories",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[15918..15994))"
+        },
+        "MethodContainingCall": "RemoveItems",
+        "CalledMethodName": "RemoveItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[16696..16720))"
+        },
+        "MethodContainingCall": "RemoveCategories",
+        "CalledMethodName": "RemoveItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[17696..17716))"
+        },
+        "MethodContainingCall": "RemoveCatalogs",
+        "CalledMethodName": "RemoveItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[3017..3062))"
+        },
+        "MethodContainingCall": "SearchCategories",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[8162..8207))"
+        },
+        "MethodContainingCall": "SearchItems",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[3503..3550))"
+        },
+        "MethodContainingCall": "SearchCategories",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[8637..8684))"
+        },
+        "MethodContainingCall": "SearchItems",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[2190..2224))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[1775..1804))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[1979..2011))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchCatalogs"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[6625..6652))"
+        },
+        "MethodContainingCall": "SearchCategories",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[10939..10991))"
+        },
+        "MethodContainingCall": "SearchItems",
+        "CalledMethodName": "GetByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogSearchServiceImpl.cs[7567..7593))"
+        },
+        "MethodContainingCall": "SearchCatalogs",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[1961..2005))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetAllCategoryParents"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[1563..1610))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetAllCategoryProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[4338..4378))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "RemoveCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[1489..1536))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[1391..1429))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[3257..3296))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CategoryServiceImpl.cs[2901..2923))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[1988..2031))"
+        },
+        "MethodContainingCall": "GetByIds",
+        "CalledMethodName": "GetItemByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[4581..4678))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetItemByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[2869..2912))"
+        },
+        "MethodContainingCall": "GetByIds",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[3081..3181))"
+        },
+        "MethodContainingCall": "GetByIds",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[3715..3758))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[3867..3921))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "SetItemCategoryRelation"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[5691..5722))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "RemoveItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\ItemServiceImpl.cs[1228..1270))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogServiceImpl.cs[1417..1463))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCatalogProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogServiceImpl.cs[3601..3638))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "RemoveCatalogs"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogServiceImpl.cs[1353..1389))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogServiceImpl.cs[2603..2640))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\CatalogServiceImpl.cs[2300..2321))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[1188..1232))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetPropertyCatalog"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[1291..1336))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetPropertyCategory"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[1933..1975))"
+        },
+        "MethodContainingCall": "GetCatalogProperties",
+        "CalledMethodName": "GetCatalogProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[2476..2523))"
+        },
+        "MethodContainingCall": "GetCategoryProperties",
+        "CalledMethodName": "GetAllCategoryProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[1357..1404))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[1864..1900))"
+        },
+        "MethodContainingCall": "GetCatalogProperties",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[2403..2450))"
+        },
+        "MethodContainingCall": "GetCategoryProperties",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3261..3306))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetCatalogById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[2342..2380))"
+        },
+        "MethodContainingCall": "GetCategoryProperties",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3104..3151))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetCategoryById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[971..1029))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetPropertiesByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3868..3937))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetPropertiesByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[4444..4486))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetPropertiesByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3456..3508))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "SetCatalogProperty"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3159..3213))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "SetCategoryProperty"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[3605..3627))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Services\\PropertyServiceImpl.cs[4774..4793))"
+        },
+        "MethodContainingCall": "SearchDictionaryValues",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\BackgroundJobs\\CsvCatalogImportJob.cs[7205..7262))"
+        },
+        "MethodContainingCall": "SaveProducts",
+        "CalledMethodName": "SaveProduct"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\BackgroundJobs\\CsvCatalogImportJob.cs[4303..4351))"
+        },
+        "MethodContainingCall": "DoImport",
+        "CalledMethodName": "SaveProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\BackgroundJobs\\CsvCatalogExportJob.cs[2898..2959))"
+        },
+        "MethodContainingCall": "DoExport",
+        "CalledMethodName": "LoadProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\BackgroundJobs\\CsvCatalogExportJob.cs[7653..7729))"
+        },
+        "MethodContainingCall": "LoadProducts",
+        "CalledMethodName": "LoadProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\BackgroundJobs\\CsvCatalogExportJob.cs[4335..4400))"
+        },
+        "MethodContainingCall": "DoExport",
+        "CalledMethodName": "PopulateProductExportConfiguration"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\Controllers\\Api\\CatalogModuleCatalogsController.cs[7216..7238))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "UpdateCatalog"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\Controllers\\Api\\CatalogModuleExportImportController.cs[2522..2792))"
+        },
+        "MethodContainingCall": "DoExport",
+        "CalledMethodName": "DoExport"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\Controllers\\Api\\CatalogModuleProductsController.cs[2261..2291))"
+        },
+        "MethodContainingCall": "GetNewProduct",
+        "CalledMethodName": "GetNewProduct"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\Controllers\\Api\\CatalogModuleProductsController.cs[5628..5650))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "UpdateProduct"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Web\\Controllers\\Api\\CatalogModuleProductsController.cs[7005..7043))"
+        },
+        "MethodContainingCall": "UpdateProduct",
+        "CalledMethodName": "GenerateProductDefaultSlugUrl"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[2627..2668))"
+        },
+        "MethodContainingCall": "GetProductsByIds",
+        "CalledMethodName": "InnerGetProductsByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[3023..3085))"
+        },
+        "MethodContainingCall": "GetProduct",
+        "CalledMethodName": "InnerGetProductsByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[3875..3956))"
+        },
+        "MethodContainingCall": "GetProductByCode",
+        "CalledMethodName": "InnerGetProductsByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[4692..4773))"
+        },
+        "MethodContainingCall": "GetProductByKeyword",
+        "CalledMethodName": "InnerGetProductsByIds"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[6701..6741))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "GetFilters"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Controllers\\MerchandisingModuleProductController.cs[9886..9937))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchandising\\VirtoCommerce.MerchandisingModule.Web\\Services\\FilterService.cs[1178..1211))"
+        },
+        "MethodContainingCall": "GetFilters",
+        "CalledMethodName": "GetStoreBrowseFilters"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.CoreModule.Data\\Repositories\\SqlCommerceSampleDatabaseInitializer.cs[825..857))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateFulfillmentCenter"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Bases\\FunctionalTestBase.cs[1081..1249))"
+        },
+        "MethodContainingCall": "GetRepository",
+        "CalledMethodName": "EnsureDatabaseInitialized"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Bases\\FunctionalTestBase.cs[3471..3524))"
+        },
+        "MethodContainingCall": "ResetDatabase",
+        "CalledMethodName": "EnsureDatabaseInitialized"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Bases\\FunctionalTestBase.cs[3429..3456))"
+        },
+        "MethodContainingCall": "ResetDatabase",
+        "CalledMethodName": "DropDatabase"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Bases\\MigrationsTestBase.cs[830..860))"
+        },
+        "MethodContainingCall": "ColumnExists",
+        "CalledMethodName": "ColumnExists"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Bases\\MigrationsTestBase.cs[701..723))"
+        },
+        "MethodContainingCall": "TableExists",
+        "CalledMethodName": "TableExists"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Fixtures\\RepositoryDatabaseFixture.cs[1151..1319))"
+        },
+        "MethodContainingCall": "",
+        "CalledMethodName": "EnsureDatabaseInitialized"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Converters\\AddressConverter.cs[2000..2014))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Converters\\AddressConverter.cs[2018..2032))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartSearchServiceImpl.cs[1711..1744))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "GetShoppingCartById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[1209..1247))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetShoppingCartById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[3044..3090))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetShoppingCartById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[3653..3687))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetShoppingCartById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[1887..1905))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[2188..2204))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[2815..2838))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Services\\ShoppingCartServiceImpl.cs[3514..3525))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Converters\\AddressConverter.cs[1803..1817))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Converters\\AddressConverter.cs[1821..1835))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[2619..2655))"
+        },
+        "MethodContainingCall": "CreateByShoppingCart",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[1825..1876))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetCustomerOrderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[3453..3527))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetCustomerOrderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[2470..2493))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[3171..3221))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[2835..2856))"
+        },
+        "MethodContainingCall": "CreateByShoppingCart",
+        "CalledMethodName": "Create"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Services\\CustomerOrderServiceImpl.cs[3681..3728))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetChangeTracker"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Observers\\AdjustInventoryObserver.cs[1881..2028))"
+        },
+        "MethodContainingCall": "OnNext",
+        "CalledMethodName": "GetProductsInventoryInfos"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Observers\\AdjustInventoryObserver.cs[2340..2398))"
+        },
+        "MethodContainingCall": "OnNext",
+        "CalledMethodName": "UpsertInventories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Web\\Controllers\\Api\\OrderModuleController.cs[10587..10645))"
+        },
+        "MethodContainingCall": "GetDashboardStatistics",
+        "CalledMethodName": "CollectStatistics"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Test\\OrderControllerTest.cs[2065..2086))"
+        },
+        "MethodContainingCall": "CreateNewManualOrder",
+        "CalledMethodName": "GetTestOrder"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Klarna.PaymentGatewaysModule.Web\\Managers\\KlarnaPaymentMethod.cs[9363..9381))"
+        },
+        "MethodContainingCall": "GetLocalization",
+        "CalledMethodName": "GetLocalizations"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Repositories\\SqlStoreSampleDatabaseInitializer.cs[901..932))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateStores"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Repositories\\SqlStoreSampleDatabaseInitializer.cs[1067..1102))"
+        },
+        "MethodContainingCall": "CreateStores",
+        "CalledMethodName": "CreateStore"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Repositories\\SqlStoreSampleDatabaseInitializer.cs[1127..1152))"
+        },
+        "MethodContainingCall": "CreateStores",
+        "CalledMethodName": "CreateStore"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Repositories\\SqlStoreSampleDatabaseInitializer.cs[1247..1271))"
+        },
+        "MethodContainingCall": "CreateStores",
+        "CalledMethodName": "CreateStore"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[2364..2408))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetSeoKeywordsForEntity"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[2063..2106))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetAllFulfillmentCenters"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[1756..1783))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetStoreById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[3199..3232))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetStoreById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[3768..3795))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetStoreById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[2866..2883))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[3682..3693))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Services\\StoreServiceImpl.cs[4146..4162))"
+        },
+        "MethodContainingCall": "GetStoreList",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Converters\\AddressConverter.cs[2648..2662))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Converters\\AddressConverter.cs[2666..2680))"
+        },
+        "MethodContainingCall": "Equals",
+        "CalledMethodName": "GetHashCode"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Converters\\PropertyConverter.cs[1338..1372))"
+        },
+        "MethodContainingCall": "ToDataModel",
+        "CalledMethodName": "SetPropertyValue"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Repositories\\CustomerRepositoryImpl.cs[920..952))"
+        },
+        "MethodContainingCall": "OnModelCreating",
+        "CalledMethodName": "InheritanceMapping"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Repositories\\SqlCustomerSampleDatabaseInitializer.cs[696..724))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "FillCustomerContent"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\ContactServiceImpl.cs[1067..1096))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetContactById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\ContactServiceImpl.cs[1832..1869))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetContactById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\ContactServiceImpl.cs[2264..2293))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetContactById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\ContactServiceImpl.cs[2981..3017))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "GetContactById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\ContactServiceImpl.cs[1488..1506))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\CustomerSearchServiceImpl.cs[1094..1131))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchOrganizations"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\CustomerSearchServiceImpl.cs[1180..1212))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "SearchContacts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\OrganizationServiceImpl.cs[1068..1102))"
+        },
+        "MethodContainingCall": "GetById",
+        "CalledMethodName": "GetOrganizationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\OrganizationServiceImpl.cs[1897..1944))"
+        },
+        "MethodContainingCall": "Update",
+        "CalledMethodName": "GetOrganizationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\OrganizationServiceImpl.cs[2339..2373))"
+        },
+        "MethodContainingCall": "Delete",
+        "CalledMethodName": "GetOrganizationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Services\\OrganizationServiceImpl.cs[1528..1546))"
+        },
+        "MethodContainingCall": "Create",
+        "CalledMethodName": "GetById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[7374..7415))"
+        },
+        "MethodContainingCall": "GetPricelistById",
+        "CalledMethodName": "GetAllPricelistAssignments"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[5738..5765))"
+        },
+        "MethodContainingCall": "GetPriceById",
+        "CalledMethodName": "GetPriceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[9670..9703))"
+        },
+        "MethodContainingCall": "UpdatePrices",
+        "CalledMethodName": "GetPriceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[11223..11250))"
+        },
+        "MethodContainingCall": "DeletePrices",
+        "CalledMethodName": "GetPriceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[7190..7221))"
+        },
+        "MethodContainingCall": "GetPricelistById",
+        "CalledMethodName": "GetPricelistById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[8004..8051))"
+        },
+        "MethodContainingCall": "CreatePrice",
+        "CalledMethodName": "GetPricelistById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[10496..10537))"
+        },
+        "MethodContainingCall": "UpdatePricelists",
+        "CalledMethodName": "GetPricelistById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[11387..11418))"
+        },
+        "MethodContainingCall": "DeletePricelists",
+        "CalledMethodName": "GetPricelistById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[12323..12364))"
+        },
+        "MethodContainingCall": "GetPricelistAssignmentById",
+        "CalledMethodName": "GetPricelistAssignmentById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[13747..13799))"
+        },
+        "MethodContainingCall": "UpdatePricelistAssignments",
+        "CalledMethodName": "GetPricelistAssignmentById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[14304..14345))"
+        },
+        "MethodContainingCall": "DeletePricelistsAssignments",
+        "CalledMethodName": "GetPricelistAssignmentById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[5118..5152))"
+        },
+        "MethodContainingCall": "EvaluateProductPrices",
+        "CalledMethodName": "EvaluateProductPrices"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[8822..8844))"
+        },
+        "MethodContainingCall": "CreatePrice",
+        "CalledMethodName": "GetPriceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[9238..9265))"
+        },
+        "MethodContainingCall": "CreatePricelist",
+        "CalledMethodName": "GetPricelistById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[13237..13274))"
+        },
+        "MethodContainingCall": "CreatePriceListAssignment",
+        "CalledMethodName": "GetPricelistAssignmentById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Services\\PricingServiceImpl.cs[10927..10986))"
+        },
+        "MethodContainingCall": "UpdatePricelists",
+        "CalledMethodName": "UpdatePricelistAssignments"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Data\\Services\\InventoryServiceImpl.cs[1259..1314))"
+        },
+        "MethodContainingCall": "GetProductsInventoryInfos",
+        "CalledMethodName": "GetProductsInventories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Data\\Services\\InventoryServiceImpl.cs[1742..1794))"
+        },
+        "MethodContainingCall": "UpsertInventories",
+        "CalledMethodName": "GetProductsInventories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Data\\Services\\InventoryServiceImpl.cs[2619..2695))"
+        },
+        "MethodContainingCall": "UpsertInventory",
+        "CalledMethodName": "GetProductsInventories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Web\\Controllers\\Api\\InventoryModuleController.cs[2241..2291))"
+        },
+        "MethodContainingCall": "GetProductInventories",
+        "CalledMethodName": "GetProductsInventories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\DatabaseContentRepositoryImpl.cs[7030..7055))"
+        },
+        "MethodContainingCall": "UpdateList",
+        "CalledMethodName": "Attach"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\DatabaseContentRepositoryImpl.cs[6967..6987))"
+        },
+        "MethodContainingCall": "UpdateList",
+        "CalledMethodName": "GetListById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\DatabaseContentRepositoryImpl.cs[7571..7590))"
+        },
+        "MethodContainingCall": "DeleteList",
+        "CalledMethodName": "GetListById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\FileSystemContentRepositoryImpl.cs[2591..2628))"
+        },
+        "MethodContainingCall": "GetContentItems",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\GitHubContentRepositoryImpl.cs[3875..3900))"
+        },
+        "MethodContainingCall": "GetContentItems",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[805..858))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultMenuLinkLists"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[864..916))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultMenuLinkLists"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[922..973))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultMenuLinkLists"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[1133..1177))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultTheme"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[1183..1228))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultTheme"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[1234..1277))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultTheme"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[981..1025))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[1031..1076))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[1082..1125))"
+        },
+        "MethodContainingCall": "Seed",
+        "CalledMethodName": "CreateDefaultPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\SqlContentDatabaseInitializer.cs[9559..9600))"
+        },
+        "MethodContainingCall": "CreateDefaultTheme",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\MenuServiceImpl.cs[937..978))"
+        },
+        "MethodContainingCall": "UpdateList",
+        "CalledMethodName": "UpdateList"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\MenuServiceImpl.cs[663..714))"
+        },
+        "MethodContainingCall": "GetListsByStoreId",
+        "CalledMethodName": "GetListsByStoreId"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\MenuServiceImpl.cs[1295..1332))"
+        },
+        "MethodContainingCall": "CheckList",
+        "CalledMethodName": "GetListsByStoreId"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\MenuServiceImpl.cs[808..852))"
+        },
+        "MethodContainingCall": "GetListById",
+        "CalledMethodName": "GetListById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\MenuServiceImpl.cs[1052..1095))"
+        },
+        "MethodContainingCall": "DeleteList",
+        "CalledMethodName": "DeleteList"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[1433..1469))"
+        },
+        "MethodContainingCall": "GetPages",
+        "CalledMethodName": "GetPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[1895..1924))"
+        },
+        "MethodContainingCall": "GetPage",
+        "CalledMethodName": "GetPage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2341..2393))"
+        },
+        "MethodContainingCall": "SavePage",
+        "CalledMethodName": "SavePage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2580..2612))"
+        },
+        "MethodContainingCall": "DeletePage",
+        "CalledMethodName": "DeletePage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[1433..1469))"
+        },
+        "MethodContainingCall": "GetPages",
+        "CalledMethodName": "GetPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2341..2393))"
+        },
+        "MethodContainingCall": "SavePage",
+        "CalledMethodName": "SavePage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[1895..1924))"
+        },
+        "MethodContainingCall": "GetPage",
+        "CalledMethodName": "GetPage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[1433..1469))"
+        },
+        "MethodContainingCall": "GetPages",
+        "CalledMethodName": "GetPages"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2580..2612))"
+        },
+        "MethodContainingCall": "DeletePage",
+        "CalledMethodName": "DeletePage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2341..2393))"
+        },
+        "MethodContainingCall": "SavePage",
+        "CalledMethodName": "SavePage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\PagesServiceImpl.cs[2718..2750))"
+        },
+        "MethodContainingCall": "CheckList",
+        "CalledMethodName": "GetPage"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1236..1268))"
+        },
+        "MethodContainingCall": "GetThemes",
+        "CalledMethodName": "GetThemes"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1681..1729))"
+        },
+        "MethodContainingCall": "GetThemeAssets",
+        "CalledMethodName": "GetContentItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2144..2180))"
+        },
+        "MethodContainingCall": "GetThemeAsset",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2585..2645))"
+        },
+        "MethodContainingCall": "SaveThemeAsset",
+        "CalledMethodName": "SaveContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2873..2912))"
+        },
+        "MethodContainingCall": "DeleteThemeAssets",
+        "CalledMethodName": "DeleteContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1429..1463))"
+        },
+        "MethodContainingCall": "DeleteTheme",
+        "CalledMethodName": "DeleteTheme"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1681..1729))"
+        },
+        "MethodContainingCall": "GetThemeAssets",
+        "CalledMethodName": "GetContentItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1236..1268))"
+        },
+        "MethodContainingCall": "GetThemes",
+        "CalledMethodName": "GetThemes"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2144..2180))"
+        },
+        "MethodContainingCall": "GetThemeAsset",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2585..2645))"
+        },
+        "MethodContainingCall": "SaveThemeAsset",
+        "CalledMethodName": "SaveContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2144..2180))"
+        },
+        "MethodContainingCall": "GetThemeAsset",
+        "CalledMethodName": "GetContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1236..1268))"
+        },
+        "MethodContainingCall": "GetThemes",
+        "CalledMethodName": "GetThemes"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[1681..1729))"
+        },
+        "MethodContainingCall": "GetThemeAssets",
+        "CalledMethodName": "GetContentItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[2585..2645))"
+        },
+        "MethodContainingCall": "SaveThemeAsset",
+        "CalledMethodName": "SaveContentItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Services\\ThemeServiceImpl.cs[4585..4636))"
+        },
+        "MethodContainingCall": "UploadTheme",
+        "CalledMethodName": "SaveThemeAsset"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Web\\Controllers\\Api\\PagesController.cs[3409..3470))"
+        },
+        "MethodContainingCall": "DeleteItem",
+        "CalledMethodName": "GetShortPageInfoFromString"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Mailing\\MailChimp.MailingModule.Web\\Services\\OAuth2.cs[6021..6058))"
+        },
+        "MethodContainingCall": "MakeOauth2Request",
+        "CalledMethodName": "makeRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Mailing\\MailChimp.MailingModule.Web\\Services\\OAuth2.cs[8521..8575))"
+        },
+        "MethodContainingCall": "getAccessTokenFromAuthorizationCode",
+        "CalledMethodName": "makeRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Converters\\PropertyConverter.cs[1156..1190))"
+        },
+        "MethodContainingCall": "ToDataModel",
+        "CalledMethodName": "SetPropertyValue"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Repositories\\MarketingRepositoryImpl.cs[5572..5615))"
+        },
+        "MethodContainingCall": "GetContentFolderById",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Repositories\\MarketingRepositoryImpl.cs[5858..5895))"
+        },
+        "MethodContainingCall": "GetContentItemById",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Repositories\\MarketingRepositoryImpl.cs[6103..6140))"
+        },
+        "MethodContainingCall": "GetContentPlaceById",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DefaultDynamicContentEvaluatorImpl.cs[2006..2062))"
+        },
+        "MethodContainingCall": "EvaluateItems",
+        "CalledMethodName": "GetContentItemById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DefaultPromotionEvaluatorImpl.cs[1191..1254))"
+        },
+        "MethodContainingCall": "EvaluatePromotion",
+        "CalledMethodName": "EvaluteBestAmountRewards"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DefaultPromotionEvaluatorImpl.cs[1649..1708))"
+        },
+        "MethodContainingCall": "EvaluatePromotion",
+        "CalledMethodName": "EvaluteBestAmountRewards"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DefaultPromotionEvaluatorImpl.cs[740..779))"
+        },
+        "MethodContainingCall": "EvaluatePromotion",
+        "CalledMethodName": "GetActivePromotions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DefaultPromotionEvaluatorImpl.cs[3440..3479))"
+        },
+        "MethodContainingCall": "ProcessEvent",
+        "CalledMethodName": "GetActivePromotions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[5853..5888))"
+        },
+        "MethodContainingCall": "GetFolderById",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[6637..6679))"
+        },
+        "MethodContainingCall": "UpdateFolder",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[7071..7106))"
+        },
+        "MethodContainingCall": "DeleteFolder",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[1034..1067))"
+        },
+        "MethodContainingCall": "GetContentItemById",
+        "CalledMethodName": "GetContentItemById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[1873..1914))"
+        },
+        "MethodContainingCall": "UpdateContents",
+        "CalledMethodName": "GetContentItemById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[2324..2357))"
+        },
+        "MethodContainingCall": "DeleteContents",
+        "CalledMethodName": "GetContentItemById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[2636..2670))"
+        },
+        "MethodContainingCall": "GetPlaceById",
+        "CalledMethodName": "GetContentPlaceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[3408..3448))"
+        },
+        "MethodContainingCall": "UpdatePlace",
+        "CalledMethodName": "GetContentPlaceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[3840..3874))"
+        },
+        "MethodContainingCall": "DeletePlaces",
+        "CalledMethodName": "GetContentPlaceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[4171..4211))"
+        },
+        "MethodContainingCall": "GetPublicationById",
+        "CalledMethodName": "GetContentPublicationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[5067..5115))"
+        },
+        "MethodContainingCall": "UpdatePublications",
+        "CalledMethodName": "GetContentPublicationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[5529..5569))"
+        },
+        "MethodContainingCall": "DeletePublications",
+        "CalledMethodName": "GetContentPublicationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[1499..1528))"
+        },
+        "MethodContainingCall": "CreateContent",
+        "CalledMethodName": "GetContentItemById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[3097..3120))"
+        },
+        "MethodContainingCall": "CreatePlace",
+        "CalledMethodName": "GetPlaceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[4674..4703))"
+        },
+        "MethodContainingCall": "CreatePublication",
+        "CalledMethodName": "GetPublicationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\DynamicContentServiceImpl.cs[6321..6345))"
+        },
+        "MethodContainingCall": "CreateFolder",
+        "CalledMethodName": "GetFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[2854..2895))"
+        },
+        "MethodContainingCall": "SearchFolders",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[3087..3137))"
+        },
+        "MethodContainingCall": "SearchFolders",
+        "CalledMethodName": "GetContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[2311..2342))"
+        },
+        "MethodContainingCall": "SearchResources",
+        "CalledMethodName": "SearchFolders"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[1569..1605))"
+        },
+        "MethodContainingCall": "SearchResources",
+        "CalledMethodName": "SearchContentItems"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[1811..1848))"
+        },
+        "MethodContainingCall": "SearchResources",
+        "CalledMethodName": "SearchContentPlaces"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[2067..2110))"
+        },
+        "MethodContainingCall": "SearchResources",
+        "CalledMethodName": "SearchContentPublications"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\MarketingSearchServiceImpl.cs[1333..1367))"
+        },
+        "MethodContainingCall": "SearchResources",
+        "CalledMethodName": "SearchPromotions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\PromotionServiceImpl.cs[1818..1849))"
+        },
+        "MethodContainingCall": "GetPromotionById",
+        "CalledMethodName": "GetPromotionById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\PromotionServiceImpl.cs[2724..2765))"
+        },
+        "MethodContainingCall": "UpdatePromotions",
+        "CalledMethodName": "GetPromotionById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\PromotionServiceImpl.cs[3177..3208))"
+        },
+        "MethodContainingCall": "DeletePromotions",
+        "CalledMethodName": "GetPromotionById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\PromotionServiceImpl.cs[1328..1360))"
+        },
+        "MethodContainingCall": "GetActivePromotions",
+        "CalledMethodName": "GetActivePromotions"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Services\\PromotionServiceImpl.cs[2361..2388))"
+        },
+        "MethodContainingCall": "CreatePromotion",
+        "CalledMethodName": "GetPromotionById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Controllers\\Api\\MarketingModuleDynamicContentController.cs[1864..1896))"
+        },
+        "MethodContainingCall": "CreateDynamicContent",
+        "CalledMethodName": "GetDynamicContentById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Controllers\\Api\\MarketingModuleDynamicContentController.cs[3485..3522))"
+        },
+        "MethodContainingCall": "CreateDynamicContentPlace",
+        "CalledMethodName": "GetDynamicContentPlaceById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Controllers\\Api\\MarketingModuleDynamicContentController.cs[5861..5904))"
+        },
+        "MethodContainingCall": "CreateDynamicContent",
+        "CalledMethodName": "GetDynamicContentPublicationById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Controllers\\Api\\MarketingModuleDynamicContentController.cs[7584..7622))"
+        },
+        "MethodContainingCall": "CreateDynamicContentFolder",
+        "CalledMethodName": "GetDynamicContentFolderById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Controllers\\Api\\MarketingModulePromotionController.cs[2466..2493))"
+        },
+        "MethodContainingCall": "CreatePromotion",
+        "CalledMethodName": "GetPromotionById"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Web\\Module.cs[2174..2295))"
+        },
+        "MethodContainingCall": "PostInitialize",
+        "CalledMethodName": "EnsureRootFoldersExist"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Controllers\\Api\\GoogleShoppingController.cs[2077..2132))"
+        },
+        "MethodContainingCall": "SyncProduct",
+        "CalledMethodName": "GetProductUpdates"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Controllers\\Api\\GoogleShoppingController.cs[3059..3103))"
+        },
+        "MethodContainingCall": "UpdateOutdatedProducts",
+        "CalledMethodName": "GetProductUpdates"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Controllers\\Api\\GoogleShoppingController.cs[3801..3851))"
+        },
+        "MethodContainingCall": "BatchOutdatedProducts",
+        "CalledMethodName": "GetProductsBatchRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Controllers\\Api\\GoogleShoppingController.cs[4378..4436))"
+        },
+        "MethodContainingCall": "BatchCatalogProducts",
+        "CalledMethodName": "GetCatalogProductsBatchRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Controllers\\Api\\GoogleShoppingController.cs[5033..5103))"
+        },
+        "MethodContainingCall": "BatchCategoryProducts",
+        "CalledMethodName": "GetCatalogProductsBatchRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Merchant\\GoogleShopping.Merchant.Web\\Providers\\VCGoogleProductProvider.cs[2351..2373))"
+        },
+        "MethodContainingCall": "GetProductsBatchRequest",
+        "CalledMethodName": "GetProductUpdates"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\BlockConditionAndOr.cs[875..901))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetConditionExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\BlockConditionAndOr.cs[875..901))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetConditionExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtCartItemExtendedTotal.cs[1296..1339))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtCartItemExtendedTotal.cs[1361..1403))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtNumItemsInCart.cs[1083..1126))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtNumItemsInCart.cs[1147..1189))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtNumItemsOfCategoryAreInCart.cs[1263..1306))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionAtNumItemsOfCategoryAreInCart.cs[1328..1370))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionCartSubtotalLeast.cs[1126..1169))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CartConditions\\ConditionCartSubtotalLeast.cs[1191..1233))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CatalogConditions\\ConditionCategoryIs.cs[1095..1138))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Conditions\\CatalogConditions\\ConditionCategoryIs.cs[1155..1197))"
+        },
+        "MethodContainingCall": "GetConditionExpression",
+        "CalledMethodName": "GetNewArrayExpression"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Helpers\\PromotionEvaluationContextExtension.cs[3791..3829))"
+        },
+        "MethodContainingCall": "InCategories",
+        "CalledMethodName": "IsLineItemInCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Helpers\\PromotionEvaluationContextExtension.cs[4642..4680))"
+        },
+        "MethodContainingCall": "ExcludeCategories",
+        "CalledMethodName": "IsLineItemInCategories"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Helpers\\PromotionEvaluationContextExtension.cs[4401..4436))"
+        },
+        "MethodContainingCall": "InProducts",
+        "CalledMethodName": "IsLineItemInProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\DynamicExpression\\VirtoCommerce.DynamicExpressionModule.Data\\Promotion\\Helpers\\PromotionEvaluationContextExtension.cs[4881..4916))"
+        },
+        "MethodContainingCall": "ExcludeProducts",
+        "CalledMethodName": "IsLineItemInProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Azure\\AzureSearchProvider.cs[2805..2834))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "Search"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Azure\\AzureSearchProvider.cs[2610..2644))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "BuildQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[3314..3337))"
+        },
+        "MethodContainingCall": "CreateDocuments",
+        "CalledMethodName": "IndexItem"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[7268..7308))"
+        },
+        "MethodContainingCall": "IndexItem",
+        "CalledMethodName": "IndexItemCustomProperties"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[7359..7389))"
+        },
+        "MethodContainingCall": "IndexItem",
+        "CalledMethodName": "IndexItemPrices"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[2468..2497))"
+        },
+        "MethodContainingCall": "GetPartitions",
+        "CalledMethodName": "GetPartitionsForAllProducts"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[12692..12729))"
+        },
+        "MethodContainingCall": "GetPartitionsForModifiedProducts",
+        "CalledMethodName": "GetProductChanges"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[3600..3647))"
+        },
+        "MethodContainingCall": "PublishDocuments",
+        "CalledMethodName": "Index"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\CatalogItemIndexBuilder.cs[6448..6499))"
+        },
+        "MethodContainingCall": "IndexItem",
+        "CalledMethodName": "GetOutlines"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticQueryHelper.cs[685..729))"
+        },
+        "MethodContainingCall": "CreateQuery",
+        "CalledMethodName": "CreateQueryForValue"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticQueryHelper.cs[1325..1391))"
+        },
+        "MethodContainingCall": "CreateQueryForValue",
+        "CalledMethodName": "CreatePriceRangeFilter"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticQueryHelper.cs[4888..4999))"
+        },
+        "MethodContainingCall": "CreatePriceRangeFilter",
+        "CalledMethodName": "CreatePriceRangeFilter"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticQueryHelper.cs[6530..6656))"
+        },
+        "MethodContainingCall": "CreatePriceRangeFilter",
+        "CalledMethodName": "CreatePriceRangeFilter"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchProvider.cs[5062..5096))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "BuildQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[2243..2291))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[10100..10143))"
+        },
+        "MethodContainingCall": "AddFacetQueries",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[11477..11520))"
+        },
+        "MethodContainingCall": "AddFacetQueries",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[12781..12824))"
+        },
+        "MethodContainingCall": "AddFacetPriceQueries",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[12993..13062))"
+        },
+        "MethodContainingCall": "AddFacetPriceQueries",
+        "CalledMethodName": "CreatePriceRangeFilter"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[3593..3637))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[4179..4229))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[4006..4047))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[5188..5236))"
+        },
+        "MethodContainingCall": "AddQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[3833..3888))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQueryString"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\ElasticSearch\\ElasticSearchQueryBuilder.cs[8161..8251))"
+        },
+        "MethodContainingCall": "GetFacets",
+        "CalledMethodName": "AddFacetPriceQueries"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\BaseSearchQueryBuilder.cs[3417..3469))"
+        },
+        "MethodContainingCall": "AddQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\BaseSearchQueryBuilder.cs[1575..1636))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneHelper.cs[696..730))"
+        },
+        "MethodContainingCall": "ConvertDocument",
+        "CalledMethodName": "AddFieldToDocument"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneQueryHelper.cs[2955..3008))"
+        },
+        "MethodContainingCall": "CreateQueryForValue",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneQueryHelper.cs[2750..2850))"
+        },
+        "MethodContainingCall": "CreateQueryForValue",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneQueryHelper.cs[4348..4397))"
+        },
+        "MethodContainingCall": "CreateQuery",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneQueryHelper.cs[7922..8217))"
+        },
+        "MethodContainingCall": "CreateQuery",
+        "CalledMethodName": "CreatePriceRangeQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneQueryHelper.cs[11130..11456))"
+        },
+        "MethodContainingCall": "CreatePriceRangeQuery",
+        "CalledMethodName": "CreatePriceRangeQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneSearchProvider.cs[8988..9021))"
+        },
+        "MethodContainingCall": "Search",
+        "CalledMethodName": "BuildQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneSearchQueryBuilder.cs[1988..2028))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneSearchQueryBuilder.cs[2234..2271))"
+        },
+        "MethodContainingCall": "BuildQuery",
+        "CalledMethodName": "AddQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Providers\\Lucene\\LuceneSearchResults.cs[5034..5090))"
+        },
+        "MethodContainingCall": "CalculateResultCount",
+        "CalledMethodName": "CreateQuery"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Data\\Services\\SearchProviderManager.cs[1969..2021))"
+        },
+        "MethodContainingCall": "Index",
+        "CalledMethodName": "Index"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Tests\\OutlineBuilderTest.cs[889..915))"
+        },
+        "MethodContainingCall": "LinkParentToCatalog",
+        "CalledMethodName": "GetOutlines"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Search\\VirtoCommerce.SearchModule.Tests\\OutlineBuilderTest.cs[931..956))"
+        },
+        "MethodContainingCall": "LinkParentToCatalog",
+        "CalledMethodName": "GetOutlines"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Helpdesk\\Zendesk.HelpdeskModule.Web\\Services\\OAuth2.cs[5880..5917))"
+        },
+        "MethodContainingCall": "MakeOauth2Request",
+        "CalledMethodName": "makeRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Helpdesk\\Zendesk.HelpdeskModule.Web\\Services\\OAuth2.cs[8375..8429))"
+        },
+        "MethodContainingCall": "getAccessTokenFromAuthorizationCode",
+        "CalledMethodName": "makeRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\AvaTaxClasses\\TaxSvc.cs[5265..5335))"
+        },
+        "MethodContainingCall": "Ping",
+        "CalledMethodName": "EstimateTax"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Controller\\AvaTaxController.cs[1421..1443))"
+        },
+        "MethodContainingCall": "Total",
+        "CalledMethodName": "GetTax"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Controller\\AvaTaxController.cs[3049..3071))"
+        },
+        "MethodContainingCall": "CartTotal",
+        "CalledMethodName": "GetTax"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Observers\\CalculateCartTaxesObserver.cs[1370..1392))"
+        },
+        "MethodContainingCall": "CalculateCustomerOrderTaxes",
+        "CalledMethodName": "GetTax"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Observers\\CalculateCartTaxesObserver.cs[709..743))"
+        },
+        "MethodContainingCall": "OnNext",
+        "CalledMethodName": "CalculateCustomerOrderTaxes"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Observers\\CalculateOrderTaxesObserver.cs[1448..1470))"
+        },
+        "MethodContainingCall": "CalculateCustomerOrderTaxes",
+        "CalledMethodName": "GetTax"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Web\\Observers\\CalculateOrderTaxesObserver.cs[785..819))"
+        },
+        "MethodContainingCall": "OnNext",
+        "CalledMethodName": "CalculateCustomerOrderTaxes"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Test\\TaxModuleTest.cs[1505..1528))"
+        },
+        "MethodContainingCall": "GetOrderTaxTotals",
+        "CalledMethodName": "GetTestOrder"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Tax\\AvaTax.TaxModule.Test\\TaxModuleTest.cs[1912..1932))"
+        },
+        "MethodContainingCall": "GetCartTaxTotals",
+        "CalledMethodName": "GetTestCart"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.AdaptivePayments\\Managers\\PaypalBankCardsAdaptivePaymentsPaymentMethod.cs[3593..3649))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "CreatePaypalRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.AdaptivePayments\\Managers\\PaypalBankCardsAdaptivePaymentsPaymentMethod.cs[3500..3514))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "GetConfigMap"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.AdaptivePayments\\Managers\\PaypalBankCardsAdaptivePaymentsPaymentMethod.cs[4456..4470))"
+        },
+        "MethodContainingCall": "PostProcessPayment",
+        "CalledMethodName": "GetConfigMap"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[7037..7061))"
+        },
+        "MethodContainingCall": "GetPaypalPaymentDetail",
+        "CalledMethodName": "FormatMoney"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[8912..8981))"
+        },
+        "MethodContainingCall": "CreatePaypalRequest",
+        "CalledMethodName": "GetPaypalPaymentDetail"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[3147..3174))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "GetConfigMap"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[4476..4503))"
+        },
+        "MethodContainingCall": "PostProcessPayment",
+        "CalledMethodName": "GetConfigMap"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[3231..3297))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "CreatePaypalRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[3505..3533))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "CheckResponse"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[4897..4920))"
+        },
+        "MethodContainingCall": "PostProcessPayment",
+        "CalledMethodName": "CheckResponse"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.ExpressCheckout\\Managers\\PaypalExpressCheckoutPaymentMethod.cs[5269..5294))"
+        },
+        "MethodContainingCall": "PostProcessPayment",
+        "CalledMethodName": "CheckResponse"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.DirectPayments\\Managers\\PaypalDirectPaymentsPaymentMethod.cs[3621..3633))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "GetService"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.DirectPayments\\Managers\\PaypalDirectPaymentsPaymentMethod.cs[3524..3558))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "GetDoDirectPaymentRequest"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.DirectPayments\\Managers\\PaypalDirectPaymentsPaymentMethod.cs[6015..6044))"
+        },
+        "MethodContainingCall": "GetDoDirectPaymentRequest",
+        "CalledMethodName": "GetCreditCardDetails"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.DirectPayments\\Managers\\PaypalDirectPaymentsPaymentMethod.cs[6269..6301))"
+        },
+        "MethodContainingCall": "GetDoDirectPaymentRequest",
+        "CalledMethodName": "FormatMoney"
+      }
+    ]
+  },
+  {
+    "Models": [
+      {
+        "CompilationInfo": {
+          "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\PaymentGateways\\Paypal.DirectPayments\\Managers\\PaypalDirectPaymentsPaymentMethod.cs[3769..3803))"
+        },
+        "MethodContainingCall": "ProcessPayment",
+        "CalledMethodName": "CheckResponse"
+      }
+    ]
+  }
+]

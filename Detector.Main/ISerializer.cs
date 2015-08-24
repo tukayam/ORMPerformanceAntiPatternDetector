@@ -13,7 +13,7 @@ namespace Detector.Main
     {
         Task Serialize(HashSet<DataContextDeclaration<T>> collection, string solutionUnderTest);
         Task Serialize(HashSet<DatabaseEntityDeclaration<T>> collection, string solutionUnderTest);
-        Task Serialize(HashSet<DatabaseQueryVariable<T>> collection, string solutionUnderTest);
+        Task Serialize(HashSet<DatabaseQueryVariableDeclaration<T>> collection, string solutionUnderTest);
         Task Serialize(HashSet<DatabaseAccessingMethodCallStatement<T>> collection, string solutionUnderTest);
         Task Serialize(HashSet<CodeExecutionPath> collection, string solutionUnderTest);
     }

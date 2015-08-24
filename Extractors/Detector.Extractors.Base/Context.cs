@@ -12,7 +12,7 @@ namespace Detector.Extractors.Base
     {
         HashSet<DataContextDeclaration<T>> DataContextDeclarations { get; set; }
         HashSet<DatabaseEntityDeclaration<T>> DatabaseEntityDeclarations { get; set; }
-        HashSet<DatabaseQueryVariable<T>> DatabaseQueryVariables { get; set; }
+        HashSet<DatabaseQueryVariableDeclaration<T>> DatabaseQueryVariables { get; set; }
         HashSet<DatabaseAccessingMethodCallStatement<T>> DatabaseAccessingMethodCallStatements { get; set; }
         HashSet<CodeExecutionPath> CodeExecutionPaths { get; set; }
     }

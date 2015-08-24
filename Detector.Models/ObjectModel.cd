@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingAddStatement&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="16.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCalls\DatabaseAccessingAddStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingDeleteStatement&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="14" Width="3" />
+    <InheritanceLine Type="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingMethodCallStatement&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="6.875" Y="13.684" />
+        <Point X="6.875" Y="13.98" />
+        <Point X="5.377" Y="13.98" />
+        <Point X="5.377" Y="14.375" />
+        <Point X="5.5" Y="14.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCalls\DatabaseAccessingDeleteStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingMethodCallStatement&lt;T&gt;">
+    <Position X="5.25" Y="9.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAEAAEAAEQAQAQAAABCEAAAEAAIAIAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCalls\DatabaseAccessingMethodCallStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingSelectStatement&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="14.75" Width="3" />
+    <InheritanceLine Type="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingMethodCallStatement&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="6.875" Y="13.684" />
+        <Point X="6.875" Y="13.98" />
+        <Point X="5.377" Y="13.98" />
+        <Point X="5.377" Y="15.125" />
+        <Point X="5.5" Y="15.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCalls\DatabaseAccessingSelectStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseAccessingMethodCalls.DatabaseAccessingUpdateStatement&lt;T&gt;" Collapsed="true">
+    <Position X="5.5" Y="15.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseAccessingMethodCalls\DatabaseAccessingUpdateStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntities.DatabaseEntityDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="6" Y="6" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntities\DatabaseEntityDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntities.DatabaseEntityObjectCallStatement&lt;T&gt;">
+    <Position X="5.5" Y="17.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseEntities\DatabaseEntityObjectCallStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntities.DatabaseEntityVariableDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="6" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntities\DatabaseEntityVariableDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseEntities.DatabaseEntityVariableRelatedEntityCallStatement&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="19.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseEntities\DatabaseEntityVariableRelatedEntityCallStatement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseQueries.DatabaseQuery&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="20.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAEAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DatabaseQueries\DatabaseQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DatabaseQueries.DatabaseQueryVariableDeclaration&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="5" Y="21.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DatabaseQueries\DatabaseQueryVariableDeclaration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.ORM.DataContexts.DataContextDeclaration&lt;T&gt;" Collapsed="true">
+    <Position X="6" Y="6.75" Width="2.5" />
+    <InheritanceLine Type="Detector.Models.Base.DeclarationBase" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="5.684" />
+        <Point X="7.25" Y="5.807" />
+        <Point X="5.877" Y="5.807" />
+        <Point X="5.877" Y="7.1" />
+        <Point X="6" Y="7.1" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ORM\DataContexts\DataContextDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.ORM.DataContexts.DataContextInitializationStatement&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="6.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAgA=</HashCode>
+      <FileName>ORM\DataContexts\DataContextInitializationStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Detector.Models.Base.DeclarationBase">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\DeclarationBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.Base.ModelBase">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Base\ModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Detector.Models.Base.VariableDeclaration" Collapsed="true">
+    <Position X="6" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\VariableDeclaration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.Base.CompilationInfo">
+    <Position X="3.25" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Base\CompilationInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.Base.CodeExecutionPath">
+    <Position X="7.5" Y="23" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Base\CodeExecutionPaths\CodeExecutionPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Detector.Models.Base.CodeExecutionPaths.MethodCall" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAIAAAAIgA=</HashCode>
+      <FileName>Base\CodeExecutionPaths\MethodCall.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Detector.Models.Model">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Base\Model.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

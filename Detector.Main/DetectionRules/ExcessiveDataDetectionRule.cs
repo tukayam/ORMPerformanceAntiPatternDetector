@@ -1,7 +1,8 @@
-﻿using Detector.Models;
-using Detector.Models.AntiPatterns;
+﻿using Detector.Models.AntiPatterns;
 using Detector.Models.Base;
-using Detector.Models.ORM;
+using Detector.Models.ORM.DatabaseAccessingMethodCalls;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.ORMTools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +13,22 @@ namespace Detector.Main.DetectionRules
     {
         protected override Func<bool> GetRuleFunction()
         {
-            return TreeHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed;
+            return CodeExecutionPathHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed;
         }
 
-        private bool TreeHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed()
+        private bool CodeExecutionPathHasEagerFetchingQueryAndNotAllFetchedEntitiesAreUsed()
         {
-            IEnumerable<NodeBase> databaseAccessingMethodCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseAccessingMethodCallStatement<T>>();
+            IEnumerable<DatabaseAccessingMethodCallStatement<T>> databaseAccessingMethodCalls = CodeExecutionPath.Models.OfType<DatabaseAccessingMethodCallStatement<T>>();
 
-            List<NodeBase> databaseEntityVariableRelatedEntityCalls = ORMModelTree.RootNode.ChildNodes.OfType<DatabaseEntityVariableRelatedEntityCallStatement<T>>().ToList();
+            IEnumerable<DatabaseEntityVariableRelatedEntityCallStatement<T>> databaseEntityVariableRelatedEntityCalls = CodeExecutionPath.Models.OfType<DatabaseEntityVariableRelatedEntityCallStatement<T>>();
 
-            foreach (NodeBase item in databaseAccessingMethodCalls)
+            foreach (var dbAccessingMethodCall in databaseAccessingMethodCalls)
             {
-                DatabaseAccessingMethodCallStatement<T> dbAccessingMethodCall = (DatabaseAccessingMethodCallStatement<T>)item.Model;
                 if (dbAccessingMethodCall.DoesEagerLoad)
                 {
-                    if (!databaseEntityVariableRelatedEntityCalls.Exists(x => ((DatabaseEntityVariableRelatedEntityCallStatement<T>)x.Model).CalledDatabaseEntityVariable == dbAccessingMethodCall.AssignedVariable))
+                    if (!databaseEntityVariableRelatedEntityCalls.Any(x => x.CalledDatabaseEntityVariable == dbAccessingMethodCall.AssignedVariable))
                     {
-                        this.DetectedAntiPatterns.Add(new ExcessiveDataAntiPattern(dbAccessingMethodCall, ORMModelTree));
+                        this.DetectedAntiPatterns.Add(new ExcessiveDataAntiPattern(CodeExecutionPath, dbAccessingMethodCall));
 
                         return true;
                     }

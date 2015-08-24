@@ -1,0 +1,92 @@
+[
+  {
+    "Name": "EFRepositoryBase",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Infrastructure\\EFRepositoryBase.cs[620..11395))"
+    }
+  },
+  {
+    "Name": "PlatformRepository",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Repositories\\PlatformRepository.cs[430..6375))"
+    }
+  },
+  {
+    "Name": "SecurityDbContext",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Security\\Identity\\SecurityDbContext.cs[143..641))"
+    }
+  },
+  {
+    "Name": "CatalogRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Repositories\\CatalogRepositoryImpl.cs[432..18136))"
+    }
+  },
+  {
+    "Name": "CommerceRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.CoreModule.Data\\Repositories\\CommerceRepositoryImpl.cs[367..1353))"
+    }
+  },
+  {
+    "Name": "EmptyContext",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\EmptyContext.cs[232..511))"
+    }
+  },
+  {
+    "Name": "InfoContext",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\InfoContext.cs[223..8745))"
+    }
+  },
+  {
+    "Name": "CartRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Repositories\\CartRepositoryImpl.cs[425..3869))"
+    }
+  },
+  {
+    "Name": "OrderRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Repositories\\OrderRepositoryImpl.cs[382..7094))"
+    }
+  },
+  {
+    "Name": "StoreRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Store\\VirtoCommerce.StoreModule.Data\\Repositories\\StoreRepositoryImpl.cs[369..2084))"
+    }
+  },
+  {
+    "Name": "CustomerRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Repositories\\CustomerRepositoryImpl.cs[375..4148))"
+    }
+  },
+  {
+    "Name": "PricingRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Pricing\\VirtoCommerce.PricingModule.Data\\Repositories\\PricingRepositoryImpl.cs[416..3110))"
+    }
+  },
+  {
+    "Name": "InventoryRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Data\\Repositories\\InventoryRepositoryImpl.cs[377..1320))"
+    }
+  },
+  {
+    "Name": "DatabaseContentRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Repositories\\DatabaseContentRepositoryImpl.cs[420..7653))"
+    }
+  },
+  {
+    "Name": "MarketingRepositoryImpl",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Repositories\\MarketingRepositoryImpl.cs[377..6475))"
+    }
+  }
+]

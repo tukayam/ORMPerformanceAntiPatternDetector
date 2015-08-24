@@ -26,7 +26,7 @@ namespace Detector.Extractors.Base
 
         public async Task ExtractCodeExecutionPathsAsync(Solution solution, IProgress<ExtractionProgress> progressIndicator)
         {
-            progressIndicator.Report(new ExtractionProgress("Extracting code execution paths..."));
+            progressIndicator.Report(new ExtractionProgress("Generating code execution paths..."));
             await GetInitialCodeExecutionPaths(solution, progressIndicator);
 
         }
@@ -35,15 +35,15 @@ namespace Detector.Extractors.Base
         {
             Dictionary<MethodDeclarationSyntax, HashSet<ISymbol>> methodDecAndTheirSymbolsContainingDbAccessingMethodCalls = GetMethodDeclarationsAndTheirSymbolsForDbAccessingMethodCalls();
 
-            int totalForProgress = GetTotalAmountForProgress(solution, methodDecAndTheirSymbolsContainingDbAccessingMethodCalls);
-            int counter = 0;
+            //int totalForProgress = GetTotalAmountForProgress(solution, methodDecAndTheirSymbolsContainingDbAccessingMethodCalls);
+            //int counter = 0;
 
             foreach (var project in solution.Projects)
             {
                 foreach (var document in project.Documents)
                 {
-                    counter++;
-                    progressIndicator.Report(new ExtractionProgress(counter * 100 / totalForProgress));
+                   // counter++;
+                    //progressIndicator.Report(new ExtractionProgress(counter * 100 / totalForProgress));
 
                     SyntaxNode root = await document.GetSyntaxRootAsync();
                     SemanticModel semanticModel = await document.GetSemanticModelAsync();

@@ -1,4 +1,4 @@
-﻿using Detector.Models.ORM;
+﻿using Detector.Models.ORM.ORMTools;
 using System.Collections.Generic;
 
 namespace Detector.Main.DetectionRules

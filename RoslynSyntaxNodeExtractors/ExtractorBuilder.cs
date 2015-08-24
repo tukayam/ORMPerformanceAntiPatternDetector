@@ -76,7 +76,7 @@ namespace Detector.Extractors.Base
                 _databaseEntityDeclarations.Add(databaseEntityDeclaration);
             }
 
-            //await _databaseAccessingMethodCallStatementExtractionStrategy.Execute(parameters);
+            await _databaseAccessingMethodCallStatementExtractionStrategy.Execute(parameters);
         }
     }
 }

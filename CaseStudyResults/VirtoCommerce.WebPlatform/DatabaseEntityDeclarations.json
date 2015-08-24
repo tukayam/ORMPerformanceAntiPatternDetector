@@ -1,0 +1,326 @@
+[
+  {
+    "Name": "SettingEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\SettingEntity.cs[217..1422))"
+    }
+  },
+  {
+    "Name": "AccountEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\AccountEntity.cs[136..808))"
+    }
+  },
+  {
+    "Name": "ApiAccountEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\ApiAccountEntity.cs[97..503))"
+    }
+  },
+  {
+    "Name": "RoleEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\RoleEntity.cs[136..666))"
+    }
+  },
+  {
+    "Name": "PermissionEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\PermissionEntity.cs[136..521))"
+    }
+  },
+  {
+    "Name": "RoleAssignmentEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\RoleAssignmentEntity.cs[97..527))"
+    }
+  },
+  {
+    "Name": "RolePermissionEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\RolePermissionEntity.cs[97..362))"
+    }
+  },
+  {
+    "Name": "OperationLogEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\VirtoCommerce.Platform.Data\\Model\\OperationLogEntity.cs[261..532))"
+    }
+  },
+  {
+    "Name": "dataModel.CategoryBase",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\Category.cs[367..1400))"
+    }
+  },
+  {
+    "Name": "dataModel.CatalogBase",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\Catalog.cs[367..978))"
+    }
+  },
+  {
+    "Name": "dataModel.Item",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\Item.cs[369..4068))"
+    }
+  },
+  {
+    "Name": "dataModel.Property",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Catalog\\Model\\Property.cs[130..847))"
+    }
+  },
+  {
+    "Name": "dataModel.PropertySet",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\PropertySet.cs[340..836))"
+    }
+  },
+  {
+    "Name": "dataModel.ItemRelation",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\ItemRelation.cs[250..974))"
+    }
+  },
+  {
+    "Name": "dataModel.CategoryItemRelation",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\CategoryItemRelation.cs[301..921))"
+    }
+  },
+  {
+    "Name": "dataModel.Association",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Model\\Association.cs[301..1189))"
+    }
+  },
+  {
+    "Name": "dataModel.CategoryRelation",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Catalog\\VirtoCommerce.CatalogModule.Data\\Migrations\\201505111257502_CategoryRelation.cs[129..3142))"
+    }
+  },
+  {
+    "Name": "FulfillmentCenter",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Commerce\\Model\\FulfillmentCenter.cs[217..766))"
+    }
+  },
+  {
+    "Name": "SeoUrlKeyword",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Commerce\\Model\\SeoUrlKeyword.cs[217..651))"
+    }
+  },
+  {
+    "Name": "TableInfo",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\InfoContext.cs[8781..9243))"
+    }
+  },
+  {
+    "Name": "ColumnInfo",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\InfoContext.cs[9251..10073))"
+    }
+  },
+  {
+    "Name": "TableConstraintInfo",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\InfoContext.cs[10081..10365))"
+    }
+  },
+  {
+    "Name": "KeyColumnUsageInfo",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Tests\\VirtoCommerce.Platform.Tests\\Helpers\\InfoContext.cs[11617..12078))"
+    }
+  },
+  {
+    "Name": "ShoppingCartEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Model\\ShoppingCartEntity.cs[355..2223))"
+    }
+  },
+  {
+    "Name": "CustomerOrderEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Model\\CustomerOrderEntity.cs[344..1479))"
+    }
+  },
+  {
+    "Name": "ShipmentEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Cart\\VirtoCommerce.CartModule.Data\\Model\\ShipmentEntity.cs[355..1696))"
+    }
+  },
+  {
+    "Name": "PaymentInEntity",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Order\\VirtoCommerce.OrderModule.Data\\Model\\PaymentInEntity.cs[344..1188))"
+    }
+  },
+  {
+    "Name": "Store",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Store\\Model\\Store.cs[390..1636))"
+    }
+  },
+  {
+    "Name": "ContactPropertyValue",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Model\\ContactPropertyValue.cs[305..1040))"
+    }
+  },
+  {
+    "Name": "Address",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Cart\\Model\\Address.cs[213..908))"
+    }
+  },
+  {
+    "Name": "Email",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Model\\Email.cs[459..1541))"
+    }
+  },
+  {
+    "Name": "Note",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Customer\\Model\\Note.cs[217..333))"
+    }
+  },
+  {
+    "Name": "Phone",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Model\\Phone.cs[250..615))"
+    }
+  },
+  {
+    "Name": "Organization",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Customer\\Model\\Organization.cs[217..681))"
+    }
+  },
+  {
+    "Name": "Member",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Model\\Contact.cs[368..1411))"
+    }
+  },
+  {
+    "Name": "MemberRelation",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Customer\\VirtoCommerce.CustomerModule.Data\\Model\\MemberRelation.cs[512..1897))"
+    }
+  },
+  {
+    "Name": "Pricelist",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Pricing\\Model\\Pricelist.cs[216..509))"
+    }
+  },
+  {
+    "Name": "Price",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Pricing\\Model\\Price.cs[216..599))"
+    }
+  },
+  {
+    "Name": "PricelistAssignment",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Pricing\\Model\\PricelistAssignment.cs[216..673))"
+    }
+  },
+  {
+    "Name": "Inventory",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Inventory\\VirtoCommerce.InventoryModule.Data\\Model\\Inventory.cs[237..1319))"
+    }
+  },
+  {
+    "Name": "Models.MenuLinkList",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Models\\MenuLinkList.cs[210..1133))"
+    }
+  },
+  {
+    "Name": "Models.MenuLink",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Models\\MenuLink.cs[261..723))"
+    }
+  },
+  {
+    "Name": "ContentItem",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Models\\ContentItem.cs[112..502))"
+    }
+  },
+  {
+    "Name": "Theme",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Models\\Theme.cs[215..343))"
+    }
+  },
+  {
+    "Name": "ContentPage",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\CMS\\VirtoCommerce.Content.Data\\Models\\ContentPage.cs[261..573))"
+    }
+  },
+  {
+    "Name": "Promotion",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\Promotions\\Promotion.cs[183..1207))"
+    }
+  },
+  {
+    "Name": "Coupon",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Cart\\Model\\Coupon.cs[213..354))"
+    }
+  },
+  {
+    "Name": "PromotionUsage",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\Promotions\\PromotionUsage.cs[114..384))"
+    }
+  },
+  {
+    "Name": "DynamicContentFolder",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\DynamicContent\\DynamicContentFolder.cs[218..719))"
+    }
+  },
+  {
+    "Name": "DynamicContentItem",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\DynamicContent\\DynamicContentItem.cs[218..651))"
+    }
+  },
+  {
+    "Name": "DynamicContentPlace",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Core\\VirtoCommerce.Domain\\Marketing\\Model\\DynamicContent\\DynamicContentPlace.cs[218..546))"
+    }
+  },
+  {
+    "Name": "DynamicContentPublishingGroup",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Model\\DynamicContentPublishingGroup.cs[326..1239))"
+    }
+  },
+  {
+    "Name": "PublishingGroupContentItem",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Model\\PublishingGroupContentItem.cs[327..755))"
+    }
+  },
+  {
+    "Name": "PublishingGroupContentPlace",
+    "CompilationInfo": {
+      "SyntaxNodeLocation": "SourceFile(D:\\School\\Thesis Bug prediction with antipatterns\\Projects\\vc-community\\PLATFORM\\Modules\\Marketing\\VirtoCommerce.MarketingModule.Data\\Model\\PublishingGroupContentPlace.cs[327..755))"
+    }
+  }
+]

@@ -15,15 +15,7 @@ namespace Detector.ConsoleApp
 
         static async Task MainAsync(string[] args)
         {
-            //Console.Write("Please enter folder path:");
-            //string folderPath = Console.ReadLine();
-
-            //Console.Write("Please enter solution file name:");
-            //string solutionUnderTest = Console.ReadLine();
-
-            //string folderPath = @"D:\School\Thesis Bug prediction with antipatterns\Projects\nopcommerce-f930277908c2cb606620cefe46ab19519e2c2bf7\src";
-            //string solutionUnderTest = "NopCommerce";
-
+            Console.WriteLine("Tool started at " + DateTime.Now.ToLongTimeString());
             string folderPath = @"D:\School\Thesis Bug prediction with antipatterns\Projects\vc-community\PLATFORM";
             string solutionUnderTest = "VirtoCommerce.WebPlatform";
 
@@ -31,6 +23,7 @@ namespace Detector.ConsoleApp
             var extractionManager = new DependencyResolver().GetExtractionManager();
 
             await extractionManager.ExtractAllAsync(solutionUnderTest, folderPath);
+            Console.WriteLine("Tool stopped at " + DateTime.Now.ToLongTimeString());
         }
     }
 }

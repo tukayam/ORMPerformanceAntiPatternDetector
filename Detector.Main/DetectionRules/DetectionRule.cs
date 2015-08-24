@@ -1,5 +1,5 @@
-﻿using Detector.Models;
-using Detector.Models.AntiPatterns;
+﻿using Detector.Models.AntiPatterns;
+using Detector.Models.Base;
 using System;
 using System.Collections.Generic;
 
@@ -7,11 +7,11 @@ namespace Detector.Main.DetectionRules
 {
     public abstract class DetectionRule
     {
-        protected ORMModelTree ORMModelTree { get; private set; }
+        protected CodeExecutionPath CodeExecutionPath { get; private set; }
         
-        public bool AppliesToModelTree(ORMModelTree ORMModelTree)
+        public bool AppliesToModelTree(CodeExecutionPath codeExecutionPath)
         {
-            this.ORMModelTree = ORMModelTree;
+            this.CodeExecutionPath = codeExecutionPath;
             return GetRuleFunction().Invoke();
         }
 

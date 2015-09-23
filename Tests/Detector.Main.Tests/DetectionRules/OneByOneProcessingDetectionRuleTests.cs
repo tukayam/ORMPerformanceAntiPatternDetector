@@ -17,7 +17,7 @@ namespace Detector.Main.Tests.DetectionRules
         }
 
         [TestMethod]
-        public void DetectsOneByOneProcessingAntiPattern_When_ThereIsOneQueryInTheTreeThatDoesLazyLoadingAndRelatedEntityIsUsedInALoop()
+        public void DetectsAntiPattern_When_ThereIsOneQueryInTheTreeThatDoesLazyLoadingAndRelatedEntityIsUsedInALoop()
         {
             //Arrange
             var codeExecutionPath = new CodeExecutionPathGenerator()

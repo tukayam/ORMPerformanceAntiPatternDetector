@@ -1,22 +1,21 @@
-﻿using Detector.Extractors.DatabaseEntities;
-using Detector.Models.ORM;
-using Microsoft.CodeAnalysis;
-using System.Threading.Tasks;
-using Detector.Extractors.Base;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Detector.Extractors.Base.Helpers;
+﻿using Detector.Extractors.Base;
 using Detector.Extractors.Base.ExtensionMethods;
+using Detector.Extractors.Base.Helpers;
+using Detector.Extractors.DatabaseEntities;
+using Detector.Models.ORM.DatabaseEntities;
+using Detector.Models.ORM.ORMTools;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq.Mapping;
-using System;
-using Detector.Models.ORM.ORMTools;
-using Detector.Models.ORM.DatabaseEntities;
+using System.Threading.Tasks;
 
 namespace Detector.Extractors.LINQToSQL40
 {
-    public class LINQToSQLDatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<LINQToSQL>
+    public class DatabaseEntityDeclarationExtractor : DatabaseEntityDeclarationExtractor<LINQToSQL>
     {
-        public LINQToSQLDatabaseEntityDeclarationExtractor(Context<LINQToSQL> context)
+        public DatabaseEntityDeclarationExtractor(Context<LINQToSQL> context)
             : base(context)
         { }
 

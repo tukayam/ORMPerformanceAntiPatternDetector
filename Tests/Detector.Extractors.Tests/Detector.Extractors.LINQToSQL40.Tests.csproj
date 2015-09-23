@@ -118,7 +118,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HelpersTests\SyntaxNodeExtensions_GetCompilationInfoTests.cs" />
-    <Compile Include="LINQToSQL\LINQToSQLDatabaseEntityDeclarationsExtractorTests.cs" />
+    <Compile Include="LINQToSQL\DatabaseEntityDeclarationsExtractorTests.cs" />
     <Compile Include="Helpers\RoslynSolutionGenerators\RoslynComplexSolutionGenerator.cs" />
     <Compile Include="Helpers\RoslynSolutionGenerators\RoslynSimpleSolutionGenerator.cs" />
     <Compile Include="Helpers\RoslynSolutionGenerators\RoslynSyntaxTreeParser.cs" />

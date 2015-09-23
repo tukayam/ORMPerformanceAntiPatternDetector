@@ -5,18 +5,19 @@ using System.Linq;
 
 namespace L2S_Northwind
 {
-    [DatabaseAttribute]
-    public partial class NorthWindDataClassesDataContext : System.Data.Linq.DataContext
+    #region DataContext
+    [Database]
+    public partial class NorthWindDataClassesDataContext : DataContext
     {
         partial void OnCreated();
-        private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+        private static MappingSource mappingSource = new AttributeMappingSource();
         public NorthWindDataClassesDataContext() :
             base("", mappingSource)
         {
             OnCreated();
         }
 
-        public System.Data.Linq.Table<Customer> Customers
+        public Table<Customer> Customers
         {
             get
             {
@@ -24,7 +25,7 @@ namespace L2S_Northwind
             }
         }
 
-        public System.Data.Linq.Table<Order> Orders
+        public Table<Order> Orders
         {
             get
             {
@@ -32,39 +33,94 @@ namespace L2S_Northwind
             }
         }
     }
+    #endregion
 
-    [TableAttribute]
+    #region Models
+
+    [Table]
     public partial class Order
     {
-        [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
+        [Column(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
         public int OrderID;
 
         public int CustomerID;
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Order_OrderItem", ThisKey = "OrderID", OtherKey = "OrderID")]
+        [Association(Name = "Order_OrderItem", ThisKey = "OrderID", OtherKey = "OrderID")]
         public EntitySet<OrderItem> OrderItems;
 
     }
 
-    [TableAttribute]
+    [Table]
     public partial class OrderItem
     {
-        [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
+        [Column(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
         public int OrderItemID;
 
         public int OrderID;
         public int Price;
     }
 
-    [TableAttribute(Name = "dbo.Employees")]
+    [Table]
     public partial class Customer
     {
-        [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
+        [Column(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
         public int CustomerID;
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Employee_Order", ThisKey = "EmployeeID", OtherKey = "EmployeeID")]
+        [Association(Name = "Customer_Order", ThisKey = "CustomerID", OtherKey = "CustomerID")]
         public EntitySet<Order> Orders;
     }
+
+    #endregion
+
+    #region Repositories
+
+    public interface CustomerRepository
+    {
+        Customer GetCustomer(int empId);
+        IEnumerable<Customer> GetCustomers();
+    }
+
+    public interface OrderRepository
+    {
+        IEnumerable<Order> GetOrdersOfCustomer(int employeeId);
+    }
+
+    public class ConcreteCustomerRepository : CustomerRepository
+    {
+        public Customer GetCustomer(int customerId)
+        {
+            using (NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext())
+            {
+                DataLoadOptions options = new DataLoadOptions();
+                options.LoadWith<Customer>(c => c.Orders);
+                dc.LoadOptions = options;
+
+                return (from e in dc.Customers
+                        where (e.CustomerID == customerId)
+                        select e).SingleOrDefault();
+            }
+        }
+
+        public IEnumerable<Customer> GetCustomers()
+        {
+            NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
+            return dc.Customers;
+        }
+    }
+
+    public class OrderRepositoryClass : OrderRepository
+    {
+        public IEnumerable<Order> GetOrdersOfCustomer(int customerId)
+        {
+            using (NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext())
+            {
+                return (from o in dc.Orders
+                        where o.CustomerID == customerId
+                        select o).ToList();
+            }
+        }
+    }
+    #endregion
 
     public class ClassUnderTest
     {
@@ -97,50 +153,6 @@ namespace L2S_Northwind
                     wellPayingCustomers.Add(customer);
                 }
             }
-        }
-    }
-
-    public interface CustomerRepository
-    {
-        Customer GetCustomer(int empId);
-        IEnumerable<Customer> GetCustomers();
-    }
-
-
-    public interface OrderRepository
-    {
-        IEnumerable<Order> GetOrdersOfCustomer(int employeeId);
-    }
-
-    public class CustomerRepositoryClass : CustomerRepository
-    {
-        public Customer GetCustomer(int customerId)
-        {
-            NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-            DataLoadOptions options = new DataLoadOptions();
-            options.LoadWith<Customer>(employee => employee.Orders);
-            dc.LoadOptions = options;
-
-            return (from e in dc.Customers
-                    where (e.CustomerID == customerId)
-                    select e).SingleOrDefault<Customer>();
-        }
-
-        public IEnumerable<Customer> GetCustomers()
-        {
-            NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-            return dc.Customers;
-        }
-    }
-
-    public class OrderRepositoryClass : OrderRepository
-    {
-        public IEnumerable<Order> GetOrdersOfCustomer(int customerId)
-        {
-            NorthWindDataClassesDataContext dc = new NorthWindDataClassesDataContext();
-            return (from o in dc.Orders
-                    where o.CustomerID == customerId
-                    select o).ToList();
         }
     }
 }

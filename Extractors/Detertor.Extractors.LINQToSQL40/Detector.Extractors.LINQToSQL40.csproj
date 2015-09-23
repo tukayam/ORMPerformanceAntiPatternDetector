@@ -90,12 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LINQToSQLDatabaseAccessingMethodCallExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseContextInitializationStatementExtractor.cs" />
-    <Compile Include="LINQToSQLDatabaseEntityDeclarationExtractor.cs" />
+    <Compile Include="DatabaseAccessingMethodCallExtractor.cs" />
+    <Compile Include="DatabaseContextInitializationStatementExtractor.cs" />
+    <Compile Include="DatabaseEntityDeclarationExtractor.cs" />
     <Compile Include="DataContextDeclarationExtractor.cs" />
-    <Compile Include="LINQToSQLDataLoadOptionsExtractor.cs" />
-    <Compile Include="LINQToSQLLoopDeclarationExtractor.cs" />
+    <Compile Include="DataLoadOptionsExtractor.cs" />
+    <Compile Include="LoopDeclarationExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

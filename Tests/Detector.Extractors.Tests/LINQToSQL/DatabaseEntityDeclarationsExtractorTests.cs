@@ -11,9 +11,9 @@ using Detector.Models.ORM.ORMTools;
 namespace Detector.Extractors.Tests
 {
     [TestClass]
-    public class LINQToSQLDatabaseEntityDeclarationsExtractorOnRoslynSolutionTests
+    public class DatabaseEntityDeclarationsExtractorOnRoslynSolutionTests
     {
-        LINQToSQLDatabaseEntityDeclarationExtractor target;
+        DatabaseEntityDeclarationExtractor target;
 
         [TestMethod]
         public async Task DetectsDatabaseEntityDeclarations_When_RoslynComplexSolutionIsUsed()
@@ -25,7 +25,7 @@ namespace Detector.Extractors.Tests
             //ToDo: change to use TargetBuilder
             Context<LINQToSQL> context = new ContextStub<LINQToSQL>();
 
-            target = new LINQToSQLDatabaseEntityDeclarationExtractor(context);
+            target = new DatabaseEntityDeclarationExtractor(context);
 
             var progressIndicator = new ProgressStub();
             //Act

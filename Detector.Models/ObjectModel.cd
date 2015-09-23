@@ -154,7 +154,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Detector.Models.Base.CodeExecutionPath">
-    <Position X="7.5" Y="23" Width="1.5" />
+    <Position X="7.5" Y="23" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Base\CodeExecutionPaths\CodeExecutionPath.cs</FileName>

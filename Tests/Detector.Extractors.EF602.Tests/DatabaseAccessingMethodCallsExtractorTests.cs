@@ -36,7 +36,6 @@ namespace Detector.Extractors.EF602.Tests
             var parentMethodNames = result.Select(d => d.ParentMethodName);
 
             //Assert
-            //Assert.IsTrue(target.DatabaseAccessingMethodCalls.Count == 6);
             Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingQuerySyntaxAndAssignToVariable"));
             Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingQuerySyntax"));
             Assert.IsTrue(parentMethodNames.Contains("GetCustomerUsingMethodSyntax"));

@@ -12,14 +12,14 @@ namespace Detector.Main
         private DataContextDeclarationExtractor<T> _dataContextDeclarationExtractor;
         private DatabaseEntityDeclarationExtractor<T> _databaseEntityDeclarationExtractor;
         private DatabaseAccessingMethodCallExtractor<T> _databaseAccessingMethodCallExtractor;
-        private CodeExecutionPathExtractor<T> _codeExecutionPathExtractor;
+        private CodeExecutionPathGenerator<T> _codeExecutionPathExtractor;
         IProgress<ExtractionProgress> _progressIndicator;
         private ISerializer<T> _serializer;
 
         public ExtractionManager(DataContextDeclarationExtractor<T> dataContextDeclarationExtractor
             , DatabaseEntityDeclarationExtractor<T> databaseEntityDeclarationExtractor
             , DatabaseAccessingMethodCallExtractor<T> databaseAccessingMethodCallExtractor
-            , CodeExecutionPathExtractor<T> codeExecutionPathExtractor
+            , CodeExecutionPathGenerator<T> codeExecutionPathExtractor
             , IProgress<ExtractionProgress> progressIndicator
             , ISerializer<T> serializer)
         {
@@ -44,7 +44,7 @@ namespace Detector.Main
 
         private async Task GenerateCodeExecutionPaths(string solutionUnderTest, Solution solution)
         {
-            await _codeExecutionPathExtractor.ExtractCodeExecutionPathsAsync(solution, _progressIndicator);
+            await _codeExecutionPathExtractor.GenerateCodeExecutionPathsAsync(solution, _progressIndicator);
             _progressIndicator.Report(new ExtractionProgress("Saving Code Execution Paths into json file."));
             await _serializer.Serialize(_codeExecutionPathExtractor.CodeExecutionPaths, solutionUnderTest);
             _progressIndicator.Report(new ExtractionProgress("Done"));

@@ -26,10 +26,10 @@ namespace Detector.Extractors.EF602.Tests
             await dbEntityExtractor.FindDatabaseEntityDeclarationsAsync(solution, progressIndicator);
             var dbAccessingMethodCallsExtractor = new DatabaseAccessingMethodCallExtractor(context);
             await dbAccessingMethodCallsExtractor.FindDatabaseAccessingMethodCallsAsync(solution, progressIndicator);
-            var target = new CodeExecutionPathExtractor(context);
+            var target = new CodeExecutionPathGenerator(context);
             
             //Act
-            await target.ExtractCodeExecutionPathsAsync(solution, progressIndicator);
+            await target.GenerateCodeExecutionPathsAsync(solution, progressIndicator);
 
             //Assert
             Assert.IsTrue(target.CodeExecutionPaths.Count() == 2);

@@ -99,7 +99,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeExecutionPathExtractor.cs" />
+    <Compile Include="CodeExecutionPathGenerator.cs" />
     <Compile Include="DatabaseAccessingMethodCallExtractor.cs" />
     <Compile Include="DatabaseEntityDeclarationExtractorUsingEntityBaseDeclaration.cs" />
     <Compile Include="DatabaseEntityDeclarationExtractorUsingDbContextProperties.cs" />

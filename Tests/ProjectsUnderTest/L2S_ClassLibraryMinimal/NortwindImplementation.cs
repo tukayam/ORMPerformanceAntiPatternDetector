@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace L2S_Northwind
 {
-    [global::System.Data.Linq.Mapping.DatabaseAttribute]
+    [DatabaseAttribute]
     public partial class NorthWindDataClassesDataContext : System.Data.Linq.DataContext
     {
         partial void OnCreated();
@@ -33,7 +33,7 @@ namespace L2S_Northwind
         }
     }
 
-    [global::System.Data.Linq.Mapping.TableAttribute]
+    [TableAttribute]
     public partial class Order
     {
         [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
@@ -46,7 +46,7 @@ namespace L2S_Northwind
 
     }
 
-    [global::System.Data.Linq.Mapping.TableAttribute]
+    [TableAttribute]
     public partial class OrderItem
     {
         [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]
@@ -56,7 +56,7 @@ namespace L2S_Northwind
         public int Price;
     }
 
-    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Employees")]
+    [TableAttribute(Name = "dbo.Employees")]
     public partial class Customer
     {
         [global::System.Data.Linq.Mapping.ColumnAttribute(DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true)]

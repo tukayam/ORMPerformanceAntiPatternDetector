@@ -13,18 +13,18 @@ using System.Collections.Immutable;
 
 namespace Detector.Extractors.Base
 {
-    public abstract class CodeExecutionPathExtractor<T> where T : ORMToolType
+    public abstract class CodeExecutionPathGenerator<T> where T : ORMToolType
     {
         Context<T> _context;
         public HashSet<CodeExecutionPath> CodeExecutionPaths { get; private set; }
 
-        public CodeExecutionPathExtractor(Context<T> context)
+        public CodeExecutionPathGenerator(Context<T> context)
         {
             _context = context;
             CodeExecutionPaths = new HashSet<CodeExecutionPath>();
         }
 
-        public async Task ExtractCodeExecutionPathsAsync(Solution solution, IProgress<ExtractionProgress> progressIndicator)
+        public async Task GenerateCodeExecutionPathsAsync(Solution solution, IProgress<ExtractionProgress> progressIndicator)
         {
             progressIndicator.Report(new ExtractionProgress("Generating code execution paths..."));
             await GetInitialCodeExecutionPaths(solution, progressIndicator);

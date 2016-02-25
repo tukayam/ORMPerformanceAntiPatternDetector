@@ -64,9 +64,9 @@ namespace Detector.Extractors.Tests.Helpers.RoslynSolutionGenerators
         {
             var solution = new AdhocWorkspace().CurrentSolution
                 .AddProject(projectId, "MyProject", "MyProject", LanguageNames.CSharp)
-                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(object).Assembly))
-                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.Linq.DataContext).Assembly))
-                .AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.DataTable).Assembly))
+                //.AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(object).Assembly))
+                //.AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.Linq.DataContext).Assembly))
+                //.AddMetadataReference(projectId, MetadataReference.CreateFromAssembly(typeof(System.Data.DataTable).Assembly))
                 .AddDocument(DataContextClassId, "DataContext.cs", GetDataContextCSharpDocumentText())
                 .AddDocument(OrderEntityDeclarationClassId, "Order.cs", GetOrderEntityDeclarationClassCSharpDocumentText())
                 .AddDocument(CustomerEntityDeclarationClassId, "Customer.cs", GetCustomerEntityDeclarationClassCSharpDocumentText())

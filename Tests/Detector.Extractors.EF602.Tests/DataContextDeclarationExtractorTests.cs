@@ -1,4 +1,5 @@
-﻿using Detector.Extractors.Base;
+﻿using System.Configuration;
+using Detector.Extractors.Base;
 using Detector.Models.ORM.ORMTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -32,7 +33,7 @@ namespace Detector.Extractors.EF602.Tests
             //Assert
             var item = target.DataContextDeclarations.First();
 
-            Assert.IsTrue(target.DataContextDeclarations.Count == 1);           
+            Assert.IsTrue(target.DataContextDeclarations.Count == 1);
             Assert.IsTrue(item.Name == "NWDbContext");
             Assert.IsTrue(target.DataContextDeclarations.Count == 1);
             Assert.IsTrue(context.DataContextDeclarations == target.DataContextDeclarations);
@@ -43,7 +44,8 @@ namespace Detector.Extractors.EF602.Tests
         public async Task DetectsDbContextClasses_When_VirtoCommerceSolutionIsCompiled()
         {
             //Arrange  
-            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(@"..\..\..\..\..\..\vc-community\PLATFORM\VirtoCommerce.WebPlatform.sln");
+            string solutionFilePath = ConfigurationManager.AppSettings["PathToSolutionFile_VirtoCommerce"];
+            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(solutionFilePath);
             //ToDo: Use target builder instead
             Context<EntityFramework> context = new ContextStub<EntityFramework>();
             var target = new DataContextDeclarationExtractor(context);

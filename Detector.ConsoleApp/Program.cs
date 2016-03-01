@@ -16,8 +16,10 @@ namespace Detector.ConsoleApp
         static async Task MainAsync(string[] args)
         {
             Console.WriteLine("Tool started at " + DateTime.Now.ToLongTimeString());
-            string folderPath = @"D:\School\Thesis Bug prediction with antipatterns\Projects\vc-community\PLATFORM";
-            string solutionUnderTest = "VirtoCommerce.WebPlatform";
+            //string folderPath = @"D:\School\Thesis Bug prediction with antipatterns\Projects\vc-community\PLATFORM";
+            //string solutionUnderTest = "VirtoCommerce.WebPlatform";
+            string folderPath = @"C:\Users\Aki\school\master\vc-community\PLATFORM";
+            string solutionUnderTest = "VirtoCommerce.Platform";
 
             Console.WriteLine("Extracting for solution: " + folderPath + @"\" + solutionUnderTest);
             var extractionManager = new DependencyResolver().GetExtractionManager();

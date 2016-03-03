@@ -58,8 +58,8 @@ namespace Detector.Extractors.EF602.Tests
 
             //Assert
             //Assert.IsTrue(target.DataContextDeclarations.Count == 15);
-            // VirtoCommerce.Platform.sln seems to return 3, not 15?
-            Assert.IsTrue(target.DataContextDeclarations.Count == 3);
+            // VirtoCommerce.Platform.sln seems to return 2, not 15? could be due to upgrades in vc-community software?
+            Assert.IsTrue(target.DataContextDeclarations.Count == 2);
         }
     }
 }

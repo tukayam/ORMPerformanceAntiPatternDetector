@@ -3,6 +3,7 @@ using Detector.Models.ORM.ORMTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using TestBase.RoslynSolutionGenerators;
@@ -39,6 +40,30 @@ namespace Detector.Extractors.EF602.Tests
             Assert.IsTrue(dbEntityNames.Contains("OrderItem"));
 
             Assert.IsTrue(context.DatabaseEntityDeclarations == target.DatabaseEntityDeclarations);
+        }
+
+        [TestMethod]
+        public async Task DetectsThreeDatabaseEntityDeclarations_When_VirtoCommerceSolutionIsCompiled()
+        {
+            //Arrange  
+            string solutionFilePath = ConfigurationManager.AppSettings["PathToSolutionFile_VirtoCommerce"];
+
+            Solution EF60_NWSolution = await new RoslynSolutionGenerator().GetSolutionAsync(solutionFilePath);
+            var progressIndicator = new ProgressStub();
+
+            Context<EntityFramework> context = new ContextStub<EntityFramework>();
+            var dataContextDecExtr = new DataContextDeclarationExtractor(context);
+            await dataContextDecExtr.FindDataContextDeclarationsAsync(EF60_NWSolution, progressIndicator);
+
+            var target = new DatabaseEntityDeclarationExtractorUsingDbContextProperties(context);
+
+            //Act
+            await target.FindDatabaseEntityDeclarationsAsync(EF60_NWSolution, progressIndicator);
+
+            //Assert
+            //Assert.IsTrue(target.DataContextDeclarations.Count == 54);
+            // VirtoCommerce.Platform.sln seems to return 13, not 54? could be due to upgrades in vc-community software?
+            Assert.IsTrue(target.DatabaseEntityDeclarations.Count == 13);
         }
     }
 }

@@ -24,8 +24,10 @@ namespace Detector.Main.DetectionRules
 
             foreach (var dbAccessingMethodCall in databaseAccessingMethodCalls)
             {
+                // Eager Loading is configured
                 if (dbAccessingMethodCall.DoesEagerLoad)
                 {
+                    // what is checked here? if there are no loops? (considering onebyone should check loops)
                     if (!databaseEntityVariableRelatedEntityCalls.Any(x => x.CalledDatabaseEntityVariable == dbAccessingMethodCall.AssignedVariable))
                     {
                         this.DetectedAntiPatterns.Add(new ExcessiveDataAntiPattern(CodeExecutionPath, dbAccessingMethodCall));

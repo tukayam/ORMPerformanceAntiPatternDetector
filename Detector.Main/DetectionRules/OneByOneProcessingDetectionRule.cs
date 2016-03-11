@@ -23,8 +23,10 @@ namespace Detector.Main.DetectionRules
 
             foreach (var dbAccessingMethodCall in databaseAccessingMethodCalls)
             {
+                // check for Lazy Loading configured
                 if (!dbAccessingMethodCall.DoesEagerLoad)
                 {
+                    // check for loops? as mentioned in paper page 19
                     if (databaseEntityVariableRelatedEntityCalls.Any(x => x.CalledDatabaseEntityVariable == dbAccessingMethodCall.AssignedVariable))
                     {
                         this.DetectedAntiPatterns.Add(new OneByOneProcessingAntiPattern(CodeExecutionPath, dbAccessingMethodCall));

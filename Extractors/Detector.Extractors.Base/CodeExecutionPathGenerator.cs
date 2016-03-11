@@ -69,6 +69,7 @@ namespace Detector.Extractors.Base
                     }
                 }
             }
+            Console.WriteLine("{0} Code Execution Paths found ", CodeExecutionPaths.Count);
         }
 
         private Dictionary<MethodDeclarationSyntax, HashSet<ISymbol>> GetMethodDeclarationsAndTheirSymbolsForDbAccessingMethodCalls()
